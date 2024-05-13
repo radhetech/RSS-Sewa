@@ -1,0 +1,76 @@
+// .home-page-container{
+//     padding: 50px 80px;
+// }
+// .home-page-content{
+//     width: 100%;
+//     padding-top: 50px;
+//     border-top: #02534d 3px solid;
+//     text-align: justify;
+// }
+.home-page-banner{
+    background-color: #28282B;
+    padding: 10px 20px;
+  }
+  .home-page-banner-slogan{
+    width: 1000px;
+    color: white;
+    margin: 20px auto;
+  }
+  
+  .home-page-banner-search{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  .search-input{
+    width: 68%;
+    height: 38px;
+    padding: 10px 30px;
+  }
+  .search-button{
+    padding: 10px 20px;
+    height: 38px;
+    border: none;
+    margin-left: 5px;
+    background-color: #FF5733;
+    color: white;
+  }
+  h1, p{
+    margin: 10px 0px;
+  }
+  @media only screen and (max-width: 768px) {
+    .home-page-banner-slogan {
+        width: 90%; /* Adjusted width for smaller screens */
+        margin: 20px auto; /* Center alignment */
+        text-align: center; /* Center alignment */
+    }
+
+    .home-page-banner-search {
+        margin-top: 50px; /* Reduced top margin */
+        margin-bottom: 50px; /* Reduced bottom margin */
+        text-align: center;
+    }
+
+    .search-input {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 300px; /* Max width to prevent stretching on very small screens */
+        margin: 0 auto; /* Center alignment */
+    }
+
+    .search-button {
+        width: 80%; /* Full width for smaller screens */
+        max-width: 200px; /* Max width to prevent stretching on very small screens */
+        margin: 10px auto; /* Center alignment */
+    }
+
+    h1, p {
+        margin: 5px 0; /* Adjusted margin for smaller screens */
+    }
+    h1{
+      font-size: 16px;
+    }
+    p{
+      font-size: 8px;
+    }
+  
+}

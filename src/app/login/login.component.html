@@ -1,0 +1,24 @@
+<header>
+    <app-navbar></app-navbar>
+ </header>
+<div class="app-login-form">
+    <h2>Login Here</h2>
+    <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
+    <form #loginForm="ngForm" (ngSubmit)="onFormSubmitted(loginForm)">
+        <div class="form-input">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email address" name="email" ngModel required>
+        </div>
+        <div class="form-input">
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" ngModel required>
+        </div>
+        <button type="submit" class="app-login-btn" [disabled]="loginForm.invalid">Login</button>
+        <p class="app-toggle">
+            <button class="app-toggle-btn">Forgotten password?</button>
+        </p>
+    </form>
+</div>
+<div class="footer-wrapper">
+<app-footer></app-footer>
+</div>
