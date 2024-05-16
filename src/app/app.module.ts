@@ -18,6 +18,7 @@ import { SevaUpakramaComponent } from './seva-upakrama/seva-upakrama.component';
 import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
 import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
     SevaUpakramaComponent,
     SevaKaryaComponent,
     UtsavaVrttaComponent,
-    SevaDarshanComponent
+    SevaDarshanComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
