@@ -1,18 +1,5 @@
-.footer {
-    width: 100%;
-    background: #02534d;
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    bottom: 0px;
-    z-index: 1000; /* Set a high z-index value */
-}
 
 .social-icon {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,5 +30,3 @@
     font-size: 1rem;
     font-weight: 300;
 }
-
-

@@ -10,7 +10,7 @@
     justify-content: space-between;
   }
  .nav-title{
-   
+   cursor: pointer;
     color: white;
     font-size: 24px;
     margin-top: 24px;
@@ -42,6 +42,7 @@
   .menu-icon {
     display: none;
     z-index: 1001;
+
   }
   
   @media screen and (min-width: 128px) and (max-width: 1320px) {
@@ -75,5 +76,9 @@
     }
     .nav-title{
         font-size: 14px;
+       
+    }
+    .mobile_menu.active ~ body {
+      overflow: hidden;
     }
   }

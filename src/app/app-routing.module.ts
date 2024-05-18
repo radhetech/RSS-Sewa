@@ -24,27 +24,27 @@ const routes: Routes = [
     canActivate:[authguardGuard]
   },
   {
-    path:'SakhaVrtta',
+    path:'sakha-vrtta',
     component:SakhaVrttaComponent,
     canActivate:[authguardGuard]
   },
   {
-    path:'SevaUpakrama',
+    path:'seva-upakrama',
     component:SevaUpakramaComponent,
     canActivate:[authguardGuard]
   },
   {
-    path:'SevaKarya',
+    path:'seva-karya',
     component:SevaKaryaComponent,
     canActivate:[authguardGuard]
   },
   {
-    path:'UtsavaVrtta',
+    path:'utsava-vrtta',
     component:UtsavaVrttaComponent,
     canActivate:[authguardGuard]
   },
   {
-    path:'SevaDarshan',
+    path:'seva-darshan',
     component:SevaDarshanComponent,
     canActivate:[authguardGuard]
   }

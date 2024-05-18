@@ -4,7 +4,7 @@
     
             <div class="col-md-3 col-sm-3 col-3">
                 <div >
-                    <h2  class="nav-title">Sewa Vibhag - RSS- Gujarat </h2>
+                    <h2  class="nav-title" routerLink="/home">Sewa Vibhag - RSS- Gujarat </h2>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9 col-9 text-end nav-hadder-end" *ngIf="selecteduser">
@@ -15,11 +15,11 @@
      
             <div class="desktop_menu" [class.mobile_menu]="menuValue">
                 <ul>
-                    <li routerLink="/SakhaVrtta">Sakha Vrtta</li>
-                    <li routerLink="/SevaUpakrama">Seva Upakrama</li>
-                    <li routerLink="/SevaKarya">Seva Karya</li>
-                    <li routerLink="/UtsavaVrtta">Utsava Vrtta</li>
-                    <li routerLink="/SevaDarshan">Seva Darshan</li>
+                    <li routerLink="/sakha-vrtta" class="active">Sakha Vrtta</li>
+                    <li routerLink="/seva-upakrama">Seva Upakrama</li>
+                    <li routerLink="/seva-karya">Seva Karya</li>
+                    <li routerLink="/utsava-vrtta">Utsava Vrtta</li>
+                    <li routerLink="/seva-darsha">Seva Darshan</li>
                     <li (click)="logout()">LogOut</li>
                     <!-- <li routerLink="/login" [queryParams]="{logout:true}">LogOut</li> -->
                 </ul>
