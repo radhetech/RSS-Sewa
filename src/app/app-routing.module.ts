@@ -8,11 +8,16 @@ import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
 import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { authguardGuard } from './services/Auth/authguard.guard';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
     path:'',
     component:LoginComponent
+  }, {
+    path:'',
+    pathMatch:'full',
+    redirectTo:'home'
   },
   {
     path:'login',
@@ -47,6 +52,9 @@ const routes: Routes = [
     path:'seva-darshan',
     component:SevaDarshanComponent,
     canActivate:[authguardGuard]
+  }, {
+    path:'**',
+    component:ErrorComponent,
   }
 ];
 

@@ -18,6 +18,11 @@ export class LoginService{
        Name: 'Munesh',
        userid: 'munesh@gmail.com',
        password: 'Ram@111'
+     },
+     {
+       Name: 'Yagni',
+       userid: 'yagni@gmail.com',
+       password: 'dm@111'
      }
    ]
    isUserLogin: boolean = false;
