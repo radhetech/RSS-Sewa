@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -19,6 +18,7 @@ import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
 import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { ErrorComponent } from './error/error.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,9 @@ import { ErrorComponent } from './error/error.component';
     FormsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
