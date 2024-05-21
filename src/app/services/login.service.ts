@@ -1,56 +1,61 @@
-import { Injectable, inject } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { credentials } from "../Model/credentials";
-import { Router } from "@angular/router";
+import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { credentials } from '../Model/credentials';
+import { Router } from '@angular/router';
 
 @Injectable({
-    providedIn:'root'
+  providedIn: 'root',
 })
-export class LoginService{
-
+export class LoginService {
   data: credentials[] = [
-      {
-       Name: 'Dainik',
-       userid: 'dainik@gmail.com',
-       password: '123'
-     },
-     {
-       Name: 'Munesh',
-       userid: 'munesh@gmail.com',
-       password: 'Ram@111'
-     }
-   ]
-   isUserLogin: boolean = false;
-   _router = inject(Router);
-  
-   constructor() {
+    {
+      Name: 'Dainik',
+      userid: 'dainik@gmail.com',
+      password: '123',
+    },
+    {
+      Name: 'Munesh',
+      userid: 'munesh@gmail.com',
+      password: 'Ram@111',
+    },
+    {
+      Name: 'Vishal',
+      userid: 'vishal@gmail.com',
+      password: '1234',
+    },
+  ];
+  isUserLogin: boolean = false;
+  _router = inject(Router);
+
+  constructor() {
     const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
-        this.isUserLogin = true;
+      this.isUserLogin = true;
     }
-}
+  }
 
-   userLogin(username: string, password: string) {
-    const loginUser = this.data.find(a => a.userid == username && a.password == password)
-    console.log(loginUser)
+  userLogin(username: string, password: string) {
+    const loginUser = this.data.find(
+      (a) => a.userid == username && a.password == password
+    );
+    console.log(loginUser);
     if (loginUser === undefined) {
-        this.isUserLogin = false
+      this.isUserLogin = false;
     } else {
       localStorage.setItem('loggedInUser', JSON.stringify(loginUser));
-        this.isUserLogin = true
+      this.isUserLogin = true;
     }
     return loginUser;
-}
-userLogout() {
-  localStorage.removeItem('loggedInUser');
+  }
+  userLogout() {
+    localStorage.removeItem('loggedInUser');
     this.isUserLogin = false;
     this._router.navigate(['login']);
-}
+  }
 
-isuserLoginorNot(){
-    return this.isUserLogin
-}
-
+  isuserLoginorNot() {
+    return this.isUserLogin;
+  }
 
   //   private loginObserveable = new BehaviorSubject(null);
   //   isLoggedIn = this.loginObserveable.asObservable();
