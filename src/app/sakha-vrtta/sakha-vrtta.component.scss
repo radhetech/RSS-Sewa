@@ -2,15 +2,25 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+// #e98a2b #e1a16112
 
+.selected {
+  color: #e98a2b;
+}
+span{
+  margin: 0px 10px 0px 5px;
+}
+h3,h4{
+  color: #e98a2b !important;
+}
 .list-container {
   width: 80%;
-  max-width: 600px;
-  margin: 20px auto;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #f9f9f9;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid #ff9d3e;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
 }
 
 .list-container h3 {
@@ -34,7 +44,7 @@
 
 .list-container ul li:hover {
   background-color: #f1f1f1;
-  color: #007bff;
+  color: #e98a2b;
 }
 
 .subList {
@@ -44,12 +54,12 @@
 
 .mainTitle {
   margin-top: 20px;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 #texttitle {
-  font-size: 17px;
+  font-size: 15px;
   margin-right: 15px;
 }
 
@@ -64,7 +74,7 @@
 }
 
 .mainTitle label {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .mainTitle input[type="number"]:focus,
