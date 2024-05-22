@@ -51,6 +51,22 @@ h3,h4{
   padding-left: 20px;
   border-left: 2px solid #ddd;
 }
+.subList-label{ 
+  display:flex;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-container label {
+  margin-right: 10px;
+}
+
+.flex-container input[type="number"],
+.flex-container textarea {
+  flex: 1; 
+}
 
 .mainTitle {
   margin-top: 20px;
@@ -60,7 +76,7 @@ h3,h4{
 
 #texttitle {
   font-size: 15px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .mainTitle input[type="number"],

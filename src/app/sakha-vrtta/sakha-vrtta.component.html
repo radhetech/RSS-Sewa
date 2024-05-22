@@ -64,11 +64,11 @@
             </li>
 
             <div *ngIf="checkedItems.ha" class="subList">
-                <li class="mainTitle">
+                <li class="mainTitle flex-container">
                     <label>સ્વયંસેવકની સંખ્યા</label>
-                    <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા">
+                    <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા" min="0">
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle flex-container">
                     <label>વિશેષ નોંધ</label>
                     <textarea [(ngModel)]="checkedItems.option3" placeholder="વિશેષ નોંધ"></textarea>
                 </li>
