@@ -1,15 +1,34 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-    providedIn:'root'
+  providedIn: 'root',
 })
-export class ServicesService{
-    services = [
-        {title: 'Sakha Vrtta', image: './assets/services/service1.png', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-        {title: 'Seva Upakrama', image: './assets/services/service2.png', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-        {title: 'Seva Karya', image: './assets/services/service3.png', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-        {title: 'Utsava Vrtta', image: './assets/services/service4.png', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-        {title: 'Seva Darshan', image: './assets/services/service1.png', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
-    ]
-  
+export class ServicesService {
+  services = [
+    {
+      title: 'શાખા વૃત્ત',
+      image: './assets/services/Vrut.webp',
+      description: 'સેવા દિવસ (ગુરૂવાર) નું વૃત્ત માટે',
+    },
+    {
+      title: 'સેવા ઉપક્રમ',
+      image: './assets/services/Shikshan1.webp',
+      description: 'સેવા ઉપક્રમની વિગતો ભરવા માટે',
+    },
+    {
+      title: 'સેવા કાર્ય',
+      image: './assets/services/Sevabharati.jpeg',
+      description: 'સેવા કાર્યની વિગતો ભરવા માટે',
+    },
+    {
+      title: 'ઉત્સવ વૃત',
+      image: './assets/services/utsav.jpeg',
+      description: 'ઉત્સવનું વૃત્ત આપવા માટે',
+    },
+    {
+      title: 'સેવા દર્શન',
+      image: './assets/services/sevadarshan.jpeg',
+      description: 'સેવા દર્શનની વિગતો ભરવા માટે',
+    },
+  ];
 }

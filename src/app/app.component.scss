@@ -3,23 +3,23 @@ header {
   background: #e98a2b;
 }
 
-.footer {
-  width: 100%;
-  background: #e98a2b;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  bottom: 0px;
-  z-index: 1000;
-  /* Set a high z-index value */
-}
+// .footer {
+//   width: 100%;
+//   background: #e98a2b;
+//   min-height: 120px;
+//   padding: 20px 50px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   bottom: 0px;
+//   z-index: 1000;
+//   /* Set a high z-index value */
+// }
 
 .footer {
   position: fixed;
-  bottom: 0px;
+  bottom: -30px;
   width: 100%;
   background: #e98a2b;
   min-height: 100px;
@@ -28,7 +28,6 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  bottom: 0px;
   z-index: 1000;
   /* Set a high z-index value */
 }
