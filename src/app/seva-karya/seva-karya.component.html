@@ -1,1 +1,325 @@
-<p>seva-karya works!</p>
+<form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
+    <div class="list-container">
+        <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
+        <ul>
+            <li class="mainTitle">
+                <input type="checkbox" name="shiksan" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> શિક્ષણ પરિમાણ
+            </li>
+            <div *ngIf="showList1" class="subList">
+                <li class="mainTitle">
+                    <label> સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ </label>
+                    <input type="number" name="sanskarKendra" [(ngModel)]="checkedItems.sanskarKendra" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પાઠદાન કેન્દ્ર / ટ્યુશન કેન્દ્ર</label>
+                    <input type="number" name="tuitionCenter" [(ngModel)]="checkedItems.tuitionCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ઉચ્ચ શિક્ષણ કોચિંગ</label>
+                    <input type="number" name="higherEducationCoaching" [(ngModel)]="checkedItems.higherEducationCoaching" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અભ્યાસિકા</label>
+                    <input type="number" name="studyCenter" [(ngModel)]="checkedItems.studyCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>બાલવાડી</label>
+                    <input type="number" name="balwadi" [(ngModel)]="checkedItems.balwadi" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પ્રાથમિક શાળા (કક્ષા 5 સુધી)</label>
+                    <input type="number" name="primarySchool" [(ngModel)]="checkedItems.primarySchool" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>માધ્યમિક શાળા (કક્ષા 8 સુધી)</label>
+                    <input type="number" name="secondarySchool" [(ngModel)]="checkedItems.secondarySchool" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>હાઇસ્કૂલ</label>
+                    <input type="number" name="highSchool" [(ngModel)]="checkedItems.highSchool" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (ઉચ્ચ શિક્ષણ માટે)</label>
+                    <input type="number" name="competitiveExamCoaching" [(ngModel)]="checkedItems.competitiveExamCoaching" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ચલિત પ્રયોગશાળા</label>
+                    <input type="number" name="mobileLaboratory" [(ngModel)]="checkedItems.mobileLaboratory" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પુસ્તક પેડી બેંક</label>
+                    <input type="number" name="bookBank" [(ngModel)]="checkedItems.bookBank" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>નિર્વાહક શાળા / ગુરુકુલ</label>
+                    <input type="number" name="residentialSchool" [(ngModel)]="checkedItems.residentialSchool" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>હિન્દી શિક્ષણ વર્ગ</label>
+                    <input type="number" name="hindiTeachingClass" [(ngModel)]="checkedItems.hindiTeachingClass" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પ્રૌઢ શિક્ષણ / સાક્ષરતા કાર્યક્રમ</label>
+                    <input type="number" name="adultEducation" [(ngModel)]="checkedItems.adultEducation" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>દિવ્યાંગો માટે શાળા</label>
+                    <input type="number" name="schoolForDisabled" [(ngModel)]="checkedItems.schoolForDisabled" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>છાત્રાલય</label>
+                    <input type="number" name="hostel" [(ngModel)]="checkedItems.hostel" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>નિરાશ્રિત બાળક બાળિકા સદન</label>
+                    <input type="number" name="orphanage" [(ngModel)]="checkedItems.orphanage" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>એકલ વિદ્યાાલય</label>
+                    <input type="number" name="singleTeacherSchool" [(ngModel)]="checkedItems.singleTeacherSchool" placeholder=" સંખ્યા">
+                </li>
+            </div>
+        </ul>
+        
+        <ul>
+            <li class="mainTitle">
+                <input type="checkbox" name="aayogya" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> આરોગ્ય પરિમાણ
+            </li>
+            <div *ngIf="showList2" class="subList">
+                <li class="mainTitle">
+                    <label>ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા</label>
+                    <input type="number" name="ruralHealthGuard" [(ngModel)]="checkedItems.ruralHealthGuard" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>આરોગ્ય જાગૃતિ કેન્દ્ર</label>
+                    <input type="number" name="healthAwarenessCenter" [(ngModel)]="checkedItems.healthAwarenessCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ચલિત દવાખાનું (Mobile Dispensary)</label>
+                    <input type="number" name="mobileDispensary" [(ngModel)]="checkedItems.mobileDispensary" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્થિર દવાખાનું (O.P.D.) નાનું</label>
+                    <input type="number" name="smallOPD" [(ngModel)]="checkedItems.smallOPD" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>દિવ્યાંગ શિબિર/સાધન વિતરણ</label>
+                    <input type="number" name="divyangCamp" [(ngModel)]="checkedItems.divyangCamp" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્થિર દવાખાનું (રહેવાનું) / હોસ્પિટલ (મોટું)</label>
+                    <input type="number" name="largeHospital" [(ngModel)]="checkedItems.largeHospital" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પ્રાકૃતિક ચિકિત્સા કેન્દ્ર</label>
+                    <input type="number" name="naturopathyCenter" [(ngModel)]="checkedItems.naturopathyCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>રોગી સહાયતા</label>
+                    <input type="number" name="patientAssistance" [(ngModel)]="checkedItems.patientAssistance" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ન્યુરોथेરીપી, ફિઝિયોથેરીપી, યોગ થેરાપી</label>
+                    <input type="number" name="therapy" [(ngModel)]="checkedItems.therapy" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>રક્ત કોષ / બ્લડ બેંક</label>
+                    <input type="number" name="bloodBank" [(ngModel)]="checkedItems.bloodBank" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>રોગી વાહન સેવા</label>
+                    <input type="number" name="ambulanceService" [(ngModel)]="checkedItems.ambulanceService" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>દિવ્યાંગ સેવા કેન્દ્ર</label>
+                    <input type="number" name="disabledServiceCenter" [(ngModel)]="checkedItems.disabledServiceCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>દવાખાનું</label>
+                    <input type="number" name="hospital" [(ngModel)]="checkedItems.hospital" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>નેત્રબંક</label>
+                    <input type="number" name="eyeBank" [(ngModel)]="checkedItems.eyeBank" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>કુષ્ટ રોગી સેવા</label>
+                    <input type="number" name="leprosyService" [(ngModel)]="checkedItems.leprosyService" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>યોગ શિક્ષણ કેન્દ્ર</label>
+                    <input type="number" name="yogaEducationCenter" [(ngModel)]="checkedItems.yogaEducationCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ઔષધિ કેન્દ્ર</label>
+                    <input type="number" name="medicineCenter" [(ngModel)]="checkedItems.medicineCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>નશા મુક્તિ કેન્દ્ર</label>
+                    <input type="number" name="deAddictionCenter" [(ngModel)]="checkedItems.deAddictionCenter" placeholder=" સંખ્યા">
+                </li>
+            </div>
+        </ul>
+              
+        <ul>
+            <li class="mainTitle">
+                <input type="checkbox" name="atmanirbharta" [(ngModel)]="selectedButton3" (change)="toggleList(3)"> સામાજિક પરિમાણ
+            </li>
+            <div *ngIf="showList3" class="subList">
+                <li class="mainTitle">
+                    <label>ભજન મંડળી</label>
+                    <input type="number" name="bhajanMandali" [(ngModel)]="checkedItems.bhajanMandali" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>કિશોરી વિકાસ કેન્દ્ર</label>
+                    <input type="number" name="kishoriVikasKendra" [(ngModel)]="checkedItems.kishoriVikasKendra" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>માતૃછાયા / અનાથ શિશુ ગૃહ</label>
+                    <input type="number" name="matrushayaOrphanage" [(ngModel)]="checkedItems.matrushayaOrphanage" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>માતૃ મંડળી</label>
+                    <input type="number" name="matruMandali" [(ngModel)]="checkedItems.matruMandali" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>દીપ પૂજા / હવન (સાપ્તાહિક)</label>
+                    <input type="number" name="deepPujaHavan" [(ngModel)]="checkedItems.deepPujaHavan" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ઝોળા પુસ્તકાલય</label>
+                    <input type="number" name="jholaPustakalay" [(ngModel)]="checkedItems.jholaPustakalay" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અન્નદાન</label>
+                    <input type="number" name="annDaan" [(ngModel)]="checkedItems.annDaan" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>મહિલા આશ્રમ</label>
+                    <input type="number" name="mahilaAshram" [(ngModel)]="checkedItems.mahilaAshram" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>પરિવાર / કાનૂની પરામર્શ કેન્દ્ર (કાઉન્સેલિંગ)</label>
+                    <input type="number" name="familyLegalCounseling" [(ngModel)]="checkedItems.familyLegalCounseling" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અંતિમ સંસ્કાર કેન્દ્ર/શવ વાહન</label>
+                    <input type="number" name="antyaSanskarCenter" [(ngModel)]="checkedItems.antyaSanskarCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અનાથાલય</label>
+                    <input type="number" name="orphanageforold" [(ngModel)]="checkedItems.orphanageforold" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>વાંચનાલય / પુસ્તકાલય</label>
+                    <input type="number" name="library" [(ngModel)]="checkedItems.library" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ઝૂલા ઘર / શિશુ પાલન કેન્દ્ર</label>
+                    <input type="number" name="nursery" [(ngModel)]="checkedItems.nursery" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>વૃદ્ધજન સેવા</label>
+                    <input type="number" name="elderlyService" [(ngModel)]="checkedItems.elderlyService" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>વૃદ્ધાશ્રમ</label>
+                    <input type="number" name="oldAgeHome" [(ngModel)]="checkedItems.oldAgeHome" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>કારાવાસ, બાલ સુધાર કેન્દ્રોમાં ચાલતા કામ</label>
+                    <input type="number" name="juvenileCenterWork" [(ngModel)]="checkedItems.juvenileCenterWork" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>માનવી દૂધ કોષ</label>
+                    <input type="number" name="humanMilkBank" [(ngModel)]="checkedItems.humanMilkBank" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અન્ય (મહિલા સશક્તિકરણ)</label>
+                    <input type="number" name="womenEmpowerment" [(ngModel)]="checkedItems.womenEmpowerment" placeholder=" સંખ્યા">
+                </li>
+            </div>
+        </ul>        
+
+        <ul>
+            <li class="mainTitle">
+                <input type="checkbox" name="samajik" [(ngModel)]="selectedButton4" (change)="toggleList(4)">  આત્મનિર્ભરતા પરિમાણ
+            </li>
+            <div *ngIf="showList4" class="subList">
+                <li class="mainTitle">
+                    <label>સ્વયં સહાયતા જૂથ વૈભવ શ્રી</label>
+                    <input type="number" name="selfHelpGroup" [(ngModel)]="checkedItems.selfHelpGroup" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સિલાઈ કેન્દ્ર</label>
+                    <input type="number" name="sewingCenter" [(ngModel)]="checkedItems.sewingCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સૌંદર્ય તાલીમ કેન્દ્ર</label>
+                    <input type="number" name="beautyTrainingCenter" [(ngModel)]="checkedItems.beautyTrainingCenter" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>હેલ્થ નર્સ ટ્રેનિંગ, હોમ નર્સિંગ</label>
+                    <input type="number" name="healthNurseTraining" [(ngModel)]="checkedItems.healthNurseTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>કમ્પ્યુટર તાલીમ</label>
+                    <input type="number" name="computerTraining" [(ngModel)]="checkedItems.computerTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (રોજગાર માટે)</label>
+                    <input type="number" name="examCoaching" [(ngModel)]="checkedItems.examCoaching" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ગૌ ઉત્પાદન, પંચગવ્ય ઉત્પાદન તાલીમ</label>
+                    <input type="number" name="panchgavyaTraining" [(ngModel)]="checkedItems.panchgavyaTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>કુટીર ઉદ્યોગ તાલીમ</label>
+                    <input type="number" name="cottageIndustryTraining" [(ngModel)]="checkedItems.cottageIndustryTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>હસ્તકલા</label>
+                    <input type="number" name="handicrafts" [(ngModel)]="checkedItems.handicrafts" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્વરોજગાર કેન્દ્ર - 1- રાખી, ઇલેક્ટ્રિક લડીઓ, દીપક</label>
+                    <input type="number" name="selfEmploymentCenter1" [(ngModel)]="checkedItems.selfEmploymentCenter1" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સજાવટ, ખાદ્ય સામગ્રી વગેરે ઉત્પાદન</label>
+                    <input type="number" name="decorationFoodProduction" [(ngModel)]="checkedItems.decorationFoodProduction" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>સ્વરોજગાર કેન્દ્ર- 2- ઇલેક્ટ્રિક, નળ</label>
+                    <input type="number" name="selfEmploymentCenter2" [(ngModel)]="checkedItems.selfEmploymentCenter2" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>રિપેરીંગ અને ફિટિંગ</label>
+                    <input type="number" name="repairFitting" [(ngModel)]="checkedItems.repairFitting" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>વ્યવસાય અને કુશળ તાલીમ</label>
+                    <input type="number" name="businessSkillTraining" [(ngModel)]="checkedItems.businessSkillTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>ગામ ઉદ્યોગ</label>
+                    <input type="number" name="villageIndustry" [(ngModel)]="checkedItems.villageIndustry" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>વન ઔષધી આધારિત ઉત્પાદન તાલીમ</label>
+                    <input type="number" name="forestMedicineTraining" [(ngModel)]="checkedItems.forestMedicineTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>અન્ન અને ફળ પ્રક્રિયા તાલીમ</label>
+                    <input type="number" name="foodProcessingTraining" [(ngModel)]="checkedItems.foodProcessingTraining" placeholder=" સંખ્યા">
+                </li>
+                <li class="mainTitle">
+                    <label>બીજ કોષ</label>
+                    <input type="number" name="seedBank" [(ngModel)]="checkedItems.seedBank" placeholder=" સંખ્યા">
+                </li>
+            </div>
+        </ul>        
+        <input type="submit" value="Submit" class="submit-btn"> 
+    </div>
+</form>
