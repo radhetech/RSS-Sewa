@@ -5,41 +5,48 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
+  constructor(private elementRef: ElementRef, private router: Router) {}
 
-  constructor(private elementRef: ElementRef) {}
-
-  menuValue:boolean=false;
-  menu_icon :string ='bi bi-list';
-  loginService= inject(LoginService);
+  menuValue: boolean = false;
+  menu_icon: string = 'bi bi-list';
+  loginService = inject(LoginService);
   _router = inject(Router);
-  loginerr:string|null=null;
-  selecteduser:boolean = false
- 
- 
+  loginerr: string | null = null;
+  selecteduser: boolean = false;
+  menuListenersAttached: boolean = false;
 
   ngOnInit(): void {
-    this.selecteduser= this.loginService.isUserLogin
+    this.selecteduser = this.loginService.isUserLogin;
   }
   openMenu() {
     this.menuValue = !this.menuValue;
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
-    
+
     if (this.menuValue) {
-      // Attach click event listener to close menu when clicking outside
-      document.addEventListener('scroll', this.closeMenuOutside);
-      document.addEventListener('touchstart', this.closeMenuOutside);
+      // Check if event listeners are already attached
+      if (!this.menuListenersAttached) {
+        // Attach event listeners when menu is opened
+        document.addEventListener('click', this.closeMenuOutside);
+        document.addEventListener('scroll', this.closeMenuOutside);
+        document.addEventListener('touchstart', this.closeMenuOutside);
+        // Set flag to indicate event listeners are attached
+        this.menuListenersAttached = true;
+      }
     } else {
-      // Remove click event listener when closing menu
-      document.removeEventListener('click', this.closeMenuOutside);
+      // Remove event listeners and close menu when menu is closed
+      this.removeEventListeners();
     }
   }
 
-  closeMenuOutside = (event: any) => {
-    // Check if the click event target is not within the menu
-    if (!this.elementRef.nativeElement.contains(event.target)) {
+  closeMenuOutside = (event: Event) => {
+    const target = event.target as HTMLElement;
+    const menuIcon = document.querySelector('.menu-icon');
+
+    // Check if the click event target is not within the menu or menu icon
+    if (!this.elementRef.nativeElement.contains(target)) {
       this.closeMenu();
     }
   };
@@ -47,17 +54,28 @@ export class NavbarComponent implements OnInit{
   closeMenu() {
     this.menuValue = false;
     this.menu_icon = 'bi bi-list';
-    document.removeEventListener('click', this.closeMenuOutside);
+    this.removeEventListeners();
+    this.menuListenersAttached = false;
   }
 
-   logout(){
-     this.loginService.userLogout()
-      this.loginerr = 'You have been successfully logged Out!!'
-      this.snackTimeOut()
-   }
-   snackTimeOut() {
+  private removeEventListeners() {
+    document.removeEventListener('click', this.closeMenuOutside);
+    document.removeEventListener('scroll', this.closeMenuOutside);
+    document.removeEventListener('touchstart', this.closeMenuOutside);
+  }
+  navigateAndClose(route: string) {
+    this.router.navigateByUrl(route);
+    this.closeMenu();
+  }
+
+  logout() {
+    this.loginService.userLogout();
+    this.loginerr = 'You have been successfully logged Out!!';
+    this.snackTimeOut();
+  }
+  snackTimeOut() {
     setTimeout(() => {
       this.loginerr = null;
-    }, 4000)
+    }, 4000);
   }
 }

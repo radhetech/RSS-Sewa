@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="desktop_menu" [class.mobile_menu]="menuValue">
+      <!-- <div class="desktop_menu" [class.mobile_menu]="menuValue">
         <ul>
           <li routerLink="/home">મુખપૃષ્ઠ </li>
           <li routerLink="/ShakhaVrut">શાખા વૃત્ત</li>
@@ -22,10 +22,22 @@
           <li routerLink="/SevaUpakrama">સેવા કાર્ય</li>
           <li routerLink="/UtsavaVrtta">ઉત્સવ વૃત</li>
           <li routerLink="/SevaDarshan">સેવા દર્શન</li>
-          <li (click)="logout()">લૉગ આઉટ </li>
-          <!-- <li routerLink="/login" [queryParams]="{logout:true}">LogOut</li> -->
+          <li (click)="logout()">લૉગ આઉટ </li> -->
+      <!-- <li routerLink="/login" [queryParams]="{logout:true}">LogOut</li> -->
+      <!-- </ul> -->
+      <!-- </div> -->
+      <div class="desktop_menu" [class.mobile_menu]="menuValue">
+        <ul>
+          <li (click)="navigateAndClose('/home')">મુખપૃષ્ઠ</li>
+          <li (click)="navigateAndClose('/ShakhaVrut')">શાખા વૃત્ત</li>
+          <li (click)="navigateAndClose('/SevaUpakrama')">સેવા ઉપક્રમ</li>
+          <li (click)="navigateAndClose('/SevaKarya')">સેવા કાર્ય</li>
+          <li (click)="navigateAndClose('/UtsavaVrtta')">ઉત્સવ વૃત</li>
+          <li (click)="navigateAndClose('/SevaDarshan')">સેવા દર્શન</li>
+          <li (click)="logout()">લૉગ આઉટ</li>
         </ul>
       </div>
+
     </div>
   </div>
 </div>
