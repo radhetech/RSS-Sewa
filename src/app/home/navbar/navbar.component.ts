@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit{
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private router: Router) {}
 
   menuValue:boolean=false;
   menu_icon :string ='bi bi-list';
   loginService= inject(LoginService);
   _router = inject(Router);
   loginerr:string|null=null;
-  selecteduser:boolean = false
+  selecteduser:boolean = false;
+  menuListenersAttached:boolean=false;
  
  
 
@@ -28,18 +29,23 @@ export class NavbarComponent implements OnInit{
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
     
     if (this.menuValue) {
-      // Attach click event listener to close menu when clicking outside
-      document.addEventListener('scroll', this.closeMenuOutside);
-      document.addEventListener('touchstart', this.closeMenuOutside);
+      // Check if event listeners are already attached
+      if (!this.menuListenersAttached) {
+        // Attach event listeners when menu is opened
+        document.addEventListener('click', this.closeMenuOutside);
+        document.addEventListener('scroll', this.closeMenuOutside);
+        document.addEventListener('touchstart', this.closeMenuOutside);
+        // Set flag to indicate event listeners are attached
+        this.menuListenersAttached = true;
+      }
     } else {
-      // Remove click event listener when closing menu
-      document.removeEventListener('click', this.closeMenuOutside);
+      this.removeEventListeners();
     }
   }
 
-  closeMenuOutside = (event: any) => {
-    // Check if the click event target is not within the menu
-    if (!this.elementRef.nativeElement.contains(event.target)) {
+  closeMenuOutside = (event: Event) => {
+    const target = event.target as HTMLElement;
+    if (!this.elementRef.nativeElement.contains(target)) {
       this.closeMenu();
     }
   };
@@ -47,7 +53,18 @@ export class NavbarComponent implements OnInit{
   closeMenu() {
     this.menuValue = false;
     this.menu_icon = 'bi bi-list';
+    this.removeEventListeners();
+    this.menuListenersAttached = false;
+  }
+
+  private removeEventListeners() {
     document.removeEventListener('click', this.closeMenuOutside);
+    document.removeEventListener('scroll', this.closeMenuOutside);
+    document.removeEventListener('touchstart', this.closeMenuOutside);
+  }
+  navigateAndClose(route: string) {
+    this.router.navigateByUrl(route);
+    this.closeMenu();
   }
 
    logout(){

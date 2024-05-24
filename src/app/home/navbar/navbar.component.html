@@ -15,15 +15,14 @@
      
             <div class="desktop_menu" [class.mobile_menu]="menuValue">
                 <ul>
-                    <li routerLink="/home">Home</li>
-                    <li routerLink="/ShakhaVrut">Sakha Vrtta</li>
-                    <li routerLink="/SevaUpakrama">Seva Upakrama</li>
-                    <li routerLink="/SevaKarya">Seva Karya</li>
-                    <li routerLink="/UtsavaVrtta">Utsava Vrtta</li>
-                    <li routerLink="/SevaDarshan">Seva Darshan</li>
+                    <li (click)="navigateAndClose('/home')">Home</li>
+                    <li (click)="navigateAndClose('/ShakhaVrut')">Sakha Vrtta</li>
+                    <li (click)="navigateAndClose('/SevaUpakrama')">Seva Upakrama</li>
+                    <li (click)="navigateAndClose('/SevaKarya')">Seva Karya</li>
+                    <li (click)="navigateAndClose('/UtsavaVrtta')">Utsava Vrtta</li>
+                    <li (click)="navigateAndClose('/SevaDarshan')">Seva Darshan</li>
                     <li (click)="logout()">LogOut</li>
-                    <!-- <li routerLink="/login" [queryParams]="{logout:true}">LogOut</li> -->
-                </ul>
+                  </ul>
             </div>
         </div>
     </div>
