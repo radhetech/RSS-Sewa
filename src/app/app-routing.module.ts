@@ -39,7 +39,7 @@ const routes: Routes = [
     canActivate:[authguardGuard]
   },
   {
-    path:'SevaUpakrama',
+    path:'SevaKarya',
     component:SevaKaryaComponent,
     canActivate:[authguardGuard]
   },

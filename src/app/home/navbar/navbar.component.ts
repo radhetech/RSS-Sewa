@@ -36,16 +36,12 @@ export class NavbarComponent implements OnInit {
         this.menuListenersAttached = true;
       }
     } else {
-      // Remove event listeners and close menu when menu is closed
       this.removeEventListeners();
     }
   }
 
   closeMenuOutside = (event: Event) => {
     const target = event.target as HTMLElement;
-    const menuIcon = document.querySelector('.menu-icon');
-
-    // Check if the click event target is not within the menu or menu icon
     if (!this.elementRef.nativeElement.contains(target)) {
       this.closeMenu();
     }
