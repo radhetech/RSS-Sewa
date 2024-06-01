@@ -8,55 +8,50 @@ import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit{
-  
+export class LoginComponent implements OnInit {
   isLoginMode: boolean = true;
   loginerr: string | null = null;
   snackbarColour: string | null = null;
 
-
   loginService = inject(LoginService);
   _router = inject(Router);
-  activeRouter:ActivatedRoute = inject(ActivatedRoute);
+  activeRouter: ActivatedRoute = inject(ActivatedRoute);
 
-  ngOnInit(){
-    this.activeRouter.queryParamMap.subscribe((a)=>{
-        const b = Boolean(a.get('logout'));
-        console.log(typeof b)
-        if(b){
-         this.loginService.userLogout()
-         this.snackbarColour = 'success';
-         this.loginerr = 'You Are Now Logged Out!!'
-         this.snackTimeOut();
-
-        }
-    })
-   }
+  ngOnInit() {
+    this.activeRouter.queryParamMap.subscribe((a) => {
+      const b = Boolean(a.get('logout'));
+      console.log(typeof b);
+      if (b) {
+        this.loginService.userLogout();
+        this.snackbarColour = 'success';
+        this.loginerr = 'લૉગ આઉટ થઈ ગયા છો!!';
+        this.snackTimeOut();
+      }
+    });
+  }
   onFormSubmitted(res: NgForm) {
     const emailid = res.value.email.toLowerCase();
-     const passwords = res.value.password;
-     const a = this.loginService.userLogin(emailid, passwords);
-     if(a === undefined){
+    const passwords = res.value.password;
+    const a = this.loginService.userLogin(emailid, passwords);
+    if (a === undefined) {
       this.snackbarColour = 'error';
-      this.loginerr = 'Enter Correct Userid or Password'
+      this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
       this.snackTimeOut();
-     }
-     else{
+    } else {
       this.snackbarColour = 'success';
-      this.loginerr = 'welcome to RSS'
+      this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
       this.snackTimeOut();
-      this._router.navigate(['home'])
-     }
-
+      this._router.navigate(['home']);
+    }
   }
   snackTimeOut() {
-       setTimeout(() => {
-         this.loginerr = null;
-         console.log(this.loginerr);
-       }, 4000);
-     }
+    setTimeout(() => {
+      this.loginerr = null;
+      console.log(this.loginerr);
+    }, 4000);
+  }
   // public userData = { username: '', name: '', isLoggedIn: false };
 
   // data: credentials[] = [
@@ -100,7 +95,7 @@ export class LoginComponent implements OnInit{
   //     this.snackbarColour = 'error'
   //     this.snackTimeOut();
   //   }
-  
+
   // }
   // snackTimeOut() {
   //   console.log("Snack timeout function called");
@@ -109,9 +104,7 @@ export class LoginComponent implements OnInit{
   //     console.log(this.loginerr);
   //   }, 4000);
   // }
-
 }
-
 
 // let found = false;
 // res.reset()

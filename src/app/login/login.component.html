@@ -1,18 +1,18 @@
 <div class="app-login-form">
-    <h2>Login Here</h2>
-    <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
-    <form #loginForm="ngForm" (ngSubmit)="onFormSubmitted(loginForm)">
-        <div class="form-input">
-            <label>Email Address</label>
-            <input type="email" placeholder="Email address" name="email" ngModel required>
-        </div>
-        <div class="form-input">
-            <label>Password</label>
-            <input type="password" placeholder="Password" name="password" ngModel required>
-        </div>
-        <button type="submit" class="app-login-btn" [disabled]="loginForm.invalid">Login</button>
-        <p class="app-toggle">
-            <button class="app-toggle-btn">Forgotten password?</button>
-        </p>
-    </form>
+  <h2>અહીં લૉગિન કરો</h2>
+  <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
+  <form #loginForm="ngForm" (ngSubmit)="onFormSubmitted(loginForm)">
+    <div class="form-input">
+      <label>ઈ-મેલ એડ્રેસ</label>
+      <input type="email" placeholder="ઈ-મેલ એડ્રેસ" name="email" ngModel required>
+    </div>
+    <div class="form-input">
+      <label>પાસવર્ડ</label><br>
+      <input type="password" placeholder="પાસવર્ડ" name="password" ngModel required>
+    </div>
+    <button type="submit" class="app-login-btn" [disabled]="loginForm.invalid">લૉગ ઇન</button>
+    <p class="app-toggle">
+      <button class="app-toggle-btn">પાસવર્ડ ભૂલી ગયા છો?</button>
+    </p>
+  </form>
 </div>
