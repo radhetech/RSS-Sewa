@@ -36,7 +36,9 @@
     background-color: #f1f1f1;
     color: #007bff;
   }
-  
+  ul li input{
+    margin-top: -5px;
+  }
   .subList {
     padding-left: 20px;
     border-left: 2px solid #ddd;
@@ -89,7 +91,9 @@
   .submit-btn:hover {
     background: #9b4f04;
   }
-  
+  .has-error{
+    border: 2px solid red !important;
+  }
   @media screen and (max-width: 768px) {
     .list-container {
       width: 90%;
