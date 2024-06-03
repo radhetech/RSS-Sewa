@@ -1,18 +1,4 @@
-<!-- <header>
-    <h1>Sewa Vibhag - RSS- Gujarat</h1>
-</header>
-<nav>
-    <a href="#">Sakha Vrtta</a>
-    <a href="#">Seva Upakrama</a>
-    <a href="#">Seva Karya</a>
-    <a href="#">Utsava Vrtta</a>
-    <a href="#">Seva Darshan</a>
-</nav>
-<main>
-    <h2>Lo 85</h2>
-    <p>This is the main content area of the page.</p>
-</main> -->
-
+<app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
     <div class="list-container">
         <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
@@ -21,21 +7,21 @@
                 <input type="checkbox" name="shiksan" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> શિક્ષણ પરિમાણ
             </li>
             <div *ngIf="showList1" class="subList">
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.educationMaterialDistribution == null}">
                     <label> શૈક્ષણિક સામગ્રીનું વિતરણ</label>
-                    <input type="number" name="educationMaterialDistribution" [(ngModel)]="checkedItems.educationMaterialDistribution" placeholder=" સંખ્યા">
+                    <input type="number" name="educationMaterialDistribution" [(ngModel)]="checkedItems.educationMaterialDistribution" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.examGuidanceCamp == null}">
                     <label>પરીક્ષા માર્ગદર્શન શિબિર</label>
-                    <input type="number" name="examGuidanceCamp" [(ngModel)]="checkedItems.examGuidanceCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="examGuidanceCamp" [(ngModel)]="checkedItems.examGuidanceCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.feeAssistance == null}">
                     <label>ફી સહાય</label>
-                    <input type="number" name="feeAssistance" [(ngModel)]="checkedItems.feeAssistance" placeholder=" સંખ્યા">
+                    <input type="number" name="feeAssistance" [(ngModel)]="checkedItems.feeAssistance" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.personalityDevelopmentCamp == null}">
                     <label>વ્યક્તિત્વ વિકાસ શિબિર</label>
-                    <input type="number" name="personalityDevelopmentCamp" [(ngModel)]="checkedItems.personalityDevelopmentCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="personalityDevelopmentCamp" [(ngModel)]="checkedItems.personalityDevelopmentCamp" placeholder=" 0" required>
                 </li>
             </div>
         </ul>
@@ -44,41 +30,41 @@
                 <input type="checkbox" name="aayogya" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> આરોગ્ય પરિમાણ
             </li>
             <div *ngIf="showList2" class="subList">
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bloodDonationCamp == null}">
                     <label>રક્તદાન શિબિર</label>
-                    <input type="number" name="bloodDonationCamp" [(ngModel)]="checkedItems.bloodDonationCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="bloodDonationCamp" [(ngModel)]="checkedItems.bloodDonationCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.healthCamp == null}">
                     <label>આરોગ્ય શિબિર</label>
-                    <input type="number" name="healthCamp" [(ngModel)]="checkedItems.healthCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="healthCamp" [(ngModel)]="checkedItems.healthCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.eyeCheckupCamp == null}">
                     <label>આંખ તપાસ કેમ્પ</label>
-                    <input type="number" name="eyeCheckupCamp" [(ngModel)]="checkedItems.eyeCheckupCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="eyeCheckupCamp" [(ngModel)]="checkedItems.eyeCheckupCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.yogaCamp == null}">
                     <label>યોગ શિબિર</label>
-                    <input type="number" name="yogaCamp" [(ngModel)]="checkedItems.yogaCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="yogaCamp" [(ngModel)]="checkedItems.yogaCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.divyangCamp == null}">
                     <label>દિવ્યાંગ શિબિર/સાધન વિતરણ</label>
-                    <input type="number" name="divyangCamp" [(ngModel)]="checkedItems.divyangCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="divyangCamp" [(ngModel)]="checkedItems.divyangCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bloodDonorList == null}">
                     <label>રક્તદાતા જૂથ યાદી</label>
-                    <input type="number" name="bloodDonorList" [(ngModel)]="checkedItems.bloodDonorList" placeholder=" સંખ્યા">
+                    <input type="number" name="bloodDonorList" [(ngModel)]="checkedItems.bloodDonorList" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.firstAidTraining == null}">
                     <label>પ્રથમ સહાય તાલીમ</label>
-                    <input type="number" name="firstAidTraining" [(ngModel)]="checkedItems.firstAidTraining" placeholder=" સંખ્યા">
+                    <input type="number" name="firstAidTraining" [(ngModel)]="checkedItems.firstAidTraining" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.counseling == null}">
                     <label>સોંપણી(કાઉન્સેલિંગ)</label>
-                    <input type="number" name="counseling" [(ngModel)]="checkedItems.counseling" placeholder=" સંખ્યા">
+                    <input type="number" name="counseling" [(ngModel)]="checkedItems.counseling" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.deAddictionCamp == null}">
                     <label>વ્યસન મુક્તિ શિબિર</label>
-                    <input type="number" name="deAddictionCamp" [(ngModel)]="checkedItems.deAddictionCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="deAddictionCamp" [(ngModel)]="checkedItems.deAddictionCamp" placeholder=" 0" required>
                 </li>
             </div>
         </ul>
@@ -87,41 +73,41 @@
                 <input type="checkbox" name="atmanirbharta" [(ngModel)]="selectedButton3" (change)="toggleList(3)">  આત્મનિર્ભરતા પરિમાણ
             </li>
             <div *ngIf="showList3" class="subList">
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.professionalTrainingCamp == null}">
                     <label>વ્યવસાય તાલીમ શિબિર</label>
-                    <input type="number" name="professionalTrainingCamp" [(ngModel)]="checkedItems.professionalTrainingCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="professionalTrainingCamp" [(ngModel)]="checkedItems.professionalTrainingCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.panchgavyaTrainingCamp == null}">
                     <label>પંચગવ્ય નિર્માણ શિબિર</label>
-                    <input type="number" name="panchgavyaTrainingCamp" [(ngModel)]="checkedItems.panchgavyaTrainingCamp" placeholder=" સંખ્યા">
+                    <input type="number" name="panchgavyaTrainingCamp" [(ngModel)]="checkedItems.panchgavyaTrainingCamp" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.rakdiMaking == null}">
                     <label>રાખડી બનાવવી</label>
-                    <input type="number" name="rakdiMaking" [(ngModel)]="checkedItems.rakdiMaking" placeholder=" સંખ્યા">
+                    <input type="number" name="rakdiMaking" [(ngModel)]="checkedItems.rakdiMaking" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.electricMalaConstruction == null}">
                     <label>ઇલેક્ટ્રિક માળા બાંધકામ</label>
-                    <input type="number" name="electricMalaConstruction" [(ngModel)]="checkedItems.electricMalaConstruction" placeholder=" સંખ્યા">
+                    <input type="number" name="electricMalaConstruction" [(ngModel)]="checkedItems.electricMalaConstruction" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.decorativeMaterialProduction == null}">
                     <label>સુશોભન સામગ્રીનું ઉત્પાદન</label>
-                    <input type="number" name="decorativeMaterialProduction" [(ngModel)]="checkedItems.decorativeMaterialProduction" placeholder=" સંખ્યા">
+                    <input type="number" name="decorativeMaterialProduction" [(ngModel)]="checkedItems.decorativeMaterialProduction" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
-                    <label>દિવાળીના દીવા બનાવવા</label>
-                    <input type="number" name="diwaliLampMaking" [(ngModel)]="checkedItems.diwaliLampMaking" placeholder=" સંખ્યા">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.diwaliLampMaking == null}">
+                    <label>દિવાળીના દીવા બનાવવાન</label>
+                    <input type="number" name="diwaliLampMaking" [(ngModel)]="checkedItems.diwaliLampMaking" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sweetsAndSnacksProduction == null}">
                     <label>મીઠાઈઓ અને નાસ્તાનું ઉત્પાદન</label>
-                    <input type="number" name="sweetsAndSnacksProduction" [(ngModel)]="checkedItems.sweetsAndSnacksProduction" placeholder=" સંખ્યા">
+                    <input type="number" name="sweetsAndSnacksProduction" [(ngModel)]="checkedItems.sweetsAndSnacksProduction" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.managerialTraining == null}">
                     <label>કારભારી તાલીમ</label>
-                    <input type="number" name="managerialTraining" [(ngModel)]="checkedItems.managerialTraining" placeholder=" સંખ્યા">
+                    <input type="number" name="managerialTraining" [(ngModel)]="checkedItems.managerialTraining" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.organicFertilizerTraining == null}">
                     <label>કાર્બનિક ખાતર ઉત્પાદન તાલીમ</label>
-                    <input type="number" name="organicFertilizerTraining" [(ngModel)]="checkedItems.organicFertilizerTraining" placeholder=" સંખ્યા">
+                    <input type="number" name="organicFertilizerTraining" [(ngModel)]="checkedItems.organicFertilizerTraining" placeholder=" 0" required>
                 </li>
             </div>
         </ul>
@@ -130,54 +116,52 @@
                 <input type="checkbox" name="samajik" [(ngModel)]="selectedButton4" (change)="toggleList(4)">  સામાજિક પરિમાણ
             </li>
             <div *ngIf="showList4" class="subList">
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.girlWorship == null}">
                     <label>છોકરી પૂજા</label>
-                    <input type="number" name="girlWorship" [(ngModel)]="checkedItems.girlWorship" placeholder=" સંખ્યા">
+                    <input type="number" name="girlWorship" [(ngModel)]="checkedItems.girlWorship" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.massMarriage == null}">
                     <label>સમૂહ લગ્ન</label>
-                    <input type="number" name="massMarriage" [(ngModel)]="checkedItems.massMarriage" placeholder=" સંખ્યા">
+                    <input type="number" name="massMarriage" [(ngModel)]="checkedItems.massMarriage" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.templeCleanliness == null}">
                     <label>મંદિરની સ્વચ્છતા</label>
-                    <input type="number" name="templeCleanliness" [(ngModel)]="checkedItems.templeCleanliness" placeholder=" સંખ્યા">
+                    <input type="number" name="templeCleanliness" [(ngModel)]="checkedItems.templeCleanliness" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.publicCleanliness == null}">
                     <label>જાહેર સ્વચ્છતા</label>
-                    <input type="number" name="publicCleanliness" [(ngModel)]="checkedItems.publicCleanliness" placeholder=" સંખ્યા">
+                    <input type="number" name="publicCleanliness" [(ngModel)]="checkedItems.publicCleanliness" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.waterConservationPondConstruction == null}">
                     <label>જળ સંરક્ષણ તળાવનું બાંધકામ</label>
-                    <input type="number" name="waterConservationPondConstruction" [(ngModel)]="checkedItems.waterConservationPondConstruction" placeholder=" સંખ્યા">
+                    <input type="number" name="waterConservationPondConstruction" [(ngModel)]="checkedItems.waterConservationPondConstruction" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.roadConstruction == null}">
                     <label>રોડ બાંધકામ</label>
-                    <input type="number" name="roadConstruction" [(ngModel)]="checkedItems.roadConstruction" placeholder=" સંખ્યા">
+                    <input type="number" name="roadConstruction" [(ngModel)]="checkedItems.roadConstruction" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.communityCelebration == null}">
                     <label>સામૂહિક ઉજવણી</label>
-                    <input type="number" name="communityCelebration" [(ngModel)]="checkedItems.communityCelebration" placeholder=" સંખ્યા">
+                    <input type="number" name="communityCelebration" [(ngModel)]="checkedItems.communityCelebration" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.treePlantation == null}">
                     <label>રોપા વિતરણ/વૃક્ષ રોપણી</label>
-                    <input type="number" name="treePlantation" [(ngModel)]="checkedItems.treePlantation" placeholder=" સંખ્યા">
+                    <input type="number" name="treePlantation" [(ngModel)]="checkedItems.treePlantation" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sportsCompetition == null}">
                     <label>રમતગમત સ્પર્ધા</label>
-                    <input type="number" name="sportsCompetition" [(ngModel)]="checkedItems.sportsCompetition" placeholder=" સંખ્યા">
+                    <input type="number" name="sportsCompetition" [(ngModel)]="checkedItems.sportsCompetition" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.blanketSweaterDelivery == null}">
                     <label>બ્લેન્કેટ સ્વેટર વગેરેની ડિલિવરી</label>
-                    <input type="number" name="blanketSweaterDelivery" [(ngModel)]="checkedItems.blanketSweaterDelivery" placeholder=" સંખ્યા">
+                    <input type="number" name="blanketSweaterDelivery" [(ngModel)]="checkedItems.blanketSweaterDelivery" placeholder=" 0" required>
                 </li>
-                <li class="mainTitle">
+                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.foodDonation == null}">
                     <label>ખોરાક દાન/નાસ્તો વગેરેનું વિતરણ.</label>
-                    <input type="number" name="foodDonation" [(ngModel)]="checkedItems.foodDonation" placeholder=" સંખ્યા">
+                    <input type="number" name="foodDonation" [(ngModel)]="checkedItems.foodDonation" placeholder=" 0" required>
                 </li>
             </div>
         </ul>
         <input type="submit" value="Submit" class="submit-btn"> 
     </div>
 </form>
-
-
