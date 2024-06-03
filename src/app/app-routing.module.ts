@@ -31,7 +31,7 @@ const routes: Routes = [
   {
     path:'ShakhaVrut',
     component:SakhaVrttaComponent,
-    // canActivate:[authguardGuard]
+    canActivate:[authguardGuard]
   },
   {
     path:'SevaUpakrama',
