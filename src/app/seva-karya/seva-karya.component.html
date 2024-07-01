@@ -1,326 +1,367 @@
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
-    <div class="list-container">
-        <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
-        <ul>
-            <li class="mainTitle">
-                <input type="checkbox" name="shiksan" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> શિક્ષણ પરિમાણ
-            </li>
-            <div *ngIf="showList1" class="subList">
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sanskarKendra == null}">
-                    <label> સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ </label>
-                    <input type="number" name="sanskarKendra" [(ngModel)]="checkedItems.sanskarKendra" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.tuitionCenter == null}">
-                    <label>પાઠદાન કેન્દ્ર / ટ્યુશન કેન્દ્ર</label>
-                    <input type="number" name="tuitionCenter" [(ngModel)]="checkedItems.tuitionCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.higherEducationCoaching == null}">
-                    <label>ઉચ્ચ શિક્ષણ કોચિંગ</label>
-                    <input type="number" name="higherEducationCoaching" [(ngModel)]="checkedItems.higherEducationCoaching" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.studyCenter == null}">
-                    <label>અભ્યાસિકા</label>
-                    <input type="number" name="studyCenter" [(ngModel)]="checkedItems.studyCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.balwadi == null}">
-                    <label>બાલવાડી</label>
-                    <input type="number" name="balwadi" [(ngModel)]="checkedItems.balwadi" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.primarySchool == null}">
-                    <label>પ્રાથમિક શાળા (કક્ષા 5 સુધી)</label>
-                    <input type="number" name="primarySchool" [(ngModel)]="checkedItems.primarySchool" placeholder=" 0"required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.secondarySchool == null}">
-                    <label>માધ્યમિક શાળા (કક્ષા 8 સુધી)</label>
-                    <input type="number" name="secondarySchool" [(ngModel)]="checkedItems.secondarySchool" placeholder=" 0"required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.highSchool == null}">
-                    <label>હાઇસ્કૂલ</label>
-                    <input type="number" name="highSchool" [(ngModel)]="checkedItems.highSchool" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.competitiveExamCoaching == null}">
-                    <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (ઉચ્ચ શિક્ષણ માટે)</label>
-                    <input type="number" name="competitiveExamCoaching" [(ngModel)]="checkedItems.competitiveExamCoaching" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mobileLaboratory == null}">
-                    <label>ચલિત પ્રયોગશાળા</label>
-                    <input type="number" name="mobileLaboratory" [(ngModel)]="checkedItems.mobileLaboratory" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bookBank == null}">
-                    <label>પુસ્તક પેડી બેંક</label>
-                    <input type="number" name="bookBank" [(ngModel)]="checkedItems.bookBank" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.residentialSchool == null}">
-                    <label>નિર્વાહક શાળા / ગુરુકુલ</label>
-                    <input type="number" name="residentialSchool" [(ngModel)]="checkedItems.residentialSchool" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hindiTeachingClass == null}">
-                    <label>હિન્દી શિક્ષણ વર્ગ</label>
-                    <input type="number" name="hindiTeachingClass" [(ngModel)]="checkedItems.hindiTeachingClass" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.adultEducation == null}">
-                    <label>પ્રૌઢ શિક્ષણ / સાક્ષરતા કાર્યક્રમ</label>
-                    <input type="number" name="adultEducation" [(ngModel)]="checkedItems.adultEducation" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.schoolForDisabled == null}">
-                    <label>દિવ્યાંગો માટે શાળા</label>
-                    <input type="number" name="schoolForDisabled" [(ngModel)]="checkedItems.schoolForDisabled" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hostel == null}">
-                    <label>છાત્રાલય</label>
-                    <input type="number" name="hostel" [(ngModel)]="checkedItems.hostel" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.orphanage == null}">
-                    <label>નિરાશ્રિત બાળક બાળિકા સદન</label>
-                    <input type="number" name="orphanage" [(ngModel)]="checkedItems.orphanage" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.singleTeacherSchool == null}">
-                    <label>એકલ વિદ્યાાલય</label>
-                    <input type="number" name="singleTeacherSchool" [(ngModel)]="checkedItems.singleTeacherSchool" placeholder=" 0" required>
-                </li>
-            </div>
-        </ul>
-        
-        <ul>
-            <li class="mainTitle">
-                <input type="checkbox" name="aayogya" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> આરોગ્ય પરિમાણ
-            </li>
-            <div *ngIf="showList2" class="subList">
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.ruralHealthGuard == null}">
-                    <label>ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા</label>
-                    <input type="number" name="ruralHealthGuard" [(ngModel)]="checkedItems.ruralHealthGuard" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.healthAwarenessCenter == null}">
-                    <label>આરોગ્ય જાગૃતિ કેન્દ્ર</label>
-                    <input type="number" name="healthAwarenessCenter" [(ngModel)]="checkedItems.healthAwarenessCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mobileDispensary == null}">
-                    <label>ચલિત દવાખાનું (Mobile Dispensary)</label>
-                    <input type="number" name="mobileDispensary" [(ngModel)]="checkedItems.mobileDispensary" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.smallOPD == null}">
-                    <label>સ્થિર દવાખાનું (O.P.D.) નાનું</label>
-                    <input type="number" name="smallOPD" [(ngModel)]="checkedItems.smallOPD" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.divyangCamp == null}">
-                    <label>દિવ્યાંગ શિબિર/સાધન વિતરણ</label>
-                    <input type="number" name="divyangCamp" [(ngModel)]="checkedItems.divyangCamp" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.largeHospital == null}">
-                    <label>સ્થિર દવાખાનું (રહેવાનું) / હોસ્પિટલ (મોટું)</label>
-                    <input type="number" name="largeHospital" [(ngModel)]="checkedItems.largeHospital" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.naturopathyCenter == null}">
-                    <label>પ્રાકૃતિક ચિકિત્સા કેન્દ્ર</label>
-                    <input type="number" name="naturopathyCenter" [(ngModel)]="checkedItems.naturopathyCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.patientAssistance == null}">
-                    <label>રોગી સહાયતા</label>
-                    <input type="number" name="patientAssistance" [(ngModel)]="checkedItems.patientAssistance" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.therapy == null}">
-                    <label>ન્યુરોथेરીપી, ફિઝિયોથેરીપી, યોગ થેરાપી</label>
-                    <input type="number" name="therapy" [(ngModel)]="checkedItems.therapy" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bloodBank == null}">
-                    <label>રક્ત કોષ / બ્લડ બેંક</label>
-                    <input type="number" name="bloodBank" [(ngModel)]="checkedItems.bloodBank" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.ambulanceService == null}">
-                    <label>રોગી વાહન સેવા</label>
-                    <input type="number" name="ambulanceService" [(ngModel)]="checkedItems.ambulanceService" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.disabledServiceCenter == null}">
-                    <label>દિવ્યાંગ સેવા કેન્દ્ર</label>
-                    <input type="number" name="disabledServiceCenter" [(ngModel)]="checkedItems.disabledServiceCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hospital == null}">
-                    <label>દવાખાનું</label>
-                    <input type="number" name="hospital" [(ngModel)]="checkedItems.hospital" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.eyeBank == null}">
-                    <label>નેત્રબંક</label>
-                    <input type="number" name="eyeBank" [(ngModel)]="checkedItems.eyeBank" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.leprosyService == null}">
-                    <label>કુષ્ટ રોગી સેવા</label>
-                    <input type="number" name="leprosyService" [(ngModel)]="checkedItems.leprosyService" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.yogaEducationCenter == null}">
-                    <label>યોગ શિક્ષણ કેન્દ્ર</label>
-                    <input type="number" name="yogaEducationCenter" [(ngModel)]="checkedItems.yogaEducationCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.medicineCenter == null}">
-                    <label>ઔષધિ કેન્દ્ર</label>
-                    <input type="number" name="medicineCenter" [(ngModel)]="checkedItems.medicineCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.deAddictionCenter == null}">
-                    <label>નશા મુક્તિ કેન્દ્ર</label>
-                    <input type="number" name="deAddictionCenter" [(ngModel)]="checkedItems.deAddictionCenter" placeholder=" 0" required>
-                </li>
-            </div>
-        </ul>
-              
-        <ul>
-            <li class="mainTitle">
-                <input type="checkbox" name="atmanirbharta" [(ngModel)]="selectedButton3" (change)="toggleList(3)"> સામાજિક પરિમાણ
-            </li>
-            <div *ngIf="showList3" class="subList">
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bhajanMandali == null}">
-                    <label>ભજન મંડળી</label>
-                    <input type="number" name="bhajanMandali" [(ngModel)]="checkedItems.bhajanMandali" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.kishoriVikasKendra == null}">
-                    <label>કિશોરી વિકાસ કેન્દ્ર</label>
-                    <input type="number" name="kishoriVikasKendra" [(ngModel)]="checkedItems.kishoriVikasKendra" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.matrushayaOrphanage == null}">
-                    <label>માતૃછાયા / અનાથ શિશુ ગૃહ</label>
-                    <input type="number" name="matrushayaOrphanage" [(ngModel)]="checkedItems.matrushayaOrphanage" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.matruMandali == null}">
-                    <label>માતૃ મંડળી</label>
-                    <input type="number" name="matruMandali" [(ngModel)]="checkedItems.matruMandali" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.deepPujaHavan == null}">
-                    <label>દીપ પૂજા / હવન (સાપ્તાહિક)</label>
-                    <input type="number" name="deepPujaHavan" [(ngModel)]="checkedItems.deepPujaHavan" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.jholaPustakalay == null}">
-                    <label>ઝોળા પુસ્તકાલય</label>
-                    <input type="number" name="jholaPustakalay" [(ngModel)]="checkedItems.jholaPustakalay" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.annDaan == null}">
-                    <label>અન્નદાન</label>
-                    <input type="number" name="annDaan" [(ngModel)]="checkedItems.annDaan" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mahilaAshram == null}">
-                    <label>મહિલા આશ્રમ</label>
-                    <input type="number" name="mahilaAshram" [(ngModel)]="checkedItems.mahilaAshram" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.familyLegalCounseling == null}">
-                    <label>પરિવાર / કાનૂની પરામર્શ કેન્દ્ર (કાઉન્સેલિંગ)</label>
-                    <input type="number" name="familyLegalCounseling" [(ngModel)]="checkedItems.familyLegalCounseling" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.antyaSanskarCenter == null}">
-                    <label>અંતિમ સંસ્કાર કેન્દ્ર/શવ વાહન</label>
-                    <input type="number" name="antyaSanskarCenter" [(ngModel)]="checkedItems.antyaSanskarCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.orphanageforold == null}">
-                    <label>અનાથાલય</label>
-                    <input type="number" name="orphanageforold" [(ngModel)]="checkedItems.orphanageforold" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.library == null}">
-                    <label>વાંચનાલય / પુસ્તકાલય</label>
-                    <input type="number" name="library" [(ngModel)]="checkedItems.library" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.nursery == null}">
-                    <label>ઝૂલા ઘર / શિશુ પાલન કેન્દ્ર</label>
-                    <input type="number" name="nursery" [(ngModel)]="checkedItems.nursery" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.elderlyService == null}">
-                    <label>વૃદ્ધજન સેવા</label>
-                    <input type="number" name="elderlyService" [(ngModel)]="checkedItems.elderlyService" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.oldAgeHome == null}">
-                    <label>વૃદ્ધાશ્રમ</label>
-                    <input type="number" name="oldAgeHome" [(ngModel)]="checkedItems.oldAgeHome" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.juvenileCenterWork == null}">
-                    <label>કારાવાસ, બાલ સુધાર કેન્દ્રોમાં ચાલતા કામ</label>
-                    <input type="number" name="juvenileCenterWork" [(ngModel)]="checkedItems.juvenileCenterWork" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.humanMilkBank == null}">
-                    <label>માનવી દૂધ કોષ</label>
-                    <input type="number" name="humanMilkBank" [(ngModel)]="checkedItems.humanMilkBank" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.womenEmpowerment == null}">
-                    <label>અન્ય (મહિલા સશક્તિકરણ)</label>
-                    <input type="number" name="womenEmpowerment" [(ngModel)]="checkedItems.womenEmpowerment" placeholder=" 0" required>
-                </li>
-            </div>
-        </ul>        
+  <div class="list-container">
+    <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
+    <ul>
+      <li class="mainTitle">
+        <input type="checkbox" name="shiksan" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> શિક્ષા
+      </li>
+      <div *ngIf="showList1" class="subList">
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sanskarKendra == null}">
+          <label> સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ </label>
+          <input type="number" name="sanskarKendra" [(ngModel)]="checkedItems.sanskarKendra" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.tuitionCenter == null}">
+          <label>પાઠદાન કેન્દ્ર / ટ્યુશન કેન્દ્ર</label>
+          <input type="number" name="tuitionCenter" [(ngModel)]="checkedItems.tuitionCenter" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.higherEducationCoaching == null}">
+          <label>ઉચ્ચ શિક્ષણ કોચિંગ</label>
+          <input type="number" name="higherEducationCoaching" [(ngModel)]="checkedItems.higherEducationCoaching"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.studyCenter == null}">
+          <label>અભ્યાસિકા</label>
+          <input type="number" name="studyCenter" [(ngModel)]="checkedItems.studyCenter" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.balwadi == null}">
+          <label>બાલવાડી</label>
+          <input type="number" name="balwadi" [(ngModel)]="checkedItems.balwadi" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.primarySchool == null}">
+          <label>પ્રાથમિક શાળા (કક્ષા 5 સુધી)</label>
+          <input type="number" name="primarySchool" [(ngModel)]="checkedItems.primarySchool" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.secondarySchool == null}">
+          <label>માધ્યમિક શાળા (કક્ષા 8 સુધી)</label>
+          <input type="number" name="secondarySchool" [(ngModel)]="checkedItems.secondarySchool" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.highSchool == null}">
+          <label>હાઇસ્કૂલ</label>
+          <input type="number" name="highSchool" [(ngModel)]="checkedItems.highSchool" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.competitiveExamCoaching == null}">
+          <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (ઉચ્ચ શિક્ષણ માટે)</label>
+          <input type="number" name="competitiveExamCoaching" [(ngModel)]="checkedItems.competitiveExamCoaching"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mobileLaboratory == null}">
+          <label>ચલિત પ્રયોગશાળા</label>
+          <input type="number" name="mobileLaboratory" [(ngModel)]="checkedItems.mobileLaboratory" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bookBank == null}">
+          <label>પુસ્તક પેટી બેંક</label>
+          <input type="number" name="bookBank" [(ngModel)]="checkedItems.bookBank" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.residentialSchool == null}">
+          <label>નિર્વાહક શાળા / ગુરુકુલ</label>
+          <input type="number" name="residentialSchool" [(ngModel)]="checkedItems.residentialSchool" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hindiTeachingClass == null}">
+          <label>હિન્દી શિક્ષણ વર્ગ</label>
+          <input type="number" name="hindiTeachingClass" [(ngModel)]="checkedItems.hindiTeachingClass" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.adultEducation == null}">
+          <label>પ્રૌઢ શિક્ષણ / સાક્ષરતા કાર્યક્રમ</label>
+          <input type="number" name="adultEducation" [(ngModel)]="checkedItems.adultEducation" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.schoolForDisabled == null}">
+          <label>દિવ્યાંગો માટે શાળા</label>
+          <input type="number" name="schoolForDisabled" [(ngModel)]="checkedItems.schoolForDisabled" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hostel == null}">
+          <label>છાત્રાલય</label>
+          <input type="number" name="hostel" [(ngModel)]="checkedItems.hostel" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.orphanage == null}">
+          <label>નિરાશ્રિત બાળક-બાળિકા સદન</label>
+          <input type="number" name="orphanage" [(ngModel)]="checkedItems.orphanage" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.singleTeacherSchool == null}">
+          <label>એકલ વિદ્યાાલય</label>
+          <input type="number" name="singleTeacherSchool" [(ngModel)]="checkedItems.singleTeacherSchool"
+            placeholder=" 0" required>
+        </li>
+      </div>
+    </ul>
 
-        <ul>
-            <li class="mainTitle">
-                <input type="checkbox" name="samajik" [(ngModel)]="selectedButton4" (change)="toggleList(4)">  આત્મનિર્ભરતા પરિમાણ
-            </li>
-            <div *ngIf="showList4" class="subList">
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfHelpGroup == null}">
-                    <label>સ્વયં સહાયતા જૂથ વૈભવ શ્રી</label>
-                    <input type="number" name="selfHelpGroup" [(ngModel)]="checkedItems.selfHelpGroup" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sewingCenter == null}">
-                    <label>સિલાઈ કેન્દ્ર</label>
-                    <input type="number" name="sewingCenter" [(ngModel)]="checkedItems.sewingCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.beautyTrainingCenter == null}">
-                    <label>સૌંદર્ય તાલીમ કેન્દ્ર</label>
-                    <input type="number" name="beautyTrainingCenter" [(ngModel)]="checkedItems.beautyTrainingCenter" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.healthNurseTraining == null}">
-                    <label>હેલ્થ નર્સ ટ્રેનિંગ, હોમ નર્સિંગ</label>
-                    <input type="number" name="healthNurseTraining" [(ngModel)]="checkedItems.healthNurseTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.computerTraining == null}">
-                    <label>કમ્પ્યુટર તાલીમ</label>
-                    <input type="number" name="computerTraining" [(ngModel)]="checkedItems.computerTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.examCoaching == null}">
-                    <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (રોજગાર માટે)</label>
-                    <input type="number" name="examCoaching" [(ngModel)]="checkedItems.examCoaching" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.panchgavyaTraining == null}">
-                    <label>ગૌ ઉત્પાદન, પંચગવ્ય ઉત્પાદન તાલીમ</label>
-                    <input type="number" name="panchgavyaTraining" [(ngModel)]="checkedItems.panchgavyaTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.cottageIndustryTraining == null}">
-                    <label>કુટીર ઉદ્યોગ તાલીમ</label>
-                    <input type="number" name="cottageIndustryTraining" [(ngModel)]="checkedItems.cottageIndustryTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.handicrafts == null}">
-                    <label>હસ્તકલા</label>
-                    <input type="number" name="handicrafts" [(ngModel)]="checkedItems.handicrafts" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfEmploymentCenter1 == null}">
-                    <label>સ્વરોજગાર કેન્દ્ર - 1- રાખી, ઇલેક્ટ્રિક લડીઓ, દીપક</label>
-                    <input type="number" name="selfEmploymentCenter1" [(ngModel)]="checkedItems.selfEmploymentCenter1" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.decorationFoodProduction == null}">
-                    <label>સજાવટ, ખાદ્ય સામગ્રી વગેરે ઉત્પાદન</label>
-                    <input type="number" name="decorationFoodProduction" [(ngModel)]="checkedItems.decorationFoodProduction" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfEmploymentCenter2 == null}">
-                    <label>સ્વરોજગાર કેન્દ્ર- 2- ઇલેક્ટ્રિક, નળ</label>
-                    <input type="number" name="selfEmploymentCenter2" [(ngModel)]="checkedItems.selfEmploymentCenter2" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.repairFitting == null}">
-                    <label>રિપેરીંગ અને ફિટિંગ</label>
-                    <input type="number" name="repairFitting" [(ngModel)]="checkedItems.repairFitting" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.businessSkillTraining == null}">
-                    <label>વ્યવસાય અને કુશળ તાલીમ</label>
-                    <input type="number" name="businessSkillTraining" [(ngModel)]="checkedItems.businessSkillTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.villageIndustry == null}">
-                    <label>ગામ ઉદ્યોગ</label>
-                    <input type="number" name="villageIndustry" [(ngModel)]="checkedItems.villageIndustry" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.forestMedicineTraining == null}">
-                    <label>વન ઔષધી આધારિત ઉત્પાદન તાલીમ</label>
-                    <input type="number" name="forestMedicineTraining" [(ngModel)]="checkedItems.forestMedicineTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.foodProcessingTraining == null}">
-                    <label>અન્ન અને ફળ પ્રક્રિયા તાલીમ</label>
-                    <input type="number" name="foodProcessingTraining" [(ngModel)]="checkedItems.foodProcessingTraining" placeholder=" 0" required>
-                </li>
-                <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.seedBank == null}">
-                    <label>બીજ કોષ</label>
-                    <input type="number" name="seedBank" [(ngModel)]="checkedItems.seedBank" placeholder=" 0" required>
-                </li>
-            </div>
-        </ul>        
-        <input type="submit" value="Submit" class="submit-btn"> 
-    </div>
+    <ul>
+      <li class="mainTitle">
+        <input type="checkbox" name="aayogya" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> સ્વાસ્થ્ય
+      </li>
+      <div *ngIf="showList2" class="subList">
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.ruralHealthGuard == null}">
+          <label>ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા</label>
+          <input type="number" name="ruralHealthGuard" [(ngModel)]="checkedItems.ruralHealthGuard" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.healthAwarenessCenter == null}">
+          <label>આરોગ્ય જાગૃતિ કેન્દ્ર</label>
+          <input type="number" name="healthAwarenessCenter" [(ngModel)]="checkedItems.healthAwarenessCenter"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mobileDispensary == null}">
+          <label>ચલિત દવાખાનું (Mobile Dispensary)</label>
+          <input type="number" name="mobileDispensary" [(ngModel)]="checkedItems.mobileDispensary" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.smallOPD == null}">
+          <label>સ્થિર દવાખાનું (O.P.D.) નાનું</label>
+          <input type="number" name="smallOPD" [(ngModel)]="checkedItems.smallOPD" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.divyangCamp == null}">
+          <label>દિવ્યાંગ શિબિર/સાધન વિતરણ</label>
+          <input type="number" name="divyangCamp" [(ngModel)]="checkedItems.divyangCamp" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.largeHospital == null}">
+          <label>સ્થિર દવાખાનું (રહેવાનું) / હોસ્પિટલ (મોટું)</label>
+          <input type="number" name="largeHospital" [(ngModel)]="checkedItems.largeHospital" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.naturopathyCenter == null}">
+          <label>પ્રાકૃતિક ચિકિત્સા કેન્દ્ર</label>
+          <input type="number" name="naturopathyCenter" [(ngModel)]="checkedItems.naturopathyCenter" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.patientAssistance == null}">
+          <label>રોગી સહાયતા</label>
+          <input type="number" name="patientAssistance" [(ngModel)]="checkedItems.patientAssistance" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.therapy == null}">
+          <label>ન્યુરોथेરીપી, ફિઝિયોથેરીપી, યોગ થેરાપી</label>
+          <input type="number" name="therapy" [(ngModel)]="checkedItems.therapy" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bloodBank == null}">
+          <label>રક્ત કોષ / બ્લડ બેંક</label>
+          <input type="number" name="bloodBank" [(ngModel)]="checkedItems.bloodBank" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.ambulanceService == null}">
+          <label>રોગી વાહન સેવા</label>
+          <input type="number" name="ambulanceService" [(ngModel)]="checkedItems.ambulanceService" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.disabledServiceCenter == null}">
+          <label>દિવ્યાંગ સેવા કેન્દ્ર</label>
+          <input type="number" name="disabledServiceCenter" [(ngModel)]="checkedItems.disabledServiceCenter"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.hospital == null}">
+          <label>દવાખાનું</label>
+          <input type="number" name="hospital" [(ngModel)]="checkedItems.hospital" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.eyeBank == null}">
+          <label>નેત્ર બેંક</label>
+          <input type="number" name="eyeBank" [(ngModel)]="checkedItems.eyeBank" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.leprosyService == null}">
+          <label>કુષ્ટ રોગી સેવા</label>
+          <input type="number" name="leprosyService" [(ngModel)]="checkedItems.leprosyService" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.yogaEducationCenter == null}">
+          <label>યોગ શિક્ષણ કેન્દ્ર</label>
+          <input type="number" name="yogaEducationCenter" [(ngModel)]="checkedItems.yogaEducationCenter"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.medicineCenter == null}">
+          <label>ઔષધિ કેન્દ્ર</label>
+          <input type="number" name="medicineCenter" [(ngModel)]="checkedItems.medicineCenter" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.deAddictionCenter == null}">
+          <label>નશા મુક્તિ કેન્દ્ર</label>
+          <input type="number" name="deAddictionCenter" [(ngModel)]="checkedItems.deAddictionCenter" placeholder=" 0"
+            required>
+        </li>
+      </div>
+    </ul>
+
+    <ul>
+      <li class="mainTitle">
+        <input type="checkbox" name="samajik" [(ngModel)]="selectedButton4" (change)="toggleList(4)"> સ્વાવલંબન
+      </li>
+      <div *ngIf="showList4" class="subList">
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfHelpGroup == null}">
+          <label>સ્વયં સહાયતા જૂથ વૈભવ શ્રી</label>
+          <input type="number" name="selfHelpGroup" [(ngModel)]="checkedItems.selfHelpGroup" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.sewingCenter == null}">
+          <label>સિલાઈ કેન્દ્ર</label>
+          <input type="number" name="sewingCenter" [(ngModel)]="checkedItems.sewingCenter" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.beautyTrainingCenter == null}">
+          <label>સૌંદર્ય તાલીમ કેન્દ્ર</label>
+          <input type="number" name="beautyTrainingCenter" [(ngModel)]="checkedItems.beautyTrainingCenter"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.healthNurseTraining == null}">
+          <label>હેલ્થ નર્સ ટ્રેનિંગ, હોમ નર્સિંગ</label>
+          <input type="number" name="healthNurseTraining" [(ngModel)]="checkedItems.healthNurseTraining"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.computerTraining == null}">
+          <label>કમ્પ્યુટર તાલીમ</label>
+          <input type="number" name="computerTraining" [(ngModel)]="checkedItems.computerTraining" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.examCoaching == null}">
+          <label>સ્પર્ધાત્મક પરીક્ષા કોચિંગ (રોજગાર માટે)</label>
+          <input type="number" name="examCoaching" [(ngModel)]="checkedItems.examCoaching" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.panchgavyaTraining == null}">
+          <label>ગૌ ઉત્પાદન, પંચગવ્ય ઉત્પાદન તાલીમ</label>
+          <input type="number" name="panchgavyaTraining" [(ngModel)]="checkedItems.panchgavyaTraining" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.cottageIndustryTraining == null}">
+          <label>કુટીર ઉદ્યોગ તાલીમ</label>
+          <input type="number" name="cottageIndustryTraining" [(ngModel)]="checkedItems.cottageIndustryTraining"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.handicrafts == null}">
+          <label>હસ્તકલા</label>
+          <input type="number" name="handicrafts" [(ngModel)]="checkedItems.handicrafts" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfEmploymentCenter1 == null}">
+          <label>સ્વરોજગાર કેન્દ્ર - 1- રાખી, ઇલેક્ટ્રિક લડીઓ, દીપક</label>
+          <input type="number" name="selfEmploymentCenter1" [(ngModel)]="checkedItems.selfEmploymentCenter1"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.decorationFoodProduction == null}">
+          <label>સજાવટ, ખાદ્ય સામગ્રી વગેરે ઉત્પાદન</label>
+          <input type="number" name="decorationFoodProduction" [(ngModel)]="checkedItems.decorationFoodProduction"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.selfEmploymentCenter2 == null}">
+          <label>સ્વરોજગાર કેન્દ્ર- 2- ઇલેક્ટ્રિક, નળ</label>
+          <input type="number" name="selfEmploymentCenter2" [(ngModel)]="checkedItems.selfEmploymentCenter2"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.repairFitting == null}">
+          <label>રિપેરીંગ અને ફિટિંગ</label>
+          <input type="number" name="repairFitting" [(ngModel)]="checkedItems.repairFitting" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.businessSkillTraining == null}">
+          <label>વ્યવસાય અને કુશળ તાલીમ</label>
+          <input type="number" name="businessSkillTraining" [(ngModel)]="checkedItems.businessSkillTraining"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.villageIndustry == null}">
+          <label>ગામ ઉદ્યોગ</label>
+          <input type="number" name="villageIndustry" [(ngModel)]="checkedItems.villageIndustry" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.forestMedicineTraining == null}">
+          <label>વન ઔષધી આધારિત ઉત્પાદન તાલીમ</label>
+          <input type="number" name="forestMedicineTraining" [(ngModel)]="checkedItems.forestMedicineTraining"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.foodProcessingTraining == null}">
+          <label>અન્ન અને ફળ પ્રક્રિયા તાલીમ</label>
+          <input type="number" name="foodProcessingTraining" [(ngModel)]="checkedItems.foodProcessingTraining"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.seedBank == null}">
+          <label>બીજ કોષ</label>
+          <input type="number" name="seedBank" [(ngModel)]="checkedItems.seedBank" placeholder=" 0" required>
+        </li>
+      </div>
+    </ul>
+
+    <ul>
+      <li class="mainTitle">
+        <input type="checkbox" name="atmanirbharta" [(ngModel)]="selectedButton3" (change)="toggleList(3)"> સામાજિક
+      </li>
+      <div *ngIf="showList3" class="subList">
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.bhajanMandali == null}">
+          <label>ભજન મંડળી</label>
+          <input type="number" name="bhajanMandali" [(ngModel)]="checkedItems.bhajanMandali" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.kishoriVikasKendra == null}">
+          <label>કિશોરી વિકાસ કેન્દ્ર</label>
+          <input type="number" name="kishoriVikasKendra" [(ngModel)]="checkedItems.kishoriVikasKendra" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.matrushayaOrphanage == null}">
+          <label>માતૃછાયા / અનાથ શિશુ ગૃહ</label>
+          <input type="number" name="matrushayaOrphanage" [(ngModel)]="checkedItems.matrushayaOrphanage"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.matruMandali == null}">
+          <label>માતૃ મંડળી</label>
+          <input type="number" name="matruMandali" [(ngModel)]="checkedItems.matruMandali" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.deepPujaHavan == null}">
+          <label>દીપ પૂજા / હવન (સાપ્તાહિક)</label>
+          <input type="number" name="deepPujaHavan" [(ngModel)]="checkedItems.deepPujaHavan" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.jholaPustakalay == null}">
+          <label>ઝોલા પુસ્તકાલય</label>
+          <input type="number" name="jholaPustakalay" [(ngModel)]="checkedItems.jholaPustakalay" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.annDaan == null}">
+          <label>અન્નદાન</label>
+          <input type="number" name="annDaan" [(ngModel)]="checkedItems.annDaan" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.mahilaAshram == null}">
+          <label>મહિલા આશ્રમ</label>
+          <input type="number" name="mahilaAshram" [(ngModel)]="checkedItems.mahilaAshram" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.familyLegalCounseling == null}">
+          <label>પરિવાર / કાનૂની પરામર્શ કેન્દ્ર (કાઉન્સેલિંગ)</label>
+          <input type="number" name="familyLegalCounseling" [(ngModel)]="checkedItems.familyLegalCounseling"
+            placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.antyaSanskarCenter == null}">
+          <label>અંતિમ સંસ્કાર કેન્દ્ર/શવ વાહન</label>
+          <input type="number" name="antyaSanskarCenter" [(ngModel)]="checkedItems.antyaSanskarCenter" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.orphanageforold == null}">
+          <label>અનાથાલય</label>
+          <input type="number" name="orphanageforold" [(ngModel)]="checkedItems.orphanageforold" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.library == null}">
+          <label>વાંચનાલય / પુસ્તકાલય</label>
+          <input type="number" name="library" [(ngModel)]="checkedItems.library" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.nursery == null}">
+          <label>ઝૂલા ઘર / શિશુ પાલન કેન્દ્ર</label>
+          <input type="number" name="nursery" [(ngModel)]="checkedItems.nursery" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.elderlyService == null}">
+          <label>વૃદ્ધજન સેવા</label>
+          <input type="number" name="elderlyService" [(ngModel)]="checkedItems.elderlyService" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.oldAgeHome == null}">
+          <label>વૃદ્ધાશ્રમ</label>
+          <input type="number" name="oldAgeHome" [(ngModel)]="checkedItems.oldAgeHome" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.juvenileCenterWork == null}">
+          <label>કારાવાસ, બાલ સુધાર કેન્દ્રોમાં ચાલતા કામ</label>
+          <input type="number" name="juvenileCenterWork" [(ngModel)]="checkedItems.juvenileCenterWork" placeholder=" 0"
+            required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.humanMilkBank == null}">
+          <label>માનવી દૂધ કોષ</label>
+          <input type="number" name="humanMilkBank" [(ngModel)]="checkedItems.humanMilkBank" placeholder=" 0" required>
+        </li>
+        <li class="mainTitle" [ngClass]="{'has-error': showError && checkedItems.womenEmpowerment == null}">
+          <label>અન્ય (મહિલા સશક્તિકરણ)</label>
+          <input type="number" name="womenEmpowerment" [(ngModel)]="checkedItems.womenEmpowerment" placeholder=" 0"
+            required>
+        </li>
+      </div>
+    </ul>
+    <input type="submit" value="Submit" class="submit-btn">
+  </div>
 </form>
