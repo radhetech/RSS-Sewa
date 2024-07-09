@@ -104,7 +104,9 @@
   border-color: #007bff;
   outline: none;
 }
-
+.input-with-icon{
+ float:right;
+}
 @media screen and (max-width: 768px) {
   .list-container {
     width: 90%;

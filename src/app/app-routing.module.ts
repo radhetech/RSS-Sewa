@@ -9,52 +9,58 @@ import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { authguardGuard } from './services/Auth/authguard.guard';
 import { ErrorComponent } from './error/error.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:LoginComponent
+    path: '',
+    component: LoginComponent
   }, {
-    path:'',
-    pathMatch:'full',
-    redirectTo:'home'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path:'home',
-    component:HomeComponent,
-    canActivate:[authguardGuard]
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [authguardGuard]
   },
   {
-    path:'ShakhaVrut',
-    component:SakhaVrttaComponent,
-    canActivate:[authguardGuard]
+    path: 'ShakhaVrut',
+    component: SakhaVrttaComponent,
+    canActivate: [authguardGuard]
   },
   {
-    path:'SevaUpakrama',
-    component:SevaUpakramaComponent,
-    canActivate:[authguardGuard]
+    path: 'SevaUpakrama',
+    component: SevaUpakramaComponent,
+    canActivate: [authguardGuard]
   },
   {
-    path:'SevaKarya',
-    component:SevaKaryaComponent,
-    canActivate:[authguardGuard]
+    path: 'SevaKarya',
+    component: SevaKaryaComponent,
+    canActivate: [authguardGuard]
   },
   {
-    path:'UtsavaVrtta',
-    component:UtsavaVrttaComponent,
-    canActivate:[authguardGuard]
+    path: 'UtsavaVrtta',
+    component: UtsavaVrttaComponent,
+    canActivate: [authguardGuard]
   },
   {
-    path:'SevaDarshan',
-    component:SevaDarshanComponent,
-    canActivate:[authguardGuard]
+    path: 'SevaDarshan',
+    component: SevaDarshanComponent,
+    canActivate: [authguardGuard]
+  }, 
+  {
+    path: 'Profile',
+    component: ProfileComponent,
+    canActivate: [authguardGuard]
   }, {
-    path:'**',
-    component:ErrorComponent,
+    path: '**',
+    component: ErrorComponent,
   }
 ];
 

@@ -1,0 +1,36 @@
+<div class="list-container">
+  <h1>પ્રોફાઇલ</h1>
+  <form [formGroup]="profileForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="emailid">ઈમેલ આઈડી</label>
+        <input type="text" id="emailid" formControlName="emailid">
+      </div>
+      <div class="form-group">
+        <label for="mobileno">મોબાઈલ નંબર:</label>
+        <input type="number" id="mobileno" formControlName="mobileno">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="district">ભાગ/જિલ્લો:</label>
+        <input type="text" id="district" formControlName="district">
+      </div>
+      <div class="form-group">
+        <label for="taluk">નગર/તાલુકો:</label>
+        <input type="text" id="taluk" formControlName="taluk" [disabled]="!profileForm.get('district')?.value">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="population">સેવા વસતી:</label>
+        <input type="text" id="population" formControlName="population" [disabled]="!profileForm.get('taluk')?.value">
+      </div>
+      <div class="form-group">
+        <label for="branch">શાખા:</label>
+        <input type="text" id="branch" formControlName="branch" [disabled]="!profileForm.get('population')?.value">
+      </div>
+    </div>
+    <button type="submit" class="submit-btn" [disabled]="profileForm.invalid">Submit</button>
+  </form>
+</div>

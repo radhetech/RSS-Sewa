@@ -14,7 +14,11 @@
 </main> -->
 
 <div class="list-container">
-  <h1>વૃત્તનો પ્રકાર પસંદ કરો</h1>
+  <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
+  <span class="input-with-icon">
+    <input type="date" id="datepickerInput">
+  </span>
+
   <ul>
     <li class="mainTitle">
       <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" value="1" (change)="toggleList(1)"> સેવા દિન (ગુરુવાર)
