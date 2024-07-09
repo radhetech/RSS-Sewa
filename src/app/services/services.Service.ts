@@ -30,5 +30,10 @@ export class ServicesService {
       image: './assets/services/sevadarshan.jpeg',
       description: 'સેવા દર્શનની વિગતો ભરવા માટે',
     },
+    {
+      title: 'પ્રોફાઇલ',
+      image: './assets/services/sevadarshan.jpeg',
+      description: 'પ્રોફાઇલ માટે',
+    },
   ];
 }

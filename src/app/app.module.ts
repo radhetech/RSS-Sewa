@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './home/banner/banner.component';
@@ -19,6 +19,7 @@ import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { ErrorComponent } from './error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     SevaKaryaComponent,
     UtsavaVrttaComponent,
     SevaDarshanComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule 
   ],
   providers: [
     provideAnimationsAsync()

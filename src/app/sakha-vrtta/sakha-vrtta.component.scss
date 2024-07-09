@@ -12,11 +12,43 @@
   padding: 20px;
   background-color: #f9f9f9;
 }
+// .submit-btn {
+//   height: 45px;
+//   width: 100%;
+//   color: #fff;
+//   font-size: 1rem;
+//   font-weight: 400;
+//   margin-top: 30px;
+//   border: none;
+//   cursor: pointer;
+//   transition: all 0.2s ease;
+//   background:#e98a2b ;
+// }
 
-.list-container h3 {
+.submit-btn {
+  height: 45px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background:#e98a2b ;
+}
+.submit-btn:hover {
+  background: #9b4f04;
+}
+.submit-btn.disabled {
+  background-color: #9b4f04; 
+  cursor: not-allowed;
+}
+.list-container h1 {
   margin-top: 0;
   text-align: center;
-  color: #333;
+  color:#e98a2b;
+  text-shadow: 2px 2px 3px #f1c08f;
 }
 
 /* List Styles */
@@ -72,8 +104,9 @@
   border-color: #007bff;
   outline: none;
 }
-
-
+.input-with-icon{
+ float:right;
+}
 @media screen and (max-width: 768px) {
   .list-container {
     width: 90%;

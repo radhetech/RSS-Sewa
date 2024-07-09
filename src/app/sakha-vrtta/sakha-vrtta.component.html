@@ -14,69 +14,171 @@
 </main> -->
 
 <div class="list-container">
-    <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
-    <ul>
-        <li class="mainTitle">
-            <input type="checkbox" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> સેવા દિન (ગુરુવાર)
+  <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
+  <span class="input-with-icon">
+    <input type="date" id="datepickerInput">
+  </span>
+
+  <ul>
+    <li class="mainTitle">
+      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" value="1" (change)="toggleList(1)"> સેવા દિન (ગુરુવાર)
+    </li>
+
+    <div *ngIf="showList1" class="subList">
+      <h4>કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</h4>
+      <li class="mainTitle">
+        <input type="radio" name="sanskarSelect" [(ngModel)]="selectedSanskar" value="sanskar1" (change)="toggleMainCheckbox('sanskar1')"> *સંસ્કાર ૧
+      </li>
+      <div *ngIf="showSubList1" class="subList">
+        <li>
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_1" (change)="checkSubmitValidity()"> ૧. અમૃતવચન/સુભાષિત
         </li>
-
-        <div *ngIf="showList1" class="subList">
-            <h4>કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</h4>
-            <li (click)="toggleMainCheckbox('sanskar1')" class="mainTitle">
-                <input type="checkbox" [(ngModel)]="checkedItems.sanskar1"> *સંસ્કાર ૧
-            </li>
-            <div *ngIf="showSubList1" class="subList">
-                <li>
-                    <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_1"> ૧. અમૃતવચન/સુભાષિત
-                </li>
-                <li>
-                    <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_2"> ૨. સેવા ગીત
-                </li>
-                <li>
-                    <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_3"> ૩. સેવા બોધકથા
-                </li>
-            </div>
-
-            <li (click)="toggleMainCheckbox('sanskar2')" class="mainTitle">
-                <input type="checkbox" [(ngModel)]="checkedItems.sanskar2"> *સંસ્કાર ૨
-            </li>
-            <div *ngIf="showSubList2" class="subList">
-                <li>
-                    <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_1"> ૧. સેવા પ્રસંગ
-                </li>
-                <li>
-                    <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_2"> ૨. સેવા વસતી કર્યા આયોજન
-                </li>
-            </div>
-        </div>
-    </ul>
-
-    <ul>
-        <li class="mainTitle">
-            <input type="checkbox" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> માસિક સેવા વસતી સંપર્ક
+        <li>
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_2" (change)="checkSubmitValidity()"> ૨. સેવા ગીત
         </li>
-        <div *ngIf="showList2" class="subList">
-            <li class="mainTitle">
-                <label id="texttitle">સંપર્ક થયેલ છે?</label>
-                
-                <input type="checkbox" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')"> હા
+        <li>
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_3" (change)="checkSubmitValidity()"> ૩. સેવા બોધકથા
+        </li>
+      </div>
 
-                <input type="checkbox" [(ngModel)]="checkedItems.na" (change)="toggleHaNa('na')"> ના
-            </li>
+      <li class="mainTitle">
+        <input type="radio" name="sanskarSelect" [(ngModel)]="selectedSanskar" value="sanskar2" (change)="toggleMainCheckbox('sanskar2')"> *સંસ્કાર ૨
+      </li>
+      <div *ngIf="showSubList2" class="subList">
+        <li>
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_1" (change)="checkSubmitValidity()"> ૧. સેવા પ્રસંગ
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_2" (change)="checkSubmitValidity()"> ૨. સેવા વસતી કર્યા આયોજન
+        </li>
+      </div>
+    </div>
+  </ul>
 
-            <div *ngIf="checkedItems.ha" class="subList">
-                <li class="mainTitle">
-                    <label>સ્વયંસેવકની સંખ્યા</label>
-                    <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા">
-                </li>
-                <li class="mainTitle">
-                    <label>વિશેષ નોંધ</label>
-                    <textarea [(ngModel)]="checkedItems.option3" placeholder="વિશેષ નોંધ"></textarea>
-                </li>
-            </div>
+  <ul>
+      <li class="mainTitle">
+        <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" value="2" (change)="toggleList(2)"> માસિક સેવા વસતી સંપર્ક
+      </li>
+      <div *ngIf="showList2" class="subList">
+        <li class="mainTitle">
+          <label id="texttitle">સંપર્ક થયેલ છે?</label>
+          <input type="radio" name="contact" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')" value="true"> હા
+          <input type="radio" name="contact" [(ngModel)]="checkedItems.na" (change)="toggleHaNa('na')" value="false"> ના
+        </li>
+  
+        <div *ngIf="checkedItems.ha==true" class="subList">
+          <li class="mainTitle">
+            <label>સ્વયંસેવકની સંખ્યા</label>
+            <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા" (input)="checkSubmitValidity()">
+          </li>
+          <li class="mainTitle">
+            <label>વિશેષ નોંધ</label>
+            <textarea [(ngModel)]="checkedItems.option3" placeholder="વિશેષ નોંધ" (change)="checkSubmitValidity()"></textarea>
+          </li>
         </div>
+      </div>
     </ul>
+  <button type="submit" 
+  class="submit-btn" 
+  [class.disabled]="submitDisabled" 
+  [disabled]="submitDisabled" (click)="submitForm()">Submit</button>
+
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="list-container">
+  <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
+  <ul>
+      <li class="mainTitle">
+          <input type="checkbox" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> સેવા દિન (ગુરુવાર)
+      </li>
+
+      <div *ngIf="showList1" class="subList">
+          <h4>કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</h4>
+          <li (click)="toggleMainCheckbox('sanskar1')" class="mainTitle">
+              <input type="checkbox" [(ngModel)]="checkedItems.sanskar1"> *સંસ્કાર ૧
+          </li>
+          <div *ngIf="showSubList1" class="subList">
+              <li>
+                  <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_1"> ૧. અમૃતવચન/સુભાષિત
+              </li>
+              <li>
+                  <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_2"> ૨. સેવા ગીત
+              </li>
+              <li>
+                  <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_3"> ૩. સેવા બોધકથા
+              </li>
+          </div>
+
+          <li (click)="toggleMainCheckbox('sanskar2')" class="mainTitle">
+              <input type="checkbox" [(ngModel)]="checkedItems.sanskar2"> *સંસ્કાર ૨
+          </li>
+          <div *ngIf="showSubList2" class="subList">
+              <li>
+                  <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_1"> ૧. સેવા પ્રસંગ
+              </li>
+              <li>
+                  <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_2"> ૨. સેવા વસતી કર્યા આયોજન
+              </li>
+          </div>
+      </div>
+  </ul>
+
+  <ul>
+      <li class="mainTitle">
+          <input type="checkbox" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> માસિક સેવા વસતી સંપર્ક
+      </li>
+      <div *ngIf="showList2" class="subList">
+          <li class="mainTitle">
+              <label id="texttitle">સંપર્ક થયેલ છે?</label>
+              
+              <input type="checkbox" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')"> હા
+
+              <input type="checkbox" [(ngModel)]="checkedItems.na" (change)="toggleHaNa('na')"> ના
+          </li>
+
+          <div *ngIf="checkedItems.ha" class="subList">
+              <li class="mainTitle">
+                  <label>સ્વયંસેવકની સંખ્યા</label>
+                  <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા">
+              </li>
+              <li class="mainTitle">
+                  <label>વિશેષ નોંધ</label>
+                  <textarea [(ngModel)]="checkedItems.option3" placeholder="વિશેષ નોંધ"></textarea>
+              </li>
+          </div>
+      </div>
+  </ul>
+  <button type="submit" class="submit-btn">Submit</button>
+</div>
+
+-->
 
 
