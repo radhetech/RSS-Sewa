@@ -17,6 +17,10 @@ export class LoginService {
       Name: 'Munesh',
       userid: 'munesh@gmail.com',
       password: 'Ram@111',
+    },{
+      Name: 'yagni',
+      userid: 'yagni@gmail.com',
+      password: 'dm123',
     },
     {
       Name: 'Vishal',

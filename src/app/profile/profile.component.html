@@ -2,33 +2,50 @@
   <h1>પ્રોફાઇલ</h1>
   <form [formGroup]="profileForm">
     <div class="form-row">
+    <div class="form-group">
+      <label for="fullname">પૂરું નામ:</label>
+      <input type="text" id="fullname" formControlName="fullname">
+    </div>
+  </div>
+    <div class="form-row">
       <div class="form-group">
-        <label for="emailid">ઈમેલ આઈડી</label>
-        <input type="text" id="emailid" formControlName="emailid">
+        <label for="vibhag">વિભાગ:</label>
+        <select id="vibhag" formControlName="vibhag" (change)="onVibhagChange()">
+          <option value="">પસંદ કરો</option>
+          <option *ngFor="let vibhag of vibhagOptions" [value]="vibhag">{{ vibhag }}</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="mobileno">મોબાઈલ નંબર:</label>
-        <input type="number" id="mobileno" formControlName="mobileno">
+        <label for="jillo">જિલ્લો:</label>
+        <select id="jillo" formControlName="jillo" (change)="onJilloChange()">
+          <option value="">પસંદ કરો</option>
+          <option *ngFor="let jillo of filteredJilloOptions" [value]="jillo">{{ jillo }}</option>
+        </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="district">ભાગ/જિલ્લો:</label>
-        <input type="text" id="district" formControlName="district">
+        <label for="taluko">તાલુકો:</label>
+        <select id="taluko" formControlName="taluko" (change)="onTalukoChange()">
+          <option value="">પસંદ કરો</option>
+          <option *ngFor="let taluko of filteredTalukoOptions" [value]="taluko">{{ taluko }}</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="taluk">નગર/તાલુકો:</label>
-        <input type="text" id="taluk" formControlName="taluk" [disabled]="!profileForm.get('district')?.value">
+        <label for="seva-vsti">સેવા વસતી:</label>
+        <select id="seva-vsti" formControlName="sevaVsti" (change)="onSevaVstiChange()">
+          <option value="">પસંદ કરો</option>
+          <option *ngFor="let sevaVsti of filteredSevaVstiOptions" [value]="sevaVsti">{{ sevaVsti }}</option>
+        </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="population">સેવા વસતી:</label>
-        <input type="text" id="population" formControlName="population" [disabled]="!profileForm.get('taluk')?.value">
-      </div>
-      <div class="form-group">
-        <label for="branch">શાખા:</label>
-        <input type="text" id="branch" formControlName="branch" [disabled]="!profileForm.get('population')?.value">
+        <label for="shakha">શાખા:</label>
+        <select id="shakha" formControlName="shakha">
+          <option value="">પસંદ કરો</option>
+          <option *ngFor="let shakha of filteredShakhaOptions" [value]="shakha">{{ shakha }}</option>
+        </select>
       </div>
     </div>
     <button type="submit" class="submit-btn" [disabled]="profileForm.invalid">Submit</button>

@@ -70,7 +70,30 @@ export class SevaUpakramaComponent {
         break;
     }
   }   
-  
+  selectMainOption(option: number) {
+    switch (option) {
+      case 1:
+        this.selectedButton1 = !this.selectedButton1;
+        this.toggleList(1);
+        break;
+      case 2:
+        this.selectedButton2 = !this.selectedButton2;
+        this.toggleList(2);
+        break;
+      case 3:
+        this.selectedButton3 = !this.selectedButton3;
+        this.toggleList(3);
+        break;
+      case 4:
+        this.selectedButton4 = !this.selectedButton4;
+        this.toggleList(4);
+        break;
+    }
+  }
+  selectSanskarOption(option: string) {
+    this.checkedItems[option] = this.checkedItems[option] === null ? 0 : null;
+  }
+
   isFormValid() {
     let isValid = false;
   
@@ -116,7 +139,7 @@ export class SevaUpakramaComponent {
         this.checkedItems.blanketSweaterDelivery !== null &&
         this.checkedItems.foodDonation !== null;
     }
-  
+
     return isValid;
   }
     
