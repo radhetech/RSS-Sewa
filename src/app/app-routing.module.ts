@@ -10,6 +10,7 @@ import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { authguardGuard } from './services/Auth/authguard.guard';
 import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,11 @@ const routes: Routes = [
   {
     path: 'SevaDarshan',
     component: SevaDarshanComponent,
+    canActivate: [authguardGuard]
+  }, 
+  {
+    path: 'Admin',
+    component: AdminProfileComponent,
     canActivate: [authguardGuard]
   }, 
   {

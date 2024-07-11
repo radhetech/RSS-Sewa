@@ -20,6 +20,7 @@ import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { ErrorComponent } from './error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProfileComponent } from './profile/profile.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProfileComponent } from './profile/profile.component';
     UtsavaVrttaComponent,
     SevaDarshanComponent,
     ErrorComponent,
-    ProfileComponent
+    ProfileComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,

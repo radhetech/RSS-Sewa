@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   selecteduser: boolean = false;
   menuListenersAttached: boolean = false;
 
+
   ngOnInit(): void {
     this.selecteduser = this.loginService.isUserLogin;
   }
@@ -26,13 +27,10 @@ export class NavbarComponent implements OnInit {
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
 
     if (this.menuValue) {
-      // Check if event listeners are already attached
       if (!this.menuListenersAttached) {
-        // Attach event listeners when menu is opened
         document.addEventListener('click', this.closeMenuOutside);
         document.addEventListener('scroll', this.closeMenuOutside);
         document.addEventListener('touchstart', this.closeMenuOutside);
-        // Set flag to indicate event listeners are attached
         this.menuListenersAttached = true;
       }
     } else {
