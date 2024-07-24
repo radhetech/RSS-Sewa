@@ -36,7 +36,17 @@ const routes: Routes = [
     canActivate: [authguardGuard]
   },
   {
+    path: 'શાખા-વૃત્ત',
+    component: SakhaVrttaComponent,
+    canActivate: [authguardGuard]
+  },
+  {
     path: 'SevaUpakrama',
+    component: SevaUpakramaComponent,
+    canActivate: [authguardGuard]
+  },
+  {
+    path: 'સેવા-ઉપક્રમ',
     component: SevaUpakramaComponent,
     canActivate: [authguardGuard]
   },
@@ -46,8 +56,23 @@ const routes: Routes = [
     canActivate: [authguardGuard]
   },
   {
+    path: 'સેવા-કાર્ય',
+    component: SevaKaryaComponent,
+    canActivate: [authguardGuard]
+  },
+  {
     path: 'UtsavaVrtta',
     component: UtsavaVrttaComponent,
+    canActivate: [authguardGuard]
+  },
+  {
+    path: 'ઉત્સવ-વૃત',
+    component: UtsavaVrttaComponent,
+    canActivate: [authguardGuard]
+  },
+  {
+    path: 'સેવા-દર્શન',
+    component: SevaDarshanComponent,
     canActivate: [authguardGuard]
   },
   {
@@ -64,7 +89,11 @@ const routes: Routes = [
     path: 'Profile',
     component: ProfileComponent,
     canActivate: [authguardGuard]
-  }, {
+  },{
+    path:'પ્રોફાઇલ',
+    component: ProfileComponent,
+    canActivate: [authguardGuard]
+  },{
     path: '**',
     component: ErrorComponent,
   }

@@ -3,7 +3,7 @@
   <div class="list-container">
     <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
     <ul>
-      <li class="mainTitle">
+      <li class="mainTitle" [ngClass]="{'selected': selectedButton1}" (click)="selectMainOption(1)">
         <input type="checkbox" name="shiksan" [(ngModel)]="selectedButton1" (change)="toggleList(1)"> શિક્ષા
       </li>
       <div *ngIf="showList1" class="subList">
@@ -30,7 +30,7 @@
       </div>
     </ul>
     <ul>
-      <li class="mainTitle">
+      <li class="mainTitle" [ngClass]="{'selected': selectedButton2}" (click)="selectMainOption(2)">
         <input type="checkbox" name="aayogya" [(ngModel)]="selectedButton2" (change)="toggleList(2)"> સ્વાસ્થ્ય
       </li>
       <div *ngIf="showList2" class="subList">
@@ -78,7 +78,7 @@
       </div>
     </ul>
     <ul>
-      <li class="mainTitle">
+      <li class="mainTitle" [ngClass]="{'selected': selectedButton3}" (click)="selectMainOption(3)">
         <input type="checkbox" name="atmanirbharta" [(ngModel)]="selectedButton3" (change)="toggleList(3)"> સ્વાવલંબન
       </li>
       <div *ngIf="showList3" class="subList">
@@ -129,7 +129,7 @@
       </div>
     </ul>
     <ul>
-      <li class="mainTitle">
+      <li class="mainTitle" [ngClass]="{'selected': selectedButton4}" (click)="selectMainOption(4)">
         <input type="checkbox" name="samajik" [(ngModel)]="selectedButton4" (change)="toggleList(4)"> સામાજિક
       </li>
       <div *ngIf="showList4" class="subList">

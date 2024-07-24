@@ -32,7 +32,7 @@ export class ServicesService {
     },
     {
       title: 'પ્રોફાઇલ',
-      image: './assets/services/sevadarshan.jpeg',
+      image: './assets/services/profile.avif',
       description: 'પ્રોફાઇલ માટે',
     },
   ];

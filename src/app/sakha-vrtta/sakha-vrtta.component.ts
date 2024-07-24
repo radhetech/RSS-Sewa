@@ -26,16 +26,47 @@ export class SakhaVrttaComponent {
     option2: null,
     option3: ''
   };
+  dateOptions: string[] = [];
+  lastFiveThursdays: Date[] = [];
+
+  constructor() {
+    this.getLastFiveThursdays();
+    this.dateOptions.push('Jul 4 2024'); 
+  }
+
+  getLastFiveThursdays(): void {
+    const today = new Date();
+    let count = 0;
+    if (today.getDay() === 4) {
+      this.lastFiveThursdays.push(new Date(today)); 
+      count++;
+    }
+    while (count < 5) {
+      today.setDate(today.getDate() - 1);
+      if (today.getDay() === 4) { 
+        this.lastFiveThursdays.push(new Date(today));
+        count++;
+      }
+    }
+  }
+
+  onDateChange(event: any): void {
+  
+    console.log('Selected date:', event.target.value);
+  }
+
+  onThursdayChange(event: any): void {
+   
+    console.log('Selected Thursday:', event.target.value);
+  }
 
   checkSubmitValidity(): void {
-
     if (this.selectedButton == 1) {
       if (this.selectedSanskar === 'sanskar1') {
         if (this.checkedItems.sanskar1_1 || this.checkedItems.sanskar1_2 || this.checkedItems.sanskar1_3) {
-
-          this.submitDisabled = false; // Enable submit button
+          this.submitDisabled = false; 
         } else {
-          this.submitDisabled = true; // Disable submit button 
+          this.submitDisabled = true;  
         }
       } else if (this.selectedSanskar === 'sanskar2') {
         if (this.checkedItems.sanskar2_1 || this.checkedItems.sanskar2_2) {
@@ -45,9 +76,7 @@ export class SakhaVrttaComponent {
         }
       }
     } else if (this.selectedButton == 2) {
-     
       if (this.checkedItems.ha) {
-       
         if (this.checkedItems.option2 != null) {
           this.submitDisabled = false; 
         } else {
@@ -61,109 +90,89 @@ export class SakhaVrttaComponent {
     } else {
       this.submitDisabled = true; 
     }
-
   }
 
-toggleList(listNumber: number) {
-  if (listNumber === 1) {
-    this.showList1 = true;
-    this.showList2 = false;
-    this.selectedSanskar = null;
-    this.showSubList1 = false;
-    this.showSubList2 = false;
-  } else if (listNumber === 2) {
-    this.showList2 = true;
-    this.showList1 = false;
-    this.selectedSanskar = null;
-    this.showSubList1 = false;
-    this.showSubList2 = false;
+  toggleList(listNumber: number) {
+    if (listNumber === 1) {
+      this.showList1 = true;
+      this.showList2 = false;
+      this.selectedSanskar = null;
+      this.showSubList1 = false;
+      this.showSubList2 = false;
+    } else if (listNumber === 2) {
+      this.showList2 = true;
+      this.showList1 = false;
+      this.selectedSanskar = null;
+      this.showSubList1 = false;
+      this.showSubList2 = false;
+    }
+    this.checkSubmitValidity();
   }
-  this.checkSubmitValidity();
-}
 
-toggleMainCheckbox(mainCheckbox: string) {
-  if (mainCheckbox === 'sanskar1') {
-    this.checkedItems.sanskar1 = true;
-    this.checkedItems.sanskar2 = false;
-    this.showSubList1 = true;
-    this.showSubList2 = false;
-  } else if (mainCheckbox === 'sanskar2') {
-    this.checkedItems.sanskar2 = true;
-    this.checkedItems.sanskar1 = false;
-    this.showSubList1 = false;
-    this.showSubList2 = true;
+  toggleMainCheckbox(mainCheckbox: string) {
+    if (mainCheckbox === 'sanskar1') {
+      this.checkedItems.sanskar1 = true;
+      this.checkedItems.sanskar2 = false;
+      this.showSubList1 = true;
+      this.showSubList2 = false;
+    } else if (mainCheckbox === 'sanskar2') {
+      this.checkedItems.sanskar2 = true;
+      this.checkedItems.sanskar1 = false;
+      this.showSubList1 = false;
+      this.showSubList2 = true;
+    }
+    this.checkSubmitValidity();
   }
-  this.checkSubmitValidity();
-}
 
-toggleHaNa(sublist: string) {
-  if (sublist === 'ha') {
-    this.checkedItems.ha = true;
-    this.checkedItems.na = false;
-  } else if (sublist === 'na') {
-    this.checkedItems.na = true;
-    this.checkedItems.ha = false;
-    this.checkedItems.option2 = null;
-    this.checkedItems.option3 = '';
+  toggleHaNa(sublist: string) {
+    if (sublist === 'ha') {
+      this.checkedItems.ha = true;
+      this.checkedItems.na = false;
+    } else if (sublist === 'na') {
+      this.checkedItems.na = true;
+      this.checkedItems.ha = false;
+      this.checkedItems.option2 = null;
+      this.checkedItems.option3 = '';
+    }
+    this.checkSubmitValidity();
   }
-  this.checkSubmitValidity();
-}
-submitForm(): void {
-  let formData: any;
 
-  if (this.selectedButton == 1) {
+  selectMainOption(option: number) {
+    this.selectedButton = option;
+    this.toggleList(option);
+  }
+
+  selectSanskarOption(option: string) {
+    this.selectedSanskar = option;
+    this.toggleMainCheckbox(option);
+  }
+
+  toggleCheckbox(checkbox: string) {
+    this.checkedItems[checkbox] = !this.checkedItems[checkbox];
+    this.checkSubmitValidity();
+  }
+
+  submitForm(): void {
+    let formData: any;
+
+    if (this.selectedButton == 1) {
       formData = {
-          samparkType: 'sewadin',
-          sanskar: this.selectedSanskar,
-          sanskarList: Object.keys(this.checkedItems)
-              .filter(key => {
-                  // console.log('Key:', key, 'Checked:', this.checkedItems[key]); 
-                  return key.startsWith(this.selectedSanskar!) && this.checkedItems[key];
-              })
-              .map(key => {
-                  const splitKey = key.split('_');
-                  // console.log('Split Key:', splitKey); 
-                  return splitKey[1];
-              })
-              .filter(value => value !== undefined)
+        samparkType: 'sewadin',
+        sanskar: this.selectedSanskar,
+        sanskarList: Object.keys(this.checkedItems)
+          .filter(key => key.startsWith(this.selectedSanskar!) && this.checkedItems[key])
+          .map(key => key.split('_')[1])
+          .filter(value => value !== undefined)
       };
-  } else if (this.selectedButton == 2) {
+    } else if (this.selectedButton == 2) {
       formData = {
-          samparkType: 'masikseva',
-          samapark: this.checkedItems.ha, 
-          sss: this.checkedItems.option2 || null, 
-          note: this.checkedItems.option3
+        samparkType: 'masikseva',
+        samapark: this.checkedItems.ha, 
+        sss: this.checkedItems.option2 || null, 
+        note: this.checkedItems.option3
       };
+    }
+
+    console.log('Form Data:', formData);
   }
-
-  console.log('Form Data:', formData);
 }
-
-}
-
-
-
-
-
-// submitForm(): void {
-//   let formData: any;
-//   if(this.selectedButton == 1) {
-//   formData = {
-//     samparkType: 'sewadin',
-//     sanskar: this.selectedSanskar,
-//     sanskarList: Object.keys(this.checkedItems)
-//       .filter(key => key.startsWith(this.selectedSanskar!) && this.checkedItems[key])
-//       .map(key => key.split('_')[1])
-//   };
-// } else if (this.selectedButton == 2) {
-//   formData = {
-//     samparkType: 'masikseva',
-//     samapark: this.checkedItems.ha, // assuming 'ha' is for "Yes" option
-//     sss: this.checkedItems.option2 || null, // assuming this is the number input field
-//     note: this.checkedItems.option3 // assuming this is the textarea input field
-//   };
-// }
-
-// console.log('Form Data:', formData);
-//   }
-
