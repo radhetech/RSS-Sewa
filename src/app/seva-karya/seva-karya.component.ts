@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './seva-karya.component.scss'
 })
 export class SevaKaryaComponent {
+
   selectedButton1:boolean = false;
   selectedButton2:boolean = false;
   selectedButton3:boolean = false;
@@ -17,366 +18,293 @@ export class SevaKaryaComponent {
   showError:boolean=false;
   snackbarColour:string|null = null;
   loginerr: string | null = null;
+  showOthersShiksha: boolean = false;
+  showOthersAayogya: boolean = false;
+  showOthersSawval: boolean = false;
+  showOthersSamajik:Boolean= false;
+  activeCategory:number=0
+
+  educationItems = [
+    { label: 'સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ', name: 'sanskarKendra', showInputs: false },
+    { label: 'પાઠદાન કેન્દ્ર / ટ્યુશન કેન્દ્ર', name: 'tuitionCenter', showInputs: false },
+    { label: 'ઉચ્ચ શિક્ષણ કોચિંગ', name: 'higherEducationCoaching', showInputs: false },
+    { label: 'અભ્યાસિકા', name: 'studyCenter', showInputs: false },
+    { label: 'બાલવાડી', name: 'balwadi', showInputs: false },
+    { label: 'પ્રાથમિક શાળા (કક્ષા 5 સુધી)', name: 'primarySchool', showInputs: false },
+    { label: 'માધ્યમિક શાળા (કક્ષા 8 સુધી)', name: 'secondarySchool', showInputs: false },
+    { label: 'હાઇસ્કૂલ', name: 'highSchool', showInputs: false },
+    { label: 'સ્પર્ધાત્મક પરીક્ષા કોચિંગ (ઉચ્ચ શિક્ષણ માટે)', name: 'competitiveExamCoaching', showInputs: false },
+    { label: 'ચલિત પ્રયોગશાળા', name: 'mobileLaboratory', showInputs: false },
+    { label: 'પુસ્તક પેટી બેંક', name: 'bookBank', showInputs: false },
+    { label: 'નિર્વાહક શાળા / ગુરુકુલ', name: 'residentialSchool', showInputs: false },
+    { label: 'હિન્દી શિક્ષણ વર્ગ', name: 'hindiTeachingClass', showInputs: false },
+    { label: 'પ્રૌઢ શિક્ષણ / સાક્ષરતા કાર્યક્રમ', name: 'adultEducation', showInputs: false },
+    { label: 'દિવ્યાંગો માટે શાળા', name: 'schoolForDisabled', showInputs: false },
+    { label: 'છાત્રાલય', name: 'hostel', showInputs: false },
+    { label: 'નિરાશ્રિત બાળક-બાળિકા સદન', name: 'orphanage', showInputs: false },
+    { label: 'એકલ વિદ્યાાલય', name: 'singleTeacherSchool', showInputs: false },
+  ];
+  healthItems = [
+    { label: 'ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા', name: 'ruralHealthGuard', showInputs: false },
+    { label: 'આરોગ્ય જાગૃતિ કેન્દ્ર', name: 'healthAwarenessCenter', showInputs: false },
+    { label: 'ચલિત દવાખાનું (Mobile Dispensary)', name: 'mobileDispensary', showInputs: false },
+    { label: 'સ્થિર દવાખાનું (O.P.D.) નાનું', name: 'smallOPD', showInputs: false },
+    { label: 'દિવ્યાંગ શિબિર/સાધન વિતરણ', name: 'divyangCamp', showInputs: false },
+    { label: 'સ્થિર દવાખાનું (રહેવાનું) / હોસ્પિટલ (મોટું)', name: 'largeHospital', showInputs: false },
+    { label: 'પ્રાકૃતિક ચિકિત્સા કેન્દ્ર', name: 'naturopathyCenter', showInputs: false },
+    { label: 'રોગી સહાયતા', name: 'patientAssistance', showInputs: false },
+    { label: 'ન્યુરોथेરીપી, ફિઝિયોથેરીપી, યોગ થેરાપી', name: 'therapy', showInputs: false },
+    { label: 'રક્ત કોષ / બ્લડ બેંક', name: 'bloodBank', showInputs: false },
+    { label: 'રોગી વાહન સેવા', name: 'ambulanceService', showInputs: false },
+    { label: 'દિવ્યાંગ સેવા કેન્દ્ર', name: 'disabledServiceCenter', showInputs: false },
+    { label: 'દવાખાનું', name: 'hospital', showInputs: false },
+    { label: 'નેત્ર બેંક', name: 'eyeBank', showInputs: false },
+    { label: 'કુષ્ટ રોગી સેવા', name: 'leprosyService', showInputs: false },
+    { label: 'યોગ શિક્ષણ કેન્દ્ર', name: 'yogaEducationCenter', showInputs: false },
+    { label: 'ઔષધિ કેન્દ્ર', name: 'medicineCenter', showInputs: false },
+    { label: 'નશા મુક્તિ કેન્દ્ર', name: 'deAddictionCenter', showInputs: false }
+  ];
+  swavalambanItems = [
+    { label: 'સ્વયં સહાયતા જૂથ વૈભવ શ્રી', name: 'selfHelpGroup', showInputs: false },
+    { label: 'સિલાઈ કેન્દ્ર', name: 'sewingCenter', showInputs: false },
+    { label: 'સૌંદર્ય તાલીમ કેન્દ્ર', name: 'beautyTrainingCenter', showInputs: false },
+    { label: 'હેલ્થ નર્સ ટ્રેનિંગ, હોમ નર્સિંગ', name: 'healthNurseTraining', showInputs: false },
+    { label: 'કમ્પ્યુટર તાલીમ', name: 'computerTraining', showInputs: false },
+    { label: 'સ્પર્ધાત્મક પરીક્ષા કોચિંગ (રોજગાર માટે)', name: 'examCoaching', showInputs: false },
+    { label: 'ગૌ ઉત્પાદન, પંચગવ્ય ઉત્પાદન તાલીમ', name: 'panchgavyaTraining', showInputs: false },
+    { label: 'કુટીર ઉદ્યોગ તાલીમ', name: 'cottageIndustryTraining', showInputs: false },
+    { label: 'હસ્તકલા', name: 'handicrafts', showInputs: false },
+    { label: 'સ્વરોજગાર કેન્દ્ર - 1- રાખી, ઇલેક્ટ્રિક લડીઓ, દીપક', name: 'selfEmploymentCenter1', showInputs: false },
+    { label: 'સજાવટ, ખાદ્ય સામગ્રી વગેરે ઉત્પાદન', name: 'decorationFoodProduction', showInputs: false },
+    { label: 'સ્વરોજગાર કેન્દ્ર- 2- ઇલેક્ટ્રિક, નળ', name: 'selfEmploymentCenter2', showInputs: false },
+    { label: 'રિપેરીંગ અને ફિટિંગ', name: 'repairFitting', showInputs: false },
+    { label: 'વ્યવસાય અને કુશળ તાલીમ', name: 'businessSkillTraining', showInputs: false },
+    { label: 'ગામ ઉદ્યોગ', name: 'villageIndustry', showInputs: false },
+    { label: 'વન ઔષધી આધારિત ઉત્પાદન તાલીમ', name: 'forestMedicineTraining', showInputs: false },
+    { label: 'અન્ન અને ફળ પ્રક્રિયા તાલીમ', name: 'foodProcessingTraining', showInputs: false },
+    { label: 'બીજ કોષ', name: 'seedBank', showInputs: false }
+  ];
+  socialItems = [
+    { name: 'bhajanMandali', label: 'ભજન મંડળી', showInputs: false },
+    { name: 'kishoriVikasKendra', label: 'કિશોરી વિકાસ કેન્દ્ર', showInputs: false },
+    { name: 'matrushayaOrphanage', label: 'માતૃછાયા / અનાથ શિશુ ગૃહ', showInputs: false },
+    { name: 'matruMandali', label: 'માતૃ મંડળી', showInputs: false },
+    { name: 'deepPujaHavan', label: 'દીપ પૂજા / હવન (સાપ્તાહિક)', showInputs: false },
+    { name: 'jholaPustakalay', label: 'ઝોલા પુસ્તકાલય', showInputs: false },
+    { name: 'annDaan', label: 'અન્નદાન', showInputs: false },
+    { name: 'mahilaAshram', label: 'મહિલા આશ્રમ', showInputs: false },
+    { name: 'familyLegalCounseling', label: 'પરિવાર / કાનૂની પરામર્શ કેન્દ્ર (કાઉન્સેલિંગ)', showInputs: false },
+    { name: 'antyaSanskarCenter', label: 'અંતિમ સંસ્કાર કેન્દ્ર/શવ વાહન', showInputs: false },
+    { name: 'orphanageforold', label: 'અનાથાલય', showInputs: false },
+    { name: 'library', label: 'વાંચનાલય / પુસ્તકાલય', showInputs: false },
+    { name: 'nursery', label: 'ઝૂલા ઘર / શિશુ પાલન કેન્દ્ર', showInputs: false },
+    { name: 'elderlyService', label: 'વૃદ્ધજન સેવા', showInputs: false },
+    { name: 'oldAgeHome', label: 'વૃદ્ધાશ્રમ', showInputs: false },
+    { name: 'juvenileCenterWork', label: 'કારાવાસ, બાલ સુધાર કેન્દ્રોમાં ચાલતા કામ', showInputs: false },
+    { name: 'humanMilkBank', label: 'માનવી દૂધ કોષ', showInputs: false },
+    { name: 'womenEmpowerment', label: 'અન્ય (મહિલા સશક્તિકરણ)', showInputs: false }
+  ];
+  customShiksha:any = [];
+  customAayogya:any = [];
+  customSawval:any = [];
+  customSamajik:any = [];
+
+  othersShiksha = { name: '', men: '', women: '', others: '' };
+  othersAayogya = { name: '', men: '', women: '', others: '' };
+  othersSawval = { name: '', men: '', women: '', others: '' };
+  othersSamajik = { name: '', men: '', women: '', others: '' };
+
+
   checkedItems: any = {
-    sanskarKendra: null,
-    tuitionCenter: null,
-    higherEducationCoaching: null,
-    studyCenter: null,
-    balwadi: null,
-    primarySchool: null,
-    secondarySchool: null,
-    highSchool: null,
-    competitiveExamCoaching: null,
-    mobileLaboratory: null,
-    bookBank: null,
-    residentialSchool: null,
-    hindiTeachingClass: null,
-    adultEducation: null,
-    schoolForDisabled: null,
-    hostel: null,
-    orphanage: null,
-    singleTeacherSchool: null,
-    ruralHealthGuard: null,
-    healthAwarenessCenter: null,
-    mobileDispensary: null,
-    smallOPD: null,
-    divyangCamp: null,
-    largeHospital: null,
-    naturopathyCenter: null,
-    patientAssistance: null,
-    therapy: null,
-    bloodBank: null,
-    ambulanceService: null,
-    disabledServiceCenter: null,
-    hospital: null,
-    eyeBank: null,
-    leprosyService: null,
-    yogaEducationCenter: null,
-    medicineCenter: null,
-    deAddictionCenter: null,
-    bhajanMandali: null,
-    kishoriVikasKendra: null,
-    matrushayaOrphanage: null,
-    matruMandali: null,
-    deepPujaHavan: null,
-    jholaPustakalay: null,
-    annDaan: null,
-    mahilaAshram: null,
-    familyLegalCounseling: null,
-    antyaSanskarCenter: null,
-    orphanageforold: null,
-    library: null,
-    nursery: null,
-    elderlyService: null,
-    oldAgeHome: null,
-    juvenileCenterWork: null,
-    humanMilkBank: null,
-    womenEmpowerment: null,
-    selfHelpGroup: null,
-    sewingCenter: null,
-    beautyTrainingCenter: null,
-    healthNurseTraining: null,
-    computerTraining: null,
-    examCoaching: null,
-    panchgavyaTraining: null,
-    cottageIndustryTraining: null,
-    handicrafts: null,
-    selfEmploymentCenter1: null,
-    decorationFoodProduction: null,
-    selfEmploymentCenter2: null,
-    repairFitting: null,
-    businessSkillTraining: null,
-    villageIndustry: null,
-    forestMedicineTraining: null,
-    foodProcessingTraining: null,
-    seedBank: null
+    sanskarKendra: { men: '', women: '', others: '' },
+    tuitionCenter: { men: '', women: '', others: '' },
+    higherEducationCoaching: { men: '', women: '', others: '' },
+    studyCenter: { men: '', women: '', others: '' },
+    balwadi: { men: '', women: '', others: '' },
+    primarySchool: { men: '', women: '', others: '' },
+    secondarySchool: { men: '', women: '', others: '' },
+    highSchool: { men: '', women: '', others: '' },
+    competitiveExamCoaching: { men: '', women: '', others: '' },
+    mobileLaboratory: { men: '', women: '', others: '' },
+    bookBank: { men: '', women: '', others: '' },
+    residentialSchool: { men: '', women: '', others: '' },
+    hindiTeachingClass: { men: '', women: '', others: '' },
+    adultEducation: { men: '', women: '', others: '' },
+    schoolForDisabled: { men: '', women: '', others: '' },
+    hostel: { men: '', women: '', others: '' },
+    orphanage: { men: '', women: '', others: '' },
+    singleTeacherSchool: { men: '', women: '', others: '' },
+    ruralHealthGuard: { men: '', women: '', others: '' },
+    healthAwarenessCenter: { men: '', women: '', others: '' },
+    mobileDispensary: { men: '', women: '', others: '' },
+    smallOPD: { men: '', women: '', others: '' },
+    divyangCamp: { men: '', women: '', others: '' },
+    largeHospital: { men: '', women: '', others: '' },
+    naturopathyCenter: { men: '', women: '', others: '' },
+    patientAssistance: { men: '', women: '', others: '' },
+    therapy: { men: '', women: '', others: '' },
+    bloodBank: { men: '', women: '', others: '' },
+    ambulanceService: { men: '', women: '', others: '' },
+    disabledServiceCenter: { men: '', women: '', others: '' },
+    hospital: { men: '', women: '', others: '' },
+    eyeBank: { men: '', women: '', others: '' },
+    leprosyService: { men: '', women: '', others: '' },
+    yogaEducationCenter: { men: '', women: '', others: '' },
+    medicineCenter: { men: '', women: '', others: '' },
+    deAddictionCenter: { men: '', women: '', others: '' },
+    bhajanMandali: { men: '', women: '', others: '' },
+    kishoriVikasKendra: { men: '', women: '', others: '' },
+    matrushayaOrphanage: { men: '', women: '', others: '' },
+    matruMandali: { men: '', women: '', others: '' },
+    deepPujaHavan: { men: '', women: '', others: '' },
+    jholaPustakalay: { men: '', women: '', others: '' },
+    annDaan: { men: '', women: '', others: '' },
+    mahilaAshram: { men: '', women: '', others: '' },
+    familyLegalCounseling: { men: '', women: '', others: '' },
+    antyaSanskarCenter: { men: '', women: '', others: '' },
+    orphanageforold: { men: '', women: '', others: '' },
+    library: { men: '', women: '', others: '' },
+    nursery: { men: '', women: '', others: '' },
+    elderlyService: { men: '', women: '', others: '' },
+    oldAgeHome: { men: '', women: '', others: '' },
+    juvenileCenterWork: { men: '', women: '', others: '' },
+    humanMilkBank: { men: '', women: '', others: '' },
+    womenEmpowerment: { men: '', women: '', others: '' },
+    selfHelpGroup: { men: '', women: '', others: '' },
+    sewingCenter: { men: '', women: '', others: '' },
+    beautyTrainingCenter: { men: '', women: '', others: '' },
+    healthNurseTraining: { men: '', women: '', others: '' },
+    computerTraining: { men: '', women: '', others: '' },
+    examCoaching: { men: '', women: '', others: '' },
+    panchgavyaTraining: { men: '', women: '', others: '' },
+    cottageIndustryTraining: { men: '', women: '', others: '' },
+    handicrafts: { men: '', women: '', others: '' },
+    selfEmploymentCenter1: { men: '', women: '', others: '' },
+    decorationFoodProduction: { men: '', women: '', others: '' },
+    selfEmploymentCenter2: { men: '', women: '', others: '' },
+    repairFitting: { men: '', women: '', others: '' },
+    businessSkillTraining: { men: '', women: '', others: '' },
+    villageIndustry: { men: '', women: '', others: '' },
+    forestMedicineTraining: { men: '', women: '', others: '' },
+    foodProcessingTraining: { men: '', women: '', others: '' },
+    seedBank: { men: '', women: '', others: '' }
 
   };
-  toggleList(listNumber: number) {
-    switch (listNumber) {
-      case 1:
-        this.showList1 = !this.showList1;
-        break;
-      case 2:
-        this.showList2 = !this.showList2;
-        break;
-      case 3:
-        this.showList3 = !this.showList3;
-        break;
-      case 4:
-        this.showList4 = !this.showList4;
-        break;
-    }
+  toggleList(category: number) {
+    this.activeCategory = category;
   }
-  // toggleList(listNumber: number) {
-  //   if (listNumber === 1) {
-  //     if (!this.selectedButton1) {
-  //       this.showList1 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton3 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //     if (this.selectedButton1) {
-  //       this.showList1 = true;
-  //       this.showList2 = false;
-  //       this.showList3 = false;
-  //       this.showList4 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton3 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //   } else if (listNumber === 2) {
-  //     if (!this.selectedButton2) {
-  //       this.showList2 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton3 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //     if (this.selectedButton2) {
-  //       this.showList2 = true;
-  //       this.showList1 = false;
-  //       this.showList4 = false;
-  //       this.showList3 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton3 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //   }
-  //   else if (listNumber === 3) {
-  //     if (!this.selectedButton3) {
-  //       this.showList3 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //     if (this.selectedButton3) {
-  //       this.showList3 = true;
-  //       this.showList2 = false;
-  //       this.showList1 = false;
-  //       this.showList4 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton4 = false;
-  //     }
-  //   }
-  //   else if (listNumber === 4) {
-  //     if (!this.selectedButton4) {
-  //       this.showList4 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton3 = false;
-  //     }
-  //     if (this.selectedButton4) {
-  //       this.showList4 = true;
-  //       this.showList2 = false;
-  //       this.showList3 = false;
-  //       this.showList1 = false;
-  //       this.selectedButton1 = false;
-  //       this.selectedButton2 = false;
-  //       this.selectedButton3 = false;
-  //     }
-  //   }
-  // }
-
-  isFormValid(){
-    if (this.selectedButton1 && 
-      this.checkedItems.sanskarKendra != null && 
-      this.checkedItems.tuitionCenter != null &&
-      this.checkedItems.higherEducationCoaching != null &&
-      this.checkedItems.studyCenter!= null &&
-      this.checkedItems.balwadi!= null &&
-      this.checkedItems.primarySchool!= null &&
-      this.checkedItems.secondarySchool!= null &&
-      this.checkedItems.highSchool!= null &&
-      this.checkedItems.competitiveExamCoaching!= null &&
-      this.checkedItems.mobileLaboratory!= null &&
-      this.checkedItems.bookBank!= null &&
-      this.checkedItems.residentialSchool!= null &&
-      this.checkedItems.hindiTeachingClass!= null &&
-      this.checkedItems.adultEducation!= null &&
-      this.checkedItems.schoolForDisabled!= null &&
-      this.checkedItems.hostel!= null &&
-      this.checkedItems.orphanage!= null &&
-      this.checkedItems.singleTeacherSchool!= null) {
-      return true;
-    }
-    if (this.selectedButton2 &&
-      this.checkedItems.ruralHealthGuard != null &&
-      this.checkedItems.healthAwarenessCenter != null &&
-      this.checkedItems.mobileDispensary != null &&
-      this.checkedItems.smallOPD != null &&
-      this.checkedItems.divyangCamp != null &&
-      this.checkedItems.largeHospital != null &&
-      this.checkedItems.naturopathyCenter != null &&
-      this.checkedItems.patientAssistance != null &&
-      this.checkedItems.therapy != null &&
-      this.checkedItems.bloodBank != null &&
-      this.checkedItems.ambulanceService != null &&
-      this.checkedItems.disabledServiceCenter != null &&
-      this.checkedItems.hospital != null &&
-      this.checkedItems.eyeBank != null &&
-      this.checkedItems.leprosyService != null &&
-      this.checkedItems.yogaEducationCenter != null &&
-      this.checkedItems.medicineCenter != null &&
-      this.checkedItems.deAddictionCenter != null
-    ) {
-      return true;
-    }
-    if (
-      this.selectedButton3 &&
-      this.checkedItems.bhajanMandali != null &&
-      this.checkedItems.kishoriVikasKendra != null &&
-      this.checkedItems.matrushayaOrphanage != null &&
-      this.checkedItems.matruMandali != null &&
-      this.checkedItems.deepPujaHavan != null &&
-      this.checkedItems.jholaPustakalay != null &&
-      this.checkedItems.annDaan != null &&
-      this.checkedItems.mahilaAshram != null &&
-      this.checkedItems.familyLegalCounseling != null &&
-      this.checkedItems.antyaSanskarCenter != null &&
-      this.checkedItems.orphanageforold != null &&
-      this.checkedItems.library != null &&
-      this.checkedItems.nursery != null &&
-      this.checkedItems.elderlyService != null &&
-      this.checkedItems.oldAgeHome != null &&
-      this.checkedItems.juvenileCenterWork != null &&
-      this.checkedItems.humanMilkBank != null &&
-      this.checkedItems.womenEmpowerment != null) {
-      return true;
-    }
-    if (this.selectedButton4 && 
-      this.checkedItems.selfHelpGroup != null &&
-      this.checkedItems.sewingCenter != null &&
-      this.checkedItems.beautyTrainingCenter != null &&
-      this.checkedItems.healthNurseTraining != null &&
-      this.checkedItems.computerTraining != null &&
-      this.checkedItems.examCoaching != null &&
-      this.checkedItems.panchgavyaTraining != null &&
-      this.checkedItems.cottageIndustryTraining != null &&
-      this.checkedItems.handicrafts != null &&
-      this.checkedItems.selfEmploymentCenter1 != null &&
-      this.checkedItems.decorationFoodProduction != null &&
-      this.checkedItems.selfEmploymentCenter2 != null &&
-      this.checkedItems.repairFitting != null &&
-      this.checkedItems.businessSkillTraining != null &&
-      this.checkedItems.villageIndustry != null &&
-      this.checkedItems.forestMedicineTraining != null &&
-      this.checkedItems.foodProcessingTraining != null &&
-      this.checkedItems.seedBank != null) {
-      return true;
-    }
+  toggleSubList(item: any) {
+    item.showInputs = !item.showInputs;
+  }
+  isFilled(item: any): boolean {
+    return (this.checkedItems[item.name]?.men || 
+            this.checkedItems[item.name]?.women || 
+            this.checkedItems[item.name]?.others) != null;
+  }
+  isOthersFilled(category: string): any {
+    if (category === 'shiksha') return this.othersShiksha.men || this.othersShiksha.women || this.othersShiksha.others;
+    if (category === 'aayogya') return this.othersAayogya.men || this.othersAayogya.women || this.othersAayogya.others;
+    if (category === 'sawval') return this.othersSawval.men || this.othersSawval.women || this.othersSawval.others;
+    if (category === 'samajik') return this.othersSamajik.men || this.othersSamajik.women || this.othersSamajik.others;
     return false;
   }
 
+  toggleOthersSubList(type: string) {
+    if (type === 'shiksha') {
+      this.showOthersShiksha = !this.showOthersShiksha;
+    } else if (type === 'aayogya') {
+      this.showOthersAayogya = !this.showOthersAayogya;
+    } else if (type === 'sawval') {
+      this.showOthersSawval = !this.showOthersSawval;
+    } else if (type === 'samajik') {
+      this.showOthersSamajik = !this.showOthersSamajik;
+    }
+  }
+  
+  addCustomSubLabel(type: string) {
+    if (type === 'shiksha') {
+      this.customShiksha.push({ name: '', men: '', women: '', others: '' });
+    } else if (type === 'aayogya') {
+      this.customAayogya.push({ name: '', men: '', women: '', others: '' });
+    }else if (type === 'sawval') {
+      this.customSawval.push({ name: '', men: '', women: '', others: '' });
+    }else if (type === 'samajik') {
+      this.customSawval.push({ name: '', men: '', women: '', others: '' });
+    }
+  }
+
   onSubmit(form: any) {
-    if (!this.isFormValid()) {
-      this.showError = true;
-      this.loginerr = "Please fill all the mandatory fields.";
-      this.snackbarColour = 'error';
-      this.snackTimeOut();
-      return;  
-    }
-    this.showError = false;
-    let result = [];
-    if (this.selectedButton1) {
-      let section = {
-        selectedsection: 'shiksan',
-        sanskarKendra: this.checkedItems.sanskarKendra,
-        tuitionCenter: this.checkedItems.tuitionCenter,
-        higherEducationCoaching: this.checkedItems.higherEducationCoaching,
-        studyCenter: this.checkedItems.studyCenter,
-        balwadi: this.checkedItems.balwadi,
-        primarySchool: this.checkedItems.primarySchool,
-        secondarySchool: this.checkedItems.secondarySchool,
-        highSchool: this.checkedItems.highSchool,
-        competitiveExamCoaching: this.checkedItems.competitiveExamCoaching,
-        mobileLaboratory: this.checkedItems.mobileLaboratory,
-        bookBank: this.checkedItems.bookBank,
-        residentialSchool: this.checkedItems.residentialSchool,
-        hindiTeachingClass: this.checkedItems.hindiTeachingClass,
-        adultEducation: this.checkedItems.adultEducation,
-        schoolForDisabled: this.checkedItems.schoolForDisabled,
-        hostel: this.checkedItems.hostel,
-        orphanage: this.checkedItems.orphanage,
-        singleTeacherSchool: this.checkedItems.singleTeacherSchool
-      };
-      result.push(section);
-    }
+    const shiksha: any = {};
+    const aayogya: any = {};
+    const swavalamban:any={};
+    const samajik:any={};
 
-    if (this.selectedButton2) {
-      let section = {
-        selectedsection: 'aayogya',
-        ruralHealthGuard: this.checkedItems.ruralHealthGuard,
-        healthAwarenessCenter: this.checkedItems.healthAwarenessCenter,
-        mobileDispensary: this.checkedItems.mobileDispensary,
-        smallOPD: this.checkedItems.smallOPD,
-        divyangCamp: this.checkedItems.divyangCamp,
-        largeHospital: this.checkedItems.largeHospital,
-        naturopathyCenter: this.checkedItems.naturopathyCenter,
-        patientAssistance: this.checkedItems.patientAssistance,
-        therapy: this.checkedItems.therapy,
-        bloodBank: this.checkedItems.bloodBank,
-        ambulanceService: this.checkedItems.ambulanceService,
-        disabledServiceCenter: this.checkedItems.disabledServiceCenter,
-        hospital: this.checkedItems.hospital,
-        eyeBank: this.checkedItems.eyeBank,
-        leprosyService: this.checkedItems.leprosyService,
-        yogaEducationCenter: this.checkedItems.yogaEducationCenter,
-        medicineCenter: this.checkedItems.medicineCenter,
-        deAddictionCenter: this.checkedItems.deAddictionCenter
+    this.educationItems.forEach(item => {
+      const checked = this.checkedItems[item.name];
+      shiksha[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0
       };
-      result.push(section);
-    }
+      item.showInputs = false;
+    });
+  
 
-    if (this.selectedButton3) {
-      let section = {
-        selectedsection: 'atmanirbharta',
-        bhajanMandali: this.checkedItems.bhajanMandali,
-        kishoriVikasKendra: this.checkedItems.kishoriVikasKendra,
-        matrushayaOrphanage: this.checkedItems.matrushayaOrphanage,
-        matruMandali: this.checkedItems.matruMandali,
-        deepPujaHavan: this.checkedItems.deepPujaHavan,
-        jholaPustakalay: this.checkedItems.jholaPustakalay,
-        annDaan: this.checkedItems.annDaan,
-        mahilaAshram: this.checkedItems.mahilaAshram,
-        familyLegalCounseling: this.checkedItems.familyLegalCounseling,
-        antyaSanskarCenter: this.checkedItems.antyaSanskarCenter,
-        orphanageforold: this.checkedItems.orphanageforold,
-        library: this.checkedItems.library,
-        nursery: this.checkedItems.nursery,
-        elderlyService: this.checkedItems.elderlyService,
-        oldAgeHome: this.checkedItems.oldAgeHome,
-        juvenileCenterWork: this.checkedItems.juvenileCenterWork,
-        humanMilkBank: this.checkedItems.humanMilkBank,
-        womenEmpowerment: this.checkedItems.womenEmpowerment
+    this.healthItems.forEach(item => {
+      const checked = this.checkedItems[item.name];
+      aayogya[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0
       };
-      result.push(section);
-    }
-    if (this.selectedButton4) {
-      let section = {
-        selectedsection: 'samajik',
-        selfHelpGroup: this.checkedItems.selfHelpGroup,
-        sewingCenter: this.checkedItems.sewingCenter,
-        beautyTrainingCenter: this.checkedItems.beautyTrainingCenter,
-        healthNurseTraining: this.checkedItems.healthNurseTraining,
-        computerTraining: this.checkedItems.computerTraining,
-        examCoaching: this.checkedItems.examCoaching,
-        panchgavyaTraining: this.checkedItems.panchgavyaTraining,
-        cottageIndustryTraining: this.checkedItems.cottageIndustryTraining,
-        handicrafts: this.checkedItems.handicrafts,
-        selfEmploymentCenter1: this.checkedItems.selfEmploymentCenter1,
-        decorationFoodProduction: this.checkedItems.decorationFoodProduction,
-        selfEmploymentCenter2: this.checkedItems.selfEmploymentCenter2,
-        repairFitting: this.checkedItems.repairFitting,
-        businessSkillTraining: this.checkedItems.businessSkillTraining,
-        villageIndustry: this.checkedItems.villageIndustry,
-        forestMedicineTraining: this.checkedItems.forestMedicineTraining,
-        foodProcessingTraining: this.checkedItems.foodProcessingTraining,
-        seedBank: this.checkedItems.seedBank
-      };
-      result.push(section);
-    }
-    console.log(result);
+      item.showInputs = false;
+    });
+  
+
+    this.swavalambanItems.forEach((item)=>{
+     const checked = this.checkedItems[item.name];
+     swavalamban[item.name]={
+      men: checked.men || 0,
+      women: checked.women || 0,
+      others: checked.others || 0
+     }
+     item.showInputs = false;
+    })
+
+    this.socialItems.forEach((item)=>{
+      const checked = this.checkedItems[item.name];
+      samajik[item.name]={
+       men: checked.men || 0,
+       women: checked.women || 0,
+       others: checked.others || 0
+      }
+      item.showInputs = false;
+     })
+
+     shiksha[this.customShiksha.name] = {
+      men: this.customShiksha.men,
+      women: this.customShiksha.women,
+      others: this.customShiksha.others
+    };
+    
+    aayogya[this.customAayogya.name] = {
+      men: this.customAayogya.men,
+      women: this.customAayogya.women,
+      others: this.customAayogya.others
+    };
+    
+    swavalamban[this.customSawval.name] = {
+      men: this.customSawval.men,
+      women: this.customSawval.women,
+      others: this.customSawval.others
+    };
+    samajik[this.customSamajik.name] = {
+      men: this.customSamajik.men,
+      women: this.customSamajik.women,
+      others: this.customSamajik.others}
+  
+    console.log({ shiksha, aayogya,swavalamban,samajik });
+
     form.reset()
     this.showError = false;
     this.showList1 = false;
@@ -393,4 +321,5 @@ snackTimeOut() {
     console.log(this.loginerr);
   }, 4000);
 }
+
 }
