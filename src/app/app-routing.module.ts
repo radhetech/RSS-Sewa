@@ -64,9 +64,14 @@ const routes: Routes = [
     path: 'Profile',
     component: ProfileComponent,
     canActivate: [authguardGuard]
-  }, {
+  }, 
+  {
     path: '**',
     component: ErrorComponent,
+  },  
+  { path: '', 
+    redirectTo: '/SevaUpakrama', 
+    pathMatch: 'full' 
   }
 ];
 

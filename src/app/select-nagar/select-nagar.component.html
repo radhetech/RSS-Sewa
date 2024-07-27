@@ -1,0 +1,26 @@
+<div class="overlay">
+	<div class="popup">
+		<a class="close" (click)="OnCloseForm()">&times;</a>
+		<div class="content">
+			<section class="container">
+                <form action="#" class="form" #taskForm="ngForm">
+                  <h2>નગર પસંદ કરો</h2>
+                  <div class="input-box address">
+                      <div class="select-box">
+                        <select name="priority" [(ngModel)]="selectedNagar">
+                          <option value="nagar1">Nagar 1</option>
+                          <option value="nagar2">Nagar 2</option>
+                          <option value="nagar3">Nagar 3</option>
+                          <option value="nagar4">Nagar 4</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="column">
+                  <button type="button" (click)="OnFormSubmitted()">Add Nagar</button>
+                  <button type="button" (click)="OnCloseForm()">Cancel</button>
+                </div>
+                </form>
+              </section>
+		</div>
+	</div>
+</div>

@@ -21,6 +21,7 @@ import { ErrorComponent } from './error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { SelectNagarComponent } from './select-nagar/select-nagar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     SevaDarshanComponent,
     ErrorComponent,
     ProfileComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    SelectNagarComponent
   ],
   imports: [
     BrowserModule,

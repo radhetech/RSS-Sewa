@@ -190,16 +190,17 @@ export class SevaKaryaComponent {
     seedBank: { men: '', women: '', others: '' }
 
   };
-  toggleList(category: number) {
-    this.activeCategory = category;
+  toggleList(category: any) {
+    this.activeCategory = this.activeCategory === category ? null : category;
   }
-  toggleSubList(item: any) {
+  toggleSubList(item: any, itemList: any[]) {
+    itemList.forEach(i => i.showInputs = false);
     item.showInputs = !item.showInputs;
   }
   isFilled(item: any): boolean {
     return (this.checkedItems[item.name]?.men || 
             this.checkedItems[item.name]?.women || 
-            this.checkedItems[item.name]?.others) != null;
+            this.checkedItems[item.name]?.others);
   }
   isOthersFilled(category: string): any {
     if (category === 'shiksha') return this.othersShiksha.men || this.othersShiksha.women || this.othersShiksha.others;

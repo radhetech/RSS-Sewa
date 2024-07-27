@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SelectNagarService } from '../services/selectNagar.service';
 
 @Component({
   selector: 'app-seva-upakrama',
@@ -22,6 +23,12 @@ export class SevaUpakramaComponent {
   showOthersSawval: boolean = false;
   showOthersSamajik:Boolean= false;
   activeCategory: number = 0;
+  selectedNagar: string | undefined;
+  ShowNagar: boolean = true;
+
+
+  constructor(private sharedService: SelectNagarService) {}
+
 
 
   educationItems = [
@@ -112,19 +119,31 @@ export class SevaUpakramaComponent {
     blanketSweaterDelivery: { men: '', women: '', others: '' },
     foodDonation: { men: '', women: '', others: '' }
   };
-  
-  toggleList(category: number) {
-    this.activeCategory = category;
+
+
+  ngOnInit() {
+    this.sharedService.currentNagar.subscribe(nagar => {
+      this.selectedNagar = nagar;
+      this.ShowNagar = !this.selectedNagar;
+      console.log('Selected nagar in another component:', this.selectedNagar);
+   
+    });
   }
 
-  toggleSubList(item: any) {
+  openSelectNagar() {
+    this.ShowNagar = true;
+  }
+  toggleList(category: any) {
+    this.activeCategory = this.activeCategory === category ? null : category;
+  }
+  toggleSubList(item: any, itemList: any[]) {
+    itemList.forEach(i => i.showInputs = false);
     item.showInputs = !item.showInputs;
   }
-  isFilled(item: any): boolean {
+  isFilled(item: any) {
     return (this.checkedItems[item.name]?.men || 
             this.checkedItems[item.name]?.women || 
-            this.checkedItems[item.name]?.others) != null;
-  }
+            this.checkedItems[item.name]?.others)  }
   isOthersFilled(category: string): any {
     if (category === 'shiksha') return this.othersShiksha.men || this.othersShiksha.women || this.othersShiksha.others;
     if (category === 'aayogya') return this.othersAayogya.men || this.othersAayogya.women || this.othersAayogya.others;
