@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './select-nagar.component.scss'
 })
 export class SelectNagarComponent {
-  selectedNagar: string ='nagar1';
+  selectedNagar: string ='Nagar1';
 
   sharedService=inject(SelectNagarService)
   router=inject(Router)
