@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   isLoginMode: boolean = true;
   loginerr: string | null = null;
   snackbarColour: string | null = null;
-  loginUrl:string='http://localhost:3000/users';
+  loginUrl:string='http://localhost:4000/users';
 
   ngOnInit() {
     this.activeRouter.queryParamMap.subscribe((a) => {
