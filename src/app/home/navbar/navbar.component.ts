@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, inject } from '@angular/core';
-import { LoginService } from '../../services/login.service';
+import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   menuValue: boolean = false;
   menu_icon: string = 'bi bi-list';
-  loginService = inject(LoginService);
+  AuthenticationService = inject(AuthenticationService);
   _router = inject(Router);
   loginerr: string | null = null;
   selecteduser: boolean = false;
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.selecteduser = this.loginService.isUserLogin;
+    this.selecteduser = this.AuthenticationService.isUserLogin;
   }
   openMenu() {
     this.menuValue = !this.menuValue;
@@ -63,7 +63,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.loginService.userLogout();
+    this.AuthenticationService.userLogout();
     this.loginerr = 'You have been successfully logged Out!!';
     this.snackTimeOut();
   }

@@ -2,8 +2,8 @@
   <!-- <h1>Our Services</h1> -->
 </div>
 <div class="home-page-services">
-  <div class="home-page-service-card" *ngFor="let service of services" appHighLight
-    (click)="navigateToService(service.title)">
+  <div class="home-page-service-card" *ngFor="let service of services"
+    (click)="navigateToService(service.enTitle)">
     <img [src]="service.image">
     <h3>{{ service.title }}</h3>
     <p>{{ service.description }}</p>

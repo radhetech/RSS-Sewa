@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class AuthenticationService {
   data: credentials[] = [
     {
       Name: 'Dainik',
@@ -29,55 +29,24 @@ export class LoginService {
     },
   ];
   isUserLogin: boolean = false;
+  loggedInUserData:any;
   _router = inject(Router);
 
   constructor() {
-    const loggedInUser = localStorage.getItem('loggedInUser');
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
     if (loggedInUser) {
       this.isUserLogin = true;
     }
   }
 
-  userLogin(username: string, password: string) {
-    const loginUser = this.data.find(
-      (a) => a.userid == username && a.password == password
-    );
-    console.log(loginUser);
-    if (loginUser === undefined) {
-      this.isUserLogin = false;
-    } else {
-      localStorage.setItem('loggedInUser', JSON.stringify(loginUser));
-      this.isUserLogin = true;
-    }
-    return loginUser;
-  }
   userLogout() {
     localStorage.removeItem('loggedInUser');
     this.isUserLogin = false;
     this._router.navigate(['login']);
   }
 
-  isuserLoginorNot() {
-    return this.isUserLogin;
-  }
-
-  //   private loginObserveable = new BehaviorSubject(null);
-  //   isLoggedIn = this.loginObserveable.asObservable();
-  //   isLoggedIns:boolean=false;
-
-  // setLoginData(data: any) {
-  //   localStorage.setItem('userData', data);
-  // }
-
-  // getLoginData() {
-  //   return JSON.parse(localStorage.getItem('userData') as any);
-  // }
-
   clearLoginData() {
     localStorage.removeItem('userData');
   }
 
-  // setLoginStatus(isLoggedIn: any) {
-  //   this.loginObserveable.next(isLoggedIn)
-  // }
 }

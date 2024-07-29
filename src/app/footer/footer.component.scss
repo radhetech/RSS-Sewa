@@ -1,4 +1,26 @@
 
+footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+footer {
+    position: fixed;
+    bottom: -30px;
+    width: 100%;
+    background: #e98a2b;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    /* Set a high z-index value */
+  }
+/*uncomment this code if social media link is active in future*/
+/*
 .social-icon {
     display: flex;
     justify-content: center;
@@ -23,10 +45,4 @@
 .social-icon__link:hover {
     transform: translateY(-10px);
 }
-
-.footer p {
-    color: #fff;
-    margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
-}
+*/

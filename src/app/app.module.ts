@@ -9,10 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './home/banner/banner.component';
-import { ServiceComponent } from './home/service/service.component';
-import { HighLightDirective } from './home/service/custom-directive/high-light.directive';
 import { NavbarComponent } from './home/navbar/navbar.component';
-import { SakhaVrttaComponent } from './sakha-vrtta/sakha-vrtta.component';
+import { SakhaVrutComponent } from './sakha-vrut/sakha-vrut.component';
 import { SevaUpakramaComponent } from './seva-upakrama/seva-upakrama.component';
 import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
 import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
@@ -21,6 +19,9 @@ import { ErrorComponent } from './error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ApiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,9 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     SnackbarComponent,
     FooterComponent,
     BannerComponent,
-    ServiceComponent,
-    HighLightDirective,
+    DashboardComponent,
     NavbarComponent,
-    SakhaVrttaComponent,
+    SakhaVrutComponent,
     SevaUpakramaComponent,
     SevaKaryaComponent,
     UtsavaVrttaComponent,
@@ -47,10 +47,12 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

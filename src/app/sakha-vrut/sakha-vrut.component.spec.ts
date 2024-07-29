@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SakhaVrttaComponent } from './sakha-vrtta.component';
+import { SakhaVrutComponent } from './sakha-vrut.component';
 
 describe('SakhaVrttaComponent', () => {
-  let component: SakhaVrttaComponent;
-  let fixture: ComponentFixture<SakhaVrttaComponent>;
+  let component: SakhaVrutComponent;
+  let fixture: ComponentFixture<SakhaVrutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SakhaVrttaComponent]
+      declarations: [SakhaVrutComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SakhaVrttaComponent);
+    fixture = TestBed.createComponent(SakhaVrutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

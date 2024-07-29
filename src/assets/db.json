@@ -1,0 +1,41 @@
+{
+    "posts": [
+      { "id": "1", "title": "a title", "views": 100 },
+      { "id": "2", "title": "another title", "views": 200 }
+    ],
+    "comments": [
+      { "id": "1", "text": "a comment about post 1", "postId": "1" },
+      { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    ],
+    "profile": {
+      "name": "typicode"
+    },
+    "users":[
+        {
+        "Name":"Munesh",
+        "userid":"Munesh",
+        "role":"admin",
+        "messages":[],
+        "passwordExp":"",
+        "jwt":"",
+        "prant":"Gujarat",
+        "vibhag":"Gandhinagar",
+        "jilla":"Gandhinagar",
+        "taluka":"Kalol",
+        "shakha":"kalol-1"
+        },
+        {
+            "Name":"Dainik",
+            "userid":"dainik",
+            "role":"guest",
+            "messages":[],
+            "passwordExp":"",
+            "jwt":"token-2",
+            "prant":"Gujarat",
+            "vibhag":"Mehsana",
+            "jilla":"Visnagar",
+            "taluka":"kheralu",
+            "shakha":"kheralu-1"
+            }
+    ]
+  } 
