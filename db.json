@@ -1,19 +1,124 @@
 {
   "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
   ],
   "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
   ],
   "profile": {
     "name": "typicode"
-  }
-}
+  },
+  "vibhagList":{
+    "vibhag": [
+      {
+        "name": "vibhag-1",
+        "id": 1,
+        "jilla": [
+          {
+            "name": "jilla-1",
+            "id": "100",
+            "taluka": [
+              {
+                "name": "taluka-1",
+                "id": 1000,
+                "sevaVasti": [
+                  {
+                    "name": "sevaVasti-1",
+                    "id": 10000,
+                    "shakha": [
+                      {
+                        "shakhaName": "shakha1",
+                        "id": "A"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "jilla-2",
+            "id": "200",
+            "taluka": [
+              {
+                "name": "taluka-1",
+                "id": 1000,
+                "sevaVasti": [
+                  {
+                    "name": "sevaVasti-1",
+                    "id": 10000,
+                    "shakha": [
+                      {
+                        "shakhaName": "shakha1",
+                        "id": "A"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Karnavati-purv",
+        "id": 2,
+        "jilla": [
+          {
+            "name": "Sabarmati-1",
+            "id": "200",
+            "taluka": [
+              {
+                "name": "nagar-1",
+                "id": 2000,
+                "sevaVasti": [
+                  {
+                    "name": "naroda-1",
+                    "id": 20000,
+                    "shakha": [
+                      {
+                        "shakhaName": "nagar-shakha",
+                        "id": "B"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "users":[
+      {
+      "Name":"Munesh",
+      "userid":"Munesh",
+      "role":"admin",
+      "messages":[],
+      "passwordExp":"",
+      "jwt":"",
+      "prant":"Gujarat",
+      "vibhag":"Gandhinagar",
+      "jilla":"Gandhinagar",
+      "taluka":"Kalol",
+      "shakha":"kalol-1"
+      },
+      {
+          "Name":"Dainik",
+          "userid":"dainik",
+          "role":"guest",
+          "messages":[],
+          "passwordExp":"",
+          "jwt":"token-2",
+          "prant":"Gujarat",
+          "vibhag":"Mehsana",
+          "jilla":"Visnagar",
+          "taluka":"kheralu",
+          "shakha":"kheralu-1"
+          }
+  ]
+
+} 
