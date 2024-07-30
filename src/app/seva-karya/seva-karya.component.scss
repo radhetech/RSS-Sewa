@@ -28,7 +28,7 @@
   .list-container ul li {
     cursor: pointer;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     transition: background-color 0.3s, color 0.3s;
   }
   ul li input{
@@ -77,6 +77,17 @@
     border-color: #007bff;
     outline: none;
   }
+  .libtn{
+    height: 40px;
+    width: 95%;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+  }
   .submit-btn {
     height: 55px;
     width: 100%;
@@ -92,12 +103,25 @@
   .submit-btn:hover {
     background: #9b4f04;
   }
-  .has-error{
-  border: 2px solid red !important;
-}
+  .input-group{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .input-group input{
+    padding: 5px;
+    width: 30%;
+    border-radius: 10px;
+  }
+  .green {
+    background-color: rgb(133, 223, 133);
+  }
   
   @media screen and (max-width: 768px) {
     .list-container {
       width: 90%;
     }
   }
+
