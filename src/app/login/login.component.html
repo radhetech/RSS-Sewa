@@ -4,11 +4,11 @@
   <form #loginForm="ngForm" (ngSubmit)="onFormSubmitted(loginForm)">
     <div class="form-input">
       <label>ઈ-મેલ એડ્રેસ</label>
-      <input type="email" placeholder="ઈ-મેલ એડ્રેસ" name="email" ngModel required>
+      <input type="email" placeholder="ઈ-મેલ એડ્રેસ" id="email" name="email" ngModel required>
     </div>
     <div class="form-input">
       <label>પાસવર્ડ</label><br>
-      <input type="password" placeholder="પાસવર્ડ" name="password" ngModel required>
+      <input type="password" placeholder="પાસવર્ડ" id="password" name="password" ngModel required>
     </div>
     <button type="submit" class="app-login-btn pointer" [disabled]="loginForm.invalid">લૉગ ઇન</button>
     <p class="app-toggle pointer">

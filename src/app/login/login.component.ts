@@ -37,9 +37,16 @@ export class LoginComponent implements OnInit {
     this._router.navigate(['home']);
     this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
     this.snackTimeOut();
+    this.apiService.postData(this.loginUrl,res.value).subscribe({next:(res)=>{
+      console.log('Success:', res)
+      //sessionStorage.setItem('loggedInUser',res)
+    },
+    error: (error) => {
+      console.error('Error:', error)}
+    })
    
     // this code is for api. uncomment once we have backend
-    // this.apiService.postData(this.loginUrl,res.value).subscribe({next:(res)=>{
+    //this.apiService.postData(this.loginUrl,res.value).subscribe({next:(res)=>{
     //   this.snackbarColour = 'success';
     //   this._router.navigate(['home']);
     //   this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
@@ -49,8 +56,8 @@ export class LoginComponent implements OnInit {
     //   this.snackbarColour = 'error';
     //   this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
     //   this.snackTimeOut();
-    // }) })
-  }
+    // })  })
+     }
   snackTimeOut() {
     setTimeout(() => {
       this.loginerr = null;
