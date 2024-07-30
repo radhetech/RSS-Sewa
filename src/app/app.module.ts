@@ -22,6 +22,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectNagarComponent } from './select-nagar/select-nagar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     SevaDarshanComponent,
     ErrorComponent,
     ProfileComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    SelectNagarComponent
   ],
   imports: [
     BrowserModule,

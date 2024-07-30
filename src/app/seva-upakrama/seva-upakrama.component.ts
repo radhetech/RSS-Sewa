@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { SelectNagarService } from '../services/selectNagar.service';
 
 @Component({
   selector: 'app-seva-upakrama',
@@ -11,207 +11,242 @@ export class SevaUpakramaComponent {
   selectedButton2 = false;
   selectedButton3 = false;
   selectedButton4 = false;
-  showList1 = false;
-  showList2 = false;
-  showList3 = false;
-  showList4 = false;
+  showList1:boolean = false;
+  showList2:boolean = false;
+  showList3:boolean = false;
+  showList4:boolean = false;
   showError: boolean = false;
   snackbarColour: string | null = null;
   loginerr: string | null = null;
+  showOthersShiksha: boolean = false;
+  showOthersAayogya: boolean = false;
+  showOthersSawval: boolean = false;
+  showOthersSamajik:Boolean= false;
+  activeCategory: number = 0;
+  selectedNagar: string | undefined;
+  ShowNagar: boolean = true;
+
+
+  constructor(private sharedService: SelectNagarService) {}
+
+
+
+  educationItems = [
+    { label: 'શૈક્ષણિક સામગ્રીનું વિતરણ', name: 'educationMaterialDistribution', showInputs: false, men: null, women: null, others: null },
+    { label: 'પરીક્ષા માર્ગદર્શન શિબિર', name: 'examGuidanceCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'ફી સહાય', name: 'feeAssistance', showInputs: false, men: null, women: null, others: null },
+    { label: 'વ્યક્તિત્વ વિકાસ શિબિર', name: 'personalityDevelopmentCamp', showInputs: false, men: null, women: null, others: null }
+  ];
+
+  healthItems = [
+    { label: 'રક્તદાન શિબિર', name: 'bloodDonationCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'આરોગ્ય શિબિર', name: 'healthCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'આંખ તપાસ કેમ્પ', name: 'eyeCheckupCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'યોગ શિબિર', name: 'yogaCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'દિવ્યાંગ શિબિર/સાધન વિતરણ', name: 'divyangCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'રક્તદાતા જૂથ યાદી', name: 'bloodDonorList', showInputs: false, men: null, women: null, others: null },
+    { label: 'પ્રાથમિક સહાય તાલીમ', name: 'firstAidTraining', showInputs: false, men: null, women: null, others: null },
+    { label: 'સોંપણી(કાઉન્સેલિંગ)', name: 'counseling', showInputs: false, men: null, women: null, others: null },
+    { label: 'વ્યસન મુક્તિ શિબિર', name: 'deAddictionCamp', showInputs: false, men: null, women: null, others: null }
+  ];
+  selfRelianceItems = [
+    { label: 'વ્યવસાય તાલીમ શિબિર', name: 'professionalTrainingCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'પંચગવ્ય નિર્માણ શિબિર', name: 'panchgavyaTrainingCamp', showInputs: false, men: null, women: null, others: null },
+    { label: 'રાખડી બનાવવી', name: 'rakdiMaking', showInputs: false, men: null, women: null, others: null },
+    { label: 'ઇલેક્ટ્રિક માળા બનાવવી', name: 'electricMalaConstruction', showInputs: false, men: null, women: null, others: null },
+    { label: 'સુશોભન સામગ્રીનું ઉત્પાદન', name: 'decorativeMaterialProduction', showInputs: false, men: null, women: null, others: null },
+    { label: 'દિવાળીના દીવા બનાવવા', name: 'diwaliLampMaking', showInputs: false, men: null, women: null, others: null },
+    { label: 'મીઠાઈઓ અને નાસ્તાનું ઉત્પાદન', name: 'sweetsAndSnacksProduction', showInputs: false, men: null, women: null, others: null },
+    { label: 'કારભારી તાલીમ', name: 'managerialTraining', showInputs: false, men: null, women: null, others: null },
+    { label: 'કાર્બનિક ખાતર ઉત્પાદન તાલીમ', name: 'organicFertilizerTraining', showInputs: false, men: null, women: null, others: null }
+  ];
+  socialItems = [
+    { label: 'કન્યા પૂજા', name: 'girlWorship', showInputs: false, men: null, women: null, others: null },
+    { label: 'સમૂહ લગ્ન', name: 'massMarriage', showInputs: false, men: null, women: null, others: null },
+    { label: 'મંદિરની સ્વચ્છતા', name: 'templeCleanliness', showInputs: false, men: null, women: null, others: null },
+    { label: 'જાહેર સ્વચ્છતા', name: 'publicCleanliness', showInputs: false, men: null, women: null, others: null },
+    { label: 'જળ સંરક્ષણ તળાવનું બાંધકામ', name: 'waterConservationPondConstruction', showInputs: false, men: null, women: null, others: null },
+    { label: 'રોડ બાંધકામ', name: 'roadConstruction', showInputs: false, men: null, women: null, others: null },
+    { label: 'સામૂહિક ઉજવણી', name: 'communityCelebration', showInputs: false, men: null, women: null, others: null },
+    { label: 'રોપા વિતરણ/વૃક્ષ રોપણી', name: 'treePlantation', showInputs: false, men: null, women: null, others: null },
+    { label: 'રમતગમત સ્પર્ધા', name: 'sportsCompetition', showInputs: false, men: null, women: null, others: null },
+    { label: 'બ્લેન્કેટ સ્વેટર વગેરેની ડિલિવરી', name: 'blanketSweaterDelivery', showInputs: false, men: null, women: null, others: null },
+    { label: 'ખોરાક દાન/નાસ્તો વગેરેનું વિતરણ.', name: 'foodDonation', showInputs: false, men: null, women: null, others: null }
+  ];
+
+  customShiksha:any = [];
+  customAayogya:any = [];
+  customSawval:any = [];
+  customSamajik:any = [];
+
+  othersShiksha = { name: '', men: '', women: '', others: '' };
+  othersAayogya ={ name: '', men: '', women: '', others: '' };
+  othersSawval = { name: '', men: '', women: '', others: '' };
+  othersSamajik = { name: '', men: '', women: '', others: '' };  
+      
   checkedItems: any = {
-    educationMaterialDistribution: null,
-    examGuidanceCamp: null,
-    feeAssistance: null,
-    personalityDevelopmentCamp: null,
-    bloodDonationCamp: null,
-    healthCamp: null,
-    eyeCheckupCamp: null,
-    yogaCamp: null,
-    divyangCamp: null,
-    bloodDonorList: null,
-    firstAidTraining: null,
-    counseling: null,
-    deAddictionCamp: null,
-    professionalTrainingCamp: null,
-    panchgavyaTrainingCamp: null,
-    rakdiMaking: null,
-    electricMalaConstruction: null,
-    decorativeMaterialProduction: null,
-    diwaliLampMaking: null,
-    sweetsAndSnacksProduction: null,
-    managerialTraining: null,
-    organicFertilizerTraining: null,
-    girlWorship: null,
-    massMarriage: null,
-    templeCleanliness: null,
-    publicCleanliness: null,
-    waterConservationPondConstruction: null,
-    roadConstruction: null,
-    communityCelebration: null,
-    treePlantation: null,
-    sportsCompetition: null,
-    blanketSweaterDelivery: null,
-    foodDonation: null
+    educationMaterialDistribution: { men: '', women: '', others: '' },
+    examGuidanceCamp: { men: '', women: '', others: '' },
+    feeAssistance: { men: '', women: '', others: '' },
+    personalityDevelopmentCamp: { men: '', women: '', others: '' },
+    bloodDonationCamp: { men: '', women: '', others: '' },
+    healthCamp: { men: '', women: '', others: '' },
+    eyeCheckupCamp: { men: '', women: '', others: '' },
+    yogaCamp: { men: '', women: '', others: '' },
+    divyangCamp: { men: '', women: '', others: '' },
+    bloodDonorList: { men: '', women: '', others: '' },
+    firstAidTraining: { men: '', women: '', others: '' },
+    counseling: { men: '', women: '', others: '' },
+    deAddictionCamp: { men: '', women: '', others: '' },
+    professionalTrainingCamp: { men: '', women: '', others: '' },
+    panchgavyaTrainingCamp: { men: '', women: '', others: '' },
+    rakdiMaking: { men: '', women: '', others: '' },
+    electricMalaConstruction: { men: '', women: '', others: '' },
+    decorativeMaterialProduction: { men: '', women: '', others: '' },
+    diwaliLampMaking: { men: '', women: '', others: '' },
+    sweetsAndSnacksProduction: { men: '', women: '', others: '' },
+    managerialTraining: { men: '', women: '', others: '' },
+    organicFertilizerTraining: { men: '', women: '', others: '' },
+    girlWorship: { men: '', women: '', others: '' },
+    massMarriage: { men: '', women: '', others: '' },
+    templeCleanliness: { men: '', women: '', others: '' },
+    publicCleanliness: { men: '', women: '', others: '' },
+    waterConservationPondConstruction: { men: '', women: '', others: '' },
+    roadConstruction: { men: '', women: '', others: '' },
+    communityCelebration: { men: '', women: '', others: '' },
+    treePlantation: { men: '', women: '', others: '' },
+    sportsCompetition: { men: '', women: '', others: '' },
+    blanketSweaterDelivery: { men: '', women: '', others: '' },
+    foodDonation: { men: '', women: '', others: '' }
   };
 
-  toggleList(listNumber: number) {
-    switch (listNumber) {
-      case 1:
-        this.showList1 = !this.showList1;
-        break;
-      case 2:
-        this.showList2 = !this.showList2;
-        break;
-      case 3:
-        this.showList3 = !this.showList3;
-        break;
-      case 4:
-        this.showList4 = !this.showList4;
-        break;
-    }
-  }   
-  selectMainOption(option: number) {
-    switch (option) {
-      case 1:
-        this.selectedButton1 = !this.selectedButton1;
-        this.toggleList(1);
-        break;
-      case 2:
-        this.selectedButton2 = !this.selectedButton2;
-        this.toggleList(2);
-        break;
-      case 3:
-        this.selectedButton3 = !this.selectedButton3;
-        this.toggleList(3);
-        break;
-      case 4:
-        this.selectedButton4 = !this.selectedButton4;
-        this.toggleList(4);
-        break;
-    }
-  }
-  selectSanskarOption(option: string) {
-    this.checkedItems[option] = this.checkedItems[option] === null ? 0 : null;
+
+  ngOnInit() {
+    this.sharedService.currentNagar.subscribe(nagar => {
+      this.selectedNagar = nagar;
+      this.ShowNagar = !this.selectedNagar;
+      console.log('Selected nagar in another component:', this.selectedNagar);
+   
+    });
   }
 
-  isFormValid() {
-    let isValid = false;
-  
-    if (this.selectedButton1) {
-      isValid =
-        this.checkedItems.educationMaterialDistribution !== null &&
-        this.checkedItems.examGuidanceCamp !== null &&
-        this.checkedItems.feeAssistance !== null &&
-        this.checkedItems.personalityDevelopmentCamp !== null;
-    } else if (this.selectedButton2) {
-      isValid =
-        this.checkedItems.bloodDonationCamp !== null &&
-        this.checkedItems.healthCamp !== null &&
-        this.checkedItems.eyeCheckupCamp !== null &&
-        this.checkedItems.yogaCamp !== null &&
-        this.checkedItems.divyangCamp !== null &&
-        this.checkedItems.bloodDonorList !== null &&
-        this.checkedItems.firstAidTraining !== null &&
-        this.checkedItems.counseling !== null &&
-        this.checkedItems.deAddictionCamp !== null;
-    } else if (this.selectedButton3) {
-      isValid =
-        this.checkedItems.professionalTrainingCamp !== null &&
-        this.checkedItems.panchgavyaTrainingCamp !== null &&
-        this.checkedItems.rakdiMaking !== null &&
-        this.checkedItems.electricMalaConstruction !== null &&
-        this.checkedItems.decorativeMaterialProduction !== null &&
-        this.checkedItems.diwaliLampMaking !== null &&
-        this.checkedItems.sweetsAndSnacksProduction !== null &&
-        this.checkedItems.managerialTraining !== null &&
-        this.checkedItems.organicFertilizerTraining !== null;
-    } else if (this.selectedButton4) {
-      isValid =
-        this.checkedItems.girlWorship !== null &&
-        this.checkedItems.massMarriage !== null &&
-        this.checkedItems.templeCleanliness !== null &&
-        this.checkedItems.publicCleanliness !== null &&
-        this.checkedItems.waterConservationPondConstruction !== null &&
-        this.checkedItems.roadConstruction !== null &&
-        this.checkedItems.communityCelebration !== null &&
-        this.checkedItems.treePlantation !== null &&
-        this.checkedItems.sportsCompetition !== null &&
-        this.checkedItems.blanketSweaterDelivery !== null &&
-        this.checkedItems.foodDonation !== null;
-    }
-
-    return isValid;
+  openSelectNagar() {
+    this.ShowNagar = true;
   }
-    
+  toggleList(category: any) {
+    this.activeCategory = this.activeCategory === category ? null : category;
+  }
+  toggleSubList(item: any, itemList: any[]) {
+    itemList.forEach(i => i.showInputs = false);
+    item.showInputs = !item.showInputs;
+  }
+  isFilled(item: any) {
+    return (this.checkedItems[item.name]?.men || 
+            this.checkedItems[item.name]?.women || 
+            this.checkedItems[item.name]?.others)  }
+  isOthersFilled(category: string): any {
+    if (category === 'shiksha') return this.othersShiksha.men || this.othersShiksha.women || this.othersShiksha.others;
+    if (category === 'aayogya') return this.othersAayogya.men || this.othersAayogya.women || this.othersAayogya.others;
+    if (category === 'sawval') return this.othersSawval.men || this.othersSawval.women || this.othersSawval.others;
+    if (category === 'samajik') return this.othersSamajik.men || this.othersSamajik.women || this.othersSamajik.others;
+    return false;
+  }
+
+  toggleOthersSubList(type: string) {
+    if (type === 'shiksha') {
+      this.showOthersShiksha = !this.showOthersShiksha;
+    } else if (type === 'aayogya') {
+      this.showOthersAayogya = !this.showOthersAayogya;
+    } else if (type === 'sawval') {
+      this.showOthersSawval = !this.showOthersSawval;
+    } else if (type === 'samajik') {
+      this.showOthersSamajik = !this.showOthersSamajik;
+    }
+  }
+  addCustomSubLabel(type: string) {
+    if (type === 'shiksha') {
+      this.customShiksha.push({ name: '', men: '', women: '', others: '' });
+    } else if (type === 'aayogya') {
+      this.customAayogya.push({ name: '', men: '', women: '', others: '' });
+    }else if (type === 'sawval') {
+      this.customSawval.push({ name: '', men: '', women: '', others: '' });
+    }else if (type === 'samajik') {
+      this.customSawval.push({ name: '', men: '', women: '', others: '' });
+    }
+  }
+
+
   onSubmit(form: any) {
-    if (!this.isFormValid()) {
-      this.showError = true;
-      this.loginerr = "Please fill all the mandatory fields.";
-      this.snackbarColour = 'error';
-      this.snackTimeOut();
-      return;
-    }
-    this.showError = false;
-    let result = [];
-    if (this.selectedButton1) {
-      let section = {
-        selectedsection: 'shiksan',
-        educationMaterialDistribution: this.checkedItems.educationMaterialDistribution,
-        examGuidanceCamp: this.checkedItems.examGuidanceCamp,
-        feeAssistance: this.checkedItems.feeAssistance,
-        personalityDevelopmentCamp: this.checkedItems.personalityDevelopmentCamp
-      };
-      result.push(section);
-    }
+     const shiksha: any = {};
+    const aayogya: any = {};
+    const swavalamban:any={};
+    const samajik:any={};
 
-    if (this.selectedButton2) {
-      let section = {
-        bloodDonationCamp: this.checkedItems.bloodDonationCamp,
-        healthCamp: this.checkedItems.healthCamp,
-        eyeCheckupCamp: this.checkedItems.eyeCheckupCamp,
-        yogaCamp: this.checkedItems.yogaCamp,
-        divyangCamp: this.checkedItems.divyangCamp,
-        bloodDonorList: this.checkedItems.bloodDonorList,
-        firstAidTraining: this.checkedItems.firstAidTraining,
-        counseling: this.checkedItems.counseling,
-        deAddictionCamp: this.checkedItems.deAddictionCamp
+    this.educationItems.forEach(item => {
+      const checked = this.checkedItems[item.name];
+      shiksha[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0
       };
-      result.push(section);
-    }
+      item.showInputs = false;
+    });
+  
 
-    if (this.selectedButton3) {
-      let section = {
-        selectedsection: 'atmanirbharta',
-        professionalTrainingCamp: this.checkedItems.professionalTrainingCamp,
-        panchgavyaTrainingCamp: this.checkedItems.panchgavyaTrainingCamp,
-        rakdiMaking: this.checkedItems.rakdiMaking,
-        electricMalaConstruction: this.checkedItems.electricMalaConstruction,
-        decorativeMaterialProduction: this.checkedItems.decorativeMaterialProduction,
-        diwaliLampMaking: this.checkedItems.diwaliLampMaking,
-        sweetsAndSnacksProduction: this.checkedItems.sweetsAndSnacksProduction,
-        managerialTraining: this.checkedItems.managerialTraining,
-        organicFertilizerTraining: this.checkedItems.organicFertilizerTraining
+    this.healthItems.forEach(item => {
+      const checked = this.checkedItems[item.name];
+      aayogya[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0
       };
-      result.push(section);
-    }
-    if (this.selectedButton4) {
-      let section = {
-        selectedsection: 'samajik',
-        girlWorship: this.checkedItems.girlWorship,
-        massMarriage: this.checkedItems.massMarriage,
-        templeCleanliness: this.checkedItems.templeCleanliness,
-        publicCleanliness: this.checkedItems.publicCleanliness,
-        waterConservationPondConstruction: this.checkedItems.waterConservationPondConstruction,
-        roadConstruction: this.checkedItems.roadConstruction,
-        communityCelebration: this.checkedItems.communityCelebration,
-        treePlantation: this.checkedItems.treePlantation,
-        sportsCompetition: this.checkedItems.sportsCompetition,
-        blanketSweaterDelivery: this.checkedItems.blanketSweaterDelivery,
-        foodDonation: this.checkedItems.foodDonation,
-      };
-      result.push(section);
-    }
-    console.log(result);
+      item.showInputs = false;
+    });
+  
+
+    this.selfRelianceItems.forEach((item)=>{
+     const checked = this.checkedItems[item.name];
+     swavalamban[item.name]={
+      men: checked.men || 0,
+      women: checked.women || 0,
+      others: checked.others || 0
+     }
+     item.showInputs = false;
+    })
+
+    this.socialItems.forEach((item)=>{
+      const checked = this.checkedItems[item.name];
+      samajik[item.name]={
+       men: checked.men || 0,
+       women: checked.women || 0,
+       others: checked.others || 0
+      }
+      item.showInputs = false;
+     })
+
+     shiksha[this.customShiksha.name] = {
+      men: this.customShiksha.men,
+      women: this.customShiksha.women,
+      others: this.customShiksha.others
+    };
+    
+    aayogya[this.customAayogya.name] = {
+      men: this.customAayogya.men,
+      women: this.customAayogya.women,
+      others: this.customAayogya.others
+    };
+    
+    swavalamban[this.customSawval.name] = {
+      men: this.customSawval.men,
+      women: this.customSawval.women,
+      others: this.customSawval.others
+    };
+    samajik[this.customSamajik.name] = {
+      men: this.customSamajik.men,
+      women: this.customSamajik.women,
+      others: this.customSamajik.others}
+  
+    console.log({ shiksha, aayogya,swavalamban,samajik });
     form.reset()
     this.showError = false;
     this.showList1 = false;

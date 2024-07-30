@@ -68,6 +68,10 @@ const routes: Routes = [
   {
     path: '**',
     component: ErrorComponent,
+  },  
+  { path: '', 
+    redirectTo: '/SevaUpakrama', 
+    pathMatch: 'full' 
   }
 ];
 
