@@ -38,7 +38,7 @@ const routes: Routes = [
   {
     path: 'SevaUpakrama',
     component: SevaUpakramaComponent,
-    canActivate: [authguardGuard]
+    // canActivate: [authguardGuard]
   },
   {
     path: 'SevaKarya',

@@ -8,10 +8,10 @@ import { BehaviorSubject } from "rxjs";
 export class SelectNagarService{
 
 
- private selectedNagarSource = new BehaviorSubject<string>('');
+ private selectedNagarSource = new BehaviorSubject<any>('');
   currentNagar = this.selectedNagarSource.asObservable();
 
-  changeNagar(nagar: string) {
+  changeNagar(nagar: any) {
     this.selectedNagarSource.next(nagar);
   }
 }

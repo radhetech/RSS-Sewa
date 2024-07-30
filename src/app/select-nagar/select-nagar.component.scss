@@ -1,4 +1,3 @@
-/* Overlay styling */
 .overlay {
   position: fixed;
   top: 0;
@@ -45,41 +44,94 @@
   flex-direction: column;
   align-items: center;
 }
-
-/* Form styling */
-.form {
-  width: 100%;
-}
-
-/* Input box styling */
-.input-box {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-/* Column styling */
-.column {
-  display: flex; 
+.btn-row{
+  display: flex;
   flex-direction: row;
 }
 
-/* Select box styling */
-.select-box {
+.list-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.submit-btn {
+  height: 45px;
   width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #e98a2b;
+}
+
+.submit-btn:hover {
+  background: #9b4f04;
+}
+
+.submit-btn.disabled {
+  background-color: #9b4f04; 
+  cursor: not-allowed;
+}
+
+.list-container h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #e98a2b;
+  text-shadow: 2px 2px 3px #f1c08f;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 
 select {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-option{
-  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Button styling */
+input {
+  width: 70%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addbtn {
+  width: 25%;
+  padding: 6px;
+}
 button {
   background-color: #e98a2b;
   color: white;
@@ -96,28 +148,37 @@ button:hover {
   background-color: #9b4f04;
 }
 
-/* Responsive styling */
 @media (max-width: 600px) {
-  .popup {
-    width: 95%;
+  .list-container {
+    width: 100%;
+    padding: 10px;
   }
 
-  .form {
-    width: 100%;
+  .form-row {
+    flex-direction: column;
   }
 
-  .input-box {
+  .form-group {
     width: 100%;
+    margin-right: 0;
   }
 
-  .select-box {
-    width: 100%;
-  }
-  select{
-    width: 100%;
+  input {
+    width: 75%;
   }
 
-  button {
-    width: 100%;
+  .addbtn {
+    width: 25%;
+    margin-top: 10px;
+  }
+
+  select {
+    font-size: 14px; /* Adjust font size for select box */
+    padding: 10px;   /* Adjust padding for select box */
+  }
+
+  option {
+    font-size: 14px; /* Adjust font size for options */
+    padding: 8px;    /* Adjust padding for options */
   }
 }

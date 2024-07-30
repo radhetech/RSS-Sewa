@@ -23,7 +23,7 @@ export class SevaUpakramaComponent {
   showOthersSawval: boolean = false;
   showOthersSamajik:Boolean= false;
   activeCategory: number = 0;
-  selectedNagar: string | undefined;
+  selectedNagar: any;
   ShowNagar: boolean = true;
 
 

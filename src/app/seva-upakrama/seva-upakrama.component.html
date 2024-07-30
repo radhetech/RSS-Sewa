@@ -1,5 +1,5 @@
 <app-select-nagar *ngIf="ShowNagar"></app-select-nagar>
-<button class="libtn" *ngIf="selectedNagar" (click)="openSelectNagar()">{{ selectedNagar }}</button>
+<button class="top-btn" *ngIf="selectedNagar" (click)="openSelectNagar()">{{ selectedNagar.vibhag+''}} >>{{ selectedNagar.jilla +' '}} >>{{ selectedNagar.taluka +' '}} >>{{ selectedNagar.vasti +' '}} >>{{ selectedNagar.shakha}}</button>
 
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">

@@ -2,7 +2,7 @@
     <h1>એડમિન પ્રોફાઇલ</h1>
     <form [formGroup]="adminForm" (ngSubmit)="onSubmit(adminForm)">
         <div class="form-group">
-          <label for="vibhag">Vibhag</label>
+          <label for="vibhag">વિભાગ</label>
           <select id="vibhag" formControlName="vibhag" (change)="vibhagChange($event)">
             <option value="" selected>Select</option>
             <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name" >{{ vibhag.name }}</option>
