@@ -13,7 +13,8 @@ export class AdminProfileComponent implements OnInit {
   jillaList:any = [];
   talukaList:any = [];
   vastiList:any = [];
-  shakhaList:any = [];
+  shakhaList:any = [];  
+
 
  constructor(private ApiService:ApiService){
    this.adminForm = new FormGroup({
@@ -64,11 +65,16 @@ talukaChange(e:any){
 }
 vastiChange(e:any){
   this.shakhaList = [];
+  console.log(this.vastiList)
   this.vastiList.forEach((item:any)=>{
   if(item.name==e.target.value){
     this.shakhaList = item.shakha;
+    
   }
 })
+}
+shakhaChange(e:any){
+
 }
  onSubmit(formData:any){
   console.log(formData.value)

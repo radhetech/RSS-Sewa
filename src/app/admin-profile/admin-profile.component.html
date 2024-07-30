@@ -1,50 +1,55 @@
 <div class="list-container">
-    <h1>એડમિન પ્રોફાઇલ</h1>
-    <form [formGroup]="adminForm" (ngSubmit)="onSubmit(adminForm)">
-        <div class="form-group">
-          <label for="vibhag">Vibhag</label>
-          <select id="vibhag" formControlName="vibhag" (change)="vibhagChange($event)">
-            <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name" >{{ vibhag.name }}</option>
+  <h1>એડમિન પ્રોફાઇલ</h1>
+  <form [formGroup]="adminForm" (ngSubmit)="onSubmit(adminForm)">
+      <div class="form-group">
+        <label for="vibhag">Vibhag</label>
+        <select id="vibhag" formControlName="vibhag" (change)="vibhagChange($event)">
+          <option value="" selected>Select</option>
+          <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name" >{{ vibhag.name }}</option>
+        </select>
+      </div>
+       <div class="form-group" *ngIf="jillaList.length">
+          <label for="jilla">ભાગ/જિલ્લો:</label>
+          <select id="jilla" formControlName="jilla" (change)="jillaChange($event)">
+            <option value="" selected>Select</option>
+            <option *ngFor="let jilla of jillaList" [value]="jilla.name">{{ jilla.name }}</option>
           </select>
         </div>
-         <div class="form-group" *ngIf="jillaList.length">
-            <label for="jilla">ભાગ/જિલ્લો:</label>
-            <select id="jilla" formControlName="jilla" (change)="jillaChange($event)">
-              <option *ngFor="let jilla of jillaList" [value]="jilla.name">{{ jilla.name }}</option>
-            </select>
-          </div>
-          <div class="form-group"  *ngIf="talukaList.length">
-            <label for="taluka">નગર/તાલુકો:</label>
-            <select id="taluka" formControlName="taluka" (change)="talukaChange($event)">
-              <option *ngFor="let taluka of talukaList" [value]="taluka.name">{{ taluka.name }}</option>
-            </select>
-          </div>
-        <div class="form-group"  *ngIf="vastiList.length">
-      <label for="vasti">સેવા વસ્તી:</label>
-      <select id="vasti" formControlName="vasti" (change)="vastiChange($event)">
-        <option *ngFor="let vasti of vastiList" [value]="vasti.name">{{ vasti.name }}</option>
-        <!-- <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો  </option> -->
-      </select>
-      <!-- <div *ngIf="addVasti">
-        <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
-        <button type="button" class="addbtn" (click)="addVasti()">Add</button>
-      </div> -->
-    </div>
-     
-    <!-- <div class="form-group">
-        <label for="sakha">શાખા:</label>
-        <select id="sakha" formControlName="sakha">
-          <option *ngFor="let shakha of shakhaList" [value]="sakha.id">{{ sakha.name }}</option>
-          <option value="addSakha" >નવી શાખા ઉમેરો</option>
-        </select>
-        <div *ngIf="addingSakha">
-          <input type="text" formControlName="newSakha" placeholder="નવી શાખા ઉમેરો" />
-          <button type="button" class="addbtn" (click)="addSakha()">Add</button>
+        <div class="form-group"  *ngIf="talukaList.length">
+          <label for="taluka">નગર/તાલુકો:</label>
+          <select id="taluka" formControlName="taluka" (change)="talukaChange($event)">
+            <option value="" selected>Select</option>
+            <option *ngFor="let taluka of talukaList" [value]="taluka.name">{{ taluka.name }}</option>
+          </select>
         </div>
-      </div> -->
-      
-      <button type="submit" class="submit-btn" >Submit</button>
-    </form>
-   <br>
-
+      <div class="form-group"  *ngIf="vastiList.length">
+    <label for="vasti">સેવા વસ્તી:</label>
+    <select id="vasti" formControlName="vasti" (change)="vastiChange($event)">
+      <option value="" selected>Select</option>
+      <option *ngFor="let vasti of vastiList" [value]="vasti.name">{{ vasti.name }}</option>
+      <!-- <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો  </option> -->
+    </select>
+    <!-- <div *ngIf="addVasti">
+      <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
+      <button type="button" class="addbtn" (click)="addVasti()">Add</button>
+    </div> -->
   </div>
+   
+  <div class="form-group" *ngIf="shakhaList.length">
+      <label for="shakha">શાખા:</label>
+      <select id="shakha" formControlName="shakha" (change)="shakhaChange($event)">
+        <option value="" selected>Select</option>
+        <option *ngFor="let shakha of shakhaList" [value]="shakha.shakhaName">{{ shakha.shakhaName }}</option>
+        <!-- <option value="addSakha" >નવી શાખા ઉમેરો</option> -->
+      </select>
+      <!-- <div *ngIf="addingSakha">
+        <input type="text" formControlName="newSakha" placeholder="નવી શાખા ઉમેરો" />
+        <button type="button" class="addbtn" (click)="addSakha()">Add</button>
+      </div> -->
+    </div> 
+    
+    <button type="submit" class="submit-btn" >Submit</button>
+  </form>
+ <br>
+
+</div>
