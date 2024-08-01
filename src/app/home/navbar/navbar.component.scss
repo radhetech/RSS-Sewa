@@ -62,12 +62,12 @@ img {
 
 @media screen and (min-width: 128px) and (max-width: 1320px) {
   .desktop_menu {
-    position: fixed !important;
-    right: -280px;
+    position: absolute !important;
+    right: 0px;
     transition: 0.4s ease-in-out;
-    top: 0px;
+    top: 100px;
     background: #0e9c93;
-    width: 280px;
+    width: 200px;
     height: 100%;
     z-index: 1000;
   }
@@ -103,6 +103,7 @@ img {
     overflow: hidden;
   }
 }
+
 .nav-header {
   padding: 10px;
   background: #e98a2b;

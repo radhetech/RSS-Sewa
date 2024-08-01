@@ -1,127 +1,135 @@
 * {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  .list-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 30px auto;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .list-container h3 {
-    margin-top: 0;
-    text-align: center;
-    color: #333;
-  }
-  
-  /* List Styles */
-  .list-container ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .list-container ul li {
-    cursor: pointer;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  ul li input{
-    margin-top: -5px;
-  }
-  
-  .list-container ul li:hover {
-    background-color: #f1f1f1;
-    color: #007bff;
-  }
-  
-  .subList {
-    padding-left: 20px;
-    border-left: 2px solid #ddd;
-  }
-  
-  .mainTitle {
-    margin-top: 20px;
-    font-size: 17px;
-    font-weight: bold;
-  }
-  
-  #texttitle {
-    font-size: 17px;
-    margin-right: 15px;
-  }
-  
-  .mainTitle input[type="number"],
-  .mainTitle textarea {
-    float: right;
-    width: 25%;
-   height: 30px;
-   padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-  }
-  
-  .mainTitle label {
-    font-size: 15px;
-  }
-  
-  .mainTitle input[type="number"]:focus,
-  .mainTitle textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  .libtn{
-    height: 40px;
-    width: 95%;
-    color: black;
-    font-size: 1rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    padding-left: 20px;
-  }
-  .submit-btn {
-    height: 55px;
-    width: 100%;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top: 30px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background:#e98a2b ;
-  }
-  .submit-btn:hover {
-    background: #9b4f04;
-  }
-  .input-group{
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .input-group input{
-    padding: 5px;
-    width: 30%;
-    border-radius: 10px;
-  }
-  .green {
-    background-color: rgb(133, 223, 133);
-  }
-  
-  @media screen and (max-width: 768px) {
-    .list-container {
-      width: 90%;
-    }
-  }
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
+.list-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.list-container h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+}
+
+/* List Styles */
+.list-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-container ul li {
+  cursor: pointer;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+ul li input {
+  margin-top: -5px;
+}
+
+.list-container ul li:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+.subList {
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.mainTitle {
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #e68a2e;
+}
+
+#texttitle {
+  font-size: 17px;
+  margin-right: 15px;
+}
+
+.mainTitle input[type="number"],
+.mainTitle textarea {
+  float: right;
+  width: 25%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.mainTitle label {
+  font-size: 15px;
+}
+
+.mainTitle input[type="number"]:focus,
+.mainTitle textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.libtn {
+  height: 40px;
+  width: 95%;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 20px;
+  background-color: #e68a2e;
+}
+
+.submit-btn {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #e98a2b;
+}
+
+.submit-btn:hover {
+  background: #9b4f04;
+}
+
+.input-group {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group input {
+  padding: 5px;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.green {
+  background-color: rgb(133, 223, 133);
+}
+
+@media screen and (max-width: 768px) {
+  .list-container {
+    width: 90%;
+  }
+}
