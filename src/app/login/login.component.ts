@@ -19,45 +19,40 @@ export class LoginComponent implements OnInit {
   loginUrl:string='http://localhost:4000/users';
 
   ngOnInit() {
-    this.activeRouter.queryParamMap.subscribe((a) => {
-      const b = Boolean(a.get('logout'));
-      console.log(typeof b);
-      if (b) {
-        this.AuthenticationService.userLogout();
-        this.snackbarColour = 'success';
-        this.loginerr = 'લૉગ આઉટ થઈ ગયા છો!!';
-        this.snackTimeOut();
-      }
-    });
+     if(localStorage.getItem('loggedInUser')){
+      this.AuthenticationService.isUserLogin = true;
+      this._router.navigate(['home']);
+     }
   }
   onFormSubmitted(res: NgForm) {
-    console.log(res.value)
+    // temporary if api is not working
+   /* console.log(res.value)
     this.AuthenticationService.isUserLogin = true;
     this.snackbarColour = 'success';
     this._router.navigate(['home']);
     this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
-    this.snackTimeOut();
-    this.apiService.postData(this.loginUrl,res.value).subscribe({next:(res)=>{
-      console.log('Success:', res)
-      //sessionStorage.setItem('loggedInUser',res)
-    },
-    error: (error) => {
-      console.error('Error:', error)}
-    })
+    this.snackTimeOut();*/
+  //  uncomment until here
+    // start
+    //this code is for api. uncomment once we have backend
+    this.apiService.getData(this.loginUrl).subscribe({next:(res:any)=>{
+      res = res[0];
+      localStorage.setItem('loggedInUser',JSON.stringify(res));
+      console.log('login--',res.name);
+      this.AuthenticationService.isUserLogin = true;
+      this.snackbarColour = 'success';
+      this.AuthenticationService.isUserLoginSub.next(res)
+      this._router.navigate(['home']);
+      this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
+      this.snackTimeOut();
    
-    // this code is for api. uncomment once we have backend
-    //this.apiService.postData(this.loginUrl,res.value).subscribe({next:(res)=>{
-    //   this.snackbarColour = 'success';
-    //   this._router.navigate(['home']);
-    //   this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
-    //   this.snackTimeOut();
-    //   sessionStorage.setItem('loggedInUser',res)
-    // },error:((err:any)=>{
-    //   this.snackbarColour = 'error';
-    //   this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
-    //   this.snackTimeOut();
-    // })  })
-     }
+    },error:((err:any)=>{
+      this.snackbarColour = 'error';
+      this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
+      this.snackTimeOut();
+    }) })
+  }
+// end
   snackTimeOut() {
     setTimeout(() => {
       this.loginerr = null;

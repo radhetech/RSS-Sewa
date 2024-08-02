@@ -23,6 +23,7 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SelectNagarComponent } from './select-nagar/select-nagar.component';
+import { SelectShakhaComponent } from './select-shakha/select-shakha.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SelectNagarComponent } from './select-nagar/select-nagar.component';
     ErrorComponent,
     ProfileComponent,
     AdminProfileComponent,
-    SelectNagarComponent
+    SelectNagarComponent,
+    SelectShakhaComponent
   ],
   imports: [
     BrowserModule,

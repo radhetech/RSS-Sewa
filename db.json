@@ -26,213 +26,10 @@
   "profile": {
     "name": "typicode"
   },
-  "users": [
-    {
-      "email": "dainik@gmail.com",
-      "password": "1234",
-      "id": 1
-    },
-    {
-      "Name": "Munesh",
-      "userid": "Munesh",
-      "role": "admin",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "",
-      "prant": "Gujarat",
-      "vibhag": "Gandhinagar",
-      "jilla": "Gandhinagar",
-      "taluka": "Kalol",
-      "shakha": "kalol-1"
-    },
-    {
-      "Name": "Dainik",
-      "userid": "dainik",
-      "role": "guest",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "token-2",
-      "prant": "Gujarat",
-      "vibhag": "Mehsana",
-      "jilla": "Visnagar",
-      "taluka": "kheralu",
-      "shakha": "kheralu-1"
-    },
-    {
-      "email": "muneshpatel2008@gmail.com",
-      "password": "11111111111111",
-      "id": 2
-    },
-    {
-      "email": "Divyeshpatel7778@gmail.com",
-      "password": "jiknnknk",
-      "id": 3
-    },
-    {
-      "email": "ashasutariya0505@gmail.com",
-      "password": "1111",
-      "id": 4
-    },
-    {
-      "email": "jnjk",
-      "password": "gvg",
-      "id": 5
-    },
-    {
-      "email": "jk",
-      "password": "jk",
-      "id": 6
-    },
-    {
-      "email": "kjh",
-      "password": "hjbjh",
-      "id": 7
-    },
-    {
-      "email": "kjn",
-      "password": "knkjn",
-      "id": 8
-    },
-    {
-      "email": "LKLK",
-      "password": "MKLM",
-      "id": 9
-    },
-    {
-      "email": "kjkjn",
-      "password": "kjn",
-      "id": 10
-    },
-    {
-      "email": "jn",
-      "password": "nk",
-      "id": 11
-    },
-    {
-      "email": "nkjn",
-      "password": "j",
-      "id": 12
-    },
-    {
-      "email": "jn",
-      "password": "jnk",
-      "id": 13
-    },
-    {
-      "email": "kjnkjn",
-      "password": "jnkj",
-      "id": 14
-    },
-    {
-      "email": "njk",
-      "password": "njk",
-      "id": 15
-    },
-    {
-      "email": "lkk",
-      "password": "kk",
-      "id": 16
-    },
-    {
-      "email": "jn",
-      "password": "jknkj",
-      "id": 17
-    },
-    {
-      "email": "kjnjk",
-      "password": "j",
-      "id": 18
-    },
-    {
-      "email": "mlk",
-      "password": "klm",
-      "id": 19
-    },
-    {
-      "email": "njk",
-      "password": "nk",
-      "id": 20
-    },
-    {
-      "email": "bj",
-      "password": "jnk",
-      "id": 21
-    },
-    {
-      "email": "knj",
-      "password": "kn",
-      "id": 22
-    },
-    {
-      "email": "jn",
-      "password": "k",
-      "id": 23
-    },
-    {
-      "email": "jkk",
-      "password": "nkn",
-      "id": 24
-    },
-    {
-      "email": "lk",
-      "password": "klml",
-      "id": 25
-    },
-    {
-      "email": "jk",
-      "password": "njkn",
-      "id": 26
-    },
-    {
-      "email": "klm",
-      "password": "mlk",
-      "id": 27
-    },
-    {
-      "email": "km,",
-      "password": "ll",
-      "id": 28
-    },
-    {
-      "email": "ml,m",
-      "password": "l",
-      "id": 29
-    },
-    {
-      "email": "mkl",
-      "password": "kjmlk",
-      "id": 30
-    },
-    {
-      "email": "jknklm",
-      "password": "klm",
-      "id": 31
-    },
-    {
-      "email": "lkmlkm",
-      "password": "lmlml",
-      "id": 32
-    },
-    {
-      "email": "nknk",
-      "password": "kn",
-      "id": 33
-    },
-    {
-      "email": "hbj",
-      "password": "hjb",
-      "id": 34
-    },
-    {
-      "email": "IJI",
-      "password": "JOI",
-      "id": 35
-    }
-  ],
   "vibhagList": {
     "vibhag": [
       {
-        "name": "કર્ણાવતી-પશ્ચિમ",
+        "name": "Karnavati-Paschim",
         "id": 1,
         "jilla": [
           {
@@ -1709,5 +1506,61 @@
         ]
       }
     ]
-  }
+  },
+  "users": [
+    {
+      "name": "પ્રાંત એડમીન",
+      "userid": "gujarat-prant",
+      "role": "admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "Gujarat",
+      "vibhag": "",
+      "jilla": "",
+      "taluka": "",
+      "id": "1178"
+    },
+    {
+      "name": "વિભાગ એડમીન",
+      "userid": "gandhingar-vibhag",
+      "role": "vibhag",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "Gujarat",
+      "vibhag": "gandhingar",
+      "jilla": "",
+      "taluka": "",
+      "id": "bbc2"
+    },
+    {
+      "name": "જિલ્લા એડમીન",
+      "userid": "mahesana-jilla",
+      "role": "jilla",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "Gujarat",
+      "vibhag": "Mahesana",
+      "jilla": "mahesana",
+      "taluka": "",
+      "id": "786e"
+    },
+    {
+      "name": "તાલુકા એડમીન",
+      "userid": "kadi-taluko",
+      "role": "taluka",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "Gujarat",
+      "vibhag": "Mahesana",
+      "jilla": "mahesana",
+      "taluka": "kadi",
+      "id": "7d48"
+    }
+   
+  
+  ]
 }

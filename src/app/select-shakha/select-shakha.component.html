@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="shakhaForm">
+    <label> સેવા વસ્તી  </label>
+    <select (change)="vastiChange($event)">
+        <option value="">Select</option>
+        <option  *ngFor="let vasti of vastiList" formControlName="vasti" ngDefaultControl>{{vasti.name}}</option>
+    </select>
+    <label> શાખા </label>
+    <select (change)="shakhaChange($event)">
+        <option value="">Select</option>
+        <option [value]="shakha.name" *ngFor="let shakha of shakhaList; let i = index" formControlName="shakhaVal" >{{shakha.name}}</option>
+    </select>
+</form>
+</div>
