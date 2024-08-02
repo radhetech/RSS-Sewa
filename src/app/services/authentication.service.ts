@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { credentials } from '../Model/credentials';
 import { Router } from '@angular/router';
 
@@ -7,35 +7,14 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  data: credentials[] = [
-    {
-      Name: 'Dainik',
-      userid: 'dainik@gmail.com',
-      password: '123',
-    },
-    {
-      Name: 'Munesh',
-      userid: 'munesh@gmail.com',
-      password: 'Ram@111',
-    },{
-      Name: 'yagni',
-      userid: 'yagni@gmail.com',
-      password: 'dm123',
-    },
-    {
-      Name: 'Vishal',
-      userid: 'vishal@gmail.com',
-      password: '1234',
-    },
-  ];
   isUserLogin: boolean = false;
   loggedInUserData:any;
-  _router = inject(Router);
-
-  constructor() {
-    const loggedInUser = sessionStorage.getItem('loggedInUser');
+  isUserLoginSub = new Subject<any>();
+  constructor(private _router:Router) {
+    const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
       this.isUserLogin = true;
+      this.loggedInUserData = JSON.parse(loggedInUser);
     }
   }
 

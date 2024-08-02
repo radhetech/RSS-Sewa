@@ -64,6 +64,7 @@ talukaChange(e:any){
 })
 }
 vastiChange(e:any){
+  debugger;
   this.shakhaList = [];
   console.log(this.vastiList)
   this.vastiList.forEach((item:any)=>{

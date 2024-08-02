@@ -8,19 +8,26 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  constructor(private elementRef: ElementRef, private router: Router) {}
+  constructor(private elementRef: ElementRef, private router: Router, private AuthenticationService:AuthenticationService) {
+    this.loggedInUser = this.AuthenticationService.loggedInUserData;
+   this.AuthenticationService.isUserLoginSub.asObservable().subscribe((val)=> {
+    this.authUser = true;
+    this.loggedInUser = val;
+   });
+  }
 
   menuValue: boolean = false;
   menu_icon: string = 'bi bi-list';
-  AuthenticationService = inject(AuthenticationService);
-  _router = inject(Router);
   loginerr: string | null = null;
-  selecteduser: boolean = false;
+  loggedInUser:any;
   menuListenersAttached: boolean = false;
+  authUser:boolean = false;
 
-
-  ngOnInit(): void {
-    this.selecteduser = this.AuthenticationService.isUserLogin;
+  ngOnInit() {
+   if(localStorage.getItem('loggedInUser')) { 
+    this.authUser = true;
+    this.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')!);
+   }
   }
   openMenu() {
     this.menuValue = !this.menuValue;
@@ -63,6 +70,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.authUser = false;
     this.AuthenticationService.userLogout();
     this.loginerr = 'You have been successfully logged Out!!';
     this.snackTimeOut();
