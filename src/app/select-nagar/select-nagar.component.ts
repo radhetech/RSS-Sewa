@@ -90,7 +90,7 @@ shakhaChange(e:any){
 }
 
   OnCloseForm() {
-    this.router.navigate(['/SevaUpakrama'])
+    // this.router.navigate(['/SevaUpakrama'])
   }
 
   OnFormSubmitted(){
