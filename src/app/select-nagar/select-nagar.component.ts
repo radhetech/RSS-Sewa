@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { SelectNagarService } from '../services/selectNagar.service';
+// import { SelectNagarService } from '../services/valueSelect.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SelectNagarComponent {
   selectedNagar: string ='Nagar1';
 
-  sharedService=inject(SelectNagarService)
+  // sharedService=inject()
   router=inject(Router)
 
   OnCloseForm() {
@@ -18,10 +18,10 @@ export class SelectNagarComponent {
   }
 
   OnFormSubmitted(){
-    if (this.selectedNagar) {
-      this.sharedService.changeNagar(this.selectedNagar);
-      console.log('Form submitted with nagar:', this.selectedNagar);
-    }
+    // if (this.selectedNagar) {
+    //   this.sharedService.changeNagar(this.selectedNagar);
+    //   console.log('Form submitted with nagar:', this.selectedNagar);
+    // }
     this.router.navigate(['/SevaUpakrama'])
   }
 }

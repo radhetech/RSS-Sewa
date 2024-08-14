@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SelectNagarService } from '../services/selectNagar.service';
 
 @Component({
   selector: 'app-seva-upakrama',
@@ -27,7 +26,7 @@ export class SevaUpakramaComponent {
   ShowNagar: boolean = true;
 
 
-  constructor(private sharedService: SelectNagarService) {}
+  constructor() {}
 
 
 
@@ -122,12 +121,11 @@ export class SevaUpakramaComponent {
 
 
   ngOnInit() {
-    this.sharedService.currentNagar.subscribe(nagar => {
-      this.selectedNagar = nagar;
+  
+      this.selectedNagar = '';
       this.ShowNagar = !this.selectedNagar;
       console.log('Selected nagar in another component:', this.selectedNagar);
-   
-    });
+  
   }
 
   openSelectNagar() {

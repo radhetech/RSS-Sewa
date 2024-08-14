@@ -24,6 +24,7 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SelectNagarComponent } from './select-nagar/select-nagar.component';
 import { SelectShakhaComponent } from './select-shakha/select-shakha.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SelectShakhaComponent } from './select-shakha/select-shakha.component';
     ProfileComponent,
     AdminProfileComponent,
     SelectNagarComponent,
-    SelectShakhaComponent
+    SelectShakhaComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

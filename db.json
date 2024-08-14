@@ -1,33 +1,6 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "a title",
-      "views": 100
-    },
-    {
-      "id": "2",
-      "title": "another title",
-      "views": 200
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "vibhagList": {
-    "vibhag": [
+ 
+    "vibhagList": [
       {
         "name": "Karnavati-Paschim",
         "id": 1,
@@ -1505,8 +1478,7 @@
           }
         ]
       }
-    ]
-  },
+    ],
   "users": [
     {
       "name": "પ્રાંત એડમીન",
@@ -1542,8 +1514,8 @@
       "passwordExp": "",
       "jwt": "",
       "prant": "Gujarat",
-      "vibhag": "Mahesana",
-      "jilla": "mahesana",
+      "vibhag": "Karnavati-purv",
+      "jilla": "karnavati",
       "taluka": "",
       "id": "786e"
     },
@@ -1555,9 +1527,9 @@
       "passwordExp": "",
       "jwt": "",
       "prant": "Gujarat",
-      "vibhag": "Mahesana",
-      "jilla": "mahesana",
-      "taluka": "kadi",
+      "vibhag": "Karnavati-Paschim",
+      "jilla": "બોપલ",
+      "taluka": "શ્યામાનંદ",
       "id": "7d48"
     }
    

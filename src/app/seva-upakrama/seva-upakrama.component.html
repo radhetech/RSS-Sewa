@@ -1,5 +1,3 @@
-<app-select-nagar *ngIf="ShowNagar"></app-select-nagar>
-<button class="libtn" *ngIf="selectedNagar" (click)="openSelectNagar()">{{ selectedNagar }}</button>
 
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">

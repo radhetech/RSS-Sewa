@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { valueSelect } from '../services/valueSelect.service';
 
 @Component({
   selector: 'app-sakha-vrut',
   templateUrl: './sakha-vrut.component.html',
   styleUrl: './sakha-vrut.component.scss'
 })
-export class SakhaVrutComponent {
+export class SakhaVrutComponent implements OnInit, DoCheck{
+  showComponent:boolean =false;
+  selectedShakha:string = '';
+  selectedVasti:string = '';
   selectedButton: number | null = null;
   selectedSanskar: string | null = null;
   showList1 = false;
@@ -28,10 +32,39 @@ export class SakhaVrutComponent {
   };
   dateOptions: string[] = [];
   lastFiveThursdays: Date[] = [];
-
-  constructor() {
+  isShakhaSelected = false;
+  isVastiSelected = false;
+  constructor(private valueSel:valueSelect) {
     this.getLastFiveThursdays();
     this.dateOptions.push('Jul 4 2024'); 
+  }
+  ngOnInit(): void {
+   this.valueSel.getCurrentShakha().subscribe((res)=>{
+     if(res!='શાખા'){
+      debugger;
+     console.log('shakha-v-service',res)
+      this.isShakhaSelected = false;
+      // this.isShakhaSelected = true;
+      // this.selectedShakha = res;
+     } else {
+      this.isShakhaSelected = true;
+     }
+   })
+   this.valueSel.getCurrentVasti().subscribe((res)=>{
+    if(res!='વસ્તી'){
+     this.isVastiSelected = false;
+     console.log('vasti-v-service',res)
+    // this.selectedVasti = res;
+    } else {
+      this.isVastiSelected = true;
+    }
+  })
+    
+    // console.log('shkhaVrut', this.selectedVasti)
+    // console.log('shkhaVrut', this.selectedShakha)
+  }
+  ngDoCheck(){
+      
   }
 
   getLastFiveThursdays(): void {
