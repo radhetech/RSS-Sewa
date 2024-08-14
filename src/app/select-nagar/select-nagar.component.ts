@@ -101,4 +101,3 @@ shakhaChange(e:any){
     this.router.navigate(['/SevaUpakrama'])
   }
 }
-}
