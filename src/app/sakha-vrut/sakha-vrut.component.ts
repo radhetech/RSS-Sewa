@@ -32,8 +32,8 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   };
   dateOptions: string[] = [];
   lastFiveThursdays: Date[] = [];
-  isShakhaSelected = false;
-  isVastiSelected = false;
+  isShakhaSelected = true;
+  isVastiSelected = true;
   constructor(private valueSel:valueSelect) {
     this.getLastFiveThursdays();
     this.dateOptions.push('Jul 4 2024'); 
@@ -41,7 +41,6 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   ngOnInit(): void {
    this.valueSel.getCurrentShakha().subscribe((res)=>{
      if(res!='શાખા'){
-      debugger;
      console.log('shakha-v-service',res)
       this.isShakhaSelected = false;
       // this.isShakhaSelected = true;
@@ -53,6 +52,7 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
    this.valueSel.getCurrentVasti().subscribe((res)=>{
     if(res!='વસ્તી'){
      this.isVastiSelected = false;
+     this.isShakhaSelected = true;
      console.log('vasti-v-service',res)
     // this.selectedVasti = res;
     } else {

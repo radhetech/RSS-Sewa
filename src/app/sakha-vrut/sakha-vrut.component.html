@@ -1,6 +1,6 @@
 <app-breadcrumb> </app-breadcrumb>
 <h2 *ngIf="isShakhaSelected || isVastiSelected">Please select shakha and vasti first</h2>
-<div class="list-container" *ngIf="!isShakhaSelected || !isVastiSelected">
+<div class="list-container" *ngIf="!isShakhaSelected && !isVastiSelected">
   <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
   <div class="input-with-icon">
     <label for="datepickerInput">તારીખ: </label>
