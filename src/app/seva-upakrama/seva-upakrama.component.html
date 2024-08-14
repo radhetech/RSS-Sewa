@@ -11,19 +11,26 @@
         <ng-container *ngFor="let item of educationItems">
           <li (click)="toggleSubList(item, educationItems)" [ngClass]="{'green': isFilled(item)}">
             <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">      
           </li>
           <div *ngIf="item.showInputs" class="input-group">
+            <ng-container *ngIf="item.name === 'otherActivity1'">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+            </ng-container>
             <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
+          <div *ngIf="item.showInputs" class="input-group-input">
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <div class="image-container">
+              <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
+                <img [src]="createImageUrl(image)" alt="uploaded image">
+                <button type="button" (click)="removeImage(item.name, i)">Remove</button>
+              </div>
+            </div>      
+          </div>
         </ng-container>
-        <div *ngIf="showOthersShiksha" class="input-group">
-          <input type="text" [(ngModel)]="othersShiksha.name" name="othersShikshaName" placeholder="પ્રવૃત્તિનું નામ">
-          <input type="number" [(ngModel)]="othersShiksha.men" name="othersShikshaMen" placeholder="પુરુષોની સંખ્યા">
-          <input type="number" [(ngModel)]="othersShiksha.women" name="othersShikshaWomen" placeholder="મહિલાઓની સંખ્યા">
-          <input type="number" [(ngModel)]="othersShiksha.others" name="othersShikshaOthers" placeholder="કાર્યકર્તાની સંખ્યા">
-        </div>
       </div>
 
       <li (click)="toggleList(2)">
@@ -33,19 +40,26 @@
         <ng-container *ngFor="let item of healthItems">
           <li (click)="toggleSubList(item, healthItems)" [ngClass]="{'green': isFilled(item)}">
             <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">   
           </li>
           <div *ngIf="item.showInputs" class="input-group">
+            <ng-container *ngIf="item.name === 'otherActivity2'">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+            </ng-container>
             <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
+          <div *ngIf="item.showInputs" class="input-group-input">
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <div class="image-container">
+              <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
+                <img [src]="createImageUrl(image)" alt="uploaded image">
+                <button type="button" (click)="removeImage(item.name, i)">Remove</button>
+              </div>
+            </div>      
+          </div>
         </ng-container>
-        <div *ngIf="showOthersAayogya" class="input-group">
-          <input type="text" [(ngModel)]="othersAayogya.name" name="othersAayogyaName" placeholder="પ્રવૃત્તિનું નામ">
-          <input type="number" [(ngModel)]="othersAayogya.men" name="othersAayogyaMen" placeholder="પુરુષોની સંખ્યા">
-          <input type="number" [(ngModel)]="othersAayogya.women" name="othersAayogyaWomen" placeholder="મહિલાઓની સંખ્યા">
-          <input type="number" [(ngModel)]="othersAayogya.others" name="othersAayogyaOthers" placeholder="કાર્યકર્તાની સંખ્યા">
-        </div>
       </div>
 
       <li (click)="toggleList(3)">
@@ -55,19 +69,26 @@
         <ng-container *ngFor="let item of selfRelianceItems">
           <li (click)="toggleSubList(item, selfRelianceItems)" [ngClass]="{'green': isFilled(item)}">
             <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">   
           </li>
           <div *ngIf="item.showInputs" class="input-group">
+            <ng-container *ngIf="item.name === 'otherActivity3'">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+            </ng-container>
             <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
+          <div *ngIf="item.showInputs" class="input-group-input">
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <div class="image-container">
+              <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
+                <img [src]="createImageUrl(image)" alt="uploaded image">
+                <button type="button" (click)="removeImage(item.name, i)">Remove</button>
+              </div>
+            </div>      
+          </div>
         </ng-container>
-        <div *ngIf="showOthersSawval" class="input-group">
-          <input type="text" [(ngModel)]="othersSawval.name" name="othersSawvalName" placeholder="પ્રવૃત્તિનું નામ">
-          <input type="number" [(ngModel)]="othersSawval.men" name="othersSawvalMen" placeholder="પુરુષોની સંખ્યા">
-          <input type="number" [(ngModel)]="othersSawval.women" name="othersSawvalWomen" placeholder="મહિલાઓની સંખ્યા">
-          <input type="number" [(ngModel)]="othersSawval.others" name="othersSawvalOthers" placeholder="કાર્યકર્તાની સંખ્યા">
-        </div>
       </div>
 
       <li (click)="toggleList(4)">
@@ -77,19 +98,26 @@
         <ng-container *ngFor="let item of socialItems">
           <li (click)="toggleSubList(item, socialItems)" [ngClass]="{'green': isFilled(item)}">
             <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">   
           </li>
           <div *ngIf="item.showInputs" class="input-group">
+            <ng-container *ngIf="item.name === 'otherActivity4'">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+            </ng-container>
             <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
             <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
+          <div *ngIf="item.showInputs" class="input-group-input">
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <div class="image-container">
+              <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
+                <img [src]="createImageUrl(image)" alt="uploaded image">
+                <button type="button" (click)="removeImage(item.name, i)">Remove</button>
+              </div>
+            </div>      
+          </div>
         </ng-container>
-        <div *ngIf="showOthersSamajik" class="input-group">
-          <input type="text" [(ngModel)]="othersSamajik.name" name="othersSamajikName" placeholder="પ્રવૃત્તિનું નામ">
-          <input type="number" [(ngModel)]="othersSamajik.men" name="othersSamajikMen" placeholder="પુરુષોની સંખ્યા">
-          <input type="number" [(ngModel)]="othersSamajik.women" name="othersSamajikWomen" placeholder="મહિલાઓની સંખ્યા">
-          <input type="number" [(ngModel)]="othersSamajik.others" name="othersSamajikOthers" placeholder="કાર્યકર્તાની સંખ્યા">
-        </div>
       </div>
     </ul>
     <input type="submit" value="Submit" class="submit-btn">

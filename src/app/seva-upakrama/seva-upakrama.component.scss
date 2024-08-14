@@ -5,7 +5,7 @@
 
 .list-container {
   width: 80%;
-  max-width: 600px;
+  max-width: 650px;
   margin: 30px auto;
   border: 2px solid #ddd;
   border-radius: 10px;
@@ -29,15 +29,15 @@
   cursor: pointer;
   padding: 10px;
   border-top: 1px solid #ddd;
-  transition: background-color 0.3s, color 0.3s;
+ 
 }
 ul li input{
   margin-top: -5px;
 }
 
 .list-container ul li:hover {
-  background-color: #f1f1f1;
-  color: #007bff;
+background-color: #f1f1f1;
+  color: #e98a2b;
 }
 
 .subList {
@@ -88,7 +88,15 @@ ul li input{
   text-align: left;
   padding-left: 20px;
 }
-
+.top-btn{
+  height: 40px;
+  width: 100%;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 20px;
+}
 .submit-btn {
   height: 55px;
   width: 100%;
@@ -104,6 +112,9 @@ ul li input{
 .submit-btn:hover {
   background: #9b4f04;
 }
+.subList {
+  margin-left: 20px;
+}
 .input-group{
   margin: 10px;
   display: flex;
@@ -111,9 +122,57 @@ ul li input{
   align-items: center;
   justify-content: space-between;
 }
+
+.input-group img {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 .input-group input{
+  font-size: 11px;
   padding: 5px;
   width: 30%;
+  border-radius: 10px;
+}
+.input-group-input{
+  font-size: 11px;
+  padding: 5px;
+  width: 90%;
+  border-radius: 10px;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.image-wrapper button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+.rightSideDate{
+  padding: 3px;
+  float: right;
   border-radius: 10px;
 }
 .green {
