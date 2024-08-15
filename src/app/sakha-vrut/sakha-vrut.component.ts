@@ -1,5 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { valueSelect } from '../services/valueSelect.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sakha-vrut',
@@ -7,10 +8,11 @@ import { valueSelect } from '../services/valueSelect.service';
   styleUrl: './sakha-vrut.component.scss'
 })
 export class SakhaVrutComponent implements OnInit, DoCheck{
+  sevaDinForm:FormGroup;
   showComponent:boolean =false;
   selectedShakha:string = '';
   selectedVasti:string = '';
-  selectedButton: number | null = null;
+  vrutType: number | null = null;
   selectedSanskar: string | null = null;
   showList1 = false;
   showList2 = false;
@@ -37,6 +39,7 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   constructor(private valueSel:valueSelect) {
     this.getLastFiveThursdays();
     this.dateOptions.push('Jul 4 2024'); 
+    this.sevaDinForm = new FormGroup({})
   }
   ngOnInit(): void {
    this.valueSel.getCurrentShakha().subscribe((res)=>{
@@ -66,6 +69,10 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   ngDoCheck(){
       
   }
+  submitForm(e:any){
+    console.log()
+  }
+ 
 
   getLastFiveThursdays(): void {
     const today = new Date();
@@ -94,7 +101,7 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   }
 
   checkSubmitValidity(): void {
-    if (this.selectedButton == 1) {
+    if (this.vrutType == 1) {
       if (this.selectedSanskar === 'sanskar1') {
         if (this.checkedItems.sanskar1_1 || this.checkedItems.sanskar1_2 || this.checkedItems.sanskar1_3) {
           this.submitDisabled = false; 
@@ -108,7 +115,7 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
           this.submitDisabled = true; 
         }
       }
-    } else if (this.selectedButton == 2) {
+    } else if (this.vrutType == 2) {
       if (this.checkedItems.ha) {
         if (this.checkedItems.option2 != null) {
           this.submitDisabled = false; 
@@ -124,22 +131,25 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
       this.submitDisabled = true; 
     }
   }
-
+  selectedVrutType(e:number){
+    this.vrutType = e;
+    console.log(e)
+  }
   toggleList(listNumber: number) {
-    if (listNumber === 1) {
-      this.showList1 = true;
-      this.showList2 = false;
-      this.selectedSanskar = null;
-      this.showSubList1 = false;
-      this.showSubList2 = false;
-    } else if (listNumber === 2) {
-      this.showList2 = true;
-      this.showList1 = false;
-      this.selectedSanskar = null;
-      this.showSubList1 = false;
-      this.showSubList2 = false;
-    }
-    this.checkSubmitValidity();
+    // if (listNumber === 1) {
+    //   this.showList1 = true;
+    //   this.showList2 = false;
+    //   this.selectedSanskar = null;
+    //   this.showSubList1 = false;
+    //   this.showSubList2 = false;
+    // } else if (listNumber === 2) {
+    //   this.showList2 = true;
+    //   this.showList1 = false;
+    //   this.selectedSanskar = null;
+    //   this.showSubList1 = false;
+    //   this.showSubList2 = false;
+    // }
+    // this.checkSubmitValidity();
   }
 
   toggleMainCheckbox(mainCheckbox: string) {
@@ -171,7 +181,7 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
   }
 
   selectMainOption(option: number) {
-    this.selectedButton = option;
+    this.vrutType = option;
     this.toggleList(option);
   }
 
@@ -185,27 +195,27 @@ export class SakhaVrutComponent implements OnInit, DoCheck{
     this.checkSubmitValidity();
   }
 
-  submitForm(): void {
-    let formData: any;
+  // submitForm(): void {
+  //   let formData: any;
 
-    if (this.selectedButton == 1) {
-      formData = {
-        samparkType: 'sewadin',
-        sanskar: this.selectedSanskar,
-        sanskarList: Object.keys(this.checkedItems)
-          .filter(key => key.startsWith(this.selectedSanskar!) && this.checkedItems[key])
-          .map(key => key.split('_')[1])
-          .filter(value => value !== undefined)
-      };
-    } else if (this.selectedButton == 2) {
-      formData = {
-        samparkType: 'masikseva',
-        samapark: this.checkedItems.ha, 
-        sss: this.checkedItems.option2 || null, 
-        note: this.checkedItems.option3
-      };
-    }
+  //   if (this.selectedButton == 1) {
+  //     formData = {
+  //       samparkType: 'sewadin',
+  //       sanskar: this.selectedSanskar,
+  //       sanskarList: Object.keys(this.checkedItems)
+  //         .filter(key => key.startsWith(this.selectedSanskar!) && this.checkedItems[key])
+  //         .map(key => key.split('_')[1])
+  //         .filter(value => value !== undefined)
+  //     };
+  //   } else if (this.selectedButton == 2) {
+  //     formData = {
+  //       samparkType: 'masikseva',
+  //       samapark: this.checkedItems.ha, 
+  //       sss: this.checkedItems.option2 || null, 
+  //       note: this.checkedItems.option3
+  //     };
+  //   }
 
-    console.log('Form Data:', formData);
-  }
+  //   console.log('Form Data:', formData);
+  // }
 }

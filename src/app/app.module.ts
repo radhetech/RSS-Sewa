@@ -25,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SelectNagarComponent } from './select-nagar/select-nagar.component';
 import { SelectShakhaComponent } from './select-shakha/select-shakha.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-
+import { AccordionModule } from 'primeng/accordion';
+import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     AdminProfileComponent,
     SelectNagarComponent,
     SelectShakhaComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    NewShakhaVrutComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AccordionModule,
+    RadioButtonModule
   ],
   providers: [
     provideAnimationsAsync(),

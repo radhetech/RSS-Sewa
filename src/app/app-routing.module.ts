@@ -11,6 +11,7 @@ import { authguardGuard } from './services/Auth/authguard.guard';
 import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: 'ShakhaVrut',
-    component: SakhaVrutComponent,
+    component: NewShakhaVrutComponent,
     canActivate: [authguardGuard]
   },
   {
