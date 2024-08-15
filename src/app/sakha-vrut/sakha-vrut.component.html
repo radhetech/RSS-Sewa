@@ -1,58 +1,58 @@
 <app-breadcrumb> </app-breadcrumb>
 <h2 *ngIf="isShakhaSelected || isVastiSelected">Please select shakha and vasti first</h2>
-<div class="list-container" *ngIf="!isShakhaSelected && !isVastiSelected">
+ <div class="list-container">
   <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
-  <div class="input-with-icon">
-    <label for="datepickerInput">તારીખ: </label>
-    <select id="thursdaysDropdown" (change)="onThursdayChange($event)">
-      <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
-    </select>
-  </div>
 
   <ul>
     <li class="mainTitle" [ngClass]="{ 'selected': selectedButton === 1 }" (click)="selectMainOption(1)">
-      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="1" (change)="toggleList(1)"> સેવા દિન
-      (ગુરુવાર)
+      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="1" (change)="toggleList(1)"> <span class="custom-font-size-main">સેવા દિન
+      (ગુરુવાર)</span>
+      <div class="input-with-icon">
+        <label for="datepickerInput">તારીખ: </label>
+        <select id="thursdaysDropdown" (change)="onThursdayChange($event)">
+          <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
+        </select>
+      </div>
     </li>
 
     <div *ngIf="showList1" class="subList">
-      <h4>કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</h4>
+      <label class="mainTitle custom-font-size-main">કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</label>
       <li class="mainTitle" [ngClass]="{ 'selected': selectedSanskar === 'sanskar1' }"
         (click)="selectSanskarOption('sanskar1')">
         <input type="radio" name="sanskarSelect" [(ngModel)]="selectedSanskar" [value]="'sanskar1'"
-          (change)="toggleMainCheckbox('sanskar1')"> *સંસ્કાર ૧
+          (change)="toggleMainCheckbox('sanskar1')"><span class="custom-font-size-mid"> *સંસ્કાર ૧</span>
       </li>
       <div *ngIf="showSubList1" class="subList">
         <li (click)="toggleCheckbox('sanskar1_1')">
-          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_1" (change)="checkSubmitValidity()"> ૧.
-          અમૃતવચન/સુભાષિત
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_1" (change)="checkSubmitValidity()"> <span class="custom-font-size-sub"> ૧.
+          અમૃતવચન/સુભાષિત</span>
         </li>
         <li (click)="toggleCheckbox('sanskar1_2')">
-          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_2" (change)="checkSubmitValidity()"> ૨. સેવા ગીત
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_2" (change)="checkSubmitValidity()"><span class="custom-font-size-sub">  ૨. સેવા ગીત</span>
         </li>
         <li (click)="toggleCheckbox('sanskar1_3')">
-          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_3" (change)="checkSubmitValidity()"> ૩. સેવા બોધકથા
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar1_3" (change)="checkSubmitValidity()"> <span class="custom-font-size-sub"> ૩. સેવા બોધકથા</span>
         </li>
       </div>
 
       <li class="mainTitle" [ngClass]="{ 'selected': selectedSanskar === 'sanskar2' }"
         (click)="selectSanskarOption('sanskar2')">
         <input type="radio" name="sanskarSelect" [(ngModel)]="selectedSanskar" [value]="'sanskar2'"
-          (change)="toggleMainCheckbox('sanskar2')"> *સંસ્કાર ૨
+          (change)="toggleMainCheckbox('sanskar2')"> <span class="custom-font-size-mid"> *સંસ્કાર ૨</span>
       </li>
       <div *ngIf="showSubList2" class="subList">
         <li (click)="toggleCheckbox('sanskar2_1')">
-          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_1" (change)="checkSubmitValidity()"> ૧. સેવા પ્રસંગ
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_1" (change)="checkSubmitValidity()"> <span class="custom-font-size-sub"> ૧. સેવા પ્રસંગ</span>
         </li>
         <li (click)="toggleCheckbox('sanskar2_2')">
-          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_2" (change)="checkSubmitValidity()"> ૨. સેવા વસતી
-          કર્યા આયોજન
+          <input type="checkbox" [(ngModel)]="checkedItems.sanskar2_2" (change)="checkSubmitValidity()"> <span class="custom-font-size-sub"> ૨. સેવા વસતી
+          કર્યા આયોજન</span>
         </li>
         <li>
-          વિષય લેનારનું નામ: <input type="text" (change)="checkSubmitValidity()">
+          <span class="custom-font-size-sub">  વિષય લેનારનું નામ: </span><input type="text" class="fix-input"  (change)="checkSubmitValidity()">
         </li>
         <li>
-          કરેલ કાર્યની નોંધ: <input type="text" (change)="checkSubmitValidity()">
+          <span class="custom-font-size-sub">  કરેલ કાર્યની નોંધ: </span><input type="text" class="fix-input" (change)="checkSubmitValidity()">
         </li>
       </div>
     </div>
@@ -60,24 +60,23 @@
 
   <ul>
     <li class="mainTitle" [ngClass]="{ 'selected': selectedButton === 2 }" (click)="selectMainOption(2)">
-      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="2" (change)="toggleList(2)"> માસિક
-      સેવા વસતી સંપર્ક
+      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="2" (change)="toggleList(2)"> <span class="custom-font-size-main"> માસિક સેવા વસતી સંપર્ક</span>
     </li>
-    <div *ngIf="showList2" class="subList">
+    <div *ngIf="showList2">
       <li class="mainTitle">
-        <label id="texttitle">સંપર્ક થયેલ છે?</label>
-        <input type="radio" name="contact" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')" [value]="true"> હા
-        <input type="radio" name="contact" [(ngModel)]="checkedItems.na" (change)="toggleHaNa('na')" [value]="false"> ના
+        <label id="texttitle" class="custom-font-size-mid"> સંપર્ક થયેલ છે?</label>
+        <input type="radio" name="contact" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')" [value]="true"><span class="custom-font-size-sub">હા</span>
+        <input type="radio" name="contact" [(ngModel)]="checkedItems.na" (change)="toggleHaNa('na')" [value]="false"><span class="custom-font-size-sub"> ના</span>
       </li>
 
       <div *ngIf="checkedItems.ha==true" class="subList">
         <li class="mainTitle">
-          <label>સ્વયંસેવકની સંખ્યા</label>
+          <label><span class="custom-font-size-sub">સ્વયંસેવકની સંખ્યા</span></label>
           <input type="number" [(ngModel)]="checkedItems.option2" placeholder="સ્વયંસેવકની સંખ્યા"
             (input)="checkSubmitValidity()">
         </li>
         <li class="mainTitle">
-          <label>વિશેષ નોંધ</label>
+          <label><span class="custom-font-size-sub">વિશેષ નોંધ </span></label>
           <textarea [(ngModel)]="checkedItems.option3" placeholder="વિશેષ નોંધ"
             (change)="checkSubmitValidity()"></textarea>
         </li>
