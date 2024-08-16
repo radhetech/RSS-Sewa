@@ -11,29 +11,31 @@ import { authguardGuard } from './services/Auth/authguard.guard';
 import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
-  }, {
+    component: LoginComponent,
+  },
+  {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'home',
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'ShakhaVrut',
-    component: SakhaVrutComponent,
-    canActivate: [authguardGuard]
+    component: NewShakhaVrutComponent,
+    canActivate: [authguardGuard],
   },
   {
     path: 'SevaUpakrama',
@@ -43,40 +45,37 @@ const routes: Routes = [
   {
     path: 'SevaKarya',
     component: SevaKaryaComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'UtsavaVrut',
     component: UtsavaVrttaComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'SevaDarshan',
     component: SevaDarshanComponent,
-    canActivate: [authguardGuard]
-  }, 
+    canActivate: [authguardGuard],
+  },
   {
     path: 'Admin',
     component: AdminProfileComponent,
-    canActivate: [authguardGuard]
-  }, 
+    canActivate: [authguardGuard],
+  },
   {
     path: 'Profile',
     component: ProfileComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: '**',
     component: ErrorComponent,
-  },  
-  { path: '', 
-    redirectTo: '/SevaUpakrama', 
-    pathMatch: 'full' 
-  }
+  },
+  { path: '', redirectTo: '/SevaUpakrama', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

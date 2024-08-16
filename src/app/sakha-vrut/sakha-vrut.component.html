@@ -1,22 +1,23 @@
 <app-breadcrumb> </app-breadcrumb>
-<h2 *ngIf="isShakhaSelected || isVastiSelected">Please select shakha and vasti first</h2>
- <div class="list-container">
+<!-- <h2 *ngIf="isShakhaSelected || isVastiSelected">Please select shakha and vasti first</h2> -->
+<!-- <div class="list-container" *ngIf="!isShakhaSelected && !isVastiSelected"> -->
+  <div class="list-container" >
   <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
+  <select id="thursdaysDropdown" (change)="onThursdayChange($event)">
+    <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
+  </select>
+  <!-- <div class="input-with-icon">
+    <label for="datepickerInput">તારીખ: </label>
+  </div> -->
 
   <ul>
-    <li class="mainTitle" [ngClass]="{ 'selected': selectedButton === 1 }" (click)="selectMainOption(1)">
-      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="1" (change)="toggleList(1)"> <span class="custom-font-size-main">સેવા દિન
-      (ગુરુવાર)</span>
-      <div class="input-with-icon">
-        <label for="datepickerInput">તારીખ: </label>
-        <select id="thursdaysDropdown" (change)="onThursdayChange($event)">
-          <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
-        </select>
-      </div>
+    <li class="mainTitle" [ngClass]="{ 'selected': vrutType === 1 }" (click)="selectedVrutType(1)">
+      <input type="radio" name="mainSelect"  [value]="1" (change)="toggleList(1)"> સેવા દિન
+      (ગુરુવાર)
     </li>
 
-    <div *ngIf="showList1" class="subList">
-      <label class="mainTitle custom-font-size-main">કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</label>
+    <div *ngIf="showList1" class="subList" [formGroup]="sevaDinForm" (ngSubmit)="submitForm(sevaDinForm)">
+      <h4>કયા સંસ્કાર નું વૃત્ત નોધવાનું છે?</h4>
       <li class="mainTitle" [ngClass]="{ 'selected': selectedSanskar === 'sanskar1' }"
         (click)="selectSanskarOption('sanskar1')">
         <input type="radio" name="sanskarSelect" [(ngModel)]="selectedSanskar" [value]="'sanskar1'"
@@ -59,10 +60,11 @@
   </ul>
 
   <ul>
-    <li class="mainTitle" [ngClass]="{ 'selected': selectedButton === 2 }" (click)="selectMainOption(2)">
-      <input type="radio" name="mainSelect" [(ngModel)]="selectedButton" [value]="2" (change)="toggleList(2)"> <span class="custom-font-size-main"> માસિક સેવા વસતી સંપર્ક</span>
+    <li class="mainTitle" [ngClass]="{ 'selected': vrutType === 2 }" (click)="selectedVrutType(2)">
+      <input type="radio" name="mainSelect" [value]="2" (change)="toggleList(2)"> માસિક
+      સેવા વસતી સંપર્ક
     </li>
-    <div *ngIf="showList2">
+    <!-- <div *ngIf="showList2" class="subList">
       <li class="mainTitle">
         <label id="texttitle" class="custom-font-size-mid"> સંપર્ક થયેલ છે?</label>
         <input type="radio" name="contact" [(ngModel)]="checkedItems.ha" (change)="toggleHaNa('ha')" [value]="true"><span class="custom-font-size-sub">હા</span>
@@ -81,9 +83,10 @@
             (change)="checkSubmitValidity()"></textarea>
         </li>
       </div>
-    </div>
+    </div> -->
   </ul>
-  <button type="submit" class="submit-btn" [class.disabled]="submitDisabled" [disabled]="submitDisabled"
-    (click)="submitForm()">Submit</button>
-
+  <!-- <button type="submit" class="submit-btn" [class.disabled]="submitDisabled" [disabled]="submitDisabled"
+    (click)="submitForm()">Submit</button> -->
+    <!-- <button type="submit"  [disabled]="true"
+    (click)="submitForm(shakhaForm)">Submit</button> -->
 </div>

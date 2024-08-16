@@ -1,0 +1,65 @@
+<app-breadcrumb> </app-breadcrumb>
+<div class="list-container" *ngIf="isShakhaSelected && isVastiSelected">
+  <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
+  <form class="mainTitle" [formGroup]="formGroup">
+    <!-- for date selection  -->
+    <select id="thursdaysDropdown" formControlName="selectedDate">
+      <option value="select">તારીખ પસંદ કરો</option>
+      <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
+    </select>
+    <!-- weekly form accordion -->
+    <div class="accordion">
+      <div class="accordion-heading weekly" (click)="selectedAccordion('W')">
+        <input type="radio" value="W" name="selectedCategory" formControlName="selectedCategory"> સેવા દિન (ગુરૂવાર)
+      </div>
+      <div *ngIf="selectedCategory=='W'" class="accordion-body" formGroupName="weeklyForm">
+        <div class="level-1-heading" (click)="selectedLevelHeading('sanskar1')">
+          <input type="radio" value="sanskar1" name="sanskar" formControlName="sanskar"> સંસ્કાર-૧
+        </div>
+        <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group" class="p-10">
+          <input type="checkbox" value='amrutvachanSubhashit' name="amrutvachan/subhashit"
+            formControlName="amrutvachanSubhashit"> અમૃતવચન/સુભાષિત <br> <br>
+          <input type="checkbox" value='sevaGit' name="sevaGit" formControlName="sevaGit"> સેવા ગીત <br> <br>
+          <input type="checkbox" value='sevaBodhKatha' name="sevaBodhKatha" formControlName="sevaBodhKatha"> સેવા બોધકથા
+          <br>
+        </div>
+        <div class="level-1-heading" (click)="selectedLevelHeading('sanskar2')">
+          <input type="radio" value="sanskar2" name="sanskar" formControlName="sanskar"> સંસ્કાર-૨
+        </div>
+        <div *ngIf="selectedSanskar=='sanskar2'" formGroupName="sanskar2Group" class="p-10">
+          <input type="checkbox" value='sevaPrasang' name="sevaPrasang" formControlName="sevaPrasang"> સેવા પ્રસંગ <br>
+          <br>
+          <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> સેવા વસ્તી કાર્ય
+          આયોજન <br> <br>
+          વિષય લેનારનું નામ:<input type="text" value='' name="vishayLenar" formControlName="vishayLenar"> <br>
+          <br>
+          કરેલ કાર્યની નોંધ:<textarea value='' name="karyNondh" formControlName="karyNondh"> </textarea><br>
+        </div>
+      </div>
+    </div>
+    <!-- mothly form accordion -->
+    <div class="accordion">
+      <div class="accordion-heading monthly" (click)="selectedAccordion('M')">
+        <input type="radio" value="M" name="selectedCategory" formControlName="selectedCategory"> માસિક
+        સેવા વસતી સંપર્ક
+      </div>
+      <div *ngIf="selectedCategory=='M'" class="accordion-body" formGroupName="monthlyForm">
+        <div>
+          <label for="">સંપર્ક થયેલ છે?</label>
+          <br>
+          <input type="radio" value="Yes" name="sampark" formControlName="sampark"> હા
+          <input type="radio" value="No" name="sampark" formControlName="sampark"> ના
+        </div>
+        <br>
+        <div *ngIf="samparkSelected=='Yes'">
+          સ્વયંસેવકની સંખ્યા: <input class="box1" type="number" value='' name="swSankhya" formControlName="swSankhya">
+          <br> <br>
+          <p>વિશેષ નોંધ: </p><textarea class="box2" type="text" value='' name="visheshNondh"
+            formControlName="visheshNondh"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  <button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid" class="submit-btn"> સબમિટ કરો</button>
+</div>
