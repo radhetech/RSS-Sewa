@@ -118,9 +118,10 @@
     cursor: pointer;
   }
   .accordion-body{
-    padding:15px;
-    background-color: red;
-    color:white;
+    padding: 15px;
+    background-color: #e9d4d4;
+    border-radius: 5px;
+    margin-top: 5px;
   }
   .weekly{
     background-color: #e98a2b;
@@ -128,7 +129,25 @@
   .monthly{
     background-color: aqua;
   }
-  
+  .level-1-heading{
+    background-color: red;
+    margin:5px;
+    cursor: pointer;
+    padding:10px;
+  }
+  .p-10{
+    padding:10px;
+  }
+  .submit-btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #caf3a2;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+
   @media screen and (max-width: 768px) {
     .list-container {
       width: 90%;

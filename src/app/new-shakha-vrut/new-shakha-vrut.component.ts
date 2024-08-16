@@ -9,6 +9,7 @@ import { valueSelect } from '../services/valueSelect.service';
 })
 export class NewShakhaVrutComponent implements OnInit {
   formGroup!:FormGroup;
+  lastFiveThursdays: Date[] = [];
   isShakhaSelected:boolean = false;
   isVastiSelected:boolean = false;
 sanskar1List:any = [{name:'amrutvachan/subhashit'},{name:'seva git'},
@@ -17,7 +18,9 @@ sanskar1List:any = [{name:'amrutvachan/subhashit'},{name:'seva git'},
 isSanskar1Open = false;
   isSanskar2Open = false;
 constructor(private valueSel:valueSelect){
+  this.getLastFiveThursdays();
   this.formGroup= new FormGroup({
+    selectedDate: new FormControl(null,Validators.required),
     selectedCategory: new FormControl('',Validators.required),
     weeklyForm: new FormGroup({
       sanskar:new FormControl(''),
@@ -32,8 +35,6 @@ constructor(private valueSel:valueSelect){
        sevaPrasang: new FormControl(''),
        karyAyojan: new FormControl('')
       }),
-     
-
     }),
     monthlyForm: new FormGroup({
       sampark: new FormControl(''),
@@ -59,6 +60,11 @@ constructor(private valueSel:valueSelect){
        this.isVastiSelected = false;
      }
    })
+  //  this.formGroup.valueChanges.subscribe((res)=>{
+  //      if(res.selectedCategory=='W'){
+  //         (this.formGroup.get('weeklyForm')as FormGroup).get('sankar')?.setValidators(Validators.required)
+  //      }
+  //  })
 }
 
 get selectedCategory(){
@@ -71,11 +77,32 @@ get selectedSanskar(){
 get samparkSelected(){
   return (this.formGroup.controls['monthlyForm'] as FormGroup).get('sampark')!.value;
 }
+getLastFiveThursdays(): void {
+  const today = new Date();
+  let count = 0;
+  if (today.getDay() === 4) {
+    this.lastFiveThursdays.push(new Date(today)); 
+    count++;
+  }
+  while (count < 5) {
+    today.setDate(today.getDate() - 1);
+    if (today.getDay() === 4) { 
+      this.lastFiveThursdays.push(new Date(today));
+      count++;
+    }
+  }
+}
 selectedAccordion(val:string){
   this.formGroup.patchValue({
     selectedCategory:val
   })
-  
+}
+selectedLevelHeading(val:string){
+   this.formGroup.patchValue({
+    weeklyForm:({
+      sanskar:val
+    })
+   })
 }
 submitForm(form:any){
   console.log(form.value)

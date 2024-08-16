@@ -8,6 +8,7 @@ ul.breadcrumb {
   ul.breadcrumb li {
     display: inline;
     font-size: 18px;
+    margin-right:2px;
   }
   
   /* Add a slash symbol (/) before/behind each list item */
@@ -32,5 +33,10 @@ ul.breadcrumb {
     cursor: not-allowed !important;
     opacity: 0.5;
    
+  }
+  @media screen and (max-width:768px)  {
+    ul>.m-hidden{
+      display: none !important;
+    }
   }
  

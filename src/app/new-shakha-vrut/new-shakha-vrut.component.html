@@ -3,8 +3,9 @@
     <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
 <form class="mainTitle" [formGroup]="formGroup">
     <!-- for date selection  -->
-    <select id="thursdaysDropdown">
-        <option >19 Aug 2024</option>
+    <select id="thursdaysDropdown" formControlName="selectedDate">
+        <option [value]="" selected> Select </option>
+        <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }}</option>
       </select>
     <!-- weekly form accordion -->
     <div class="accordion">
@@ -12,20 +13,22 @@
     <input type="radio" value="W" name="selectedCategory" formControlName="selectedCategory" > Weekly
     </div>
     <div *ngIf="selectedCategory=='W'"  class="accordion-body" formGroupName="weeklyForm">
-        <div>
+        <div class="level-1-heading" (click)="selectedLevelHeading('sanskar1')">
         <input type="radio" value="sanskar1" name="sanskar" formControlName="sanskar"> Sanskar-1
+        </div>
+        <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group" class="p-10"> 
+            <input type="checkbox" value='amrutvachanSubhashit' name="amrutvachan/subhashit" formControlName="amrutvachanSubhashit"> amrutvachan/subhashit <br> <br>
+            <input type="checkbox" value='sevaGit' name="sevaGit" formControlName="sevaGit"> seva git <br> <br>
+            <input type="checkbox" value='sevaBodhKatha' name="sevaBodhKatha" formControlName="sevaBodhKatha"> seva bodh katha <br> 
+        </div>
+       <div class="level-1-heading" (click)="selectedLevelHeading('sanskar2')">
         <input type="radio" value="sanskar2" name="sanskar" formControlName="sanskar"> Sankar-2
         </div>
-        <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group"> 
-            <input type="checkbox" value='amrutvachanSubhashit' name="amrutvachan/subhashit" formControlName="amrutvachanSubhashit"> amrutvachan/subhashit
-            <input type="checkbox" value='sevaGit' name="sevaGit" formControlName="sevaGit"> seva git
-            <input type="checkbox" value='sevaBodhKatha' name="sevaBodhKatha" formControlName="sevaBodhKatha"> seva bodh katha
-        </div>
-        <div *ngIf="selectedSanskar=='sanskar2'"  formGroupName="sanskar2Group"> 
-            <input type="checkbox" value='sevaPrasang' name="sevaPrasang" formControlName="sevaPrasang"> Seva Prasang
-            <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> Seva Vasti Kary Ayojan
-            <input type="text" value='' name="vishayLenar" formControlName="vishayLenar" placeholder="vishay Lenar">
-            <input type="text" value='' name="karyNondh" formControlName="karyNondh" placeholder="karel Kary ni Nondh"> 
+        <div *ngIf="selectedSanskar=='sanskar2'"  formGroupName="sanskar2Group" class="p-10"> 
+            <input type="checkbox" value='sevaPrasang' name="sevaPrasang" formControlName="sevaPrasang"> Seva Prasang <br> <br>
+            <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> Seva Vasti Kary Ayojan <br> <br>
+            <input type="text" value='' name="vishayLenar" formControlName="vishayLenar" placeholder="vishay Lenar"> <br> <br>
+            <textarea value='' name="karyNondh" formControlName="karyNondh" placeholder="karel Kary ni Nondh"> </textarea><br> 
         </div>
     </div>
     </div>
@@ -41,13 +44,14 @@
                <input type="radio" value="Yes" name="sampark" formControlName="sampark"> Ha 
                <input type="radio" value="No" name="sampark" formControlName="sampark"> Na
            </div>
+           <br> 
            <div *ngIf="samparkSelected=='Yes'">
-               <input type="number" value='' name="swSankhya" formControlName="swSankhya" placeholder="swayamsevak ni sankhya">
-               <input type="text" value='' name="visheshNondh" formControlName="visheshNondh" placeholder="vishesh Nondh">
+               <input type="number" value='' name="swSankhya" formControlName="swSankhya" placeholder="swayamsevak ni sankhya"> <br> <br>
+               <textarea type="text" value='' name="visheshNondh" formControlName="visheshNondh" placeholder="vishesh Nondh"> </textarea>
            </div>
     </div>
     </div>
     
 </form>
-<button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid"> Submit Form</button>
+<button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid" class="submit-btn"> Submit Form</button>
 </div>
