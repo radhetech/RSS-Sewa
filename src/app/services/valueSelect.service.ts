@@ -10,7 +10,9 @@ export class valueSelect{
 private showComp = new BehaviorSubject<boolean>(false);
  private currentVasti = new BehaviorSubject<string>('');
  private currentShakha = new BehaviorSubject<string>('');
-  
+public getUserData=()=>{
+  return JSON.parse(window.localStorage.getItem('loggedInUser')!);
+}
  
   showComp$ = this.showComp.asObservable();
   changeShakha(shakha: string) {

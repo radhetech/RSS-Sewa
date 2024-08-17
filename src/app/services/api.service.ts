@@ -13,4 +13,7 @@ export class ApiService {
   postData(url:string,data:any): Observable<any>{
     return this._http.post(url,data);
   }
+  udpateRecord(url:string,data:any): Observable<any>{
+    return this._http.put(url,data);
+  }
 }

@@ -8,7 +8,7 @@ import { valueSelect } from '../services/valueSelect.service';
 })
 export class BreadcrumbComponent implements OnInit {
   myList:any = {};
-  selectedShakha:string = '';
+  selectedShakha:string = ''; 
   selectedVasti:string = '';
   constructor(public valueSel:valueSelect){
    
