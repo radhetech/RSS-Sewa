@@ -3,14 +3,14 @@
   font-family: Arial, sans-serif;
 }
 
-.list h2 {
+.list h3 {
   margin-top: 0;
   text-align: center;
   color: #333;
 }
 
 .list {
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   margin: 20px auto;
   border: 2px solid #ddd;
@@ -22,6 +22,7 @@
 .list ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 10px;
 }
 
 .list ul li {
@@ -34,11 +35,6 @@
 .list ul li:hover {
   background-color: #f1f1f1;
   color: #007bff;
-}
-
-.list ul {
-  list-style-type: none;
-  padding-left: 0;
 }
 
 .submit {
@@ -59,27 +55,30 @@
 }
 
 .category-list {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-size: 17px;
   font-weight: bold;
 }
 
 .category-list input[type="number"],
-[type="text"],
-.category-list textarea {
-  float: right;
+.category-list input[type="text"] {
   width: 25%;
   height: 30px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
   resize: vertical;
 }
 
-.category-list input[type="text"],
 .category-list textarea {
   width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .category-list label {
@@ -90,4 +89,27 @@
 .category-list textarea:focus {
   border-color: #007bff;
   outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .list {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .category-list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+  }
+
+  .category-list label {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  .submit {
+    font-size: 1.2rem;
+    height: 60px;
+  }
 }
