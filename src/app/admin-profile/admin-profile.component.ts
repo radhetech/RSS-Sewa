@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { LiteralArrayExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-admin-profile',
@@ -14,6 +15,8 @@ export class AdminProfileComponent implements OnInit {
   talukaList:any = [];
   vastiList:any = [];
   shakhaList:any = [];  
+  addVastiFlag:boolean = false;
+  addShakhaFlag:boolean = false;
 
 
  constructor(private ApiService:ApiService){
@@ -23,6 +26,8 @@ export class AdminProfileComponent implements OnInit {
     taluka: new FormControl(''),
     vasti: new FormControl(''),
     shakha: new FormControl(''),
+    newVasti: new FormControl(''),
+    newShakha: new FormControl('')
    })
  }
  getVibhagUrl:string = 'http://localhost:4000/vibhagList';
@@ -30,8 +35,10 @@ export class AdminProfileComponent implements OnInit {
  ngOnInit(){
    this.ApiService.getData(this.getVibhagUrl).subscribe({next:(res:any)=>{
     console.log(res);
-    this.vibhagList = res["vibhag"]
+    this.vibhagList = res;
    },error:()=>{}})
+  
+   
  }
  vibhagChange(e:any){
   this.jillaList=[];
@@ -64,8 +71,11 @@ talukaChange(e:any){
 })
 }
 vastiChange(e:any){
-  debugger;
-  this.shakhaList = [];
+      if(e.target.value=='addVasti'){
+        this.addVastiFlag = true;
+        this.shakhaList = [];
+         }
+  
   console.log(this.vastiList)
   this.vastiList.forEach((item:any)=>{
   if(item.name==e.target.value){
@@ -74,8 +84,37 @@ vastiChange(e:any){
   }
 })
 }
-shakhaChange(e:any){
 
+addVasti(val:any){
+  console.log(val)
+  // api call pending to add vasti 
+  const pushedVal:any = {
+    name: this.adminForm.controls['newVasti'].value,
+    id: 1001,
+    shakha:[]
+  };
+  this.vastiList.push(pushedVal);
+  this.addVastiFlag = false;
+
+  console.log(this.vastiList)
+}
+
+addShakha(val:any){
+  console.log(val)
+  // api call pending to add vasti 
+  const pushedShakha:any = {
+    shakhaName: this.adminForm.controls['newShakha'].value,
+    id: 1001
+  };
+  this.shakhaList.push(pushedShakha);
+  this.addShakhaFlag = false;
+
+  console.log(this.shakhaList)
+}
+shakhaChange(e:any){
+  if(e.target.value=='addSakha'){
+    this.addShakhaFlag = true;
+     }
 }
  onSubmit(formData:any){
   console.log(formData.value)

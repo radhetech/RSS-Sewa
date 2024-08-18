@@ -1,30 +1,30 @@
 {
   "vibhagList": [
     {
-      "name": "Karnavati-Paschim",
+      "name": "કર્ણાવતી પશ્ચિમ",
       "id": 1,
       "jilla": [
         {
           "name": "બોપલ",
-          "id": "100",
+          "id": 10,
           "taluka": [
             {
               "name": "શ્યામાનંદ",
-              "id": 1000,
+              "id": 100,
               "sevaVasti": [
                 {
                   "name": "રાજીવનગર",
-                  "id": 10000,
+                  "id": 1001,
                   "shakha": [
                     {
                       "shakhaName": "શક્તિ પ્રભાત",
-                      "id": "A"
+                      "id": "1000A"
                     }
                   ]
                 },
                 {
                   "name": "વ્રજ નગરી",
-                  "id": 10001,
+                  "id": 1002,
                   "shakha": [
                     {
                       "shakhaName": "કારગીલ પ્રભાત",
@@ -34,7 +34,7 @@
                 },
                 {
                   "name": "કૃષ્ણધામ",
-                  "id": 10002,
+                  "id": 1003,
                   "shakha": [
                     {
                       "shakhaName": "આનંદનગર પ્રભાત",
@@ -46,77 +46,37 @@
             },
             {
               "name": "જોધપુર",
-              "id": 1001,
+              "id": 101,
               "sevaVasti": [
                 {
                   "name": "રામદેવનગર",
-                  "id": 10003,
+                  "id": 1011,
                   "shakha": [
                     {
                       "shakhaName": "રવીરશ્મી પ્રભાત",
                       "id": "D"
                     }
                   ]
-                },
-                {
-                  "name": "જોધપુર ગામ",
-                  "id": 10004,
-                  "shakha": [
-                    {
-                      "shakhaName": "રામકૃષ્ણ પ્રભાત",
-                      "id": "E"
-                    }
-                  ]
-                },
-                {
-                  "name": "ગોપાલ આવાસ",
-                  "id": 10005,
-                  "shakha": [
-                    {
-                      "shakhaName": "વિવેકાનંદ પ્રભાત",
-                      "id": "F"
-                    }
-                  ]
-                },
+                },      
                 {
                   "name": "ગોકુલ આવાસ",
-                  "id": 10006,
+                  "id": 1012,
                   "shakha": [
                     {
                       "shakhaName": "તરુણ વ્યવસાયી મિલન",
                       "id": "G"
                     }
                   ]
-                },
-                {
-                  "name": "શ્વેતાંજલી",
-                  "id": 10007,
-                  "shakha": [
-                    {
-                      "shakhaName": "પાર્થ પ્રભાત",
-                      "id": "H"
-                    }
-                  ]
-                },
-                {
-                  "name": "વિસતનગર",
-                  "id": 10008,
-                  "shakha": [
-                    {
-                      "shakhaName": "દિવ્ય જ્યોત",
-                      "id": "I"
-                    }
-                  ]
                 }
               ]
             },
             {
-              "name": "બોપલ",
-              "id": 1002,
+              "name": "બોપલ નગર",
+              "id": 102,
               "sevaVasti": [
                 {
                   "name": "રણછોડ પુરા",
-                  "id": 10009,
+                  "id": 1021,
                   "shakha": [
                     {
                       "shakhaName": "નંદીશ્વર પ્રભાત",
@@ -125,40 +85,20 @@
                   ]
                 },
                 {
-                  "name": "G E B",
-                  "id": 10010,
+                  "name": "જીઇબી",
+                  "id": 1022,
                   "shakha": [
                     {
                       "shakhaName": "માતૃભૂમિ પ્રભાત",
                       "id": "K"
                     }
                   ]
-                },
-                {
-                  "name": "બોપલ ગામ",
-                  "id": 10011,
-                  "shakha": [
-                    {
-                      "shakhaName": "શ્યામ રાત્રી",
-                      "id": "L"
-                    }
-                  ]
-                },
-                {
-                  "name": "મણિપુર ગામ",
-                  "id": 10012,
-                  "shakha": [
-                    {
-                      "shakhaName": "ચાણક્ય પ્રભાત",
-                      "id": "M"
-                    }
-                  ]
                 }
               ]
             },
             {
-              "name": "દક્ષીણ બોપલ",
-              "id": 1003,
+              "name": "સાઉથ બોપલ",
+              "id": 103,
               "sevaVasti": [
                 {
                   "name": "કિષ્ના",
@@ -192,11 +132,11 @@
             },
             {
               "name": "શેલા",
-              "id": 1004,
+              "id": 104,
               "sevaVasti": [
                 {
                   "name": "શેલા ગામ",
-                  "id": 10015,
+                  "id": 1041,
                   "shakha": [
                     {
                       "shakhaName": "નાનાજી દેશમુખ પ્રભાત",
@@ -206,7 +146,7 @@
                 },
                 {
                   "name": "શાંતીપુરા",
-                  "id": 10016,
+                  "id": 1042,
                   "shakha": [
                     {
                       "shakhaName": "ગોકુલ ધામ",
@@ -216,7 +156,7 @@
                 },
                 {
                   "name": "ઉલ્લારીયા",
-                  "id": 10017,
+                  "id": 1043,
                   "shakha": [
                     {
                       "shakhaName": "વ્રજેશ્વર મિલન",
@@ -225,32 +165,12 @@
                   ]
                 },
                 {
-                  "name": "ચાંગોદર",
-                  "id": 10018,
+                  "name": "મહેરપુરા",
+                  "id": 1044,
                   "shakha": [
                     {
                       "shakhaName": "કેશવ પ્રભાત",
                       "id": "U"
-                    }
-                  ]
-                },
-                {
-                  "name": "મોરૈયા",
-                  "id": 10019,
-                  "shakha": [
-                    {
-                      "shakhaName": "વિવેકાનંદ પ્રભાત",
-                      "id": "V"
-                    }
-                  ]
-                },
-                {
-                  "name": "નવાપુરા",
-                  "id": 10020,
-                  "shakha": [
-                    {
-                      "shakhaName": "સરદાર સાયં",
-                      "id": "W"
                     }
                   ]
                 }
@@ -258,21 +178,11 @@
             },
             {
               "name": "સરખેજ",
-              "id": 1005,
-              "sevaVasti": [
+              "id": 105,
+              "sevaVasti": [ 
                 {
-                  "name": "રામનાથ",
-                  "id": 10021,
-                  "shakha": [
-                    {
-                      "shakhaName": "સિદ્ધનાથ રાત્રી",
-                      "id": "X"
-                    }
-                  ]
-                },
-                {
-                  "name": "સરદાર આવાસ - I",
-                  "id": 10022,
+                  "name": "સરદાર આવાસ",
+                  "id": 1051,
                   "shakha": [
                     {
                       "shakhaName": "આઝાદ પ્રભાત",
@@ -281,48 +191,8 @@
                   ]
                 },
                 {
-                  "name": "સરદાર આવાસ - II",
-                  "id": 10023,
-                  "shakha": [
-                    {
-                      "shakhaName": "ઓમકારેશ્વર",
-                      "id": "Z"
-                    }
-                  ]
-                },
-                {
-                  "name": "શંકરપુરા",
-                  "id": 10024,
-                  "shakha": [
-                    {
-                      "shakhaName": "સિદ્ધેસ્વર મિલન",
-                      "id": "AA"
-                    }
-                  ]
-                },
-                {
-                  "name": "વિસલપુર",
-                  "id": 10025,
-                  "shakha": [
-                    {
-                      "shakhaName": "મિલન",
-                      "id": "BB"
-                    }
-                  ]
-                },
-                {
-                  "name": "બાકરોલ",
-                  "id": 10026,
-                  "shakha": [
-                    {
-                      "shakhaName": "બાકરોલ મિલન",
-                      "id": "CC"
-                    }
-                  ]
-                },
-                {
-                  "name": "કાસિંદ્રા",
-                  "id": 10027,
+                  "name": "મારુંજીવાસ",
+                  "id": 1052,
                   "shakha": [
                     {
                       "shakhaName": "મિલન",
@@ -336,15 +206,15 @@
         },
         {
           "name": "મેમનગર",
-          "id": "200",
+          "id": 11,
           "taluka": [
             {
               "name": "વસ્ત્રાપુર",
-              "id": 2000,
+              "id": 111,
               "sevaVasti": [
                 {
                   "name": "ચંદુજી ની ચાલી",
-                  "id": 20000,
+                  "id": 1111,
                   "shakha": [
                     {
                       "shakhaName": "નરસિંહ મેહતા",
@@ -353,8 +223,8 @@
                   ]
                 },
                 {
-                  "name": "રણુજા નગર - ૧",
-                  "id": 20001,
+                  "name": "રણુજા નગર-૧",
+                  "id": 1112,
                   "shakha": [
                     {
                       "shakhaName": "રચના પ્રભાત",
@@ -363,8 +233,8 @@
                   ]
                 },
                 {
-                  "name": "રણુજા નગર - ૨",
-                  "id": 20002,
+                  "name": "રણુજા નગર-૨",
+                  "id": 1113,
                   "shakha": [
                     {
                       "shakhaName": "સાંદીપની",
@@ -373,8 +243,8 @@
                   ]
                 },
                 {
-                  "name": "હરસિદ્ધ નગર",
-                  "id": 20003,
+                  "name": "લેકવ્યૂ",
+                  "id": 1114,
                   "shakha": [
                     {
                       "shakhaName": "અશ્વિની",
@@ -386,11 +256,11 @@
             },
             {
               "name": "મેમનગર",
-              "id": 2001,
+              "id": 112,
               "sevaVasti": [
                 {
                   "name": "વાલ્મીકી વાસ",
-                  "id": 20010,
+                  "id": 1121,
                   "shakha": [
                     {
                       "shakhaName": "વાળીનાથ",
@@ -400,7 +270,7 @@
                 },
                 {
                   "name": "સુખીપુરા",
-                  "id": 20011,
+                  "id": 1122,
                   "shakha": [
                     {
                       "shakhaName": "નારાયણ",
@@ -410,7 +280,7 @@
                 },
                 {
                   "name": "અજનતા ઈલોરા",
-                  "id": 20012,
+                  "id": 1123,
                   "shakha": [
                     {
                       "shakhaName": "તરુણ નગર",
@@ -419,8 +289,8 @@
                   ]
                 },
                 {
-                  "name": "શેણાબાઈ નગર",
-                  "id": 20013,
+                  "name": "ભમરીયા",
+                  "id": 1124,
                   "shakha": [
                     {
                       "shakhaName": "ગૌરવ પ્રભાત",
@@ -432,11 +302,11 @@
             },
             {
               "name": "ઘાટલોડિયા",
-              "id": 2002,
+              "id": 113,
               "sevaVasti": [
                 {
-                  "name": "લક્ષ્મણ ગઢનો ટેકરો",
-                  "id": 20020,
+                  "name": "લક્ષ્મણ ગઢ-1",
+                  "id": 1131,
                   "shakha": [
                     {
                       "shakhaName": "શિવાજી પ્રભાત",
@@ -445,8 +315,18 @@
                   ]
                 },
                 {
+                  "name": "લક્ષ્મણ ગઢ-૨",
+                  "id": 1132,
+                  "shakha": [
+                    {
+                      "shakhaName": "વિવેકાનંદ પ્રભાત",
+                      "id": "O"
+                    }
+                  ]
+                },
+                {
                   "name": "મુરલીધર આવાસ",
-                  "id": 20021,
+                  "id": 1133,
                   "shakha": [
                     {
                       "shakhaName": "સુયોધ્ય",
@@ -455,8 +335,8 @@
                   ]
                 },
                 {
-                  "name": "ગિરધાર આવાસ",
-                  "id": 20022,
+                  "name": "ગિરધર નગર",
+                  "id": 1134,
                   "shakha": [
                     {
                       "shakhaName": "વર્ધમાન",
@@ -465,54 +345,25 @@
                   ]
                 },
                 {
-                  "name": "ખોડીયાર નગર",
-                  "id": 20023,
+                  "name": "ખોડીયાર",
+                  "id": 1135,
                   "shakha": [
                     {
                       "shakhaName": "પંચદેવ",
                       "id": "L"
                     }
                   ]
-                },
-                {
-                  "name": "ઘાટલોડિયા ગામ",
-                  "id": 20024,
-                  "shakha": [
-                    {
-                      "shakhaName": "મહારાણા",
-                      "id": "M"
-                    }
-                  ]
-                },
-                {
-                  "name": "ગાયત્રીનગર વસાહત",
-                  "id": 20025,
-                  "shakha": [
-                    {
-                      "shakhaName": "સર્મપણ",
-                      "id": "N"
-                    }
-                  ]
-                },
-                {
-                  "name": "લક્ષ્મણ ગઢનો ટેકરો - ૨",
-                  "id": 20026,
-                  "shakha": [
-                    {
-                      "shakhaName": "વિવેકાનંદ પ્રભાત",
-                      "id": "O"
-                    }
-                  ]
                 }
+                 
               ]
             },
             {
               "name": "થલતેજ",
-              "id": 2003,
+              "id": 114,
               "sevaVasti": [
                 {
-                  "name": "માલવ તળાવ",
-                  "id": 20030,
+                  "name": "મલાવ-1",
+                  "id": 1141,
                   "shakha": [
                     {
                       "shakhaName": "તત્વતીર્થ",
@@ -521,8 +372,18 @@
                   ]
                 },
                 {
-                  "name": "નર્મદા આવાસ",
-                  "id": 20031,
+                  "name": "મલાવ-2",
+                  "id": 1141,
+                  "shakha": [
+                    {
+                      "shakhaName": "malav-2-shakha",
+                      "id": "P"
+                    }
+                  ]
+                },
+                {
+                  "name": "નર્મદા",
+                  "id": 1142,
                   "shakha": [
                     {
                       "shakhaName": "તત્વતીર્થ",
@@ -534,22 +395,17 @@
             },
             {
               "name": "શીલજ",
-              "id": 2004,
+              "id": 115,
               "sevaVasti": [
                 {
-                  "name": "દેવી પૂજક",
-                  "id": 20040,
+                  "name": "શીલજ ગામ",
+                  "id": 1151,
                   "shakha": [
                     {
                       "shakhaName": "કાવેરી",
                       "id": "R"
                     }
                   ]
-                },
-                {
-                  "name": "રંચરડા",
-                  "id": 20041,
-                  "shakha": []
                 }
               ]
             }
@@ -561,11 +417,11 @@
           "taluka": [
             {
               "name": "ચાંદલોડિયા",
-              "id": 3000,
+              "id": 3001,
               "sevaVasti": [
                 {
                   "name": "ઓમકારેશ્વર",
-                  "id": 30000,
+                  "id": 30011,
                   "shakha": [
                     {
                       "shakhaName": "માધવ પ્રભાત",
@@ -579,7 +435,7 @@
                 },
                 {
                   "name": "રામદેવ - ૧",
-                  "id": 30001,
+                  "id": 30012,
                   "shakha": [
                     {
                       "shakhaName": "કેશવ",
@@ -589,7 +445,7 @@
                 },
                 {
                   "name": "રામદેવ - ૨",
-                  "id": 30002,
+                  "id": 30013,
                   "shakha": [
                     {
                       "shakhaName": "અર્જુન",
@@ -599,7 +455,7 @@
                 },
                 {
                   "name": "સમર્પણ",
-                  "id": 30003,
+                  "id": 30014,
                   "shakha": [
                     {
                       "shakhaName": "સમર્પણ",
@@ -609,7 +465,7 @@
                 },
                 {
                   "name": "ભમ્મરિયા",
-                  "id": 30004,
+                  "id": 30015,
                   "shakha": [
                     {
                       "shakhaName": "શિવમ",
@@ -619,7 +475,7 @@
                 },
                 {
                   "name": "સરદાર",
-                  "id": 30005,
+                  "id": 30016,
                   "shakha": [
                     {
                       "shakhaName": "સરદાર",
@@ -629,7 +485,7 @@
                 },
                 {
                   "name": "સંત રોહીદાસ",
-                  "id": 30006,
+                  "id": 30017,
                   "shakha": [
                     {
                       "shakhaName": "આઝાદ",
@@ -641,7 +497,7 @@
             },
             {
               "name": "નવા રાણીપ",
-              "id": 3001,
+              "id": 3002,
               "sevaVasti": [
                 {
                   "name": "પરમેશ્વર",
@@ -687,7 +543,7 @@
             },
             {
               "name": "વંદે માતરમ",
-              "id": 3002,
+              "id": 3003,
               "sevaVasti": [
                 {
                   "name": "ચાણક્ય",
@@ -733,7 +589,7 @@
             },
             {
               "name": "વૈષ્ણોદેવી",
-              "id": 3003,
+              "id": 3004,
               "sevaVasti": [
                 {
                   "name": "ખોડીયાર પરુ",
@@ -773,7 +629,7 @@
             },
             {
               "name": "ભાગવત",
-              "id": 3004,
+              "id": 3005,
               "sevaVasti": [
                 {
                   "name": "સોલા ગામ",
@@ -1450,16 +1306,16 @@
       ]
     },
     {
-      "name": "Karnavati-purv",
+      "name": "વડોદરા મહાનગર",
       "id": 2,
       "jilla": [
         {
-          "name": "Sabarmati-1",
-          "id": "200",
+          "name": "વડોદરા",
+          "id": 20,
           "taluka": [
             {
-              "name": "nagar-1",
-              "id": 2000,
+              "name": "હરની",
+              "id": 200,
               "sevaVasti": [
                 {
                   "name": "naroda-1",
@@ -1472,66 +1328,1414 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "ખોડિયાર",
+              "id": 201,
+              "sevaVasti": [
+                {
+                  "name": "ખોડિયાર",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "nagar-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "સરદાર",
+              "id": 202,
+              "sevaVasti": [
+                {
+                  "name": "સરદાર",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "nagar-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "નારાયણ",
+              "id": 203,
+              "sevaVasti": [
+                {
+                  "name": "નારાયણ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "nagar-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ઇન્દ્રપુરી",
+              "id": 204,
+              "sevaVasti": [
+                {
+                  "name": "ઇન્દ્રપુરી",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "nagar-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "વાડી",
+              "id": 205,
+              "sevaVasti": [
+                {
+                  "name": "વાડી",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "nagar-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "નરસિંહ",
+              "id": 206,
+              "sevaVasti": [
+                {
+                  "name": "નરસિંહ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "નરસિંહ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "દંતેશ્વર",
+              "id": 207,
+              "sevaVasti": [
+                {
+                  "name": "દંતેશ્વર",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "દંતેશ્વર-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "તરસાલી",
+              "id": 208,
+              "sevaVasti": [
+                {
+                  "name": "તરસાલી",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "તરસાલી-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "મકરપુરા",
+              "id": 209,
+              "sevaVasti": [
+                {
+                  "name": "મકરપુરા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "મકરપુરા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "માણેજા",
+              "id": 210,
+              "sevaVasti": [
+                {
+                  "name": "માણેજા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "માણેજા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "માંજલપુર",
+              "id": 211,
+              "sevaVasti": [
+                {
+                  "name": "માંજલપુર",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "માંજલપુર-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "વ્રજધામ",
+              "id": 212,
+              "sevaVasti": [
+                {
+                  "name": "વ્રજધામ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "વ્રજધામ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "અટલાદરા",
+              "id": 213,
+              "sevaVasti": [
+                {
+                  "name": "અટલાદરા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "અટલાદરા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "અક્ષર",
+              "id": 214,
+              "sevaVasti": [
+                {
+                  "name": "અક્ષર",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "અક્ષર-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "અકોટા",
+              "id": 215,
+              "sevaVasti": [
+                {
+                  "name": "અકોટા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "અકોટા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "હરેકૃષ્ણા",
+              "id": 216,
+              "sevaVasti": [
+                {
+                  "name": "હરેકૃષ્ણા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "હરેકૃષ્ણા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ગોત્રી",
+              "id": 217,
+              "sevaVasti": [
+                {
+                  "name": "ગોત્રી",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "ગોત્રી-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "હરિ ઓમ",
+              "id": 218,
+              "sevaVasti": [
+                {
+                  "name": "હરિ ઓમ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "હરિ ઓમ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ગોરવા",
+              "id": 219,
+              "sevaVasti": [
+                {
+                  "name": "ગોરવા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "ગોરવા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "છાણી",
+              "id": 220,
+              "sevaVasti": [
+                {
+                  "name": "છાણી",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "છાણી-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "સમા",
+              "id": 221,
+              "sevaVasti": [
+                {
+                  "name": "સમા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "સમા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "મ પ્રતાપ",
+              "id": 222,
+              "sevaVasti": [
+                {
+                  "name": "મ પ્રતાપ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "મ પ્રતાપ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "મોટનાથ",
+              "id": 223,
+              "sevaVasti": [
+                {
+                  "name": "મોટનાથ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "મોટનાથ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "કારેલી બાગ",
+              "id": 224,
+              "sevaVasti": [
+                {
+                  "name": "કારેલી બાગ",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "કારેલી બાગ-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "રાવપુરા",
+              "id": 225,
+              "sevaVasti": [
+                {
+                  "name": "રાવપુરા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "રાવપુર-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "બાબાજીપુરા",
+              "id": 226,
+              "sevaVasti": [
+                {
+                  "name": "બાબાજીપુરા",
+                  "id": 20000,
+                  "shakha": [
+                    {
+                      "shakhaName": "બાબાજીપુરા-shakha",
+                      "id": "B"
+                    }
+                  ]
+                }
+              ]
             }
+            
           ]
         }
       ]
     }
   ],
-  "users": [
-    {
-      "name": "પ્રાંત એડમીન",
-      "userid": "gujarat-prant",
-      "role": "admin",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "",
-      "prant": "Gujarat",
-      "vibhag": "",
-      "jilla": "",
-      "taluka": "",
-      "id": "1178"
-    },
-    {
-      "name": "વિભાગ એડમીન",
-      "userid": "gandhingar-vibhag",
-      "role": "vibhag",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "",
-      "prant": "Gujarat",
-      "vibhag": "gandhingar",
-      "jilla": "",
-      "taluka": "",
-      "id": "bbc2"
-    },
-    {
-      "name": "જિલ્લા એડમીન",
-      "userid": "mahesana-jilla",
-      "role": "jilla",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "",
-      "prant": "Gujarat",
-      "vibhag": "Karnavati-purv",
-      "jilla": "karnavati",
-      "taluka": "",
-      "id": "786e"
-    },
-    {
-      "name": "તાલુકા એડમીન",
-      "userid": "kadi-taluko",
-      "role": "taluka",
-      "messages": [],
-      "passwordExp": "",
-      "jwt": "",
-      "prant": "Gujarat",
-      "vibhag": "Karnavati-Paschim",
-      "jilla": "બોપલ",
-      "taluka": "શ્યામાનંદ",
-      "id": "7d48"
-    }
-  ],
+  "users": [{
+    "name": "પ્રાંત એડમીન",
+    "userid": "gujaratprant",
+     "password": "$gujaratprant$",
+    "role": "prant-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "",
+    "jilla": "",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "સુપર એડમીન",
+    "userid": "superadmin ",
+     "password": "$superadmin$",
+    "role": "super-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "",
+    "jilla": "",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "વિભાગ એડમીન",
+    "userid": "karnavatipaschim",
+     "password": "$karnavatipaschim$",
+    "role": "vibhag-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "વિભાગ એડમીન",
+    "userid": "mvadodara",
+     "password": "$mvadodara$",
+    "role": "vibhag-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "paldibhag",
+     "password": "$paldibhag$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "navranpura",
+     "password": "$navranpura$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "નવરંગપુરા",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "navavasna",
+     "password": "$navavasna$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "નવા વાસણા",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "paldinagar",
+     "password": "$paldinagar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "પાલડી",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "vejalpur",
+     "password": "$vejalpur$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "વેજલપુર",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "vasna",
+     "password": "$vasna$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "વાસણા",
+    "id": "1"
+  },
+{
+    "name": "નગર   એડમીન",
+    "userid": "ambavadi",
+     "password": "$ambavadi$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "પાલડી",
+    "taluka": "આંબાવાડી",
+    "id": "1"
+  },
+
+
+
+
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "bopalbhag",
+     "password": "$bopalbhag$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "memnagar",
+     "password": "$memnagar$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "મેમનગર",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "chandlodiya",
+     "password": "$chandlodiya$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "ચાંદલોડિયા",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "naranpura",
+     "password": "$naranpura$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "ભાગ  એડમીન",
+    "userid": "sabarmati",
+     "password": "$sabarmati$",
+    "role": "jilla-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "",
+    "id": "1"
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "harni",
+     "password": "$harni$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "હરની",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "khodiyar",
+     "password": "$khodiyar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "ખોડિયાર",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "sardar",
+     "password": "$sardar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "સરદાર",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "narayan",
+     "password": "$narayan$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "નારાયણ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "indrpuri",
+     "password": "$indrpuri$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "ઇન્દ્રપુરી",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "vadi",
+     "password": "$vadi$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "વાડી",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "narsih",
+     "password": "$narsih$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "નરસિંહ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "danteshvar",
+     "password": "$danteshvar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "દંતેશ્વર",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "tarsali",
+     "password": "$tarsali$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "તરસાલી",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "makarpura",
+     "password": "$makarpura$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "મકરપુરા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "maneja",
+     "password": "$maneja$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "માણેજા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "manjalpur",
+     "password": "$manjalpur$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "માંજલપુર",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "vrjadham",
+     "password": "$vrjadham$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "વ્રજધામ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "atladara",
+     "password": "$atladara$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "અટલાદરા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "akshar",
+     "password": "$akshar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "અક્ષર",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "akota",
+     "password": "$akota$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "અકોટા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "harekrishna",
+     "password": "$harekrishna$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "હરેકૃષ્ણા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "gotri",
+     "password": "$gotri$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "ગોત્રી",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "hariom",
+     "password": "$hariom$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "હરિ ઓમ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "gorva",
+     "password": "$gorva$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "ગોરવા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "chhani",
+     "password": "$chhani$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "છાણી",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "sama",
+     "password": "$sama$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "સમા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "mpratap",
+     "password": "$mpratap$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "મ પ્રતાપ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "motnath",
+     "password": "$motnath$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "મોટનાથ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "karelibag",
+     "password": "$karelibag$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "કારેલી બાગ",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "ravpura",
+     "password": "$ravpura$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "રાવપુરા",
+    "id": ""
+  },
+{
+    "name": "નગર  એડમીન",
+    "userid": "babajipura",
+     "password": "$babajipura$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "વડોદરા મહાનગર",
+    "jilla": "વડોદરા",
+    "taluka": "બાબાજીપુરા",
+    "id": ""
+  },
+{
+   "name": "નગર  એડમીન",
+   "userid": "vandematram",
+    "password": "$vandematram$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "ચાંદલોડિયા",
+   "taluka": "વંદે માત્રમ",
+   "id": "1"
+ },
+{
+   "name": "નગર  એડમીન",
+   "userid": "vaishnodevi",
+    "password": "$vaishnodevi$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "ચાંદલોડિયા",
+   "taluka": "વૈષ્ણોદેવી",
+   "id": "1"
+ },
+{
+   "name": "નગર  એડમીન",
+   "userid": "bhagvat",
+    "password": "$bhagvat$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "ચાંદલોડિયા",
+   "taluka": "ભાગવત",
+   "id": "1"
+ },
+{
+   "name": "નગર  એડમીન",
+   "userid": "nchandlodiya",
+    "password": "$nchandlodiya$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "ચાંદલોડિયા",
+   "taluka": "ચાંદલોડિયા નગર",
+   "id": "1"
+ },
+{
+   "name": "નગર  એડમીન",
+   "userid": "navaranip",
+    "password": "$navaranip$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "ચાંદલોડિયા",
+   "taluka": "નવા રાણીપ",
+   "id": "1"
+ },
+{
+    "name": "નગર એડમીન",
+    "userid": "motera",
+     "password": "$motera$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "મોટેરા",
+    "id": "1"
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "koteshvar",
+     "password": "$koteshvar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "કોટેશ્વર",
+    "id": "1"
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "koteshvar",
+     "password": "$koteshvar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "કોટેશ્વર",
+    "id": "1"
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "vivekanandpuram",
+     "password": "$vivekanandpuram$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "વિવેકાનંદ પુરમ",
+    "id": "1"
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "chandkheda",
+     "password": "$vivekananchandkhedadpuram$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "ચાંદખેડા",
+    "id": "1"
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "zundal",
+     "password": "$zundal$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "સાબરમતી",
+    "taluka": "ઝુંડાલ",
+    "id": "1"
+  },
+ {
+   "name": "નગર એડમીન",
+   "userid": "memnagarn",
+   "password": "$memnagarn$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "મેમનગર",
+   "taluka": "મેમનગર",
+   "id": "1"
+ },
+ {
+   "name": "નગર એડમીન",
+   "userid": "ghatlodia",
+   "password": "$ghatlodia$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "મેમનગર",
+   "taluka": "ઘાટલોડિયા",
+   "id": "1"
+ },
+ {
+   "name": "નગર એડમીન",
+   "userid": "vastrapurNagar",
+   "password": "$vastrapurNagar$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "મેમનગર",
+   "taluka": "વસ્ત્રાપુર નગર",
+   "id": "1"
+ },
+ {
+   "name": "નગર એડમીન",
+   "userid": "thaltejNagar",
+   "password": "$thaltejNagar$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "મેમનગર",
+   "taluka": "થલતેજ નગર",
+   "id": "1"
+ },
+ {
+   "name": "નગર એડમીન",
+   "userid": "shilajNagar",
+   "password": "$shilajNagar$",
+   "role": "taluka-admin",
+   "messages": [],
+   "passwordExp": "",
+   "jwt": "",
+   "prant": "ગુજરાત",
+   "vibhag": "કર્ણાવતી પશ્ચિમ",
+   "jilla": "મેમનગર",
+   "taluka": "શીલજ નગર",
+   "id": "1"
+ },
+{
+    "name": "નગર એડમીન",
+    "userid": "shyamanandnagar ",
+     "password": "$shyamanandnagar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "શ્યામાનંદ નગર",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "jodhpur",
+     "password": "$jodhpur$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "જોધપુર",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "bopalnagar",
+     "password": "$bopalnagar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "બોપલ નગર",
+    "id": ""
+  },
+  {
+    "name": "નગર એડમીન",
+    "userid": "shela",
+     "password": "$shela$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "શેલા",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "southbopal",
+     "password": "$southbopal$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "સાઉથ બોપલ",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "Sarkhej",
+     "password": "$sarkhej$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "બોપલ",
+    "taluka": "સરખેજ",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "naranpuranagar ",
+     "password": "$naranpuranagar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "નારણપુરા નગર",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "solaroad",
+     "password": "$solaroad$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "સોલારોડ",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "rannapark",
+     "password": "$rannapark$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "રન્નાપાર્ક ",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "nirnaynagar ",
+     "password": "$nirnaynagar$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "નિર્ણય નગર",
+    "id": ""
+  },
+{
+    "name": "નગર એડમીન",
+    "userid": "vadaj",
+     "password": "$vadaj$",
+    "role": "taluka-admin",
+    "messages": [],
+    "passwordExp": "",
+    "jwt": "",
+    "prant": "ગુજરાત",
+    "vibhag": "કર્ણાવતી પશ્ચિમ",
+    "jilla": "નારણપુરા",
+    "taluka": "વાડજ",
+    "id": ""
+  }]
+,
   "shakhaVrut": [
     {
       "selectedCategory": "W",
@@ -1557,15 +2761,12 @@
     {
       "selectedCategory": "W",
       "weeklyForm": {
-        "sanskar": "sanskar1",
-        "sanskar1Group": {
-          "sevaBodhKatha": true,
-          "sevaGit": true
-        },
-        "sanskar2Group": ""
+        "sanskar": "sanskar2",
+        "sanskar1Group": "",
+        "sanskar2Group": {}
       },
       "monthlyForm": "",
-      "selectedDate": "1/8/2024",
+      "selectedDate": "25/7/2024",
       "vrutPrant": "Gujarat",
       "vrutVibhag": "Karnavati-Paschim",
       "vrutJilla": "બોપલ",
@@ -1573,6 +2774,27 @@
       "vrutVasti": "",
       "vrutShakha": "",
       "id": "5e18"
+    },
+    {
+      "id": "9f65",
+      "selectedCategory": "W",
+      "weeklyForm": {
+        "sanskar": "sanskar1",
+        "sanskar1Group": {
+          "sevaBodhKatha": null,
+          "sevaGit": false,
+          "amrutvachanSubhashit": true
+        },
+        "sanskar2Group": ""
+      },
+      "monthlyForm": "",
+      "selectedDate": "NaN/NaN/NaN",
+      "vrutPrant": "Gujarat",
+      "vrutVibhag": "Karnavati-Paschim",
+      "vrutJilla": "બોપલ",
+      "vrutTaluka": "શ્યામાનંદ",
+      "vrutVasti": "",
+      "vrutShakha": ""
     }
   ]
 }

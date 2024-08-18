@@ -27,12 +27,12 @@
       <select id="vasti" formControlName="vasti" (change)="vastiChange($event)">
         <option value="" selected>Select</option>
         <option *ngFor="let vasti of vastiList" [value]="vasti.name">{{ vasti.name }}</option>
-        <!-- <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો  </option> -->
+        <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો  </option>
       </select>
-      <!-- <div *ngIf="addVasti">
+      <div *ngIf="addVastiFlag">
         <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
-        <button type="button" class="addbtn" (click)="addVasti()">Add</button>
-      </div> -->
+        <button type="button" class="addbtn" (click)="addVasti($event)">Add</button>
+      </div>
     </div>
      
     <div class="form-group" *ngIf="shakhaList.length">
@@ -40,12 +40,12 @@
         <select id="shakha" formControlName="shakha" (change)="shakhaChange($event)">
           <option value="" selected>Select</option>
           <option *ngFor="let shakha of shakhaList" [value]="shakha.shakhaName">{{ shakha.shakhaName }}</option>
-          <!-- <option value="addSakha" >નવી શાખા ઉમેરો</option> -->
+          <option value="addSakha" >નવી શાખા ઉમેરો</option>
         </select>
-        <!-- <div *ngIf="addingSakha">
-          <input type="text" formControlName="newSakha" placeholder="નવી શાખા ઉમેરો" />
-          <button type="button" class="addbtn" (click)="addSakha()">Add</button>
-        </div> -->
+        <div *ngIf="addShakhaFlag">
+          <input type="text" formControlName="newShakha" placeholder="નવી શાખા ઉમેરો" />
+          <button type="button" class="addbtn" (click)="addShakha($event)">Add</button>
+        </div>
       </div> 
       
       <button type="submit" class="submit-btn" >Submit</button>

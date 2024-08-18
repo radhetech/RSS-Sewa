@@ -17,11 +17,13 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent
-  }, {
+  },
+   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home'
   },
+
   {
     path: 'login',
     component: LoginComponent
@@ -66,14 +68,17 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [authguardGuard]
   },
+  // {
+  //   path: 'manageShakha',
+  //   component: ProfileComponent,
+  //   canActivate: [authguardGuard]
+  // },
+  
   {
     path: '**',
     component: ErrorComponent,
-  },  
-  { path: '', 
-    redirectTo: '/SevaUpakrama', 
-    pathMatch: 'full' 
   }
+  
 ];
 
 @NgModule({

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     // start
     //this code is for api. uncomment once we have backend
     this.apiService.getData(this.loginUrl).subscribe({next:(res:any)=>{
-      res = res[3];
+      res = res[0];
       localStorage.setItem('loggedInUser',JSON.stringify(res));
       console.log('login--',res.name);
       this.AuthenticationService.isUserLogin = true;
