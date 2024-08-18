@@ -1,20 +1,12 @@
-// header {
-//     padding: 10px;
-//     background: #02534d;
-//   }
+
 .app-login-form {
   width: 90%;
-  /* Adjust width for smaller screens */
   max-width: 520px;
-  /* Set a maximum width to maintain readability */
   height: auto;
-  /* Allow height to adjust dynamically */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
-  /* Decrease padding for smaller screens */
   border-radius: 10px;
   margin: 100px auto;
-  /* Adjust margin for centering */
 }
 
 .form-input {
@@ -22,22 +14,18 @@
 }
 
 .form-input input {
-  width: 90%;
+  width: 95%;
   height: 40px;
   border: #eee 2px solid;
   padding: 0px 15px;
-  /* Decrease padding for smaller screens */
   margin-bottom: 10px;
-  /* Add margin bottom for spacing */
 }
 
 .app-login-btn {
-  width: 100%;
+  width: 95%;
   border: none;
   padding: 12px;
-  /* Decrease padding for smaller screens */
   margin: 12px 0px;
-  /* Decrease margin for smaller screens */
   background-color: #e98a2b;
   color: white;
 }

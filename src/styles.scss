@@ -43,6 +43,7 @@ $rssApp-theme: mat.define-light-theme((
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 body{
     font-family: 'Poppins', sans-serif;
@@ -57,3 +58,145 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .pointer:hover{
   cursor: pointer;
 }
+
+.list-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  
+  .list-container h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+  }
+  .list-container ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .list-container ul li {
+    cursor: pointer;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+.list-container ul li:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+  }
+  
+  .subList {
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
+  }
+  
+  .mainTitle {
+    margin: 10px 0px;
+    font-weight: bold;
+  }
+  
+  #texttitle {
+    margin-right: 15px;
+  }
+
+  
+.mainTitle input[type="number"],
+.mainTitle textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+
+.mainTitle input[type="number"]:focus,
+.mainTitle textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn {
+    height: 45px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #e98a2b;
+  }
+
+  .submit-btn:hover {
+    background: #9b4f04;
+  }
+
+  
+  .libtn{
+    height: 40px;
+    width: 95%;
+    color: black;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .custom-font-size-main {
+    font-size: 16px;
+  }
+
+  .custom-font-size-mid {
+    font-size: 14px;
+  }
+
+  .custom-font-size-sub {
+    font-size: 12px;
+  }
+  
+  .input-group{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+  .input-group input{
+    padding: 4px;
+    width: 30%;
+    border-radius: 10px;
+  }
+  .green {
+    background-color: rgb(214, 235, 197);
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    .list-container {
+      width: 90%;
+    }
+    .custom-font-size-main {
+      font-size: 12px;
+    }
+  
+    .custom-font-size-mid {
+      font-size: 10px;
+    }
+  
+    .custom-font-size-sub {
+      font-size: 9px;
+    }
+    
+  }
+  

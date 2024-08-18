@@ -21,22 +21,22 @@ const routes: Routes = [
    {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'home',
   },
 
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'ShakhaVrut',
     component: NewShakhaVrutComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'SevaUpakrama',
@@ -46,27 +46,27 @@ const routes: Routes = [
   {
     path: 'SevaKarya',
     component: SevaKaryaComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'UtsavaVrut',
     component: UtsavaVrttaComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   {
     path: 'SevaDarshan',
     component: SevaDarshanComponent,
-    canActivate: [authguardGuard]
-  }, 
+    canActivate: [authguardGuard],
+  },
   {
     path: 'Admin',
     component: AdminProfileComponent,
-    canActivate: [authguardGuard]
-  }, 
+    canActivate: [authguardGuard],
+  },
   {
     path: 'Profile',
     component: ProfileComponent,
-    canActivate: [authguardGuard]
+    canActivate: [authguardGuard],
   },
   // {
   //   path: 'manageShakha',
@@ -83,6 +83,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
