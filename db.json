@@ -1,14 +1,16 @@
 {
-  "vibhagList":[
+  "vibhagList": [
     {
       "name": "કર્ણાવતી પશ્ચિમ",
+      "reportName": "कर्णावती पश्चिम",
       "id": 1,
-      "type":"vibhag",
+      "type": "vibhag",
       "jilla": [
         {
           "name": "બોપલ",
+          "reportName": "बोपल",
           "id": 10,
-          "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "શ્યામાનંદ",
@@ -61,7 +63,7 @@
                       "id": "D"
                     }
                   ]
-                },      
+                },
                 {
                   "name": "ગોકુલ આવાસ",
                   "id": 1012,
@@ -187,7 +189,7 @@
               "name": "સરખેજ",
               "id": 105,
               "type": "taluka",
-              "sevaVasti": [ 
+              "sevaVasti": [
                 {
                   "name": "સરદાર આવાસ",
                   "id": 1051,
@@ -214,8 +216,9 @@
         },
         {
           "name": "મેમનગર",
+          "reportName": "मेमनगर",
           "id": 11,
-           "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "વસ્ત્રાપુર",
@@ -366,7 +369,6 @@
                     }
                   ]
                 }
-                 
               ]
             },
             {
@@ -427,8 +429,9 @@
         },
         {
           "name": "ચાંદલોડિયા",
+          "reportName": "चांदलोडिया",
           "id": "300",
-           "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "ચાંદલોડિયા",
@@ -707,13 +710,13 @@
         },
         {
           "name": "નારણપુરા",
+          "reportName": "बोपल",
           "id": "400",
-           "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "નારણપુરા",
               "id": 4000,
-              "type": "taluka",
               "type": "taluka",
               "sevaVasti": [
                 {
@@ -752,7 +755,6 @@
               "name": "સોલા રોડ",
               "id": 4001,
               "type": "taluka",
-              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "શિવાલય",
@@ -769,7 +771,6 @@
             {
               "name": "રન્ના પાર્ક",
               "id": 4002,
-              "type": "taluka",
               "type": "taluka",
               "sevaVasti": [
                 {
@@ -817,7 +818,6 @@
             {
               "name": "નિર્ણય નગર",
               "id": 4003,
-              "type": "taluka",
               "type": "taluka",
               "sevaVasti": [
                 {
@@ -910,7 +910,6 @@
               "name": "રાણીપ",
               "id": 4004,
               "type": "taluka",
-              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોપાલપુરા",
@@ -957,7 +956,6 @@
             {
               "name": "વાડજ",
               "id": 4005,
-              "type": "taluka",
               "type": "taluka",
               "sevaVasti": [
                 {
@@ -1056,8 +1054,9 @@
         },
         {
           "name": "સાબરમતી",
+          "reportName": "साबरमती",
           "id": "500",
-           "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "સાબરમતી",
@@ -1347,17 +1346,20 @@
     },
     {
       "name": "વડોદરા મહાનગર",
+      "reportName": "वडोदरा महानगर",
       "id": 2,
+      "type": "mahanagar",
       "jilla": [
-          {
+        {
           "name": "વડોદરા",
+          "reportName": "वडोदरा",
           "id": 20,
-           "type":"jilla",
+          "type": "jilla",
           "taluka": [
             {
               "name": "હરની",
               "id": 200,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "naroda-1",
@@ -1374,7 +1376,7 @@
             {
               "name": "ખોડિયાર",
               "id": 201,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ખોડિયાર",
@@ -1391,7 +1393,7 @@
             {
               "name": "સરદાર",
               "id": 202,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સરદાર",
@@ -1408,7 +1410,7 @@
             {
               "name": "નારાયણ",
               "id": 203,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "નારાયણ",
@@ -1425,7 +1427,7 @@
             {
               "name": "ઇન્દ્રપુરી",
               "id": 204,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ઇન્દ્રપુરી",
@@ -1442,7 +1444,7 @@
             {
               "name": "વાડી",
               "id": 205,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "વાડી",
@@ -1459,7 +1461,7 @@
             {
               "name": "નરસિંહ",
               "id": 206,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "નરસિંહ",
@@ -1476,7 +1478,7 @@
             {
               "name": "દંતેશ્વર",
               "id": 207,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "દંતેશ્વર",
@@ -1493,7 +1495,7 @@
             {
               "name": "તરસાલી",
               "id": 208,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "તરસાલી",
@@ -1510,7 +1512,7 @@
             {
               "name": "મકરપુરા",
               "id": 209,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "મકરપુરા",
@@ -1527,7 +1529,7 @@
             {
               "name": "માણેજા",
               "id": 210,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "માણેજા",
@@ -1544,7 +1546,7 @@
             {
               "name": "માંજલપુર",
               "id": 211,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "માંજલપુર",
@@ -1561,7 +1563,7 @@
             {
               "name": "વ્રજધામ",
               "id": 212,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "વ્રજધામ",
@@ -1578,7 +1580,7 @@
             {
               "name": "અટલાદરા",
               "id": 213,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "અટલાદરા",
@@ -1595,7 +1597,7 @@
             {
               "name": "અક્ષર",
               "id": 214,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "અક્ષર",
@@ -1612,7 +1614,7 @@
             {
               "name": "અકોટા",
               "id": 215,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "અકોટા",
@@ -1629,7 +1631,7 @@
             {
               "name": "હરેકૃષ્ણા",
               "id": 216,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "હરેકૃષ્ણા",
@@ -1646,7 +1648,7 @@
             {
               "name": "ગોત્રી",
               "id": 217,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોત્રી",
@@ -1663,7 +1665,7 @@
             {
               "name": "હરિ ઓમ",
               "id": 218,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "હરિ ઓમ",
@@ -1680,7 +1682,7 @@
             {
               "name": "ગોરવા",
               "id": 219,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોરવા",
@@ -1697,7 +1699,7 @@
             {
               "name": "છાણી",
               "id": 220,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "છાણી",
@@ -1714,7 +1716,7 @@
             {
               "name": "સમા",
               "id": 221,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સમા",
@@ -1731,7 +1733,7 @@
             {
               "name": "મ પ્રતાપ",
               "id": 222,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "મ પ્રતાપ",
@@ -1748,7 +1750,7 @@
             {
               "name": "મોટનાથ",
               "id": 223,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "મોટનાથ",
@@ -1765,7 +1767,7 @@
             {
               "name": "કારેલી બાગ",
               "id": 224,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "કારેલી બાગ",
@@ -1782,7 +1784,7 @@
             {
               "name": "રાવપુરા",
               "id": 225,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રાવપુરા",
@@ -1799,7 +1801,7 @@
             {
               "name": "બાબાજીપુરા",
               "id": 226,
-              "type":"taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "બાબાજીપુરા",
@@ -1813,7 +1815,6 @@
                 }
               ]
             }
-            
           ]
         }
       ]
@@ -1821,990 +1822,986 @@
   ],
   "users": [
     {
-    "name": "પ્રાંત એડમીન",
-    "userid": "gujaratprant",
-    "password": "$gujaratprant$",
-    "role": "prant-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "",
-    "jilla": "",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "સુપર એડમીન",
-    "userid": "superadmin ",
-     "password": "$superadmin$",
-    "role": "super-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "",
-    "jilla": "",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "વિભાગ એડમીન",
-    "userid": "karnavatipaschim",
-     "password": "$karnavatipaschim$",
-    "role": "vibhag-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "વિભાગ એડમીન",
-    "userid": "mvadodara",
-     "password": "$mvadodara$",
-    "role": "vibhag-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "paldibhag",
-     "password": "$paldibhag$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "navranpura",
-     "password": "$navranpura$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "નવરંગપુરા",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "navavasna",
-     "password": "$navavasna$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "નવા વાસણા",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "paldinagar",
-     "password": "$paldinagar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "પાલડી",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "vejalpur",
-     "password": "$vejalpur$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "વેજલપુર",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "vasna",
-     "password": "$vasna$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "વાસણા",
-    "id": "1"
-  },
-{
-    "name": "નગર   એડમીન",
-    "userid": "ambavadi",
-     "password": "$ambavadi$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "પાલડી",
-    "taluka": "આંબાવાડી",
-    "id": "1"
-  },
-
-
-
-
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "bopalbhag",
-     "password": "$bopalbhag$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "memnagar",
-     "password": "$memnagar$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "મેમનગર",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "chandlodiya",
-     "password": "$chandlodiya$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "ચાંદલોડિયા",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "naranpura",
-     "password": "$naranpura$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "ભાગ  એડમીન",
-    "userid": "sabarmati",
-     "password": "$sabarmati$",
-    "role": "jilla-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "",
-    "id": "1"
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "harni",
-     "password": "$harni$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "હરની",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "khodiyar",
-     "password": "$khodiyar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "ખોડિયાર",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "sardar",
-     "password": "$sardar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "સરદાર",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "narayan",
-     "password": "$narayan$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "નારાયણ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "indrpuri",
-     "password": "$indrpuri$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "ઇન્દ્રપુરી",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "vadi",
-     "password": "$vadi$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "વાડી",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "narsih",
-     "password": "$narsih$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "નરસિંહ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "danteshvar",
-     "password": "$danteshvar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "દંતેશ્વર",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "tarsali",
-     "password": "$tarsali$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "તરસાલી",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "makarpura",
-     "password": "$makarpura$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "મકરપુરા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "maneja",
-     "password": "$maneja$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "માણેજા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "manjalpur",
-     "password": "$manjalpur$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "માંજલપુર",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "vrjadham",
-     "password": "$vrjadham$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "વ્રજધામ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "atladara",
-     "password": "$atladara$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "અટલાદરા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "akshar",
-     "password": "$akshar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "અક્ષર",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "akota",
-     "password": "$akota$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "અકોટા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "harekrishna",
-     "password": "$harekrishna$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "હરેકૃષ્ણા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "gotri",
-     "password": "$gotri$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "ગોત્રી",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "hariom",
-     "password": "$hariom$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "હરિ ઓમ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "gorva",
-     "password": "$gorva$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "ગોરવા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "chhani",
-     "password": "$chhani$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "છાણી",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "sama",
-     "password": "$sama$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "સમા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "mpratap",
-     "password": "$mpratap$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "મ પ્રતાપ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "motnath",
-     "password": "$motnath$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "મોટનાથ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "karelibag",
-     "password": "$karelibag$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "કારેલી બાગ",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "ravpura",
-     "password": "$ravpura$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "રાવપુરા",
-    "id": ""
-  },
-{
-    "name": "નગર  એડમીન",
-    "userid": "babajipura",
-     "password": "$babajipura$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "વડોદરા મહાનગર",
-    "jilla": "વડોદરા",
-    "taluka": "બાબાજીપુરા",
-    "id": ""
-  },
-{
-   "name": "નગર  એડમીન",
-   "userid": "vandematram",
-    "password": "$vandematram$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "ચાંદલોડિયા",
-   "taluka": "વંદે માત્રમ",
-   "id": "1"
- },
-{
-   "name": "નગર  એડમીન",
-   "userid": "vaishnodevi",
-    "password": "$vaishnodevi$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "ચાંદલોડિયા",
-   "taluka": "વૈષ્ણોદેવી",
-   "id": "1"
- },
-{
-   "name": "નગર  એડમીન",
-   "userid": "bhagvat",
-    "password": "$bhagvat$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "ચાંદલોડિયા",
-   "taluka": "ભાગવત",
-   "id": "1"
- },
-{
-   "name": "નગર  એડમીન",
-   "userid": "nchandlodiya",
-    "password": "$nchandlodiya$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "ચાંદલોડિયા",
-   "taluka": "ચાંદલોડિયા નગર",
-   "id": "1"
- },
-{
-   "name": "નગર  એડમીન",
-   "userid": "navaranip",
-    "password": "$navaranip$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "ચાંદલોડિયા",
-   "taluka": "નવા રાણીપ",
-   "id": "1"
- },
-{
-    "name": "નગર એડમીન",
-    "userid": "motera",
-     "password": "$motera$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "મોટેરા",
-    "id": "1"
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "koteshvar",
-     "password": "$koteshvar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "કોટેશ્વર",
-    "id": "1"
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "koteshvar",
-     "password": "$koteshvar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "કોટેશ્વર",
-    "id": "1"
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "vivekanandpuram",
-     "password": "$vivekanandpuram$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "વિવેકાનંદ પુરમ",
-    "id": "1"
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "chandkheda",
-     "password": "$vivekananchandkhedadpuram$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "ચાંદખેડા",
-    "id": "1"
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "zundal",
-     "password": "$zundal$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "સાબરમતી",
-    "taluka": "ઝુંડાલ",
-    "id": "1"
-  },
- {
-   "name": "નગર એડમીન",
-   "userid": "memnagarn",
-   "password": "$memnagarn$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "મેમનગર",
-   "taluka": "મેમનગર",
-   "id": "1"
- },
- {
-   "name": "નગર એડમીન",
-   "userid": "ghatlodia",
-   "password": "$ghatlodia$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "મેમનગર",
-   "taluka": "ઘાટલોડિયા",
-   "id": "1"
- },
- {
-   "name": "નગર એડમીન",
-   "userid": "vastrapurNagar",
-   "password": "$vastrapurNagar$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "મેમનગર",
-   "taluka": "વસ્ત્રાપુર નગર",
-   "id": "1"
- },
- {
-   "name": "નગર એડમીન",
-   "userid": "thaltejNagar",
-   "password": "$thaltejNagar$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "મેમનગર",
-   "taluka": "થલતેજ નગર",
-   "id": "1"
- },
- {
-   "name": "નગર એડમીન",
-   "userid": "shilajNagar",
-   "password": "$shilajNagar$",
-   "role": "taluka-admin",
-   "messages": [],
-   "passwordExp": "",
-   "jwt": "",
-   "prant": "ગુજરાત",
-   "vibhag": "કર્ણાવતી પશ્ચિમ",
-   "jilla": "મેમનગર",
-   "taluka": "શીલજ નગર",
-   "id": "1"
- },
-{
-    "name": "નગર એડમીન",
-    "userid": "shyamanandnagar ",
-     "password": "$shyamanandnagar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "શ્યામાનંદ નગર",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "jodhpur",
-     "password": "$jodhpur$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "જોધપુર",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "bopalnagar",
-     "password": "$bopalnagar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "બોપલ નગર",
-    "id": ""
-  },
-  {
-    "name": "નગર એડમીન",
-    "userid": "shela",
-     "password": "$shela$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "શેલા",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "southbopal",
-     "password": "$southbopal$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "સાઉથ બોપલ",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "Sarkhej",
-     "password": "$sarkhej$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "બોપલ",
-    "taluka": "સરખેજ",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "naranpuranagar ",
-     "password": "$naranpuranagar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "નારણપુરા નગર",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "solaroad",
-     "password": "$solaroad$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "સોલારોડ",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "rannapark",
-     "password": "$rannapark$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "રન્નાપાર્ક ",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "nirnaynagar ",
-     "password": "$nirnaynagar$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "નિર્ણય નગર",
-    "id": ""
-  },
-{
-    "name": "નગર એડમીન",
-    "userid": "vadaj",
-     "password": "$vadaj$",
-    "role": "taluka-admin",
-    "messages": [],
-    "passwordExp": "",
-    "jwt": "",
-    "prant": "ગુજરાત",
-    "vibhag": "કર્ણાવતી પશ્ચિમ",
-    "jilla": "નારણપુરા",
-    "taluka": "વાડજ",
-    "id": ""
-  }]
-,
+      "name": "પ્રાંત એડમીન",
+      "userid": "gujaratprant",
+      "password": "$gujaratprant$",
+      "role": "prant-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "",
+      "jilla": "",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "સુપર એડમીન",
+      "userid": "superadmin ",
+      "password": "$superadmin$",
+      "role": "super-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "",
+      "jilla": "",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "વિભાગ એડમીન",
+      "userid": "karnavatipaschim",
+      "password": "$karnavatipaschim$",
+      "role": "vibhag-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "વિભાગ એડમીન",
+      "userid": "mvadodara",
+      "password": "$mvadodara$",
+      "role": "vibhag-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "paldibhag",
+      "password": "$paldibhag$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "navranpura",
+      "password": "$navranpura$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "નવરંગપુરા",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "navavasna",
+      "password": "$navavasna$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "નવા વાસણા",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "paldinagar",
+      "password": "$paldinagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "પાલડી",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "vejalpur",
+      "password": "$vejalpur$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "વેજલપુર",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "vasna",
+      "password": "$vasna$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "વાસણા",
+      "id": "1"
+    },
+    {
+      "name": "નગર   એડમીન",
+      "userid": "ambavadi",
+      "password": "$ambavadi$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "પાલડી",
+      "taluka": "આંબાવાડી",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "bopalbhag",
+      "password": "$bopalbhag$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "memnagar",
+      "password": "$memnagar$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "chandlodiya",
+      "password": "$chandlodiya$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "naranpura",
+      "password": "$naranpura$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "ભાગ  એડમીન",
+      "userid": "sabarmati",
+      "password": "$sabarmati$",
+      "role": "jilla-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "",
+      "id": "1"
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "harni",
+      "password": "$harni$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "હરની",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "khodiyar",
+      "password": "$khodiyar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "ખોડિયાર",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "sardar",
+      "password": "$sardar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "સરદાર",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "narayan",
+      "password": "$narayan$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "નારાયણ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "indrpuri",
+      "password": "$indrpuri$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "ઇન્દ્રપુરી",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "vadi",
+      "password": "$vadi$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "વાડી",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "narsih",
+      "password": "$narsih$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "નરસિંહ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "danteshvar",
+      "password": "$danteshvar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "દંતેશ્વર",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "tarsali",
+      "password": "$tarsali$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "તરસાલી",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "makarpura",
+      "password": "$makarpura$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "મકરપુરા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "maneja",
+      "password": "$maneja$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "માણેજા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "manjalpur",
+      "password": "$manjalpur$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "માંજલપુર",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "vrjadham",
+      "password": "$vrjadham$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "વ્રજધામ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "atladara",
+      "password": "$atladara$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "અટલાદરા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "akshar",
+      "password": "$akshar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "અક્ષર",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "akota",
+      "password": "$akota$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "અકોટા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "harekrishna",
+      "password": "$harekrishna$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "હરેકૃષ્ણા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "gotri",
+      "password": "$gotri$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "ગોત્રી",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "hariom",
+      "password": "$hariom$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "હરિ ઓમ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "gorva",
+      "password": "$gorva$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "ગોરવા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "chhani",
+      "password": "$chhani$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "છાણી",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "sama",
+      "password": "$sama$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "સમા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "mpratap",
+      "password": "$mpratap$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "મ પ્રતાપ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "motnath",
+      "password": "$motnath$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "મોટનાથ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "karelibag",
+      "password": "$karelibag$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "કારેલી બાગ",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "ravpura",
+      "password": "$ravpura$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "રાવપુરા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "babajipura",
+      "password": "$babajipura$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "વડોદરા મહાનગર",
+      "jilla": "વડોદરા",
+      "taluka": "બાબાજીપુરા",
+      "id": ""
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "vandematram",
+      "password": "$vandematram$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "વંદે માત્રમ",
+      "id": "1"
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "vaishnodevi",
+      "password": "$vaishnodevi$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "વૈષ્ણોદેવી",
+      "id": "1"
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "bhagvat",
+      "password": "$bhagvat$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "ભાગવત",
+      "id": "1"
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "nchandlodiya",
+      "password": "$nchandlodiya$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "ચાંદલોડિયા નગર",
+      "id": "1"
+    },
+    {
+      "name": "નગર  એડમીન",
+      "userid": "navaranip",
+      "password": "$navaranip$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "ચાંદલોડિયા",
+      "taluka": "નવા રાણીપ",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "motera",
+      "password": "$motera$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "મોટેરા",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "koteshvar",
+      "password": "$koteshvar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "કોટેશ્વર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "koteshvar",
+      "password": "$koteshvar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "કોટેશ્વર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "vivekanandpuram",
+      "password": "$vivekanandpuram$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "વિવેકાનંદ પુરમ",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "chandkheda",
+      "password": "$vivekananchandkhedadpuram$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "ચાંદખેડા",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "zundal",
+      "password": "$zundal$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "ઝુંડાલ",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "memnagarn",
+      "password": "$memnagarn$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "મેમનગર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "ghatlodia",
+      "password": "$ghatlodia$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "ઘાટલોડિયા",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "vastrapurNagar",
+      "password": "$vastrapurNagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "વસ્ત્રાપુર નગર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "thaltejNagar",
+      "password": "$thaltejNagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "થલતેજ નગર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "shilajNagar",
+      "password": "$shilajNagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "મેમનગર",
+      "taluka": "શીલજ નગર",
+      "id": "1"
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "shyamanandnagar ",
+      "password": "$shyamanandnagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "શ્યામાનંદ નગર",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "jodhpur",
+      "password": "$jodhpur$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "જોધપુર",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "bopalnagar",
+      "password": "$bopalnagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "બોપલ નગર",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "shela",
+      "password": "$shela$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "શેલા",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "southbopal",
+      "password": "$southbopal$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "સાઉથ બોપલ",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "Sarkhej",
+      "password": "$sarkhej$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "બોપલ",
+      "taluka": "સરખેજ",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "naranpuranagar ",
+      "password": "$naranpuranagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "નારણપુરા નગર",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "solaroad",
+      "password": "$solaroad$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "સોલારોડ",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "rannapark",
+      "password": "$rannapark$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "રન્નાપાર્ક ",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "nirnaynagar ",
+      "password": "$nirnaynagar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "નિર્ણય નગર",
+      "id": ""
+    },
+    {
+      "name": "નગર એડમીન",
+      "userid": "vadaj",
+      "password": "$vadaj$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "નારણપુરા",
+      "taluka": "વાડજ",
+      "id": ""
+    }
+  ],
   "shakhaVrut": [
     {
       "selectedCategory": "W",
@@ -2815,18 +2812,18 @@
           "sevaGit": true,
           "amrutvachanSubhashit": true
         },
-        "sanskar2Group":{
+        "sanskar2Group": {
           "karyNondh": "",
-          "vishayLenar":"",
-         "sevaPrasang":true,
-         "karyAyojan": true
+          "vishayLenar": "",
+          "sevaPrasang": true,
+          "karyAyojan": true
         }
       },
-      "monthlyForm":{
-        "sampark":true,
-        "swSankhya":10,
-        "visheshNondh":""
-      } ,
+      "monthlyForm": {
+        "sampark": true,
+        "swSankhya": 10,
+        "visheshNondh": ""
+      },
       "selectedDate": "1/8/2024",
       "prant": "Gujarat",
       "vibhag": "Karnavati-Paschim",
@@ -2835,6 +2832,28 @@
       "vasti": "",
       "shakha": "",
       "id": "dbbc"
+    },
+    {
+      "selectedCategory": "W",
+      "weeklyForm": {
+        "sanskar": "sanskar2",
+        "sanskar1Group": "",
+        "sanskar2Group": {
+          "karyNondh": null,
+          "vishayLenar": null,
+          "sevaPrasang": null,
+          "karyAyojan": null
+        }
+      },
+      "monthlyForm": "",
+      "selectedDate": "25/7/2024",
+      "prant": "ગુજરાત",
+      "vibhag": "",
+      "jilla": "",
+      "taluka": "",
+      "vasti": "",
+      "shakha": "",
+      "id": "39e9"
     }
   ]
 }

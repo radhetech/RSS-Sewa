@@ -28,6 +28,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { AccordionModule } from 'primeng/accordion';
 import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { ReportComponent } from './report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     SelectNagarComponent,
     SelectShakhaComponent,
     BreadcrumbComponent,
-    NewShakhaVrutComponent
+    NewShakhaVrutComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
