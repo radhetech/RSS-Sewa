@@ -94,9 +94,15 @@ addVasti(val:any){
     shakha:[]
   };
   this.vastiList.push(pushedVal);
+  this.adminForm.patchValue({
+    vasti:pushedVal
+  })
   this.addVastiFlag = false;
-
-  console.log(this.vastiList)
+  //this.adminForm.controls['newVasti'].value = 
+  this.adminForm.patchValue({
+    newVasti:''
+  })
+  console.log(this.adminForm.value)
 }
 
 addShakha(val:any){

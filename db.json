@@ -1,16 +1,19 @@
 {
-  "vibhagList": [
+  "vibhagList":[
     {
       "name": "કર્ણાવતી પશ્ચિમ",
       "id": 1,
+      "type":"vibhag",
       "jilla": [
         {
           "name": "બોપલ",
           "id": 10,
+          "type":"jilla",
           "taluka": [
             {
               "name": "શ્યામાનંદ",
               "id": 100,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રાજીવનગર",
@@ -47,6 +50,7 @@
             {
               "name": "જોધપુર",
               "id": 101,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રામદેવનગર",
@@ -73,6 +77,7 @@
             {
               "name": "બોપલ નગર",
               "id": 102,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રણછોડ પુરા",
@@ -99,6 +104,7 @@
             {
               "name": "સાઉથ બોપલ",
               "id": 103,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "કિષ્ના",
@@ -133,6 +139,7 @@
             {
               "name": "શેલા",
               "id": 104,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "શેલા ગામ",
@@ -179,6 +186,7 @@
             {
               "name": "સરખેજ",
               "id": 105,
+              "type": "taluka",
               "sevaVasti": [ 
                 {
                   "name": "સરદાર આવાસ",
@@ -207,10 +215,12 @@
         {
           "name": "મેમનગર",
           "id": 11,
+           "type":"jilla",
           "taluka": [
             {
               "name": "વસ્ત્રાપુર",
               "id": 111,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ચંદુજી ની ચાલી",
@@ -257,6 +267,7 @@
             {
               "name": "મેમનગર",
               "id": 112,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "વાલ્મીકી વાસ",
@@ -303,6 +314,7 @@
             {
               "name": "ઘાટલોડિયા",
               "id": 113,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "લક્ષ્મણ ગઢ-1",
@@ -360,6 +372,7 @@
             {
               "name": "થલતેજ",
               "id": 114,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "મલાવ-1",
@@ -396,6 +409,7 @@
             {
               "name": "શીલજ",
               "id": 115,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "શીલજ ગામ",
@@ -414,10 +428,12 @@
         {
           "name": "ચાંદલોડિયા",
           "id": "300",
+           "type":"jilla",
           "taluka": [
             {
               "name": "ચાંદલોડિયા",
               "id": 3001,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ઓમકારેશ્વર",
@@ -498,6 +514,7 @@
             {
               "name": "નવા રાણીપ",
               "id": 3002,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "પરમેશ્વર",
@@ -544,6 +561,7 @@
             {
               "name": "વંદે માતરમ",
               "id": 3003,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ચાણક્ય",
@@ -590,6 +608,7 @@
             {
               "name": "વૈષ્ણોદેવી",
               "id": 3004,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ખોડીયાર પરુ",
@@ -630,6 +649,7 @@
             {
               "name": "ભાગવત",
               "id": 3005,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સોલા ગામ",
@@ -688,10 +708,13 @@
         {
           "name": "નારણપુરા",
           "id": "400",
+           "type":"jilla",
           "taluka": [
             {
               "name": "નારણપુરા",
               "id": 4000,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોપાલ નગર",
@@ -728,6 +751,8 @@
             {
               "name": "સોલા રોડ",
               "id": 4001,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "શિવાલય",
@@ -744,6 +769,8 @@
             {
               "name": "રન્ના પાર્ક",
               "id": 4002,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રામકૃષ્ણ નગર",
@@ -790,6 +817,8 @@
             {
               "name": "નિર્ણય નગર",
               "id": 4003,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "રેલ્વે લાઈન",
@@ -880,6 +909,8 @@
             {
               "name": "રાણીપ",
               "id": 4004,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોપાલપુરા",
@@ -926,6 +957,8 @@
             {
               "name": "વાડજ",
               "id": 4005,
+              "type": "taluka",
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "શાંતિનગર",
@@ -1024,10 +1057,12 @@
         {
           "name": "સાબરમતી",
           "id": "500",
+           "type":"jilla",
           "taluka": [
             {
               "name": "સાબરમતી",
               "id": 5000,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "મોટેરા",
@@ -1064,6 +1099,7 @@
             {
               "name": "વિજયનગર",
               "id": 5001,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "પ્રજાપતિ નગર",
@@ -1080,6 +1116,7 @@
             {
               "name": "બોપલ",
               "id": 5002,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સ્વામિનારાયણ",
@@ -1116,6 +1153,7 @@
             {
               "name": "ગાંધીનગર",
               "id": 5003,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સેક્ટર 21",
@@ -1202,6 +1240,7 @@
             {
               "name": "રાણાયાળા",
               "id": 5004,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "ગોકુલધામ",
@@ -1248,6 +1287,7 @@
             {
               "name": "કલોલ",
               "id": 5005,
+              "type": "taluka",
               "sevaVasti": [
                 {
                   "name": "સુકન્યાનગર",
@@ -1309,13 +1349,15 @@
       "name": "વડોદરા મહાનગર",
       "id": 2,
       "jilla": [
-        {
+          {
           "name": "વડોદરા",
           "id": 20,
+           "type":"jilla",
           "taluka": [
             {
               "name": "હરની",
               "id": 200,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "naroda-1",
@@ -1332,6 +1374,7 @@
             {
               "name": "ખોડિયાર",
               "id": 201,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "ખોડિયાર",
@@ -1348,6 +1391,7 @@
             {
               "name": "સરદાર",
               "id": 202,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "સરદાર",
@@ -1364,6 +1408,7 @@
             {
               "name": "નારાયણ",
               "id": 203,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "નારાયણ",
@@ -1380,6 +1425,7 @@
             {
               "name": "ઇન્દ્રપુરી",
               "id": 204,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "ઇન્દ્રપુરી",
@@ -1396,6 +1442,7 @@
             {
               "name": "વાડી",
               "id": 205,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "વાડી",
@@ -1412,6 +1459,7 @@
             {
               "name": "નરસિંહ",
               "id": 206,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "નરસિંહ",
@@ -1428,6 +1476,7 @@
             {
               "name": "દંતેશ્વર",
               "id": 207,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "દંતેશ્વર",
@@ -1444,6 +1493,7 @@
             {
               "name": "તરસાલી",
               "id": 208,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "તરસાલી",
@@ -1460,6 +1510,7 @@
             {
               "name": "મકરપુરા",
               "id": 209,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "મકરપુરા",
@@ -1476,6 +1527,7 @@
             {
               "name": "માણેજા",
               "id": 210,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "માણેજા",
@@ -1492,6 +1544,7 @@
             {
               "name": "માંજલપુર",
               "id": 211,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "માંજલપુર",
@@ -1508,6 +1561,7 @@
             {
               "name": "વ્રજધામ",
               "id": 212,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "વ્રજધામ",
@@ -1524,6 +1578,7 @@
             {
               "name": "અટલાદરા",
               "id": 213,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "અટલાદરા",
@@ -1540,6 +1595,7 @@
             {
               "name": "અક્ષર",
               "id": 214,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "અક્ષર",
@@ -1556,6 +1612,7 @@
             {
               "name": "અકોટા",
               "id": 215,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "અકોટા",
@@ -1572,6 +1629,7 @@
             {
               "name": "હરેકૃષ્ણા",
               "id": 216,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "હરેકૃષ્ણા",
@@ -1588,6 +1646,7 @@
             {
               "name": "ગોત્રી",
               "id": 217,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "ગોત્રી",
@@ -1604,6 +1663,7 @@
             {
               "name": "હરિ ઓમ",
               "id": 218,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "હરિ ઓમ",
@@ -1620,6 +1680,7 @@
             {
               "name": "ગોરવા",
               "id": 219,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "ગોરવા",
@@ -1636,6 +1697,7 @@
             {
               "name": "છાણી",
               "id": 220,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "છાણી",
@@ -1652,6 +1714,7 @@
             {
               "name": "સમા",
               "id": 221,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "સમા",
@@ -1668,6 +1731,7 @@
             {
               "name": "મ પ્રતાપ",
               "id": 222,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "મ પ્રતાપ",
@@ -1684,6 +1748,7 @@
             {
               "name": "મોટનાથ",
               "id": 223,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "મોટનાથ",
@@ -1700,6 +1765,7 @@
             {
               "name": "કારેલી બાગ",
               "id": 224,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "કારેલી બાગ",
@@ -1716,6 +1782,7 @@
             {
               "name": "રાવપુરા",
               "id": 225,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "રાવપુરા",
@@ -1732,6 +1799,7 @@
             {
               "name": "બાબાજીપુરા",
               "id": 226,
+              "type":"taluka",
               "sevaVasti": [
                 {
                   "name": "બાબાજીપુરા",
@@ -1751,10 +1819,11 @@
       ]
     }
   ],
-  "users": [{
+  "users": [
+    {
     "name": "પ્રાંત એડમીન",
     "userid": "gujaratprant",
-     "password": "$gujaratprant$",
+    "password": "$gujaratprant$",
     "role": "prant-admin",
     "messages": [],
     "passwordExp": "",
@@ -2746,55 +2815,26 @@
           "sevaGit": true,
           "amrutvachanSubhashit": true
         },
-        "sanskar2Group": ""
+        "sanskar2Group":{
+          "karyNondh": "",
+          "vishayLenar":"",
+         "sevaPrasang":true,
+         "karyAyojan": true
+        }
       },
-      "monthlyForm": "",
+      "monthlyForm":{
+        "sampark":true,
+        "swSankhya":10,
+        "visheshNondh":""
+      } ,
       "selectedDate": "1/8/2024",
-      "vrutPrant": "Gujarat",
-      "vrutVibhag": "Karnavati-Paschim",
-      "vrutJilla": "બોપલ",
-      "vrutTaluka": "શ્યામાનંદ",
-      "vrutVasti": "",
-      "vrutShakha": "",
+      "prant": "Gujarat",
+      "vibhag": "Karnavati-Paschim",
+      "jilla": "બોપલ",
+      "taluka": "શ્યામાનંદ",
+      "vasti": "",
+      "shakha": "",
       "id": "dbbc"
-    },
-    {
-      "selectedCategory": "W",
-      "weeklyForm": {
-        "sanskar": "sanskar2",
-        "sanskar1Group": "",
-        "sanskar2Group": {}
-      },
-      "monthlyForm": "",
-      "selectedDate": "25/7/2024",
-      "vrutPrant": "Gujarat",
-      "vrutVibhag": "Karnavati-Paschim",
-      "vrutJilla": "બોપલ",
-      "vrutTaluka": "શ્યામાનંદ",
-      "vrutVasti": "",
-      "vrutShakha": "",
-      "id": "5e18"
-    },
-    {
-      "id": "9f65",
-      "selectedCategory": "W",
-      "weeklyForm": {
-        "sanskar": "sanskar1",
-        "sanskar1Group": {
-          "sevaBodhKatha": null,
-          "sevaGit": false,
-          "amrutvachanSubhashit": true
-        },
-        "sanskar2Group": ""
-      },
-      "monthlyForm": "",
-      "selectedDate": "NaN/NaN/NaN",
-      "vrutPrant": "Gujarat",
-      "vrutVibhag": "Karnavati-Paschim",
-      "vrutJilla": "બોપલ",
-      "vrutTaluka": "શ્યામાનંદ",
-      "vrutVasti": "",
-      "vrutShakha": ""
     }
   ]
 }

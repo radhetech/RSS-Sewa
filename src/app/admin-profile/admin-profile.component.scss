@@ -59,7 +59,7 @@
 }
 
 .form-group label {
-  display: block;
+  // display: block;
   font-size: 13px;
   margin-bottom: 5px;
 }
@@ -120,4 +120,7 @@ input {
     font-size: 14px; /* Adjust font size for options */
     padding: 8px;    /* Adjust padding for options */
   }
+}
+.float-right{
+  float:right;
 }

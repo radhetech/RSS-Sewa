@@ -154,12 +154,12 @@ getFormattedDate(date:any) {
 }
 submitForm(form:any){
   form.value.selectedDate = this.getFormattedDate(this.selectedDate);
-  form.value.vrutPrant = this.userData.prant;
-  form.value.vrutVibhag = this.userData.vibhag;
-  form.value.vrutJilla = this.userData.jilla;
-  form.value.vrutTaluka = this.userData.taluka;
-  form.value.vrutVasti = this.vrutVasti;
-  form.value.vrutShakha = this.vrutShakha;
+  form.value.prant = this.userData.prant;
+  form.value.vibhag = this.userData.vibhag;
+  form.value.jilla = this.userData.jilla;
+  form.value.taluka = this.userData.taluka;
+  form.value.vasti = this.vrutVasti;
+  form.value.shakha = this.vrutShakha;
   if(this.selectedCategory=='W'){
     form.value.monthlyForm = '';
     if(form.value.weeklyForm.sanskar=='sanskar1'){
