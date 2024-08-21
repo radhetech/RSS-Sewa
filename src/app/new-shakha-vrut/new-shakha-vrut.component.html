@@ -1,8 +1,7 @@
 <app-breadcrumb> </app-breadcrumb>
 <div class="list-container">
     <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
-    <select id="thursdaysDropdown" [(ngModel)]="selectedDate" (change)="dateSelChange(selectedDate)">
-        <!-- <option [value]="dateHeading" >my date</option> -->
+    <select class="thursdaysDropdown" [(ngModel)]="selectedDate" (change)="dateSelChange(selectedDate)">
         <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }} Thursday</option>
       </select>
 <form class="mainTitle" [formGroup]="formGroup">

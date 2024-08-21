@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { valueSelect } from '../services/valueSelect.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-seva-upakrama',
@@ -24,9 +26,14 @@ export class SevaUpakramaComponent {
   activeCategory: number = 0;
   selectedNagar: any;
   ShowNagar: boolean = true;
-
-
-  constructor() {}
+  selectedDate: any;
+  userData:any;
+  vrutVasti:string = '';
+  vrutShakha:string = '';
+  formId:string = '';
+  constructor(private valueSel:valueSelect, private _apiService:ApiService) {
+    this.userData = this.valueSel.getUserData()!;
+  }
 
 
 
@@ -128,9 +135,6 @@ export class SevaUpakramaComponent {
   
   }
 
-  // openSelectNagar() {
-  //   this.ShowNagar = true;
-  // }
   toggleList(category: any) {
     this.activeCategory = this.activeCategory === category ? null : category;
   }
@@ -142,14 +146,6 @@ export class SevaUpakramaComponent {
     return (this.checkedItems[item.name]?.men || 
             this.checkedItems[item.name]?.women || 
             this.checkedItems[item.name]?.others)  }
-
-  // isOthersFilled(category: string): any {
-  //   if (category === 'shiksha') return this.othersShiksha.men || this.othersShiksha.women || this.othersShiksha.others;
-  //   if (category === 'aayogya') return this.othersAayogya.men || this.othersAayogya.women || this.othersAayogya.others;
-  //   if (category === 'sawval') return this.othersSawval.men || this.othersSawval.women || this.othersSawval.others;
-  //   if (category === 'samajik') return this.othersSamajik.men || this.othersSamajik.women || this.othersSamajik.others;
-  //   return false;
-  // }
 
   onFileChange(event: any, itemName: string) {
     const files = event.target.files;
@@ -168,6 +164,10 @@ export class SevaUpakramaComponent {
   }
   createImageUrl(image: File): string {
     return URL.createObjectURL(image);
+  }
+  openDatePicker(event: MouseEvent): void {
+    const input = event.target as HTMLInputElement;
+    input.showPicker();
   }
 
   toggleOthersSubList(type: string) {
@@ -189,7 +189,17 @@ export class SevaUpakramaComponent {
     const aayogya: any = {};
     const swavalamban:any={};
     const samajik:any={};
-
+    form.value.vrutPrant = this.userData.prant;
+  form.value.vrutVibhag = this.userData.vibhag;
+  form.value.vrutJilla = this.userData.jilla;
+  form.value.vrutTaluka = this.userData.taluka;
+  form.value.vrutVasti = this.vrutVasti;
+  form.value.vrutShakha = this.vrutShakha;
+    const dateObj = new Date(this.selectedDate);
+    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+    const year = dateObj.getFullYear(); 
+    const formattedDate = `${month}/${year}`;
+    form.value.selectedDate = formattedDate;
     this.educationItems.forEach(item => {
       const checked = this.checkedItems[item.name];
       shiksha[item.name] = {
@@ -247,8 +257,12 @@ export class SevaUpakramaComponent {
       }
       item.showInputs = false;
      })
-  
-    console.log({ shiksha, aayogya,swavalamban,samajik });
+     const submissionData = {  selectedDate: formattedDate, shiksha, aayogya, swavalamban, samajik };
+
+    console.log(submissionData);
+    this._apiService.postData('http://localhost:4000/sevaUpakramaVrut',form.value).subscribe((res)=>{
+        console.log(res)
+     })
     form.reset()
     this.showError = false;
     this.showList1 = false;

@@ -21,7 +21,14 @@ ul li input{
   margin-left: 20px;
 }
 
-
+.thursdaysDropdown {
+  border-radius: 10px;
+  width: 40%;
+  padding: 10px;
+  margin-left: 25%;
+  border: 2px solid #e98a2b;
+  margin-bottom: 10px;
+}
 .input-group img {
   margin-top: 10px;
   margin-right: 10px;
@@ -72,6 +79,10 @@ ul li input{
   .rightSideDate {
     width: 65px;
     font-size: 8px;
+  }
+  .thursdaysDropdown {
+    width: 100%;
+    margin-left: 0px;
   }
 }
 

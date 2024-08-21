@@ -3,9 +3,10 @@
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
   <div class="list-container">
     <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
+    <input type="month" class="thursdaysDropdown"  id="start" name="start" [(ngModel)]="selectedDate" min="2018-03" (click)="openDatePicker($event)" placeholder="Select Month" />
     <ul>
       <li (click)="toggleList(1)">
-        <button type="button" class="libtn custom-font-size-main">શિક્ષા</button>
+        <label class="libtn custom-font-size-main">શિક્ષા</label>
       </li>
       <div *ngIf="activeCategory === 1" class="subList">
         <ng-container *ngFor="let item of educationItems">
@@ -34,7 +35,7 @@
       </div>
 
       <li (click)="toggleList(2)">
-        <button type="button" class="libtn custom-font-size-main" >સ્વાસ્થ્ય</button>
+        <label class="libtn custom-font-size-main" >સ્વાસ્થ્ય</label>
       </li>
       <div *ngIf="activeCategory === 2" class="subList">
         <ng-container *ngFor="let item of healthItems">
@@ -63,7 +64,7 @@
       </div>
 
       <li (click)="toggleList(3)">
-        <button type="button" class="libtn custom-font-size-main">સ્વાવલંબન</button>
+        <label class="libtn custom-font-size-main">સ્વાવલંબન</label>
       </li>
       <div *ngIf="activeCategory === 3" class="subList">
         <ng-container *ngFor="let item of selfRelianceItems">
@@ -92,7 +93,7 @@
       </div>
 
       <li (click)="toggleList(4)">
-        <button type="button" class="libtn custom-font-size-main">સામાજિક</button>
+        <label class="libtn custom-font-size-main">સામાજિક</label>
       </li>
       <div *ngIf="activeCategory === 4" class="subList">
         <ng-container *ngFor="let item of socialItems">

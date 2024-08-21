@@ -84,11 +84,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;
     padding: 10px;
     border-top: 1px solid #ddd;
-    transition: background-color 0.3s, color 0.3s;
+
   }
 
 .list-container ul li:hover {
-    background-color: #f1f1f1;
+    background-color: #cefae5;
     color: #007bff;
   }
   
@@ -141,7 +141,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #9b4f04;
   }
 
-  
+  .libtn:hover{
+       background-color: #cefae5;
+    color: #007bff;
+  }
   .libtn{
     height: 40px;
     width: 95%;
@@ -178,7 +181,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 10px;
   }
   .green {
-    background-color: rgb(214, 235, 197);
+    background-color: rgb(251, 230, 176);
     font-weight: bold;
   }
 
