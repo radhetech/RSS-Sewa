@@ -2765,7 +2765,7 @@
         }
       },
       "monthlyForm": "",
-      "selectedDate": "15/8/2024",
+      "selectedDate": "8/8/2024",
       "vrutPrant": "ગુજરાત",
       "vrutVibhag": "",
       "vrutJilla": "",
@@ -3179,6 +3179,3989 @@
       "vrutVasti": "",
       "vrutShakha": "",
       "id": "BRbNgrH"
+    },
+    {
+      "selectedDate": "2024-03",
+      "educationMaterialDistributionDate": "2024-03-13",
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "6yEwC6a"
+    },
+    {
+      "selectedDate": "2024-07",
+      "educationMaterialDistributionDate": "2024-07-09",
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "_P8ro4f"
+    },
+    {
+      "selectedDate": "2024-03",
+      "educationMaterialDistributionDate": "2024-03-12",
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "rCrWhdi"
+    },
+    {
+      "selectedDate": "2024-06",
+      "educationMaterialDistributionDate": "2024-06-12",
+      "educationMaterialDistributionMen": 988,
+      "educationMaterialDistributionWomen": 9,
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "nBPLUVr"
+    },
+    {
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 6,
+          "women": 767,
+          "others": 67,
+          "choosedate": "05/03/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "xuE0irt"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-06",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 89,
+          "women": 898,
+          "others": 9,
+          "choosedate": "04/06/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "EHzwZ2k"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-07",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "_5DlRQI"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-02",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "15/02/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "Y8jSFlT"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-06",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 787,
+          "women": 878,
+          "others": 8,
+          "choosedate": "12/06/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "mReohEt"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-03",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "19/03/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "_XtKN2W"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-02",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "08/02/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "8vvXOuE"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-04",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 89,
+          "women": 89,
+          "others": 8989,
+          "choosedate": "09/04/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "rawO1Jv"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-02",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "20/02/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "mqKWMVD"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-06",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 8,
+          "women": 8,
+          "others": 8,
+          "choosedate": "12/06/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "kunPmru"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-02",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 78,
+          "women": 8,
+          "others": 78,
+          "choosedate": "14/02/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "84HjmEm"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-02",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 89,
+          "women": 989,
+          "others": 9,
+          "choosedate": "13/02/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "VHVaqtz"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-12",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 90,
+          "women": 90,
+          "others": 0,
+          "choosedate": "16/12/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "wHGOdUr"
+    },
+    {
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "selectedDate": "2024-06",
+      "shiksha": {
+        "educationMaterialDistribution": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "11/06/2024",
+          "images": []
+        },
+        "examGuidanceCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "feeAssistance": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "personalityDevelopmentCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity1": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "aayogya": {
+        "bloodDonationCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "healthCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "eyeCheckupCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "yogaCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "divyangCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "bloodDonorList": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "firstAidTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "counseling": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "deAddictionCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity2": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "swavalamban": {
+        "professionalTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "panchgavyaTrainingCamp": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "rakdiMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "electricMalaConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "decorativeMaterialProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "diwaliLampMaking": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sweetsAndSnacksProduction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "managerialTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "organicFertilizerTraining": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity3": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "samajik": {
+        "girlWorship": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "massMarriage": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "templeCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "publicCleanliness": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "waterConservationPondConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "roadConstruction": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "communityCelebration": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "treePlantation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "sportsCompetition": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "blanketSweaterDelivery": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "foodDonation": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": []
+        },
+        "otherActivity4": {
+          "men": 0,
+          "women": 0,
+          "others": 0,
+          "choosedate": "",
+          "images": [],
+          "activityName": ""
+        }
+      },
+      "id": "wVGCzRk"
     }
   ]
 }

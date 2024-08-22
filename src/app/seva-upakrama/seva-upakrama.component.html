@@ -1,5 +1,6 @@
 
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
+<app-breadcrumb> </app-breadcrumb>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
   <div class="list-container">
     <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
@@ -8,8 +9,9 @@
        id="start" name="selectedDate" 
        [(ngModel)]="selectedDate" 
        min="2018-03" 
-       (change)="onMonthYearChange()" />
-    <ul>
+       (change)="onMonthYearChange()"
+      />
+    <ul *ngIf="showAllForm">
       <li (click)="toggleList(1)">
         <label class="libtn custom-font-size-main">શિક્ષા</label>
       </li>

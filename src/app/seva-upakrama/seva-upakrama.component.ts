@@ -12,30 +12,27 @@ export class SevaUpakramaComponent {
   selectedButton2 = false;
   selectedButton3 = false;
   selectedButton4 = false;
-  showList1:boolean = false;
-  showList2:boolean = false;
-  showList3:boolean = false;
-  showList4:boolean = false;
+  showList1: boolean = false;
+  showList2: boolean = false;
+  showList3: boolean = false;
+  showList4: boolean = false;
   showError: boolean = false;
   snackbarColour: string | null = null;
   loginerr: string | null = null;
   showOthersShiksha: boolean = false;
   showOthersAayogya: boolean = false;
   showOthersSawval: boolean = false;
-  showOthersSamajik:Boolean= false;
+  showOthersSamajik: Boolean = false;
   activeCategory: number = 0;
-  selectedNagar: any;
-  ShowNagar: boolean = true;
   selectedDate: string | null = null;
-  userData:any;
-  vrutVasti:string = '';
-  vrutShakha:string = '';
-  formId:string = '';
-  constructor(private valueSel:valueSelect, private _apiService:ApiService) {
+  userData: any;
+  vrutVasti: string = '';
+  vrutShakha: string = '';
+  showAllForm:boolean=false;
+
+  constructor(private valueSel: valueSelect, private _apiService: ApiService) {
     this.userData = this.valueSel.getUserData()!;
   }
-
-
 
   educationItems = [
     { label: 'શૈક્ષણિક સામગ્રીનું વિતરણ', name: 'educationMaterialDistribution', showInputs: false, men: null, women: null, others: null },
@@ -84,54 +81,45 @@ export class SevaUpakramaComponent {
     { label: 'અન્ય પ્રવૃત્તિ', name: 'otherActivity4', showInputs: false, men: null, women: null, others: null }
   ];
 
-
-      
   checkedItems: any = {
-    educationMaterialDistribution: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    examGuidanceCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    feeAssistance: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    personalityDevelopmentCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    bloodDonationCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    healthCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    eyeCheckupCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    yogaCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    divyangCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    bloodDonorList: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    firstAidTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    counseling: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    deAddictionCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    professionalTrainingCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    panchgavyaTrainingCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    rakdiMaking: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    electricMalaConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    decorativeMaterialProduction: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    diwaliLampMaking: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    sweetsAndSnacksProduction: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    managerialTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    organicFertilizerTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    girlWorship: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    massMarriage: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    templeCleanliness: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    publicCleanliness: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    waterConservationPondConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    roadConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    communityCelebration: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    treePlantation: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    sportsCompetition: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    blanketSweaterDelivery: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    foodDonation: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    otherActivity1: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    otherActivity2: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    otherActivity3: { men: '', women: '', others: '',images:[],chooseDate:'' },
-    otherActivity4: { men: '', women: '', others: '',images:[],chooseDate:'' }
+    educationMaterialDistribution: { men: '', women: '', others: '', images: [], chooseDate:null },
+    examGuidanceCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    feeAssistance: { men: '', women: '', others: '', images: [], chooseDate:null },
+    personalityDevelopmentCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    bloodDonationCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    healthCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    eyeCheckupCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    yogaCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    divyangCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    bloodDonorList: { men: '', women: '', others: '', images: [], chooseDate:null },
+    firstAidTraining: { men: '', women: '', others: '', images: [], chooseDate:null },
+    counseling: { men: '', women: '', others: '', images: [], chooseDate:null },
+    deAddictionCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    professionalTrainingCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    panchgavyaTrainingCamp: { men: '', women: '', others: '', images: [], chooseDate:null },
+    rakdiMaking: { men: '', women: '', others: '', images: [], chooseDate:null },
+    electricMalaConstruction: { men: '', women: '', others: '', images: [], chooseDate:null },
+    decorativeMaterialProduction: { men: '', women: '', others: '', images: [], chooseDate:null },
+    diwaliLampMaking: { men: '', women: '', others: '', images: [], chooseDate:null },
+    sweetsAndSnacksProduction: { men: '', women: '', others: '', images: [], chooseDate:null },
+    managerialTraining: { men: '', women: '', others: '', images: [], chooseDate:null },
+    organicFertilizerTraining: { men: '', women: '', others: '', images: [], chooseDate:null },
+    girlWorship: { men: '', women: '', others: '', images: [], chooseDate:null },
+    massMarriage: { men: '', women: '', others: '', images: [], chooseDate:null },
+    templeCleanliness: { men: '', women: '', others: '', images: [], chooseDate:null },
+    publicCleanliness: { men: '', women: '', others: '', images: [], chooseDate:null },
+    waterConservationPondConstruction: { men: '', women: '', others: '', images: [], chooseDate:null },
+    roadConstruction: { men: '', women: '', others: '', images: [], chooseDate:null },
+    communityCelebration: { men: '', women: '', others: '', images: [], chooseDate:null },
+    treePlantation: { men: '', women: '', others: '', images: [], chooseDate:null },
+    sportsCompetition: { men: '', women: '', others: '', images: [], chooseDate:null },
+    blanketSweaterDelivery: { men: '', women: '', others: '', images: [], chooseDate:null },
+    foodDonation: { men: '', women: '', others: '', images: [], chooseDate:null },
+    otherActivity1: { men: '', women: '', others: '', images: [], chooseDate:null },
+    otherActivity2: { men: '', women: '', others: '', images: [], chooseDate:null },
+    otherActivity3: { men: '', women: '', others: '', images: [], chooseDate:null },
+    otherActivity4: { men: '', women: '', others: '', images: [], chooseDate:null }
   };
-
-
-  ngOnInit() {
-  
-      this.selectedNagar = '';
-      this.ShowNagar = !this.selectedNagar;  
-  }
 
   toggleList(category: any) {
     this.activeCategory = this.activeCategory === category ? null : category;
@@ -141,9 +129,10 @@ export class SevaUpakramaComponent {
     item.showInputs = !item.showInputs;
   }
   isFilled(item: any) {
-    return (this.checkedItems[item.name]?.men || 
-            this.checkedItems[item.name]?.women || 
-            this.checkedItems[item.name]?.others)  }
+    return (this.checkedItems[item.name]?.men ||
+      this.checkedItems[item.name]?.women ||
+      this.checkedItems[item.name]?.others)
+  }
 
   onFileChange(event: any, itemName: string) {
     const files = event.target.files;
@@ -154,7 +143,7 @@ export class SevaUpakramaComponent {
     } else {
       alert('તમે વધુમાં વધુ 2 ઈમેજ જ અપલોડ કરી શકો છો.');
     }
-    event.target.value = ''; 
+    event.target.value = '';
   }
 
   removeImage(itemName: string, index: number) {
@@ -163,58 +152,40 @@ export class SevaUpakramaComponent {
   createImageUrl(image: File): string {
     return URL.createObjectURL(image);
   }
-  toggleOthersSubList(type: string) {
-    if (type === 'shiksha') {
-      this.showOthersShiksha = !this.showOthersShiksha;
-    } else if (type === 'aayogya') {
-      this.showOthersAayogya = !this.showOthersAayogya;
-    } else if (type === 'sawval') {
-      this.showOthersSawval = !this.showOthersSawval;
-    } else if (type === 'samajik') {
-      this.showOthersSamajik = !this.showOthersSamajik;
-    }
-  }
+
   onMonthYearChange() {
     if (this.selectedDate) {
-    const dateObj = new Date(this.selectedDate);
-    const year = dateObj.getFullYear();
-    const month = dateObj.getMonth();
-    const firstDay = new Date(year, (month+1), 1).toISOString().split('T')[0];
-    const lastDay = new Date(year, (month+1) + 1, 0).toISOString().split('T')[0]; 
+      const dateObj = new Date(this.selectedDate);
+      const year = dateObj.getFullYear();
+      const month = dateObj.getMonth();
+      const firstDay = new Date(year, (month + 1), 1).toISOString().split('T')[0];
+      const lastDay = new Date(year, (month + 1) + 1, 0).toISOString().split('T')[0];
 
-    this.educationItems.forEach(item => {
+      this.educationItems.forEach(item => {
         this.checkedItems[item.name].minDate = firstDay;
         this.checkedItems[item.name].maxDate = lastDay;
-    });
-    this.healthItems.forEach(item => {
-      this.checkedItems[item.name].minDate = firstDay;
-      this.checkedItems[item.name].maxDate = lastDay;
-  });
-  this.selfRelianceItems.forEach(item => {
-    this.checkedItems[item.name].minDate = firstDay;
-    this.checkedItems[item.name].maxDate = lastDay;
-});
-this.socialItems.forEach(item => {
-  this.checkedItems[item.name].minDate = firstDay;
-  this.checkedItems[item.name].maxDate = lastDay;
-});
+      });
+      this.healthItems.forEach(item => {
+        this.checkedItems[item.name].minDate = firstDay;
+        this.checkedItems[item.name].maxDate = lastDay;
+      });
+      this.selfRelianceItems.forEach(item => {
+        this.checkedItems[item.name].minDate = firstDay;
+        this.checkedItems[item.name].maxDate = lastDay;
+      });
+      this.socialItems.forEach(item => {
+        this.checkedItems[item.name].minDate = firstDay;
+        this.checkedItems[item.name].maxDate = lastDay;
+      });
+    }
+    this.showAllForm = true
   }
- 
-}
-
 
   onSubmit(form: any) {
-     const shiksha: any = {};
-    const aayogya: any = {};
-    const swavalamban:any={};
-    const samajik:any={};
-    form.value.vrutPrant = this.userData.prant;
-  form.value.vrutVibhag = this.userData.vibhag;
-  form.value.vrutJilla = this.userData.jilla;
-  form.value.vrutTaluka = this.userData.taluka;
-  form.value.vrutVasti = this.vrutVasti;
-  form.value.vrutShakha = this.vrutShakha;
-  form.value.selectedDate =this.selectedDate ;
+    let shiksha: any = {};
+    let aayogya: any = {};
+    let swavalamban: any = {};
+    let samajik: any = {};
 
     this.educationItems.forEach(item => {
       const checked = this.checkedItems[item.name];
@@ -230,7 +201,7 @@ this.socialItems.forEach(item => {
       }
       item.showInputs = false;
     });
-  
+
     this.healthItems.forEach(item => {
       const checked = this.checkedItems[item.name];
       aayogya[item.name] = {
@@ -245,44 +216,49 @@ this.socialItems.forEach(item => {
       }
       item.showInputs = false;
     });
-  
-    this.selfRelianceItems.forEach((item)=>{
-     const checked = this.checkedItems[item.name];
-     swavalamban[item.name]={
-      men: checked.men || 0,
-      women: checked.women || 0,
-      others: checked.others || 0,
-      choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
-      images: checked.images.map((image: File) => this.createImageUrl(image))
-     }
-     if (item.name === 'otherActivity3') {
-      swavalamban[item.name].activityName = checked.activityName || '';
-    }
-     item.showInputs = false;
+
+    this.selfRelianceItems.forEach((item) => {
+      const checked = this.checkedItems[item.name];
+      swavalamban[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0,
+        choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
+        images: checked.images.map((image: File) => this.createImageUrl(image))
+      }
+      if (item.name === 'otherActivity3') {
+        swavalamban[item.name].activityName = checked.activityName || '';
+      }
+      item.showInputs = false;
     })
 
-    this.socialItems.forEach((item)=>{
+    this.socialItems.forEach((item) => {
       const checked = this.checkedItems[item.name];
-      samajik[item.name]={
-       men: checked.men || 0,
-       women: checked.women || 0,
-       others: checked.others || 0,
-       choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
-       images: checked.images.map((image: File) => this.createImageUrl(image))
+      samajik[item.name] = {
+        men: checked.men || 0,
+        women: checked.women || 0,
+        others: checked.others || 0,
+        choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
+        images: checked.images.map((image: File) => this.createImageUrl(image))
       }
       if (item.name === 'otherActivity4') {
         samajik[item.name].activityName = checked.activityName || '';
       }
       item.showInputs = false;
-     })
-    //  const submissionData = {  selectedDate: this.selectedDate, shiksha, aayogya, swavalamban, samajik };
-       
-    // console.log(submissionData);
-
-    this._apiService.postData('http://localhost:4000/sevaUpakramaVrut',form.value).subscribe((res)=>{
-        console.log(res)
-     })
-    form.reset()
+    })
+    let x = {
+      vrutPrant: this.userData.prant, vrutVibhag: this.userData.vibhag, vrutJilla: this.userData.jilla,
+      vrutTaluka: this.userData.taluka, vrutVasti: this.vrutVasti,
+      vrutShakha: this.vrutShakha, selectedDate: this.selectedDate, shiksha, aayogya, swavalamban, samajik
+    };
+    this._apiService.postData('http://localhost:4000/sevaUpakramaVrut', x).subscribe((res) => {
+      console.log(res)
+      shiksha = {};
+      aayogya = {};
+      swavalamban = {};
+      samajik = {};
+    })
+    form.reset();
     this.showError = false;
     this.showList1 = false;
     this.showList2 = false;
@@ -290,6 +266,7 @@ this.socialItems.forEach(item => {
     this.showList4 = false;
     this.snackbarColour = 'success';
     this.loginerr = "Form submitted successfully!";
+    this.showAllForm = false;
     this.snackTimeOut();
   }
   snackTimeOut() {
