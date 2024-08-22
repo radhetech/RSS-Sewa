@@ -3,7 +3,7 @@
     {
       "name": "કર્ણાવતી પશ્ચિમ",
       "reportName": "कर्णावती पश्चिम",
-      "id": 1,
+      "id": "1",
       "type": "vibhag",
       "jilla": [
         {
@@ -1347,7 +1347,7 @@
     {
       "name": "વડોદરા મહાનગર",
       "reportName": "वडोदरा महानगर",
-      "id": 2,
+      "id": "2",
       "type": "mahanagar",
       "jilla": [
         {
@@ -1821,6 +1821,20 @@
     }
   ],
   "users": [
+    {
+      "name": "નગર એડમીન",
+      "userid": "koteshvar",
+      "password": "$koteshvar$",
+      "role": "taluka-admin",
+      "messages": [],
+      "passwordExp": "",
+      "jwt": "",
+      "prant": "ગુજરાત",
+      "vibhag": "કર્ણાવતી પશ્ચિમ",
+      "jilla": "સાબરમતી",
+      "taluka": "સાબરમતી",
+      "id": "1"
+    },
     {
       "name": "પ્રાંત એડમીન",
       "userid": "gujaratprant",
@@ -2846,13 +2860,13 @@
         }
       },
       "monthlyForm": "",
-      "selectedDate": "1/8/2024",
+      "selectedDate": "25/7/2024",
       "vrutPrant": "ગુજરાત",
-      "vrutVibhag": "",
-      "vrutJilla": "",
-      "vrutTaluka": "",
-      "vrutVasti": "",
-      "vrutShakha": "",
+      "vrutVibhag": "કર્ણાવતી પશ્ચિમ",
+      "vrutJilla": "સાબરમતી",
+      "vrutTaluka": "સાબરમતી",
+      "vrutVasti": "ત્રિભુવન મીલ",
+      "vrutShakha": "મિલન",
       "id": "39e9"
     }
   ]
