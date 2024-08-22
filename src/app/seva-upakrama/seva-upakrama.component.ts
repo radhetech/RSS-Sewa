@@ -26,7 +26,7 @@ export class SevaUpakramaComponent {
   activeCategory: number = 0;
   selectedNagar: any;
   ShowNagar: boolean = true;
-  selectedDate: any;
+  selectedDate: string | null = null;
   userData:any;
   vrutVasti:string = '';
   vrutShakha:string = '';
@@ -87,52 +87,50 @@ export class SevaUpakramaComponent {
 
       
   checkedItems: any = {
-    educationMaterialDistribution: { men: '', women: '', others: '',images:[] },
-    examGuidanceCamp: { men: '', women: '', others: '',images:[] },
-    feeAssistance: { men: '', women: '', others: '',images:[] },
-    personalityDevelopmentCamp: { men: '', women: '', others: '',images:[] },
-    bloodDonationCamp: { men: '', women: '', others: '',images:[] },
-    healthCamp: { men: '', women: '', others: '',images:[] },
-    eyeCheckupCamp: { men: '', women: '', others: '',images:[] },
-    yogaCamp: { men: '', women: '', others: '',images:[] },
-    divyangCamp: { men: '', women: '', others: '',images:[] },
-    bloodDonorList: { men: '', women: '', others: '',images:[] },
-    firstAidTraining: { men: '', women: '', others: '',images:[] },
-    counseling: { men: '', women: '', others: '',images:[] },
-    deAddictionCamp: { men: '', women: '', others: '',images:[] },
-    professionalTrainingCamp: { men: '', women: '', others: '',images:[] },
-    panchgavyaTrainingCamp: { men: '', women: '', others: '',images:[] },
-    rakdiMaking: { men: '', women: '', others: '',images:[] },
-    electricMalaConstruction: { men: '', women: '', others: '',images:[] },
-    decorativeMaterialProduction: { men: '', women: '', others: '',images:[] },
-    diwaliLampMaking: { men: '', women: '', others: '',images:[] },
-    sweetsAndSnacksProduction: { men: '', women: '', others: '',images:[] },
-    managerialTraining: { men: '', women: '', others: '',images:[] },
-    organicFertilizerTraining: { men: '', women: '', others: '',images:[] },
-    girlWorship: { men: '', women: '', others: '',images:[] },
-    massMarriage: { men: '', women: '', others: '',images:[] },
-    templeCleanliness: { men: '', women: '', others: '',images:[] },
-    publicCleanliness: { men: '', women: '', others: '',images:[] },
-    waterConservationPondConstruction: { men: '', women: '', others: '',images:[] },
-    roadConstruction: { men: '', women: '', others: '',images:[] },
-    communityCelebration: { men: '', women: '', others: '',images:[] },
-    treePlantation: { men: '', women: '', others: '',images:[] },
-    sportsCompetition: { men: '', women: '', others: '',images:[] },
-    blanketSweaterDelivery: { men: '', women: '', others: '',images:[] },
-    foodDonation: { men: '', women: '', others: '',images:[] },
-    otherActivity1: { men: '', women: '', others: '',images:[] },
-    otherActivity2: { men: '', women: '', others: '',images:[] },
-    otherActivity3: { men: '', women: '', others: '',images:[] },
-    otherActivity4: { men: '', women: '', others: '',images:[] }
+    educationMaterialDistribution: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    examGuidanceCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    feeAssistance: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    personalityDevelopmentCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    bloodDonationCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    healthCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    eyeCheckupCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    yogaCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    divyangCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    bloodDonorList: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    firstAidTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    counseling: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    deAddictionCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    professionalTrainingCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    panchgavyaTrainingCamp: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    rakdiMaking: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    electricMalaConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    decorativeMaterialProduction: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    diwaliLampMaking: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    sweetsAndSnacksProduction: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    managerialTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    organicFertilizerTraining: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    girlWorship: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    massMarriage: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    templeCleanliness: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    publicCleanliness: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    waterConservationPondConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    roadConstruction: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    communityCelebration: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    treePlantation: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    sportsCompetition: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    blanketSweaterDelivery: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    foodDonation: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    otherActivity1: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    otherActivity2: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    otherActivity3: { men: '', women: '', others: '',images:[],chooseDate:'' },
+    otherActivity4: { men: '', women: '', others: '',images:[],chooseDate:'' }
   };
 
 
   ngOnInit() {
   
       this.selectedNagar = '';
-      this.ShowNagar = !this.selectedNagar;
-      console.log('Selected nagar in another component:', this.selectedNagar);
-  
+      this.ShowNagar = !this.selectedNagar;  
   }
 
   toggleList(category: any) {
@@ -165,11 +163,6 @@ export class SevaUpakramaComponent {
   createImageUrl(image: File): string {
     return URL.createObjectURL(image);
   }
-  openDatePicker(event: MouseEvent): void {
-    const input = event.target as HTMLInputElement;
-    input.showPicker();
-  }
-
   toggleOthersSubList(type: string) {
     if (type === 'shiksha') {
       this.showOthersShiksha = !this.showOthersShiksha;
@@ -181,7 +174,33 @@ export class SevaUpakramaComponent {
       this.showOthersSamajik = !this.showOthersSamajik;
     }
   }
+  onMonthYearChange() {
+    if (this.selectedDate) {
+    const dateObj = new Date(this.selectedDate);
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth();
+    const firstDay = new Date(year, (month+1), 1).toISOString().split('T')[0];
+    const lastDay = new Date(year, (month+1) + 1, 0).toISOString().split('T')[0]; 
 
+    this.educationItems.forEach(item => {
+        this.checkedItems[item.name].minDate = firstDay;
+        this.checkedItems[item.name].maxDate = lastDay;
+    });
+    this.healthItems.forEach(item => {
+      this.checkedItems[item.name].minDate = firstDay;
+      this.checkedItems[item.name].maxDate = lastDay;
+  });
+  this.selfRelianceItems.forEach(item => {
+    this.checkedItems[item.name].minDate = firstDay;
+    this.checkedItems[item.name].maxDate = lastDay;
+});
+this.socialItems.forEach(item => {
+  this.checkedItems[item.name].minDate = firstDay;
+  this.checkedItems[item.name].maxDate = lastDay;
+});
+  }
+ 
+}
 
 
   onSubmit(form: any) {
@@ -195,17 +214,15 @@ export class SevaUpakramaComponent {
   form.value.vrutTaluka = this.userData.taluka;
   form.value.vrutVasti = this.vrutVasti;
   form.value.vrutShakha = this.vrutShakha;
-    const dateObj = new Date(this.selectedDate);
-    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
-    const year = dateObj.getFullYear(); 
-    const formattedDate = `${month}/${year}`;
-    form.value.selectedDate = formattedDate;
+  form.value.selectedDate =this.selectedDate ;
+
     this.educationItems.forEach(item => {
       const checked = this.checkedItems[item.name];
       shiksha[item.name] = {
         men: checked.men || 0,
         women: checked.women || 0,
         others: checked.others || 0,
+        choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
         images: checked.images.map((image: File) => this.createImageUrl(image))
       };
       if (item.name === 'otherActivity1') {
@@ -214,13 +231,13 @@ export class SevaUpakramaComponent {
       item.showInputs = false;
     });
   
-
     this.healthItems.forEach(item => {
       const checked = this.checkedItems[item.name];
       aayogya[item.name] = {
         men: checked.men || 0,
         women: checked.women || 0,
         others: checked.others || 0,
+        choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
         images: checked.images.map((image: File) => this.createImageUrl(image))
       };
       if (item.name === 'otherActivity2') {
@@ -229,13 +246,13 @@ export class SevaUpakramaComponent {
       item.showInputs = false;
     });
   
-
     this.selfRelianceItems.forEach((item)=>{
      const checked = this.checkedItems[item.name];
      swavalamban[item.name]={
       men: checked.men || 0,
       women: checked.women || 0,
       others: checked.others || 0,
+      choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
       images: checked.images.map((image: File) => this.createImageUrl(image))
      }
      if (item.name === 'otherActivity3') {
@@ -250,6 +267,7 @@ export class SevaUpakramaComponent {
        men: checked.men || 0,
        women: checked.women || 0,
        others: checked.others || 0,
+       choosedate: checked.choosedate ? new Date(checked.choosedate).toLocaleDateString('en-GB') : '',
        images: checked.images.map((image: File) => this.createImageUrl(image))
       }
       if (item.name === 'otherActivity4') {
@@ -257,9 +275,10 @@ export class SevaUpakramaComponent {
       }
       item.showInputs = false;
      })
-     const submissionData = {  selectedDate: formattedDate, shiksha, aayogya, swavalamban, samajik };
+    //  const submissionData = {  selectedDate: this.selectedDate, shiksha, aayogya, swavalamban, samajik };
+       
+    // console.log(submissionData);
 
-    console.log(submissionData);
     this._apiService.postData('http://localhost:4000/sevaUpakramaVrut',form.value).subscribe((res)=>{
         console.log(res)
      })

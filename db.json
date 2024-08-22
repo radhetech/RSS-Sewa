@@ -2765,11 +2765,11 @@
         }
       },
       "monthlyForm": "",
-      "selectedDate": "1/8/2024",
-      "vrutPrant": "Gujarat",
-      "vrutVibhag": "Karnavati-Paschim",
-      "vrutJilla": "બોપલ",
-      "vrutTaluka": "શ્યામાનંદ",
+      "selectedDate": "15/8/2024",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
       "vrutVasti": "",
       "vrutShakha": "",
       "id": "5e18"
@@ -2812,63 +2812,63 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "bloodDonorList": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "counseling": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "deAddictionCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "divyangCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "eyeCheckupCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "firstAidTraining": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "healthCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "otherActivity2": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0,
+          "chooseDate": 0,
           "activityName": ""
         },
         "yogaCamp": {
@@ -2876,7 +2876,7 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         }
       },
       "samajik": {
@@ -2885,42 +2885,42 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "communityCelebration": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "foodDonation": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "girlWorship": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "massMarriage": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "otherActivity4": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0,
+          "chooseDate": 0,
           "activityName": ""
         },
         "publicCleanliness": {
@@ -2928,42 +2928,42 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "roadConstruction": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "sportsCompetition": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "templeCleanliness": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "treePlantation": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "waterConservationPondConstruction": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         }
       },
       "shiksha": {
@@ -2972,28 +2972,28 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "examGuidanceCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "feeAssistance": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "otherActivity1": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0,
+          "chooseDate": 0,
           "activityName": ""
         },
         "personalityDevelopmentCamp": {
@@ -3001,7 +3001,7 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         }
       },
       "swavalamban": {
@@ -3010,42 +3010,42 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "diwaliLampMaking": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "electricMalaConstruction": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "managerialTraining": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "organicFertilizerTraining": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "otherActivity3": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0,
+          "chooseDate": 0,
           "activityName": ""
         },
         "panchgavyaTrainingCamp": {
@@ -3053,58 +3053,132 @@
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "professionalTrainingCamp": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "rakdiMaking": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         },
         "sweetsAndSnacksProduction": {
           "men": 0,
           "women": 0,
           "others": 0,
           "images": [],
-          "date": 0
+          "chooseDate": 0
         }
       }
     },
     {
-      "start": "2024-07",
-      "vrutVasti": "",
-      "vrutShakha": "",
-      "selectedDate": "06/2024",
-      "id": "SzyZJnQ"
-    },
-    {
-      "start": "2024-02",
+      "selectedDate": "2024-06",
+      "educationMaterialDistributionDate": "2024-06-18",
+      "examGuidanceCampDate": null,
+      "feeAssistanceDate": null,
+      "personalityDevelopmentCampDate": null,
+      "otherActivity1Date": null,
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
       "vrutPrant": "ગુજરાત",
       "vrutVibhag": "",
       "vrutJilla": "",
       "vrutTaluka": "",
       "vrutVasti": "",
       "vrutShakha": "",
-      "selectedDate": "01/2024",
-      "id": "v1z0Fkq"
+      "id": "nCXppr2"
     },
     {
+      "selectedDate": "2024-02",
+      "educationMaterialDistributionDate": null,
+      "examGuidanceCampDate": null,
+      "feeAssistanceDate": null,
+      "personalityDevelopmentCampDate": null,
+      "otherActivity1Date": null,
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
       "vrutPrant": "ગુજરાત",
       "vrutVibhag": "",
       "vrutJilla": "",
       "vrutTaluka": "",
       "vrutVasti": "",
       "vrutShakha": "",
-      "selectedDate": "NaN/NaN",
-      "id": "giqrFHm"
+      "id": "K5bPGYK"
+    },
+    {
+      "selectedDate": "2024-02",
+      "educationMaterialDistributionDate": "2024-02-09",
+      "examGuidanceCampDate": null,
+      "feeAssistanceDate": null,
+      "personalityDevelopmentCampDate": null,
+      "otherActivity1Date": null,
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "qezrAZG"
+    },
+    {
+      "selectedDate": "2024-03",
+      "educationMaterialDistributionDate": "2024-03-15",
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "EbykWXN"
+    },
+    {
+      "selectedDate": "2024-02",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "7RzTTX5"
+    },
+    {
+      "selectedDate": "2024-06",
+      "educationMaterialDistributionDate": "2024-06-13",
+      "educationMaterialDistributionMen": "",
+      "educationMaterialDistributionWomen": "",
+      "educationMaterialDistributionOthers": "",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "FVUG6-9"
+    },
+    {
+      "selectedDate": "2024-11",
+      "vrutPrant": "ગુજરાત",
+      "vrutVibhag": "",
+      "vrutJilla": "",
+      "vrutTaluka": "",
+      "vrutVasti": "",
+      "vrutShakha": "",
+      "id": "BRbNgrH"
     }
   ]
 }
