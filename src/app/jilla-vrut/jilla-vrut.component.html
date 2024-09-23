@@ -1,0 +1,27 @@
+<h2>Jilla Vrut </h2>
+<div [formGroup]="jillaForm" (ngSubmit)="submitJilla(jillaForm)">
+  <label for="">Jilla Bethak thae </label>
+  <input type="radio" name="jbethak" value="yes" formControlName="jBethak"> Yes
+  <input type="radio" name="jbethak" value="No" formControlName="jBethak"> No
+  <br>  <br>
+  <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? </label>
+  <select name="" formControlName="selAyam" (change)="ayamChange($event)">
+    <option value="ayam" *ngFor="let ayam of aayamList">
+       {{ayam}}
+    </option>
+ </select>
+ <input type="number" formControlName="ayamSahNum"> 
+ <br><br>
+ <label>કેટલી શાખા મા પ્રવાસ થયો ? </label>
+  <input type="number" formControlName="shakhaPravasNum"> 
+  <br><br>
+  <label>કેટલી સેવા વસ્તી મા સંપર્ક થયો? </label>
+  <input type="number" formControlName="sevaVastiPravasNum">
+  <br><br>
+  <label>કેટલા સેવા કાર્ય મા જવાનુ થયુ ? </label>
+  <input type="number" formControlName="sevaKaryaPravasNum">
+  <br><br> 
+  <label>આ મહિનામા કેટલા નવા સેવા કાર્ય શરૂ થયા? </label>
+  <input type="number" formControlName="newSevaKaryaNum">  
+</div>
+<button (click)="submitJilla(jillaForm)">Submit Form</button>
