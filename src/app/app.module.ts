@@ -30,6 +30,9 @@ import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.compon
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ReportComponent } from './report/report.component';
 import { JillaVrutComponent } from './jilla-vrut/jilla-vrut.component';
+import { SummaryReportComponent } from "./report/summary/summary.component";
+import { DetailReportComponent } from "./report/detail/detail.component";
+import { StatisticsReportComponent } from "./report/statistics/statistics.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,8 +66,11 @@ import { JillaVrutComponent } from './jilla-vrut/jilla-vrut.component';
     ReactiveFormsModule,
     HttpClientModule,
     AccordionModule,
-    RadioButtonModule
-  ],
+    RadioButtonModule,
+    SummaryReportComponent,
+    DetailReportComponent,
+    StatisticsReportComponent
+],
   providers: [
     provideAnimationsAsync(),
     ApiService
