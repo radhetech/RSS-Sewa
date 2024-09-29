@@ -1,0 +1,440 @@
+<div class="form-group py-2">
+    <label for="vibhag">सांख्यिकी:</label>
+    <select id="vibhag" (change)="selectDepartment($event)">
+        <option value="" selected>-- Select Option --</option>
+        <option value="education">शिक्षा</option>
+        <option value="independent">स्वावलंबन</option>
+        <option value="health">स्वास्थ्य</option>
+        <option value="social">सामाजिक</option>
+    </select>
+</div>
+
+<div class="container table-responsive py-5" *ngIf="isOptionSelected">
+    <!--
+     MARK: Siksha Table
+    -->
+    <table class="table table-bordered table-hover" *ngIf="statisticsType === 'education'">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="3"><h1>सांख्यिकी जानकारी - शिक्षा</h1></th>
+            </tr>
+            <tr>
+                <th>क्र.</th>
+                <th>सेवा कार्य प्रकार</th>
+                <th>सांख्य</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>संस्कार केंद्र/बाल गुरुकुलम्</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>पाठदान केंद्र / ट्यूशन केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>उच्च शिक्षा कोचिंग</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>अभ्यासिका</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>बालवाड़ी</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td>प्राथमिक शाला (कक्षा 5वी तक)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>माध्यमिक शाला (कक्षा 8वी तक)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>हाई स्कूल</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td>प्रतियोगी परीक्षा कोचिंग (उच्च शिक्षा हेतु)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td>चलित प्रयोगशाला</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>पुस्तक पेठी बैंक</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td>आवासीय विद्यालय / गुरुकुल</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td>हिंदी शिक्षण वर्ग</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td>प्रौढ शिक्षा / साक्षरता कार्यक्रम</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td>दिव्यांगों के लिए स्कूल</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td>छात्रावास</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td>निराश्रित बालक बालिका सदन (विद्यालय जाने वाले)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td>एकल विद्यालय</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">योग</th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--
+    MARK: Swavlamban Table
+    -->
+    <table class="table table-bordered table-hover" *ngIf="statisticsType === 'independent'">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="3"><h1>सांख्यिकी जानकारी - स्वावलंबन</h1></th>
+            </tr>
+            <tr>
+                <th>क्र.</th>
+                <th>सेवा कार्य प्रकार</th>
+                <th>सांख्य</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>स्वयं सहायता समूह (वैभव श्री)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>सिलाई केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>सौंदर्य प्रशिक्षण केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>स्वास्थ्य परिचारिका, दाई प्रशिक्षण, होम नर्सिंग</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>कम्प्यूटर प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td>प्रतियोगी परीक्षा कोचिंग (रोजगार हेतु)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>गौ उत्पाद, पंचगव्य उत्पादन प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>कुटीर उद्योग प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td>हस्तकला</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td>स्वरोजगार केंद्र 1 - राखी, विद्युत लड़ियाँ, दीपक, सजावट, खाद्य सामग्री आदि निर्माण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>स्वरोजगार केंद्र 2 - विद्युत, नल, ऑटो रिपेयरिंग व फिटिंग</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td>व्यवसाय तथा कौशल प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td>ग्रामोद्योग</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td>वनौषधि आधारित उत्पादन प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td>अन्न और फल प्रक्रिया प्रशिक्षण</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td>बीजकोष</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">योग</th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--
+    MARK: Swasthya Table
+    -->
+    <table class="table table-bordered table-hover" *ngIf="statisticsType === 'health'">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="3"><h1>सांख्यिकी जानकारी - स्वास्थ्य</h1></th>
+            </tr>
+            <tr>
+                <th>क्र.</th>
+                <th>सेवा कार्य प्रकार</th>
+                <th>सांख्य</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>ग्रामीण आरोग्य रक्षक / मित्र, पेटिका</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>स्वास्थ्य जागरण केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>चलित चिकित्सालय (Mobile Dispensary)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>स्थिर चिकित्सा केन्द्र (O.P.D.) छोटे</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>स्थिर चिकित्सालय (आवासीय) / अस्पताल (बड़े)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td>प्राकृतिक चिकित्सा केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>रुग्ण सहायता</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>न्यूरोथेरपी, फिजीओथेरपी, योग थेरपी</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td>रक्तकोष / ब्लड बैंक</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td>रुग्णवाहिका</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>दिव्यांग सेवा केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td>रुग्णालय</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td>नेत्र कोष</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td>कुष्ठ रुग्ण सेवा</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td>योग शिक्षा केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td>औषधि केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td>नशामुक्ति केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">योग</th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--
+    MARK: Samajik Table
+    -->
+    <table class="table table-bordered table-hover" *ngIf="statisticsType === 'social'">
+        <thead class="thead-dark">
+            <tr>
+                <th colspan="3"><h1>सांख्यिकी जानकारी - सामाजिक</h1></th>
+            </tr>
+            <tr>
+                <th>क्र.</th>
+                <th>सेवा कार्य प्रकार</th>
+                <th>सांख्य</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>भजन मंडली</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>किशोरी विकास केन्द्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>मातृछाया / अनाथ शिशु गृह</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>मातृमंडली</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>दीप पूजा / हवन (साप्ताहिक)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td>झोला पुस्तकालय</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>अन्नदान</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>महिलाश्रम</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td>परिवार / कानूनी परामर्श केन्द्र ( Counselling)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td>अंत्यसंस्कार केंद्र</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>अनाथालय</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td>वाचनालय / पुस्तकालय</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td>झूलाघर (शिशु पालनकेंद्र)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td>वृद्ध जन सेवा</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td>वृद्धाश्रम</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td>कारावास, बालसुधार केंद्रों में चलने वाले कार्य</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td>मानवी दुग्ध कोष</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">योग</th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
+</div>

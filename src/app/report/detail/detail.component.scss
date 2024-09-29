@@ -1,0 +1,15 @@
+table {
+    thead,
+    tbody { 
+      tr {
+          th {
+              text-align: center;
+  
+              & > span {
+                  text-decoration: underline;
+              }
+          }
+      }
+    }
+  }
+  
