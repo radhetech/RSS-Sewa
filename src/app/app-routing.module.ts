@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { NewShakhaVrutComponent } from './new-shakha-vrut/new-shakha-vrut.component';
 import { ReportComponent } from './report/report.component';
+import { JillaVrutComponent } from './jilla-vrut/jilla-vrut.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: 'Admin',
     component: AdminProfileComponent,
+    canActivate: [authguardGuard],
+  },
+  {
+    path: 'jillaVrut',
+    component: JillaVrutComponent,
     canActivate: [authguardGuard],
   },
   {

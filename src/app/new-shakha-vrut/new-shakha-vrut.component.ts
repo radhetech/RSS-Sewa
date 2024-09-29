@@ -10,16 +10,23 @@ import { ApiService } from '../services/api.service';
 })
 export class NewShakhaVrutComponent implements OnInit {
   formGroup!: FormGroup;
+  dateForm!:FormGroup;
+  // snackbarColour:string = 'green'
+  // snackMessage:any= 'સફળતાપૂર્વક સબમિટ કર્યું';
+  // showSnackBar:boolean = false;
   lastFiveThursdays: Date[] = [];
   isShakhaSelected: boolean = false;
   isVastiSelected: boolean = false;
   dateHeading: any = '4/4/66464';
+  dateSelected:boolean = false;
   userData: any;
   vrutVasti: string = '';
   vrutShakha: string = '';
   selectedDate: any;
   formId: string = '';
   formType: string = 'સબમિટ';
+  isTalukaAdmin:boolean = false;
+
   sanskar1List: any = [
     { name: 'amrutvachan/subhashit' },
     { name: 'seva git' },
@@ -29,6 +36,9 @@ export class NewShakhaVrutComponent implements OnInit {
   isSanskar2Open = false;
   constructor(private valueSel: valueSelect, private _apiService: ApiService) {
     this.getLastFiveThursdays();
+    this.dateForm = new FormGroup({
+      selectedDate: new FormControl('')
+    })
     this.userData = this.valueSel.getUserData()!;
     this.formGroup = new FormGroup({
       // selectedDate: new FormControl(this.dateHeading,Validators.required),
@@ -73,16 +83,20 @@ export class NewShakhaVrutComponent implements OnInit {
         this.isVastiSelected = false;
       }
     });
+    if(this.userData.role =='taluka-admin'){
+      this.isTalukaAdmin = true;
+    }
   }
-  dateSelChange(selDate: any) {
-    //console.log(this.getFormattedDate(selDate));
-    // api vasti, shakha, date
+  dateSelChange(e:any) {
+   let selDate = this.dateForm.controls['selectedDate'].value;
+    if(selDate){
+      this.dateSelected = true;
     this._apiService
       .getData('http://localhost:4000/shakhaVrut')
       .subscribe((res: any) => {
         res = res[1];
         this.formId = res?.id;
-        if (res != undefined) {
+        if (res != undefined || !res.selectedCategory) {
           this.formType = 'અપડેટ';
           this.formGroup.patchValue({
             selectedCategory: res?.selectedCategory,
@@ -110,7 +124,13 @@ export class NewShakhaVrutComponent implements OnInit {
             },
           });
         }
+      },(err)=>{
+        
       });
+    } else {
+      this.dateSelected = false;
+      this.formGroup.reset();
+    }
   }
   get selectedCategory() {
     return this.formGroup.controls['selectedCategory'].value;
@@ -158,7 +178,7 @@ export class NewShakhaVrutComponent implements OnInit {
     return selDate + '/' + month + '/' + year;
   }
   submitForm(form: any) {
-    form.value.selectedDate = this.getFormattedDate(this.selectedDate);
+    form.value.selectedDate = this.getFormattedDate( this.dateForm.controls['selectedDate'].value);
     form.value.vrutPrant = this.userData.prant;
     form.value.vrutVibhag = this.userData.vibhag;
     form.value.vrutJilla = this.userData.jilla;
@@ -180,11 +200,16 @@ export class NewShakhaVrutComponent implements OnInit {
       }
     }
     console.log(form.value);
-    if (this.formType == 'Submit') {
+    if (this.formType == 'સબમિટ') {
       this._apiService
         .postData('http://localhost:4000/shakhaVrut', form.value)
         .subscribe((res) => {
+          // this.showSnackBar = true;
+          this.snackTimeOut()
+          this.formGroup.reset();
           console.log(res);
+        },(err)=>{
+          
         });
     } else {
       this._apiService
@@ -194,9 +219,17 @@ export class NewShakhaVrutComponent implements OnInit {
         )
         .subscribe((res) => {
           console.log(res);
+          this.formGroup.reset();
+          // this.showSnackBar = true;
+          // this.snackTimeOut()
         });
     }
 
     this.formGroup.reset();
+  }
+  snackTimeOut() {
+    setTimeout(() => {
+      // this.snackMessage = null;
+    }, 4000);
   }
 }
