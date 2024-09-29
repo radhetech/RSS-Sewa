@@ -1818,6 +1818,227 @@
           ]
         }
       ]
+    },
+    {
+      "name": "મેમનગર",
+      "reportName": "मेमनगर केन्द्र",
+      "id": "3",
+      "type": "nagar",
+      "jilla": [
+        {
+          "name": "મેમનગર",
+          "reportName": "मेमनगर",
+          "id": 11,
+          "type": "jilla",
+          "taluka": [
+            {
+              "name": "વસ્ત્રાપુર",
+              "id": 111,
+              "type": "taluka",
+              "sevaVasti": [
+                {
+                  "name": "ચંદુજી ની ચાલી",
+                  "id": 1111,
+                  "shakha": [
+                    {
+                      "shakhaName": "નરસિંહ મેહતા",
+                      "id": "A"
+                    }
+                  ]
+                },
+                {
+                  "name": "રણુજા નગર-૧",
+                  "id": 1112,
+                  "shakha": [
+                    {
+                      "shakhaName": "રચના પ્રભાત",
+                      "id": "B"
+                    }
+                  ]
+                },
+                {
+                  "name": "રણુજા નગર-૨",
+                  "id": 1113,
+                  "shakha": [
+                    {
+                      "shakhaName": "સાંદીપની",
+                      "id": "C"
+                    }
+                  ]
+                },
+                {
+                  "name": "લેકવ્યૂ",
+                  "id": 1114,
+                  "shakha": [
+                    {
+                      "shakhaName": "અશ્વિની",
+                      "id": "D"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "મેમનગર",
+              "id": 112,
+              "type": "taluka",
+              "sevaVasti": [
+                {
+                  "name": "વાલ્મીકી વાસ",
+                  "id": 1121,
+                  "shakha": [
+                    {
+                      "shakhaName": "વાળીનાથ",
+                      "id": "E"
+                    }
+                  ]
+                },
+                {
+                  "name": "સુખીપુરા",
+                  "id": 1122,
+                  "shakha": [
+                    {
+                      "shakhaName": "નારાયણ",
+                      "id": "F"
+                    }
+                  ]
+                },
+                {
+                  "name": "અજનતા ઈલોરા",
+                  "id": 1123,
+                  "shakha": [
+                    {
+                      "shakhaName": "તરુણ નગર",
+                      "id": "G"
+                    }
+                  ]
+                },
+                {
+                  "name": "ભમરીયા",
+                  "id": 1124,
+                  "shakha": [
+                    {
+                      "shakhaName": "ગૌરવ પ્રભાત",
+                      "id": "H"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ઘાટલોડિયા",
+              "id": 113,
+              "type": "taluka",
+              "sevaVasti": [
+                {
+                  "name": "લક્ષ્મણ ગઢ-1",
+                  "id": 1131,
+                  "shakha": [
+                    {
+                      "shakhaName": "શિવાજી પ્રભાત",
+                      "id": "I"
+                    }
+                  ]
+                },
+                {
+                  "name": "લક્ષ્મણ ગઢ-૨",
+                  "id": 1132,
+                  "shakha": [
+                    {
+                      "shakhaName": "વિવેકાનંદ પ્રભાત",
+                      "id": "O"
+                    }
+                  ]
+                },
+                {
+                  "name": "મુરલીધર આવાસ",
+                  "id": 1133,
+                  "shakha": [
+                    {
+                      "shakhaName": "સુયોધ્ય",
+                      "id": "J"
+                    }
+                  ]
+                },
+                {
+                  "name": "ગિરધર નગર",
+                  "id": 1134,
+                  "shakha": [
+                    {
+                      "shakhaName": "વર્ધમાન",
+                      "id": "K"
+                    }
+                  ]
+                },
+                {
+                  "name": "ખોડીયાર",
+                  "id": 1135,
+                  "shakha": [
+                    {
+                      "shakhaName": "પંચદેવ",
+                      "id": "L"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "થલતેજ",
+              "id": 114,
+              "type": "taluka",
+              "sevaVasti": [
+                {
+                  "name": "મલાવ-1",
+                  "id": 1141,
+                  "shakha": [
+                    {
+                      "shakhaName": "તત્વતીર્થ",
+                      "id": "P"
+                    }
+                  ]
+                },
+                {
+                  "name": "મલાવ-2",
+                  "id": 1141,
+                  "shakha": [
+                    {
+                      "shakhaName": "malav-2-shakha",
+                      "id": "P"
+                    }
+                  ]
+                },
+                {
+                  "name": "નર્મદા",
+                  "id": 1142,
+                  "shakha": [
+                    {
+                      "shakhaName": "તત્વતીર્થ",
+                      "id": "Q"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "શીલજ",
+              "id": 115,
+              "type": "taluka",
+              "sevaVasti": [
+                {
+                  "name": "શીલજ ગામ",
+                  "id": 1151,
+                  "shakha": [
+                    {
+                      "shakhaName": "કાવેરી",
+                      "id": "R"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "users": [
@@ -2848,25 +3069,20 @@
       "id": "dbbc"
     },
     {
-      "selectedCategory": "W",
-      "weeklyForm": {
-        "sanskar": "sanskar2",
-        "sanskar1Group": "",
-        "sanskar2Group": {
-          "karyNondh": null,
-          "vishayLenar": null,
-          "sevaPrasang": null,
-          "karyAyojan": null
-        }
+      "selectedCategory": "M",
+      "weeklyForm": "",
+      "monthlyForm": {
+        "sampark": "No",
+        "swSankhya": "",
+        "visheshNondh": ""
       },
-      "monthlyForm": "",
-      "selectedDate": "25/7/2024",
+      "selectedDate": "19/9/2024",
       "vrutPrant": "ગુજરાત",
       "vrutVibhag": "કર્ણાવતી પશ્ચિમ",
       "vrutJilla": "સાબરમતી",
       "vrutTaluka": "સાબરમતી",
-      "vrutVasti": "ત્રિભુવન મીલ",
-      "vrutShakha": "મિલન",
+      "vrutVasti": "મોટેરા",
+      "vrutShakha": "સરસ્વતી",
       "id": "39e9"
     }
   ]

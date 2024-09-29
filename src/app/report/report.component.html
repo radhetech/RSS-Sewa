@@ -1,72 +1,25 @@
-    <h2>Gujarat Prant</h2>
-    <div class="form-group">
-        <label for="vibhag">વિભાગ:</label>
-        <select id="vibhag"  (change)="vibhagChange($event)">
-          <option value="" selected>Select</option>
-          <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name" >{{ vibhag.reportName }}</option>
-        </select>
-      </div>
-<div class="container table-responsive py-5"> 
-    <table class="table table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">क्र</th>
-          <th scope="col">वववरण</th>
-          <th *ngFor="let jilla of jillaList">{{jilla.reportName}}</th>
-            <th scope="col">योग</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-         <td scope="row" *ngIf="isMahanagar">महानगर संख्या</td> 
-          <td scope="row"  *ngIf="!isMahanagar">ज़िला केन्द्र संख्या (महानगर छोड़कर)</td>
-          <td scope="row" *ngFor="let jilla of jillaList">{{jilla.taluka.length}}</td>
-          <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td scope="row">इनमें सेवा बस्ती संख्या</td>
-            <td scope="row" *ngFor="let jilla of jillaList">{{jilla.jillaSevaVasti}}</td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td scope="row">सेवा कायय युक्त सेवा बस्ती</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td scope="row">व्यवसायी व महाववद्यालय शाखा व वमलन संख्या</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">5</th>
-            <td scope="row">सेवा बस्ती पालक शाखा व वमलन संख्या</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">6</th>
-            <td scope="row">सेवा काययकताय युक्त शाखा व वमलन संख्या</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">7</th>
-            <td scope="row">इनमें कुल सेवा काय</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr>
-        <tr>
-            <th scope="row">8</th>
-            <td scope="row">मावसक सेवा बस्ती संपकय करने वाली शाखा व वमलन संख्या</td>
-            <td scope="row" *ngFor="let jilla of jillaList"></td>
-            <td scope="row"></td>
-        </tr> 
-       
-      </tbody>
-    </table>
+<h2>Gujarat Prant</h2>
+<div class="form-group py-2">
+  <label for="reportType">आख्या की प्रकार:</label>
+  <select id="reportType" (change)="selectReportType($event)">
+    <option value="" selected>-- Select Option --</option>
+    <option value="summary">Summary</option>
+    <option value="detail">Detail</option>
+    <option value="statistics">Statistics</option>
+  </select>
 </div>
+
+<!-- Summary Component -->
+<ng-container *ngIf="reportType === 'summary'">
+  <app-report-summary [jillaList]="jillaList" [vibhagList]="vibhagList"></app-report-summary>
+</ng-container>
+
+<!-- Detail Component -->
+<ng-container *ngIf="reportType === 'detail'">
+  <app-report-detail></app-report-detail>
+</ng-container>
+
+<!-- Department Component -->
+<ng-container *ngIf="reportType === 'statistics'">
+  <app-report-statistics></app-report-statistics>
+</ng-container>
