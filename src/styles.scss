@@ -134,7 +134,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: #e98a2b;
+    background: #5d912a !important;
   }
 
   .submit-btn:hover {
@@ -200,6 +200,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .custom-font-size-sub {
       font-size: 9px;
     }
-    
+  }
+  .float-right{
+    float:right;
   }
   

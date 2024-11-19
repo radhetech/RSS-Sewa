@@ -1,0 +1,25 @@
+<h2>Gujarat Prant</h2>
+<div class="form-group py-2">
+  <label for="reportType">आख्या की प्रकार:</label>
+  <select id="reportType" (change)="selectReportType($event)">
+    <option value="" selected>-- Select Option --</option>
+    <option value="summary">Summary</option>
+    <option value="detail">Detail</option>
+    <option value="statistics">Statistics</option>
+  </select>
+</div>
+
+<!-- Summary Component -->
+<ng-container *ngIf="reportType === 'summary'">
+  <app-report-summary [jillaList]="jillaList" [vibhagList]="vibhagList"></app-report-summary>
+</ng-container>
+
+<!-- Detail Component -->
+<ng-container *ngIf="reportType === 'detail'">
+  <app-report-detail></app-report-detail>
+</ng-container>
+
+<!-- Department Component -->
+<ng-container *ngIf="reportType === 'statistics'">
+  <app-report-statistics></app-report-statistics>
+</ng-container>

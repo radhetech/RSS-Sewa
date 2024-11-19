@@ -5,6 +5,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   loginerr: string | null = null;
   snackbarColour: string | null = null;
   loginUrl: string = 'http://localhost:4000/users';
+  authenticateUrl:string = 'http://localhost:4000/authenticate';
 
   ngOnInit() {
     if (localStorage.getItem('loggedInUser')) {
@@ -40,8 +42,14 @@ export class LoginComponent implements OnInit {
     //  uncomment until here
     // start
     //this code is for api. uncomment once we have backend
-    this.apiService.getData(this.loginUrl).subscribe({next:(res:any)=>{
-      res = res[0];
+    this.apiService.getData(this.authenticateUrl).pipe(
+      switchMap((res1:any)=>{
+        console.log(res1)
+        return this.apiService.getData(this.loginUrl)
+          // return this.apiService.getData(`this.loginUrl/${res1.token}`)
+      })
+    ).subscribe((res:any)=>{
+          res = res[0];
       localStorage.setItem('loggedInUser',JSON.stringify(res));
       console.log('login--',res.name);
       this.AuthenticationService.isUserLogin = true;
@@ -51,11 +59,28 @@ export class LoginComponent implements OnInit {
       this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
       this.snackTimeOut();
    
-    },error:((err:any)=>{
+    },((err)=>{
       this.snackbarColour = 'error';
       this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
       this.snackTimeOut();
-    }) })
+    })
+    )
+    // this.apiService.getData(this.loginUrl).subscribe({next:(res:any)=>{
+    //   res = res[0];
+    //   localStorage.setItem('loggedInUser',JSON.stringify(res));
+    //   console.log('login--',res.name);
+    //   this.AuthenticationService.isUserLogin = true;
+    //   this.snackbarColour = 'success';
+    //   this.AuthenticationService.isUserLoginSub.next(res)
+    //   this._router.navigate(['home']);
+    //   this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
+    //   this.snackTimeOut();
+   
+    // },error:((err:any)=>{
+    //   this.snackbarColour = 'error';
+    //   this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
+    //   this.snackTimeOut();
+    // }) })
   }
   // end
   snackTimeOut() {

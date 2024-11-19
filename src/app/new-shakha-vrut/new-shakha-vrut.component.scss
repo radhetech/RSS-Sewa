@@ -128,18 +128,18 @@
 
 .weekly {
   background-color: #e98a2b;
-  color: white;
 }
 
 .monthly {
-  background-color: rgb(170, 245, 245);
+  background-color: aqua;
 }
 
 .level-1-heading {
-  background-color: rgb(226, 163, 163);
+  background-color: rgb(220, 154, 154);
   margin: 5px;
   cursor: pointer;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .p-10 {
@@ -150,20 +150,24 @@
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  background-color: #cde766;
+  background-color: #caf3a2;
   margin-top: 5px;
   cursor: pointer;
-  color: black;
+  font-size: large;
 }
 
-.box1 {
-  width: 30%;
-  height: 20px;
+.heading {
+  text-align: center;
 }
 
-.box2 {
+.textArea {
   width: 100%;
   height: 50px;
+  border-radius: 10px;
+}
+
+input {
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,10 +1,16 @@
 <app-breadcrumb> </app-breadcrumb>
-<div class="list-container">
-    <h1 class="heading">વૃત્તનો પ્રકાર પસંદ કરો</h1>
-    <select class="thursdaysDropdown" [(ngModel)]="selectedDate" (change)="dateSelChange(selectedDate)">
-        <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }} Thursday</option>
-      </select>
-<form class="mainTitle" [formGroup]="formGroup">
+<h2 class="text-center" *ngIf="!isShakhaSelected || !isVastiSelected"> વસ્તી અને શાખા પાસંદ કરો.</h2>
+<div class="list-container" *ngIf="isShakhaSelected && isVastiSelected">
+  <h1 class="heading">શાખા વૃત્ત</h1>
+  <div [formGroup]="dateForm">
+  <select id="thursdaysDropdown" formControlName="selectedDate" (change)="dateSelChange($event)">
+    <option value="" selected>પસંદ કરો</option> 
+    <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }} Thursday</option>
+  </select>
+  </div>
+  <!-- if date is not selected then this form should be hidden -->
+  <div *ngIf="dateSelected">
+  <form class="mainTitle" [formGroup]="formGroup">
     <!-- for date selection  -->
     <!-- <select id="thursdaysDropdown" formControlName="selectedDate">
        
@@ -13,7 +19,7 @@
     <!-- weekly form accordion -->
     <div class="accordion">
       <div class="accordion-heading weekly" (click)="selectedAccordion('W')">
-        <input type="radio" value="W" name="selectedCategory" formControlName="selectedCategory"> સેવા દિન (ગુરૂવાર)
+        <input type="radio" value="W" name="selectedCategory" formControlName="selectedCategory"> સેવાદિન (ગુરૂવાર)
       </div>
       <div *ngIf="selectedCategory=='W'" class="accordion-body" formGroupName="weeklyForm">
         <div class="level-1-heading" (click)="selectedLevelHeading('sanskar1')">
@@ -21,7 +27,7 @@
         </div>
         <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group" class="p-10">
           <input type="checkbox" value='amrutvachanSubhashit' name="amrutvachan/subhashit"
-            formControlName="amrutvachanSubhashit"> અમૃતવચન/સુભાષિત <br> <br>
+            formControlName="amrutvachanSubhashit"> અમૃતવચન/શુભાષિત <br> <br>
           <input type="checkbox" value='sevaGit' name="sevaGit" formControlName="sevaGit"> સેવા ગીત <br> <br>
           <input type="checkbox" value='sevaBodhKatha' name="sevaBodhKatha" formControlName="sevaBodhKatha"> સેવા બોધકથા
           <br>
@@ -32,11 +38,12 @@
         <div *ngIf="selectedSanskar=='sanskar2'" formGroupName="sanskar2Group" class="p-10">
           <input type="checkbox" value='sevaPrasang' name="sevaPrasang" formControlName="sevaPrasang"> સેવા પ્રસંગ <br>
           <br>
-          <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> સેવા વસ્તી કાર્ય
+          <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> સેવા વસતી કાર્ય
           આયોજન <br> <br>
-          વિષય લેનારનું નામ:<input type="text" value='' name="vishayLenar" formControlName="vishayLenar"> <br>
+          વિષય લેનાર <input type="text" value='' name="vishayLenar" formControlName="vishayLenar"> <br>
           <br>
-          કરેલ કાર્યની નોંધ:<textarea value='' name="karyNondh" formControlName="karyNondh"> </textarea><br>
+          <p>કરેલ કાર્યની નોંધ</p><textarea class='textArea' value='' name="karyNondh"
+            formControlName="karyNondh"> </textarea><br>
         </div>
       </div>
     </div>
@@ -66,3 +73,6 @@
 </form>
 <button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid" class="submit-btn">{{formType}}</button>
 </div>
+<!-- for ends here -->
+</div>
+<!-- <app-snackbar [errorsmsg]="snackMessage" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar> -->

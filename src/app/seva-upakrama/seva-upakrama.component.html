@@ -1,4 +1,4 @@
-
+<app-breadcrumb> </app-breadcrumb>
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <app-breadcrumb> </app-breadcrumb>
 <form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
@@ -18,33 +18,30 @@
       <div *ngIf="activeCategory === 1" class="subList">
         <ng-container *ngFor="let item of educationItems">
           <li (click)="toggleSubList(item, educationItems)" [ngClass]="{'green': isFilled(item)}">
-            <label class="custom-font-size-mid">{{ item.label }}</label>
-            <input 
-              type="date" 
-              class="rightSideDate custom-font-size-mid" 
-              name="{{item.name}}Date"
-              [(ngModel)]="checkedItems[item.name].choosedate"
-              [min]="checkedItems[item.name].minDate"
-              [max]="checkedItems[item.name].maxDate"
-              (click)="checkedItems[item.name].choosedate = null"
-            />
+            <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">
           </li>
           <div *ngIf="item.showInputs" class="input-group">
             <ng-container *ngIf="item.name === 'otherActivity1'">
-              <input type="text" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName"
+                placeholder="અન્ય પ્રવૃત્તિનું નામ">
             </ng-container>
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men"
+              placeholder="પુરુષોની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women"
+              placeholder="મહિલાઓની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others"
+              placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
           <div *ngIf="item.showInputs" class="input-group-input">
-            <input type="file" class="custom-font-size-sub" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image"
+              placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
             <div class="image-container">
               <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
                 <img [src]="createImageUrl(image)" alt="uploaded image">
                 <button type="button" (click)="removeImage(item.name, i)">Remove</button>
               </div>
-            </div>      
+            </div>
           </div>
         </ng-container>
       </div>
@@ -55,33 +52,30 @@
       <div *ngIf="activeCategory === 2" class="subList">
         <ng-container *ngFor="let item of healthItems">
           <li (click)="toggleSubList(item, healthItems)" [ngClass]="{'green': isFilled(item)}">
-            <label  class="custom-font-size-mid">{{ item.label }}</label>
-            <input 
-            type="date" 
-            class="rightSideDate custom-font-size-mid" 
-            name="{{item.name}}Date"
-            [(ngModel)]="checkedItems[item.name].choosedate"
-            [min]="checkedItems[item.name].minDate"
-            [max]="checkedItems[item.name].maxDate"
-            (click)="checkedItems[item.name].choosedate = null"
-          />
+            <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">
           </li>
           <div *ngIf="item.showInputs" class="input-group">
             <ng-container *ngIf="item.name === 'otherActivity2'">
-              <input type="text" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName"
+                placeholder="અન્ય પ્રવૃત્તિનું નામ">
             </ng-container>
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men"
+              placeholder="પુરુષોની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women"
+              placeholder="મહિલાઓની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others"
+              placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
           <div *ngIf="item.showInputs" class="input-group-input">
-            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" class="custom-font-size-sub" placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image"
+              placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
             <div class="image-container">
               <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
                 <img [src]="createImageUrl(image)" alt="uploaded image">
                 <button type="button" (click)="removeImage(item.name, i)">Remove</button>
               </div>
-            </div>      
+            </div>
           </div>
         </ng-container>
       </div>
@@ -92,33 +86,30 @@
       <div *ngIf="activeCategory === 3" class="subList">
         <ng-container *ngFor="let item of selfRelianceItems">
           <li (click)="toggleSubList(item, selfRelianceItems)" [ngClass]="{'green': isFilled(item)}">
-            <label  class="custom-font-size-mid">{{ item.label }}</label>
-            <input 
-            type="date" 
-            class="rightSideDate custom-font-size-mid" 
-            name="{{item.name}}Date"
-            [(ngModel)]="checkedItems[item.name].choosedate"
-            [min]="checkedItems[item.name].minDate"
-            [max]="checkedItems[item.name].maxDate"
-            (click)="checkedItems[item.name].choosedate = null"
-          />  
+            <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">
           </li>
           <div *ngIf="item.showInputs" class="input-group">
             <ng-container *ngIf="item.name === 'otherActivity3'">
-              <input type="text" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName"
+                placeholder="અન્ય પ્રવૃત્તિનું નામ">
             </ng-container>
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men"
+              placeholder="પુરુષોની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women"
+              placeholder="મહિલાઓની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others"
+              placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
           <div *ngIf="item.showInputs" class="input-group-input">
-            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" class="custom-font-size-sub"  placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image"
+              placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
             <div class="image-container">
               <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
                 <img [src]="createImageUrl(image)" alt="uploaded image">
                 <button type="button" (click)="removeImage(item.name, i)">Remove</button>
               </div>
-            </div>      
+            </div>
           </div>
         </ng-container>
       </div>
@@ -129,33 +120,30 @@
       <div *ngIf="activeCategory === 4" class="subList">
         <ng-container *ngFor="let item of socialItems">
           <li (click)="toggleSubList(item, socialItems)" [ngClass]="{'green': isFilled(item)}">
-            <label  class="custom-font-size-mid">{{ item.label }}</label>
-            <input 
-              type="date" 
-              class="rightSideDate custom-font-size-mid" 
-              name="{{item.name}}Date"
-              [(ngModel)]="checkedItems[item.name].choosedate"
-              [min]="checkedItems[item.name].minDate"
-              [max]="checkedItems[item.name].maxDate"
-              (click)="checkedItems[item.name].choosedate = null"
-            />
+            <label>{{ item.label }}</label>
+            <input type="date" class="rightSideDate">
           </li>
           <div *ngIf="item.showInputs" class="input-group">
             <ng-container *ngIf="item.name === 'otherActivity4'">
-              <input type="text" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName" placeholder="અન્ય પ્રવૃત્તિનું નામ">
+              <input type="text" [(ngModel)]="checkedItems[item.name].activityName" name="{{item.name}}ActivityName"
+                placeholder="અન્ય પ્રવૃત્તિનું નામ">
             </ng-container>
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men" placeholder="પુરુષોની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women" placeholder="મહિલાઓની સંખ્યા">
-            <input type="number" class="custom-font-size-sub"[(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others" placeholder="કાર્યકર્તાની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].men" name="{{item.name}}Men"
+              placeholder="પુરુષોની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].women" name="{{item.name}}Women"
+              placeholder="મહિલાઓની સંખ્યા">
+            <input type="number" [(ngModel)]="checkedItems[item.name].others" name="{{item.name}}Others"
+              placeholder="કાર્યકર્તાની સંખ્યા">
           </div>
           <div *ngIf="item.showInputs" class="input-group-input">
-            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image" class="custom-font-size-sub"  placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
+            <input type="file" (change)="onFileChange($event, item.name)" name="{{item.name}}Image"
+              placeholder="છબીઓ અપલોડ કરો" accept="image/*" multiple>
             <div class="image-container">
               <div class="image-wrapper" *ngFor="let image of checkedItems[item.name].images; let i = index">
                 <img [src]="createImageUrl(image)" alt="uploaded image">
                 <button type="button" (click)="removeImage(item.name, i)">Remove</button>
               </div>
-            </div>      
+            </div>
           </div>
         </ng-container>
       </div>
