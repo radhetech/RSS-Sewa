@@ -2054,6 +2054,7 @@
       "vibhag": "કર્ણાવતી પશ્ચિમ",
       "jilla": "સાબરમતી",
       "taluka": "સાબરમતી",
+      "isRemember": true,
       "id": "1"
     },
     {
@@ -3072,18 +3073,21 @@
       "selectedCategory": "M",
       "weeklyForm": "",
       "monthlyForm": {
-        "sampark": "No",
-        "swSankhya": "",
-        "visheshNondh": ""
+        "sampark": null,
+        "swSankhya": null,
+        "visheshNondh": null
       },
-      "selectedDate": "19/9/2024",
+      "selectedDate": "17/10/2024",
       "vrutPrant": "ગુજરાત",
       "vrutVibhag": "કર્ણાવતી પશ્ચિમ",
       "vrutJilla": "સાબરમતી",
       "vrutTaluka": "સાબરમતી",
-      "vrutVasti": "મોટેરા",
-      "vrutShakha": "સરસ્વતી",
+      "vrutVasti": "ત્રિભુવન મીલ",
+      "vrutShakha": "મિલન",
       "id": "39e9"
     }
-  ]
+  ],
+  "authenticate": {
+    "token": "abc123xyz"
+  }
 }
