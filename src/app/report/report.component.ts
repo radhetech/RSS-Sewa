@@ -14,30 +14,34 @@ export class ReportComponent implements OnInit {
   jillaList: Array<any> = [];
   reportType!: string;
   selectedVibhag: any;
-  ngOnInit(): void {}
+  vibhagUrl:string = "api/getVibhag";
+  jillaUrl:string = "api/getJilla";
+  ngOnInit(): void {
+    this.apiService.manageBreadCrumb(false)
+  }
   getVibhag() {
-    this.apiService.getData('http://localhost:4000/vibhagList').subscribe({
+    this.apiService.getData(this.vibhagUrl).subscribe({
       next: (res: any) => {
         console.log(res);
         this.vibhagList = res;
-        this.jillaVastiList();
+       
       },
       error: () => {},
     });
   }
-  jillaVastiList() {
-    this.vibhagList.forEach((item) => {
-      item.vibhagSevaVasti = 0;
-      item.jilla.forEach((jilla: any) => {
-        jilla.jillaSevaVasti = 0;
-        jilla.taluka.forEach((taluka: any) => {
-          jilla.jillaSevaVasti += taluka.sevaVasti.length;
-          item.vibhagSevaVasti += taluka.sevaVasti.length;
-        });
-      });
-    });
-    console.log(this.vibhagList);
-  }
+  // jillaVastiList() {
+  //   this.vibhagList.forEach((item) => {
+  //     item.vibhagSevaVasti = 0;
+  //     item.jilla.forEach((jilla: any) => {
+  //       jilla.jillaSevaVasti = 0;
+  //       jilla.taluka.forEach((taluka: any) => {
+  //         jilla.jillaSevaVasti += taluka.sevaVasti.length;
+  //         item.vibhagSevaVasti += taluka.sevaVasti.length;
+  //       });
+  //     });
+  //   });
+  //   console.log(this.vibhagList);
+  // }
 
   selectReportType(e: any) {
     this.reportType = e.target.value;

@@ -13,7 +13,7 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { SakhaVrutComponent } from './sakha-vrut/sakha-vrut.component';
 import { SevaUpakramaComponent } from './seva-upakrama/seva-upakrama.component';
 import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
-import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
+import { UtsavVrutComponent } from './utsav-vrut/utsav-vrut.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { ErrorComponent } from './error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -21,7 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ApiService } from './services/api.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SelectNagarComponent } from './select-nagar/select-nagar.component';
 import { SelectShakhaComponent } from './select-shakha/select-shakha.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
@@ -33,6 +33,11 @@ import { JillaVrutComponent } from './jilla-vrut/jilla-vrut.component';
 import { SummaryReportComponent } from "./report/summary/summary.component";
 import { DetailReportComponent } from "./report/detail/detail.component";
 import { StatisticsReportComponent } from "./report/statistics/statistics.component";
+import { I1 } from './services/interceptor';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +51,7 @@ import { StatisticsReportComponent } from "./report/statistics/statistics.compon
     SakhaVrutComponent,
     SevaUpakramaComponent,
     SevaKaryaComponent,
-    UtsavaVrttaComponent,
+    UtsavVrutComponent,
     SevaDarshanComponent,
     ErrorComponent,
     ProfileComponent,
@@ -69,11 +74,20 @@ import { StatisticsReportComponent } from "./report/statistics/statistics.compon
     RadioButtonModule,
     SummaryReportComponent,
     DetailReportComponent,
-    StatisticsReportComponent
+    StatisticsReportComponent,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatButtonModule
 ],
   providers: [
     provideAnimationsAsync(),
-    ApiService
+    ApiService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: I1,
+      multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

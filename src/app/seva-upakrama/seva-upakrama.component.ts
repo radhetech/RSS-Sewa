@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../services/api.service';
+import { valueSelect } from '../services/valueSelect.service';
 
 @Component({
   selector: 'app-seva-upakrama',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './seva-upakrama.component.scss'
 })
 export class SevaUpakramaComponent {
+  selectedDate: Date | null = null;
+  selectedSevaVasti:string='';
   selectedButton1 = false;
   selectedButton2 = false;
   selectedButton3 = false;
@@ -24,9 +28,11 @@ export class SevaUpakramaComponent {
   activeCategory: number = 0;
   selectedNagar: any;
   ShowNagar: boolean = true;
+  maxDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 
-
-  constructor() {}
+  constructor(private apiService:ApiService,private valSel:valueSelect) {
+    
+  }
 
 
 
@@ -118,19 +124,37 @@ export class SevaUpakramaComponent {
     otherActivity3: { men: '', women: '', others: '',images:[] },
     otherActivity4: { men: '', women: '', others: '',images:[] }
   };
-
+  userData:any;
 
   ngOnInit() {
-  
+      this.apiService.manageBreadCrumb(true);
+      this.apiService.manageShakhaVrutFlag(false)
       this.selectedNagar = '';
       this.ShowNagar = !this.selectedNagar;
-      console.log('Selected nagar in another component:', this.selectedNagar);
+      this.userData = JSON.parse(localStorage.getItem('loggedInUser')!);
+      // this.getRecord();
   
   }
+  getRecord(){
+     this.apiService.getData(`api/getSevaUpkram/676077046ea295c064d6292c/12/2024`).subscribe((res)=>{
+      console.log(res)
+     })
+  }
+  
+  
 
-  // openSelectNagar() {
-  //   this.ShowNagar = true;
-  // }
+  // When the user selects a month
+  onMonthSelected(month: any) {
+    const year = this.selectedDate?.getFullYear();
+    this.selectedDate = new Date(year!, month, 1); // Set the selected year and month
+    this.getRecord();
+  }
+
+  // When the user selects a year
+  onYearSelected(year: any) {
+    const month = this.selectedDate?.getMonth();
+    this.selectedDate = new Date(year, month!, 1); // Set the selected month and year
+  }
   toggleList(category: any) {
     this.activeCategory = this.activeCategory === category ? null : category;
   }
@@ -247,8 +271,27 @@ export class SevaUpakramaComponent {
       }
       item.showInputs = false;
      })
-  
+     this.valSel.getCurrentVasti().subscribe((res)=>{
+        this.selectedSevaVasti = res;
+     })
     console.log({ shiksha, aayogya,swavalamban,samajik });
+    const data = {
+      sevaVastiId:this.selectedSevaVasti,
+      vibhagId:this.userData.vibhag.vibhagId,
+      jillaId:this.userData.jilla.jillaId,
+      talukaId:this.userData.taluka.talukaId,
+      shiksha:shiksha,
+      aayogya:aayogya,
+      swavalamban:swavalamban,
+      samajik:samajik,
+      month:'12',
+      year:'2024',
+      prant:this.userData.prant
+
+    }
+    this.apiService.postData('api/sevaUpkram',data).subscribe((res)=>{
+      console.log(res)
+    })
     form.reset()
     this.showError = false;
     this.showList1 = false;

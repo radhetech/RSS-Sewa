@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-report-summary',
@@ -8,51 +9,72 @@ import { Component, Input } from '@angular/core';
   styleUrl: './summary.component.scss',
   imports: [CommonModule],
 })
-export class SummaryReportComponent {
+export class SummaryReportComponent implements OnInit {
   isOptionSelected: boolean = false;
   isDetailedSummary: boolean = false;
   isMahanagar: boolean = false;
   isJilla: boolean = false;
   isNagar: boolean = false;
   selectedVibhag!: any;
+  jillaUrl:string = "api/getJilla";
+  vibhagUrl:string = "api/getVibhag";
+ jillaList:any = [];
+ vibhagList:any = [];
+  // @Input() jillaList!: any[];
+ constructor(private apiService:ApiService){}
+ngOnInit() {
 
-  @Input() jillaList!: any[];
-  @Input() vibhagList!: any[];
-
+    this.apiService.getData(this.vibhagUrl).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.vibhagList = res;
+       
+      },
+      error: () => {},
+   
+    })
+}
   vibhagChange(e: any) {
     if (e.target.value === '') {
       this.isOptionSelected = false;
       this.isDetailedSummary = false;
     } else {
-      if (e.target.value === 'other') {
-        this.isDetailedSummary = true;
-        this.isOptionSelected = false;
-      } else {
+       const selectedVibhag = this.vibhagList.find((obj:any)=>{
+         return obj.vibhagId = e.target.value;
+       })
+       if(selectedVibhag.isMahanagar=='true'){
+         this.isMahanagar = true
+       } else {
+        this.isMahanagar = false
+       }
         this.isDetailedSummary = false;
         this.isOptionSelected = true;
-      }
+        this.apiService.getData(`${this.jillaUrl}/${e.target.value}`).subscribe((res)=>{
+           this.jillaList = res;
+        })
     }
-    this.jillaList = [];
-    this.vibhagList.forEach((item: any) => {
-      if (item.name == e.target.value) {
-        if (item.type == 'mahanagar') {
-          this.isMahanagar = true;
-          this.isJilla = false;
-          this.isNagar = false;
-        } else if (item.type == 'vibhag') {
-          this.isMahanagar = false;
-          this.isJilla = true;
-          this.isNagar = false;
-        } else if (item.type == 'nagar') {
-          this.isMahanagar = false;
-          this.isJilla = false;
-          this.isNagar = true;
-        }
-        this.jillaList = item.jilla;
-        console.warn(this.jillaList);
-        // this.vibhagSel = item.name;
-      }
-    });
+
+    // this.jillaList = [];
+    // this.vibhagList.forEach((item: any) => {
+    //   if (item.name == e.target.value) {
+    //     if (item.type == 'mahanagar') {
+    //       this.isMahanagar = true;
+    //       this.isJilla = false;
+    //       this.isNagar = false;
+    //     } else if (item.type == 'vibhag') {
+    //       this.isMahanagar = false;
+    //       this.isJilla = true;
+    //       this.isNagar = false;
+    //     } else if (item.type == 'nagar') {
+    //       this.isMahanagar = false;
+    //       this.isJilla = false;
+    //       this.isNagar = true;
+    //     }
+    //     this.jillaList = item.jilla;
+    //     console.warn(this.jillaList);
+    //     // this.vibhagSel = item.name;
+    //   }
+    // });
     this.selectedVibhag = e.target;
   }
 }

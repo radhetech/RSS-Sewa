@@ -14,10 +14,16 @@ export class AdminProfileComponent implements OnInit {
   jillaList:any = [];
   talukaList:any = [];
   vastiList:any = [];
-  shakhaList:any = [];  
+  shakhaList:any = []; 
+  sevaVastiFlag:boolean = false;
+  shakaListFlag:boolean = false; 
   addVastiFlag:boolean = false;
   addShakhaFlag:boolean = false;
-
+  vibhagUrl:string = "api/getVibhag";
+  jillaUrl:string = "api/getJilla";
+  talukaUrl:string = "api/getTaluka";
+  vastiUrl:string = "api/getSevaVasti";
+  shakhaUrl:string = "api/getShakha";
 
  constructor(private ApiService:ApiService){
    this.adminForm = new FormGroup({
@@ -30,79 +36,78 @@ export class AdminProfileComponent implements OnInit {
     newShakha: new FormControl('')
    })
  }
- getVibhagUrl:string = 'http://localhost:4000/vibhagList';
+
 
  ngOnInit(){
-   this.ApiService.getData(this.getVibhagUrl).subscribe({next:(res:any)=>{
+   this.ApiService.getData(this.vibhagUrl).subscribe({next:(res:any)=>{
     console.log(res);
     this.vibhagList = res;
    },error:()=>{}})
-  
    
  }
  vibhagChange(e:any){
+  console.log(e.target.value)
   this.jillaList=[];
   this.talukaList=[];
   this.vastiList=[];
   this.shakhaList = [];
-   this.vibhagList.forEach((item:any)=>{
-   if(item.name==e.target.value){
-     this.jillaList = item.jilla;
-   }
-})
+  this.sevaVastiFlag = false;
+  this.shakaListFlag = false;
+  
+this.ApiService.getData(`${this.jillaUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
+  this.jillaList = res;
+ },error:()=>{}})
+
  }
  jillaChange(e:any){
+  this.sevaVastiFlag = false;
+  this.shakaListFlag = false;
   this.talukaList=[];
   this.vastiList=[];
   this.shakhaList = [];
-  this.jillaList.forEach((item:any)=>{
-  if(item.name==e.target.value){
-    this.talukaList = item.taluka;
-  }
-})
+  this.ApiService.getData(`${this.talukaUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
+    this.talukaList = res;
+   },error:()=>{}})
+   console.log(this.talukaList)
 }
 talukaChange(e:any){
   this.vastiList=[];
   this.shakhaList = [];
-  this.talukaList.forEach((item:any)=>{
-  if(item.name==e.target.value){
-    this.vastiList = item.sevaVasti;
-  }
-})
+  this.ApiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
+    this.vastiList = res;
+    this.sevaVastiFlag = true;
+   },error:()=>{}})
+   console.log(this.vastiList)
 }
 vastiChange(e:any){
-      if(e.target.value=='addVasti'){
+  this.shakaListFlag = true;
+      if(e.target.value=='addVasti'){ 
         this.addVastiFlag = true;
-        this.shakhaList = [];
-         }
+        this.shakaListFlag = false;
+    } 
+    this.ApiService.getData(`${this.shakhaUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
+      this.shakhaList = res;
+     },error:()=>{}})
+     console.log(this.shakhaList)
   
-  console.log(this.vastiList)
-  this.vastiList.forEach((item:any)=>{
-  if(item.name==e.target.value){
-    this.shakhaList = item.shakha;
-    
-  }
-})
 }
 
 addVasti(val:any){
   console.log(val)
   // api call pending to add vasti 
   const pushedVal:any = {
-    name: this.adminForm.controls['newVasti'].value,
-    id: 1001,
-    shakha:[]
+    sevaVastiName: this.adminForm.controls['newVasti'].value,
+    talukaId:this.adminForm.controls['taluka'].value
   };
-  this.vastiList.push(pushedVal);
-  this.adminForm.patchValue({
-    vasti:pushedVal
+  this.ApiService.postData('api/sevaVasti/save',pushedVal).subscribe((res)=>{
+     this.vastiList.push(res)
   })
+  // this.vastiList.push(pushedVal);
+  // this.adminForm.patchValue({
+  //   vasti:pushedVal
+  // })
   this.addVastiFlag = false;
-  //this.adminForm.controls['newVasti'].value = 
-  this.adminForm.patchValue({
-    newVasti:''
-  })
-  console.log(this.adminForm.value)
+
 }
 
 addShakha(val:any){

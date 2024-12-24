@@ -53,7 +53,7 @@
   }
 
   .home-page-service-card {
-    width: 70%;
+    width: 100%;
     /* Full width for smaller screens */
     margin: 2px 0;
     /* Adjusted margin */
@@ -73,7 +73,9 @@
       cursor: pointer;
     }
   }
-
+  .home-page-service-card:nth-child(1){
+       margin-left: -4px;
+  }
  
 
 

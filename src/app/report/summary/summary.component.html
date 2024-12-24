@@ -2,7 +2,7 @@
     <label for="vibhag">વિભાગ:</label>
     <select id="vibhag" (change)="vibhagChange($event)">
       <option value="" selected>-- Select Option --</option>
-      <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name">{{ vibhag.reportName }}</option>
+      <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
       <option value="other">अन्य</option>
     </select>
   </div>
@@ -12,7 +12,7 @@
         <tr>
           <th scope="col">क्र.</th>
           <th scope="col">विवरण</th>
-          <th *ngFor="let jilla of jillaList">{{jilla.reportName}}</th>
+          <th *ngFor="let jilla of jillaList">{{jilla.jillaName}}</th>
           <th scope="col">योग</th>
         </tr>
       </thead>

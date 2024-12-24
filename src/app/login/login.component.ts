@@ -6,32 +6,38 @@ import { AuthenticationService } from '../services/authentication.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { switchMap } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { valueSelect } from '../services/valueSelect.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
+
 export class LoginComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private AuthenticationService: AuthenticationService,
     private _router: Router,
-    private activeRouter: ActivatedRoute
+    private valSel:valueSelect
   ) {}
   isLoginMode: boolean = true;
   loginerr: string | null = null;
   snackbarColour: string | null = null;
-  loginUrl: string = 'http://localhost:4000/users';
-  authenticateUrl:string = 'http://localhost:4000/authenticate';
+  loginUrl: string = 'api/account';
+  authenticateUrl:string = 'api/authenticate';
+  tempObj:any = [];
 
   ngOnInit() {
-    if (localStorage.getItem('loggedInUser')) {
-      this.AuthenticationService.isUserLogin = true;
-      this._router.navigate(['home']);
-    }
+    localStorage.clear();
+    this.apiService.manageBreadCrumb(false)
+   
   }
+  
   onFormSubmitted(res: NgForm) {
+    console.log(res.value)
+    
     // temporary if api is not working
     /* console.log(res.value)
     this.AuthenticationService.isUserLogin = true;
@@ -42,14 +48,26 @@ export class LoginComponent implements OnInit {
     //  uncomment until here
     // start
     //this code is for api. uncomment once we have backend
-    this.apiService.getData(this.authenticateUrl).pipe(
+    
+  
+    this.apiService.postData(this.authenticateUrl, {
+      "password": res.value.password,
+      "username": res.value.username,
+      "rememberMe": "false"
+    }
+    ).pipe(
       switchMap((res1:any)=>{
-        console.log(res1)
-        return this.apiService.getData(this.loginUrl)
+        localStorage.setItem('Token',res1.id_token)
+        console.log(res1.id_token)
+        const headers2 = new HttpHeaders({
+          'Authorization': `Bearer ${res1.id_token}`
+        });
+        return this.apiService.getData(this.loginUrl,{headers:headers2})
           // return this.apiService.getData(`this.loginUrl/${res1.token}`)
       })
     ).subscribe((res:any)=>{
-          res = res[0];
+          // res = res[0]
+
       localStorage.setItem('loggedInUser',JSON.stringify(res));
       console.log('login--',res.name);
       this.AuthenticationService.isUserLogin = true;
@@ -88,5 +106,8 @@ export class LoginComponent implements OnInit {
       this.loginerr = null;
       console.log(this.loginerr);
     }, 4000);
+  }
+  forgetPassword(){
+    alert('મદદ માટે તમારા જીલા એડમિનનો સંપર્ક કરો')
   }
 }

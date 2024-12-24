@@ -1,6 +1,23 @@
-<app-breadcrumb> </app-breadcrumb>
+<!-- <app-breadcrumb> </app-breadcrumb> -->
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
-<form action="" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
+<div class="container">
+  <mat-form-field>
+    <mat-label>Choose a month and year</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" [max]="maxDate" placeholder="Select a month and year" readonly>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker 
+      #picker 
+      startView="multi-year" 
+      (yearSelected)="onYearSelected($event)" 
+      (monthSelected)="onMonthSelected($event)"
+      panelClass="month-year-picker">
+    </mat-datepicker>
+  </mat-form-field>
+  
+  <p>Selected Month/Year: {{ selectedDate | date: 'MM/yyyy' }}</p>
+</div> 
+
+<form  (ngSubmit)="onSubmit(myform)" #myform="ngForm">
   <div class="list-container">
     <h3>વૃત્તનો પ્રકાર પસંદ કરો</h3>
     <ul>

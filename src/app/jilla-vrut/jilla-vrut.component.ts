@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   FormsModule,
   Validators,
 } from '@angular/forms';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-jilla-vrut',
   templateUrl: './jilla-vrut.component.html',
   styleUrl: './jilla-vrut.component.scss',
 })
-export class JillaVrutComponent {
+export class JillaVrutComponent implements OnInit{
   aayamList: any = ['samajik', 'shiksha', 'swasthya', 'swavalamban'];
   ayamChange(e: any) {
     // this.jillaForm.get('selAyam').value = e.value;
@@ -19,7 +20,7 @@ export class JillaVrutComponent {
   }
   jillaForm: FormGroup;
   isSubmit!: boolean;
-  constructor() {
+  constructor(private _apiService:ApiService) {
     this.jillaForm = new FormGroup({
       selAyam: new FormControl('', [Validators.required]),
       jBethak: new FormControl('', [Validators.required]),
@@ -29,6 +30,9 @@ export class JillaVrutComponent {
       newSevaKaryaNum: new FormControl('', [Validators.required]),
       ayamSahNum: new FormControl('', [Validators.required]),
     });
+  }
+  ngOnInit(): void {
+    this._apiService.manageBreadCrumb(false)
   }
   submitJilla(form: FormGroup) {
     this.isSubmit = true;

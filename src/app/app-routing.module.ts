@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SakhaVrutComponent } from './sakha-vrut/sakha-vrut.component';
 import { SevaUpakramaComponent } from './seva-upakrama/seva-upakrama.component';
 import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
-import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
+import { UtsavVrutComponent } from './utsav-vrut/utsav-vrut.component';
 import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
 import { authguardGuard } from './services/Auth/authguard.guard';
 import { ErrorComponent } from './error/error.component';
@@ -52,7 +52,7 @@ const routes: Routes = [
   },
   {
     path: 'UtsavaVrut',
-    component: UtsavaVrttaComponent,
+    component: UtsavVrutComponent,
     canActivate: [authguardGuard],
   },
   {

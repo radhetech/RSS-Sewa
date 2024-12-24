@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, inject } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
+import { valueSelect } from '../../services/valueSelect.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  constructor(private elementRef: ElementRef, private router: Router, private AuthenticationService:AuthenticationService) {
+  constructor(private elementRef: ElementRef, private router: Router, private AuthenticationService:AuthenticationService, private valSel:valueSelect,private cdr:ChangeDetectorRef) {
     this.loggedInUser = this.AuthenticationService.loggedInUserData;
    this.AuthenticationService.isUserLoginSub.asObservable().subscribe((val)=> {
     this.authUser = true;
@@ -71,6 +72,8 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authUser = false;
+    localStorage.clear();
+    this.cdr.markForCheck();
     this.AuthenticationService.userLogout();
     this.loginerr = 'You have been successfully logged Out!!';
     this.snackTimeOut();

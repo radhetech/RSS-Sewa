@@ -1,4 +1,4 @@
-<app-breadcrumb> </app-breadcrumb>
+
 <h2 class="text-center" *ngIf="!isShakhaSelected || !isVastiSelected"> વસ્તી અને શાખા પાસંદ કરો.</h2>
 <div class="list-container" *ngIf="isShakhaSelected && isVastiSelected">
   <h1 class="heading">શાખા વૃત્ત</h1>
@@ -71,8 +71,10 @@
     </div>
     
 </form>
-<button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid" class="submit-btn">{{formType}}</button>
+
+<button (click)="submitForm(formGroup)" [disabled]="!formGroup.valid" class="submit-btn">Submit</button>
 </div>
 <!-- for ends here -->
 </div>
+
 <!-- <app-snackbar [errorsmsg]="snackMessage" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar> -->

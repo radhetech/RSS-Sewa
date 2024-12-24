@@ -7,18 +7,18 @@ import { BehaviorSubject } from "rxjs";
 })
 export class valueSelect{
  
-private showComp = new BehaviorSubject<boolean>(false);
- private currentVasti = new BehaviorSubject<string>('');
- private currentShakha = new BehaviorSubject<string>('');
+
+ private currentVasti = new BehaviorSubject<any>({});
+ private currentShakha = new BehaviorSubject<any>({});
 public getUserData=()=>{
   return JSON.parse(window.localStorage.getItem('loggedInUser')!);
 }
  
-  showComp$ = this.showComp.asObservable();
-  changeShakha(shakha: string) {
+  
+  changeShakha(shakha: any) {
     this.currentShakha.next(shakha);
   }
-  changeVasti(vasti: string) {
+  changeVasti(vasti: any) {
     this.currentVasti.next(vasti);
   }
   getCurrentVasti(){
@@ -27,4 +27,5 @@ public getUserData=()=>{
   getCurrentShakha(){
     return this.currentShakha.asObservable();
   }
+
 }

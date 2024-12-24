@@ -6,7 +6,7 @@
           <label for="vibhag" class="float-right">કુલ-{{vibhagList.length}}</label>
           <select id="vibhag" formControlName="vibhag" (change)="vibhagChange($event)">
             <option value="" selected>Select</option>
-            <option *ngFor="let vibhag of vibhagList" [value]="vibhag.name" >{{ vibhag.name }}</option>
+            <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId" >{{ vibhag.name }}</option>
           </select>
         </div>
          <div class="form-group" *ngIf="jillaList.length">
@@ -14,7 +14,7 @@
             <label for="vibhag" class="float-right">કુલ-{{jillaList.length}}</label>
             <select id="jilla" formControlName="jilla" (change)="jillaChange($event)">
               <option value="" selected>Select</option>
-              <option *ngFor="let jilla of jillaList" [value]="jilla.name">{{ jilla.name }}</option>
+              <option *ngFor="let jilla of jillaList" [value]="jilla.jillaId">{{ jilla.jillaName }}</option>
             </select>
           </div>
           <div class="form-group"  *ngIf="talukaList.length">
@@ -22,15 +22,15 @@
             <label for="vibhag" class="float-right">કુલ-{{talukaList.length}}</label>
             <select id="taluka" formControlName="taluka" (change)="talukaChange($event)">
               <option value="" selected>Select</option>
-              <option *ngFor="let taluka of talukaList" [value]="taluka.name">{{ taluka.name }}</option>
+              <option *ngFor="let taluka of talukaList" [value]="taluka.talukaId">{{ taluka.talukaName }}</option>
             </select>
           </div>
-        <div class="form-group"  *ngIf="vastiList.length">
+    <div class="form-group"  *ngIf="sevaVastiFlag">
       <label for="vasti">સેવા વસ્તી:</label>
       <label for="vibhag" class="float-right">કુલ-{{vastiList.length}}</label>
       <select id="vasti" formControlName="vasti" (change)="vastiChange($event)">
         <option value="" selected>Select</option>
-        <option *ngFor="let vasti of vastiList" [value]="vasti.name">{{ vasti.name }}</option>
+        <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{ vasti.sevaVastiName }}</option>
         <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો  </option>
       </select>
       <div *ngIf="addVastiFlag">

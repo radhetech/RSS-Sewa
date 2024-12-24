@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-seva-karya',
   templateUrl: './seva-karya.component.html',
   styleUrl: './seva-karya.component.scss'
 })
-export class SevaKaryaComponent {
-
+export class SevaKaryaComponent implements OnInit,OnDestroy{
+  constructor(private apiService:ApiService){}
   selectedButton1:boolean = false;
   selectedButton2:boolean = false;
   selectedButton3:boolean = false;
@@ -23,7 +24,10 @@ export class SevaKaryaComponent {
   showOthersSawval: boolean = false;
   showOthersSamajik:Boolean= false;
   activeCategory:number=0
-
+ngOnInit(){
+  this.apiService.manageBreadCrumb(true);
+  this.apiService.manageShakhaVrutFlag(false)
+}
   educationItems = [
     { label: 'સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ', name: 'sanskarKendra', showInputs: false },
     { label: 'પાઠદાન કેન્દ્ર / ટ્યુશન કેન્દ્ર', name: 'tuitionCenter', showInputs: false },
@@ -113,7 +117,7 @@ export class SevaKaryaComponent {
   othersAayogya = { name: '', men: '', women: '', others: '' };
   othersSawval = { name: '', men: '', women: '', others: '' };
   othersSamajik = { name: '', men: '', women: '', others: '' };
-
+ 
 
   checkedItems: any = {
     sanskarKendra: { men: '', women: '', others: '' },
@@ -305,7 +309,22 @@ export class SevaKaryaComponent {
       others: this.customSamajik.others}
   
     console.log({ shiksha, aayogya,swavalamban,samajik });
-
+    
+    const finalData = {
+      shiksha:shiksha,
+      aayogya:aayogya,
+      swavalamban:swavalamban,
+      samajik:samajik,
+      "prant": "Gujarat",
+      "vibhagId": "2213",
+      "jillaId": "6666",
+      "talukaId": "777",
+      "sevaVastiId": "5555",
+      "year":2024
+    }
+    this.apiService.postData('api/sevaKarya',finalData).subscribe((res)=>{
+      console.log(res)
+    })
     form.reset()
     this.showError = false;
     this.showList1 = false;
@@ -322,5 +341,7 @@ snackTimeOut() {
     console.log(this.loginerr);
   }, 4000);
 }
+ngOnDestroy(): void {
 
+}
 }

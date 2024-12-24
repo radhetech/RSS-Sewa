@@ -75,4 +75,37 @@ ul li input{
   }
 }
 
+/* Styles to remove the date selection from the calendar */
+.mat-datepicker-content {
+  .mat-calendar-body {
+    display: none;  // Hides the date grid (i.e., day selection)
+  }
+}
+
+.mat-datepicker-content .mat-calendar-year-view,
+.mat-datepicker-content .mat-calendar-month-view {
+  display: block; // Shows year and month views only
+}
+
+/* Optional: Style the calendar to look cleaner */
+.mat-datepicker-panel {
+  width: 300px;  // You can adjust the size of the date picker panel
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+mat-input {
+  font-size: 16px;
+}
+
+
+
 

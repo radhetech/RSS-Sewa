@@ -201,4 +201,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .float-right{
     float:right;
   }
+  .accordion:hover{
+    cursor: pointer;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #caf3a2;
+    margin-top: 5px;
+    font-size: large;
+    color:white;
+    &:hover{
+      cursor: pointer;
+      background-color: #45a049;
+    }
+    &:disabled {
+      background-color: #ccc; /* Gray background when disabled */
+      color: #777; /* Lighter text color */
+      cursor: not-allowed; /* Changes the cursor to indicate it's not clickable */
+      opacity: 0.6; /* Optional: slightly reduce opacity to indicate disabled state */
+    }
+  }
+ 
   

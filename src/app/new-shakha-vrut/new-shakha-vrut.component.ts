@@ -24,7 +24,6 @@ export class NewShakhaVrutComponent implements OnInit {
   vrutShakha: string = '';
   selectedDate: any;
   formId: string = '';
-  formType: string = 'સબમિટ';
   isTalukaAdmin:boolean = false;
 
   sanskar1List: any = [
@@ -46,27 +45,30 @@ export class NewShakhaVrutComponent implements OnInit {
       weeklyForm: new FormGroup({
         sanskar: new FormControl(''),
         sanskar1Group: new FormGroup({
-          sevaBodhKatha: new FormControl(''),
-          sevaGit: new FormControl(''),
-          amrutvachanSubhashit: new FormControl(''),
+          sevaBodhKatha: new FormControl(false),
+          sevaGit: new FormControl(false),
+          amrutvachanSubhashit: new FormControl(false),
         }),
         sanskar2Group: new FormGroup({
-          karyNondh: new FormControl(''),
+          karyNondh: new FormControl(false),
           vishayLenar: new FormControl(''),
-          sevaPrasang: new FormControl(''),
+          sevaPrasang: new FormControl(false),
           karyAyojan: new FormControl(''),
         }),
       }),
       monthlyForm: new FormGroup({
-        sampark: new FormControl(''),
+        sampark: new FormControl('Yes'),
         swSankhya: new FormControl(''),
         visheshNondh: new FormControl(''),
       }),
     });
   }
   ngOnInit(): void {
+    this._apiService.manageBreadCrumb(true);
+    this._apiService.manageShakhaVrutFlag(true)
     this.valueSel.getCurrentShakha().subscribe((res) => {
       this.formGroup.reset();
+      this.dateForm.reset();
       if (res != 'શાખા') {
         this.vrutShakha = res;
         this.isShakhaSelected = true;
@@ -76,28 +78,29 @@ export class NewShakhaVrutComponent implements OnInit {
     });
     this.valueSel.getCurrentVasti().subscribe((res) => {
       this.formGroup.reset();
+      this.dateForm.reset();
       if (res != 'વસ્તી') {
         this.vrutVasti = res;
         this.isVastiSelected = true;
+        this.isShakhaSelected = false;
       } else {
         this.isVastiSelected = false;
       }
     });
-    if(this.userData.role =='taluka-admin'){
-      this.isTalukaAdmin = true;
-    }
+    // if(this.userData.role =='taluka-admin'){
+    //   this.isTalukaAdmin = true;
+    // }
   }
   dateSelChange(e:any) {
    let selDate = this.dateForm.controls['selectedDate'].value;
     if(selDate){
       this.dateSelected = true;
     this._apiService
-      .getData('http://localhost:4000/shakhaVrut')
+      .getData(`api/getShakhaVrut?vastiId=${this.vrutVasti}&selectedDate=${this.getFormattedDate(selDate)}&shakhaId=${this.vrutShakha}`)
       .subscribe((res: any) => {
-        res = res[1];
+        res = res[0];
         this.formId = res?.id;
         if (res != undefined || !res.selectedCategory) {
-          this.formType = 'અપડેટ';
           this.formGroup.patchValue({
             selectedCategory: res?.selectedCategory,
             weeklyForm: {
@@ -179,53 +182,42 @@ export class NewShakhaVrutComponent implements OnInit {
   }
   submitForm(form: any) {
     form.value.selectedDate = this.getFormattedDate( this.dateForm.controls['selectedDate'].value);
-    form.value.vrutPrant = this.userData.prant;
-    form.value.vrutVibhag = this.userData.vibhag;
-    form.value.vrutJilla = this.userData.jilla;
-    form.value.vrutTaluka = this.userData.taluka;
-    form.value.vrutVasti = this.vrutVasti;
-    form.value.vrutShakha = this.vrutShakha;
+    form.value.prant = this.userData.prant;
+    form.value.vibhagId = this.userData.vibhag.vibhagId;
+    form.value.jillaId = this.userData.jilla.jillaId;
+    form.value.talukaId = this.userData.taluka.talukaId;
+    form.value.vastiId = this.vrutVasti;
+    form.value.shakhaId = this.vrutShakha;
     if (this.selectedCategory == 'W') {
-      form.value.monthlyForm = '';
+      form.value.monthlyForm = {};
       if (form.value.weeklyForm.sanskar == 'sanskar1') {
-        form.value.weeklyForm.sanskar2Group = '';
+        form.value.weeklyForm.sanskar2Group = {};
       } else {
-        form.value.weeklyForm.sanskar1Group = '';
+        form.value.weeklyForm.sanskar1Group = {};
       }
     } else if (this.selectedCategory == 'M') {
-      form.value.weeklyForm = '';
+      form.value.weeklyForm = {};
       if (form.value.monthlyForm.sampark == 'No') {
         form.value.monthlyForm.swSankhya = '';
         form.value.monthlyForm.visheshNondh = '';
       }
     }
     console.log(form.value);
-    if (this.formType == 'સબમિટ') {
       this._apiService
-        .postData('http://localhost:4000/shakhaVrut', form.value)
+        .postData('api/shakhaVrut', form.value)
         .subscribe((res) => {
           // this.showSnackBar = true;
           this.snackTimeOut()
           this.formGroup.reset();
+          this.dateForm.reset();
           console.log(res);
         },(err)=>{
           
         });
-    } else {
-      this._apiService
-        .udpateRecord(
-          `http://localhost:4000/shakhaVrut/${this.formId}`,
-          form.value
-        )
-        .subscribe((res) => {
-          console.log(res);
-          this.formGroup.reset();
-          // this.showSnackBar = true;
-          // this.snackTimeOut()
-        });
-    }
+ 
 
     this.formGroup.reset();
+    this.dateForm.reset();
   }
   snackTimeOut() {
     setTimeout(() => {

@@ -1,7 +1,20 @@
-<ul class="breadcrumb" *ngIf='myList.role=="taluka-admin"'>
-    <li class="click-link disabled m-hidden" >{{myList.prant}}</li>
-    <li class="click-link disabled m-hidden">{{myList.vibhag}}</li>
-    <li class="click-link disabled">{{myList.jilla}}</li>
-    <li class="click-link disabled">{{myList.taluka}}</li>
-    <li class="click-link"><app-select-shakha></app-select-shakha></li> 
+<ul class="breadcrumb">
+    <li class="click-link disabled" >{{myList.prant}}</li>
+    <li class="click-link disabled">{{myList.vibhag.vibhagName}}</li>
+    <li class="click-link disabled">{{myList.jilla.jillaName}}</li>
+    <li class="click-link disabled">{{myList.taluka.talukaName}}</li>
+    <!-- <li class="click-link"><app-select-shakha></app-select-shakha></li>  -->
+    <li class="click-link">
+      <select #vasti (change)="vastiChange(vasti)">
+        <option value="વસ્તી">વસ્તી</option>
+        <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{vasti.sevaVastiName}}</option>
+      </select>
+    </li>
+    <li class="click-link" *ngIf="shakhaVrutSelected">
+      <select #shakha (change)="shakhaChange(shakha)">
+        <option value="શાખા">શાખા</option>
+        <option *ngFor="let shakha of shakhaList" name="shaka" [value]="shakha.shakhaId">{{shakha.shakhaName}}</option>
+      </select>
+    </li>
   </ul>
+ 
