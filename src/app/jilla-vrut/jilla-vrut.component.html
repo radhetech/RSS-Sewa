@@ -1,21 +1,21 @@
 
-<h2>Jilla Vrut</h2>
+<h2>જિલ્લા વૃત્ત</h2>
 <div [formGroup]="jillaForm" (ngSubmit)="submitJilla(jillaForm)">
-  <label>Jilla Bethak thae </label>
+  <label>જિલ્લા બેઠક થઈ? </label>
   <input type="radio" id="jBethakYes" name="jBethak" value="Yes" formControlName="jBethak" />
-  <label for="jBethakYes">Yes</label>
+  <label for="jBethakYes">હા</label>
   <input type="radio" id="jBethakNo" name="jBethak" value="No" formControlName="jBethak" />
-  <label for="jBethakNo">No</label>
+  <label for="jBethakNo">ના</label>
   <br />
   <span class="error-message" *ngIf="
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('jBethak')?.hasError('required')
-    ">Jilla Bethak thae is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
   <br />
   <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? </label>
   <select name="" formControlName="selAyam" (change)="ayamChange($event)">
-    <option selected>-- Select an option --</option>
+    <option selected>-- પસંદ કરો --</option>
     <option value="ayam" *ngFor="let ayam of aayamList">
       {{ ayam }}
     </option>
@@ -26,42 +26,43 @@
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('ayamSahNum')?.hasError('required')
-    ">Sel Ayam is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
   <br />
-  <label>કેટલી શાખા મા પ્રવાસ થયો ? </label>
+  <label>કેટલી શાખામાં પ્રવાસ થયો? </label>
   <input type="number" formControlName="shakhaPravasNum" />
   <br />
   <span class="error-message" *ngIf="
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('shakhaPravasNum')?.hasError('required')
-    ">Shakha Pravas is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
   <br />
-  <label>કેટલી સેવા વસ્તી મા સંપર્ક થયો? </label>
+  <label>કેટલી સેવા વસ્તીમાં સંપર્ક થયો? </label>
   <input type="number" formControlName="sevaVastiPravasNum" />
   <br />
   <span class="error-message" *ngIf="
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('sevaVastiPravasNum')?.hasError('required')
-    ">Seva Vasti Prava is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
   <br />
-  <label>કેટલા સેવા કાર્ય મા જવાનુ થયુ ? </label>
+  <label>કેટલા સેવા કાર્યમાં જવાનુ થયું ? </label>
   <input type="number" formControlName="sevaKaryaPravasNum" />
   <br />
   <span class="error-message" *ngIf="
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('sevaKaryaPravasNum')?.hasError('required')
-    ">Seva Karya Prava is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
   <br />
-  <label>આ મહિનામા કેટલા નવા સેવા કાર્ય શરૂ થયા? </label>
+  <label>આ મહિનામાં કેટલા નવા સેવા કાર્ય શરૂ થયા? </label>
   <input type="number" formControlName="newSevaKaryaNum" />
   <br />
   <span class="error-message" *ngIf="
       isSubmit &&
       jillaForm.touched &&
       jillaForm.get('newSevaKaryaNum')?.hasError('required')
-    ">New Sewa Karya is a required field.</span>
+    ">વૃત્ત ભરવું ફરજિયાત છે</span>
 </div>
-<button (click)="submitJilla(jillaForm)">Submit Form</button>
+<br>
+<button (click)="submitJilla(jillaForm)">સબમિટ કરો</button>

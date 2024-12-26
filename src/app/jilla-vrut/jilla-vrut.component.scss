@@ -6,3 +6,49 @@
 label[for='jBethakYes'], label[for='jBethakNo'] {
     cursor: pointer;
 }
+h2, label {
+    margin: 5px;
+    text-align: center;
+    background-color: #e98a2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input, select {
+    padding: 8px;
+    margin: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+div {
+    border: 1px solid black;
+    display: inline-block;
+    
+}
+h2 {
+    text-align: center;
+    background-color: #e98a2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4%;
+    width: 50%;
+    max-width: 200px;
+}
+button {
+    background-color: #e98a2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4%;
+    width: 50%;
+    max-width: 200px;
+
+}

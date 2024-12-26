@@ -1,7 +1,7 @@
 <div class="form-group py-2">
-    <label for="vibhag">सांख्यिकी:</label>
+    <label for="vibhag">आयाम सह वृत्त:</label>
     <select id="vibhag" (change)="selectDepartment($event)">
-        <option value="" selected>-- Select Option --</option>
+        <option value="" selected>-- चयन कीजिए --</option>
         <option value="education">शिक्षा</option>
         <option value="independent">स्वावलंबन</option>
         <option value="health">स्वास्थ्य</option>
@@ -16,7 +16,7 @@
     <table class="table table-bordered table-hover" *ngIf="statisticsType === 'education'">
         <thead class="thead-dark">
             <tr>
-                <th colspan="3"><h1>सांख्यिकी जानकारी - शिक्षा</h1></th>
+                <th colspan="3"><h1>शिक्षा</h1></th>
             </tr>
             <tr>
                 <th>क्र.</th>
@@ -128,7 +128,7 @@
     <table class="table table-bordered table-hover" *ngIf="statisticsType === 'independent'">
         <thead class="thead-dark">
             <tr>
-                <th colspan="3"><h1>सांख्यिकी जानकारी - स्वावलंबन</h1></th>
+                <th colspan="3"><h1>स्वावलंबन</h1></th>
             </tr>
             <tr>
                 <th>क्र.</th>
@@ -230,7 +230,7 @@
     <table class="table table-bordered table-hover" *ngIf="statisticsType === 'health'">
         <thead class="thead-dark">
             <tr>
-                <th colspan="3"><h1>सांख्यिकी जानकारी - स्वास्थ्य</h1></th>
+                <th colspan="3"><h1>स्वास्थ्य</h1></th>
             </tr>
             <tr>
                 <th>क्र.</th>
@@ -337,12 +337,12 @@
     <table class="table table-bordered table-hover" *ngIf="statisticsType === 'social'">
         <thead class="thead-dark">
             <tr>
-                <th colspan="3"><h1>सांख्यिकी जानकारी - सामाजिक</h1></th>
+                <th colspan="3"><h1>सामाजिक</h1></th>
             </tr>
             <tr>
                 <th>क्र.</th>
                 <th>सेवा कार्य प्रकार</th>
-                <th>सांख्य</th>
+                <th>संख्या</th>
             </tr>
         </thead>
         <tbody>

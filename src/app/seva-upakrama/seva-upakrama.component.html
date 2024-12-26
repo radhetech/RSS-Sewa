@@ -2,8 +2,8 @@
 <app-snackbar [errorsmsg]="loginerr" [snackbarColour]="snackbarColour" *ngIf="loginerr"></app-snackbar>
 <div class="container">
   <mat-form-field>
-    <mat-label>Choose a month and year</mat-label>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" [max]="maxDate" placeholder="Select a month and year" readonly>
+    <mat-label>મહિનો અને વર્ષ પસંદ કરો</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" [max]="maxDate" placeholder="મહિનો અને વર્ષ પસંદ કરો" readonly>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker 
       #picker 
@@ -14,7 +14,7 @@
     </mat-datepicker>
   </mat-form-field>
   
-  <p>Selected Month/Year: {{ selectedDate | date: 'MM/yyyy' }}</p>
+  <p>પસંદ કરેલ મહિનો અને વર્ષ: {{ selectedDate | date: 'MM/yyyy' }}</p>
 </div> 
 
 <form  (ngSubmit)="onSubmit(myform)" #myform="ngForm">

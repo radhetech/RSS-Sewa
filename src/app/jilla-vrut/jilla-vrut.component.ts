@@ -12,15 +12,15 @@ import { ApiService } from '../services/api.service';
   templateUrl: './jilla-vrut.component.html',
   styleUrl: './jilla-vrut.component.scss',
 })
-export class JillaVrutComponent implements OnInit{
-  aayamList: any = ['samajik', 'shiksha', 'swasthya', 'swavalamban'];
+export class JillaVrutComponent implements OnInit {
+  aayamList: any = ['સામાજિક', 'શિક્ષા', 'સ્વાસ્થ્ય', 'સ્વાવલંબન'];
   ayamChange(e: any) {
     // this.jillaForm.get('selAyam').value = e.value;
     console.log(e);
   }
   jillaForm: FormGroup;
   isSubmit!: boolean;
-  constructor(private _apiService:ApiService) {
+  constructor(private _apiService: ApiService) {
     this.jillaForm = new FormGroup({
       selAyam: new FormControl('', [Validators.required]),
       jBethak: new FormControl('', [Validators.required]),
@@ -32,13 +32,13 @@ export class JillaVrutComponent implements OnInit{
     });
   }
   ngOnInit(): void {
-    this._apiService.manageBreadCrumb(false)
+    this._apiService.manageBreadCrumb(false);
   }
   submitJilla(form: FormGroup) {
     this.isSubmit = true;
     this.jillaForm.markAllAsTouched();
     if (form.valid) {
-      console.log('Form Submit :',form);
+      console.log('Form Submit :', form);
     } else {
       console.error('Invalid Form :', form);
     }

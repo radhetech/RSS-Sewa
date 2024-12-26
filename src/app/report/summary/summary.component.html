@@ -1,7 +1,7 @@
 <div class="form-group py-2">
-    <label for="vibhag">વિભાગ:</label>
+    <label for="vibhag">विभाग:</label>
     <select id="vibhag" (change)="vibhagChange($event)">
-      <option value="" selected>-- Select Option --</option>
+      <option value="" selected>-- चयन कीजिए --</option>
       <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
       <option value="other">अन्य</option>
     </select>
