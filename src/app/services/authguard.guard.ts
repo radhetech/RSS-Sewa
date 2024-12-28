@@ -7,7 +7,7 @@ export const authguardGuard: CanActivateFn = () => {
   const loggingservice: AuthenticationService = inject(AuthenticationService);
   const route: Router = inject(Router);
   if (loggingservice.isUserLogin) {
-    debugger;
+
       return true;
   } else {
       route.navigate(['login'])

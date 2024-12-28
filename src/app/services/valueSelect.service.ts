@@ -11,6 +11,7 @@ export class valueSelect{
    private showVasti = new BehaviorSubject<boolean>(false);
    private showShakha = new BehaviorSubject<boolean>(false);
    private breadCrumb = new BehaviorSubject<boolean>(true);
+   private navItemSelected = new BehaviorSubject<any>({});
   //  ends here
    shakhaVrutSelected$ = this.shakhaVrutSelected.asObservable();
    showVasti$ = this.showVasti.asObservable();
@@ -25,7 +26,7 @@ public getUserData=()=>{
  
   
   changeShakha(shakha: any) {
-    debugger
+
     this.currentShakha.next(shakha);
   }
   changeVasti(vasti: any) {

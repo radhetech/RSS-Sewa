@@ -75,6 +75,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
       this.formGroup.reset();
       this.dateForm.reset();
       if (res) {
+        console.log('shakha selected--', res)
         this.vrutShakha = res;
         this.isShakhaSelected = true;
         console.log('shakha in shakhvrut', this.vrutVasti)
@@ -157,6 +158,9 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
       .value;
     //return temp.controls['sanskar'];
   }
+  setSanskar(e){
+    console.log(e)
+  }
   get samparkSelected() {
     return (this.formGroup.controls['monthlyForm'] as FormGroup).get('sampark')!
       .value;
@@ -202,13 +206,14 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     return selDate + '/' + month + '/' + year;
   }
   submitForm(form: any) {
+    console.log(form.value)
     form.value.selectedDate = this.getFormattedDate( this.dateForm.controls['selectedDate'].value);
     form.value.prant = this.userData.prant;
     form.value.vibhagId = this.userData.vibhag.vibhagId;
     form.value.jillaId = this.userData.jilla.jillaId;
     form.value.talukaId = this.userData.taluka.talukaId;
-    form.value.vastiId = '676077046ea295c064d62925';
-    form.value.shakhaId = '676090f46ea295c064d62b15';
+    form.value.vastiId = this.vrutVasti;
+    form.value.shakhaId = this.vrutShakha;
     if (this.selectedCategory == 'W') {
       form.value.monthlyForm = {};
       if (form.value.weeklyForm.sanskar == 'sanskar1') {
@@ -227,7 +232,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
       this._apiService
         .postData('api/shakhaVrut', form.value)
         .subscribe((res) => {
-          // this.showSnackBar = true;
+          this.showSnackBar = true;
           this.snackTimeOut()
           this.formGroup.reset();
           this.dateForm.reset();

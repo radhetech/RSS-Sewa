@@ -31,7 +31,7 @@
             <select class="form-select" required aria-label="select month" (change)="yearChange($event)"
               [(ngModel)]="selectedYr">
               <option [value]="" selected>પસંદ કરો</option>
-              <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+              <option [value]="year" *ngFor="let year of [2024,2025]">{{year}}</option>
 
             </select>
 
@@ -68,17 +68,17 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (આરોગ્ય) </label>
-          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="aayogya" />
+          <input type="number" class="form-control" placeholder="આરોગ્ય" formControlName="aayogya" />
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 mb-3">
           <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (સ્વાવલંબન) </label>
-          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="swavalamban" />
+          <input type="number" class="form-control" placeholder="સ્વાવલંબન" formControlName="swavalamban" />
         </div>
         <div class="col-md-4 mb-3">
           <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (સામાજિક) </label>
-          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="samajik" />
+          <input type="number" class="form-control" placeholder="સામાજિક" formControlName="samajik" />
         </div>
         <div class="col-md-4 mb-3">
           <label>કેટલી શાખામાં પ્રવાસ થયો? </label>

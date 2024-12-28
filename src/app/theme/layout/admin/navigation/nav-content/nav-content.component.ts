@@ -1,5 +1,5 @@
 // angular import
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Location } from '@angular/common';
 
 // project import
@@ -11,14 +11,15 @@ import { environment } from 'src/environments/environment';
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })
-export class NavContentComponent {
+export class NavContentComponent implements OnInit{
   // public props
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
   @Output() onNavCollapsedMob = new EventEmitter();
   navigation: any;
   windowWidth: number;
-
+  userRole:any;
+  userData:any;
   // constructor
   constructor(
     public nav: NavigationItem,
@@ -26,6 +27,24 @@ export class NavContentComponent {
   ) {
     this.windowWidth = window.innerWidth;
     this.navigation = this.nav.get();
+  }
+  ngOnInit(): void {
+
+    console.log(this.nav.get())
+      this.userData= JSON.parse(localStorage.getItem('loggedInUser'))
+      this.userRole = this.userData.authorities[0];
+      if(this.userRole=='taluka'){
+        this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
+           return item.id!='jilla'&& item.id!='aheval'
+        })
+      } else if(this.userRole=='jilla'){
+   
+        this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
+          return  item.id=='jilla' || item.id=='aheval'
+       })
+      }
+     
+
   }
 
   // public method

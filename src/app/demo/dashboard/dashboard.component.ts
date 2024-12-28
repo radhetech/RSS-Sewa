@@ -15,13 +15,27 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 })
 export default class DashboardComponent implements OnInit {
   ngOnInit() {
+
+      let temp = JSON.parse(localStorage.getItem('loggedInUser'))
+      let userRole = temp.authorities[0];
+      if(userRole=='taluka'){
+        this.navList =  this.navList.filter((item:any)=>{
+           return item.title!='જિલ્લા વૃત'&& item.title!='અહેવાલ'
+        })
+      } else if(userRole=='jilla'){
    
+        this.navList =  this.navList.filter((item:any)=>{
+          return  item.title=='જિલ્લા વૃત' || item.title=='અહેવાલ'
+       })
+      }
+     
+
   }
 
   navList = [
     {
       title: 'શાખા વૃત્ત',
-      description: 'સેવા દિવસ ગુરૂવાર નું વૃત્ત માટે',
+      description: ' (સેવા દિવસ ગુરૂવાર નું વૃત્ત માટે)',
       design: 'col-md-3',
       link:'/shakhavrut',
       img:'../../../assets/images/Vrut.webp',
@@ -31,7 +45,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'સેવા ઉપક્રમ',
-      description: 'સેવા ઉપક્રમની વિગતો ભરવા માટે',
+      description: '(સેવા ઉપક્રમની વિગતો ભરવા માટે)',
       design: 'col-md-3',
       link:'/sevaupkram',
        img:'../../../assets/images/Shikshan1.webp',
@@ -41,7 +55,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'સેવા કાર્ય',
-      description: 'સેવા કાર્યની વિગતો ભરવા માટે',
+      description: '(સેવા કાર્યની વિગતો ભરવા માટે)',
       design: 'col-md-3',
       link:'/sevakary',
        img:'../../../assets/images/Sevabharati.jpeg',
@@ -51,7 +65,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'ઉત્સવ વૃત',
-      description: 'ઉત્સવનું વૃત્ત આપવા માટે',
+      description: '(ઉત્સવનું વૃત્ત આપવા માટે)',
       design: 'col-md-3',
       link:'/utsavvrut',
        img:'../../../assets/images/utsav.jpeg',
@@ -61,7 +75,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'સેવા દર્શન',
-      description: 'સેવા દર્શનની વિગતો ભરવા માટે',
+      description: '(સેવા દર્શનની વિગતો ભરવા માટે)',
       design: 'col-md-3',
       link:'/sevadarshan',
        img:'../../../assets/images/sevadarshan.jpeg',
@@ -71,7 +85,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'જિલ્લા વૃત',
-      description: 'જિલ્લા વૃત માટે',
+      description: '(જિલ્લા વૃત માટે)',
       design: 'col-md-3',
       link:'/jillavrut',
        img:'../../../assets/images/Vrut.webp',
@@ -81,7 +95,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'વહીવટી',
-      description: 'વહીવટી કામ માટે',
+      description: '(વહીવટી કામ માટે)',
       design: 'col-md-3',
       link:'/vahivat',
        img:'../../../assets/images/profile.avif',
@@ -91,7 +105,7 @@ export default class DashboardComponent implements OnInit {
     },
     {
       title: 'અહેવાલ',
-      description: 'માસિક અને વાર્ષિક અહેવાલ',
+      description: '(માસિક અને વાર્ષિક અહેવાલ)',
       design: 'col-md-3',
       link:'/report',
        img:'../../../assets/images/Vrut.webp',

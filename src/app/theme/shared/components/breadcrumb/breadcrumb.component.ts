@@ -55,7 +55,6 @@ export class BreadcrumbComponent implements OnInit {
   })
 }
 getVastiList(){
-  debugger;
   this.apiService.getData(`${this.vastiUrl}/${this.myList.taluka.talukaId}`).subscribe({next:(res:any)=>{
     this.vastiList = res;
    },error:()=>{}})
@@ -76,10 +75,11 @@ shakhaChange(e:any){
   this.valueSel.getCurrentVasti().subscribe((res)=>{
      console.log('current vasti', res)
   })
-  debugger
   if(e.value!='શાખા'){
     this.valueSel.changeShakha(e.value)
     console.log(e.value)
+  } else {
+    this.valueSel.changeShakha('');
   }
 }
 

@@ -1,10 +1,12 @@
 
 <div class="row">
 <div class="col-sm-12">
-   <app-card [hidHeader]="false" [cardTitle]="{title: 'શાખા વૃત્ત', description: ''}" [cardClass]="'card'">
-  
-    <div class="was-validated">
+   <app-card [hidHeader]="false" [cardTitle]="{title: 'શાખા વૃત્ત'}" [cardClass]="'card'">
+    <h3 *ngIf="!isShakhaSelected">સેવા વસ્તી અને શાખા પંસદ કરો</h3>
+  <div *ngIf="isShakhaSelected">
+    <div class="was-validated" >
         <!-- date form start here -->
+
         <div class="mb-3">
             <h5>તારીખ</h5>
             <div [formGroup]="dateForm">
@@ -17,7 +19,7 @@
           </div>
           <!-- date form ends  -->
           <hr/>
-          <div *ngIf="dateForm.get('selectedDate')?.value" [formGroup]="formGroup">
+          <form *ngIf="dateForm.get('selectedDate')?.value" [formGroup]="formGroup">
           <div class="mb-3" >
                 <select class="form-select" required aria-label="select date" formControlName="selectedCategory" (change)="selectedAccordion($event)">
                   <option value="W" selected>સેવાદિન (ગુરૂવાર)</option> 
@@ -28,12 +30,12 @@
            <!-- only if weekly selected -->
           <div *ngIf="formGroup.get('selectedCategory')?.value === 'W'"  formGroupName="weeklyForm">  
           <div class="mb-3">
-                    <select class="form-select" required aria-label="select sanskar" formControlName="sanskar" (change)="selectedSanskar($event)">
+                    <select class="form-select" required aria-label="select sanskar" formControlName="sanskar" (change)="setSanskar($event)">
                         <option value="sanskar1" selected>સંસ્કાર-૧</option> 
                         <option value="sanskar2" >સંસ્કાર-૨</option>
                       </select>
                   </div>
-                </div>
+                
                 <!-- if weekly and sankar 1 selected -->
                 <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group">  
                     <div class="mb-3">
@@ -63,7 +65,7 @@
                 formControlName="karyNondh" class="form-control" id="validationTextarea" placeholder="કરેલ કાર્યની નોંધ" ></textarea>
             </div>
             
-             
+          </div>
               </div>
                 <!-- only if monthly selected -->
                  <div *ngIf="formGroup.get('selectedCategory')?.value === 'M'"  formGroupName="monthlyForm">
@@ -89,12 +91,13 @@
                         </div>
                     </div>
        
-          </div>
+                  </form>
     </div>
-    <button type="button" class="btn btn-primary" (click)="submitForm(formGroup)" >
+    <button type="button" class="btn btn-primary" (click)="submitForm(formGroup)" [disabled]="!formGroup.valid">
         <i class="feather icon-thumbs-up"></i>
         Submit
       </button>
+      </div>
     </app-card>
 </div>
 </div>

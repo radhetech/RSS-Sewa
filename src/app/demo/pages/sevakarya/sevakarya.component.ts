@@ -25,7 +25,7 @@ export class SevakaryaComponent implements OnInit {
   loremText ="test";
     keys = [
       {
-        category: 'shiksha',
+        category: 'શિક્ષા',
         subcategories: [
           {
             label: 'સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ',
@@ -100,7 +100,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'aayogya',
+        category: 'સ્વાસ્થ્ય',
         subcategories: [
           {
             label: 'ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા',
@@ -171,7 +171,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'swavalamban',
+        category: 'સ્વાવલંબન',
         subcategories: [
           {
             label: 'સ્વયં સહાયતા જૂથ વૈભવ શ્રી',
@@ -250,7 +250,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'samajik',
+        category: 'સામાજિક',
         subcategories: [
           { name: 'bhajanMandali', label: 'ભજન મંડળી', showInputs: true },
           {

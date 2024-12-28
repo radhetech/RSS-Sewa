@@ -25,7 +25,7 @@ export class SevaupkramComponent implements OnInit {
   loremText ="test"
       keys = [
     {
-      category: 'shiksha',
+      category: 'શિક્ષા',
       subcategories: [
         { label: 'શૈક્ષણિક સામગ્રીનું વિતરણ', name: 'educationMaterialDistribution', showInputs: true },
         { label: 'પરીક્ષા માર્ગદર્શન શિબિર', name: 'examGuidanceCamp', showInputs: true },
@@ -35,7 +35,7 @@ export class SevaupkramComponent implements OnInit {
       ]
     },
     {
-      category: 'aayogya',
+      category: 'સ્વાસ્થ્ય',
       subcategories: [
         { label: 'રક્તદાન શિબિર', name: 'bloodDonationCamp', showInputs: true },
         { label: 'આરોગ્ય શિબિર', name: 'healthCamp', showInputs: true },
@@ -50,7 +50,7 @@ export class SevaupkramComponent implements OnInit {
       ]
     },
     {
-      category: 'swavalamban',
+      category: 'સ્વાવલંબન',
       subcategories: [
         { label: 'વ્યવસાય તાલીમ શિબિર', name: 'professionalTrainingCamp', showInputs: true },
         { label: 'પંચગવ્ય નિર્માણ શિબિર', name: 'panchgavyaTrainingCamp', showInputs: true },
@@ -65,7 +65,7 @@ export class SevaupkramComponent implements OnInit {
       ]
     },
     {
-      category: 'samajik',
+      category: 'સામાજિક',
       subcategories: [
         { label: 'કન્યા પૂજા', name: 'girlWorship', showInputs: true },
         { label: 'સમૂહ લગ્ન', name: 'massMarriage', showInputs: true },

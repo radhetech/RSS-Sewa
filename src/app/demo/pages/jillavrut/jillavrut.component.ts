@@ -18,7 +18,7 @@ export class JillavrutComponent {
   isSubmit!: boolean;
   userData:any;
   selectedMonth:any;
-  selectedYr:any
+  selectedYr:string='';
   maxDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
   selectedDate: Date | null = null;
   constructor(private _apiService:ApiService,private valSel:valueSelect) {
