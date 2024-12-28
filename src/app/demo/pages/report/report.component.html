@@ -1,0 +1,35 @@
+<div class="row">
+<div class="col-sm-12">
+   <app-card [hidHeader]="false" [cardTitle]="{title: 'શાખા વૃત્ત', description: ''}" [cardClass]="'card'">
+  
+    <div class="was-validated">
+       
+        <div class="mb-3">
+            <label for="reportType">आख्या की प्रकार:</label>
+            <select id="reportType" class="form-select"  (change)="selectReportType($event)">
+              <option value="" selected>-- Select Option --</option>
+              <option value="summary">Summary</option>
+              <option value="detail">Detail</option>
+              <option value="statistics">Statistics</option>
+            </select>
+            </div>
+            </div>
+            </app-card>
+            </div>
+        </div>
+
+
+<!-- Summary Component -->
+<ng-container *ngIf="reportType === 'summary'">
+  <app-report-summary></app-report-summary>
+</ng-container>
+
+<!-- Detail Component -->
+<ng-container *ngIf="reportType === 'detail'">
+  <app-report-detail></app-report-detail>
+</ng-container>
+
+<!-- Department Component -->
+<ng-container *ngIf="reportType === 'statistics'">
+  <app-report-statistics></app-report-statistics>
+</ng-container>

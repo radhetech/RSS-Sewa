@@ -1,0 +1,100 @@
+
+<div class="row">
+<div class="col-sm-12">
+   <app-card [hidHeader]="false" [cardTitle]="{title: 'શાખા વૃત્ત', description: ''}" [cardClass]="'card'">
+  
+    <div class="was-validated">
+        <!-- date form start here -->
+        <div class="mb-3">
+            <h5>તારીખ</h5>
+            <div [formGroup]="dateForm">
+                <select class="form-select" required aria-label="select date" formControlName="selectedDate" (change)="dateSelChange($event)">
+                  <option value="" selected>પસંદ કરો</option> 
+                  <option *ngFor="let thursday of lastFiveThursdays" [value]="thursday">{{ thursday | date }} ગુરુવાર</option>
+                </select>
+                </div>
+           
+          </div>
+          <!-- date form ends  -->
+          <hr/>
+          <div *ngIf="dateForm.get('selectedDate')?.value" [formGroup]="formGroup">
+          <div class="mb-3" >
+                <select class="form-select" required aria-label="select date" formControlName="selectedCategory" (change)="selectedAccordion($event)">
+                  <option value="W" selected>સેવાદિન (ગુરૂવાર)</option> 
+                  <option value="M" >માસિક
+                    સેવા વસતી સંપર્ક</option>
+                </select>
+          </div>
+           <!-- only if weekly selected -->
+          <div *ngIf="formGroup.get('selectedCategory')?.value === 'W'"  formGroupName="weeklyForm">  
+          <div class="mb-3">
+                    <select class="form-select" required aria-label="select sanskar" formControlName="sanskar" (change)="selectedSanskar($event)">
+                        <option value="sanskar1" selected>સંસ્કાર-૧</option> 
+                        <option value="sanskar2" >સંસ્કાર-૨</option>
+                      </select>
+                  </div>
+                </div>
+                <!-- if weekly and sankar 1 selected -->
+                <div *ngIf="selectedSanskar=='sanskar1'" formGroupName="sanskar1Group">  
+                    <div class="mb-3">
+                        <input type="checkbox" value='amrutvachanSubhashit' name="amrutvachan/subhashit"
+                        formControlName="amrutvachanSubhashit"> અમૃતવચન/શુભાષિત <br> <br>
+                      <input type="checkbox" value='sevaGit' name="sevaGit" formControlName="sevaGit"> સેવા ગીત <br> <br>
+                      <input type="checkbox" value='sevaBodhKatha' name="sevaBodhKatha" formControlName="sevaBodhKatha"> સેવા બોધકથા
+                            </div>
+                </div>
+               <!-- if weekly and sankar 2 selected -->
+               <div *ngIf="selectedSanskar=='sanskar2'" formGroupName="sanskar2Group">
+                <div class="mb-3">
+                    <input type="checkbox"  value='sevaPrasang' name="sevaPrasang" formControlName="sevaPrasang" for=""/>
+                       સેવા પ્રસંગ
+                </div>
+                <div class="mb-3">
+                <input type="checkbox" value='karyAyojan' name="karyAyojan" formControlName="karyAyojan"> સેવા વસતી કાર્ય આયોજન 
+            </div>
+                <div class="mb-3">
+                <label for="vishayLenar"  class="form-label">વિષય લેનાર</label>
+                <input type="text" class="form-control" value='' name="vishayLenar" placeholder="વિષય લેનાર "> 
+                </div>
+              
+            <div class="mb-3">
+                <label for="validationTextarea" class="form-label">કરેલ કાર્યની નોંધ</label>
+                <textarea  value='' name="karyNondh"
+                formControlName="karyNondh" class="form-control" id="validationTextarea" placeholder="કરેલ કાર્યની નોંધ" ></textarea>
+            </div>
+            
+             
+              </div>
+                <!-- only if monthly selected -->
+                 <div *ngIf="formGroup.get('selectedCategory')?.value === 'M'"  formGroupName="monthlyForm">
+                    <div class="mb-3">
+                        
+                            <select class="form-select" required aria-label="select sampark" formControlName="sampark" (change)="manageSampark($event)">
+                                <option value="Yes" selected>હા</option> 
+                                <option value="No" >ના</option>
+                              </select>
+                          </div>
+                          <div *ngIf="samparkSelected == 'Yes'">
+                          <div class="mb-3">
+                            <label for="vishayLenar"  class="form-label"> સ્વયંસેવકની સંખ્યા</label>
+                            <input type="number" class="form-control" value='' value='' name="swSankhya" formControlName="swSankhya" placeholder="સ્વયંસેવકની સંખ્યા"> 
+                            </div>
+                           
+                          
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">વિશેષ નોંધ</label>
+                            <textarea   value='' name="visheshNondh"
+                            formControlName="visheshNondh" class="form-control" id="validationTextarea" placeholder="કરેલ કાર્યની નોંધ" ></textarea>
+                        </div>
+                        </div>
+                    </div>
+       
+          </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="submitForm(formGroup)" >
+        <i class="feather icon-thumbs-up"></i>
+        Submit
+      </button>
+    </app-card>
+</div>
+</div>

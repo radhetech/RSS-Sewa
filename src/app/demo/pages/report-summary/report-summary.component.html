@@ -1,0 +1,139 @@
+
+    <div class="row">
+        <div class="col-md-12">
+    <label for="vibhag">વિભાગ:</label>
+    <select id="vibhag" class="form-select" (change)="vibhagChange($event)">
+      <option value="" selected>-- Select Option --</option>
+      <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
+      <option value="other">अन्य</option>
+    </select>
+    </div>
+    </div>
+  <div class="container table-responsive py-5" *ngIf="isOptionSelected">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">क्र.</th>
+          <th scope="col">विवरण</th>
+          <th *ngFor="let jilla of jillaList">{{jilla.jillaName}}</th>
+          <th scope="col">योग</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td scope="row" *ngIf="isMahanagar">महानगर संख्या</td>
+          <td scope="row" *ngIf="!isMahanagar && isJilla">ज़िला केन्द्र संख्या (महानगर छोड़कर)</td>
+          <td scope="row" *ngIf="!isMahanagar && !isJilla && isNagar">अन्य नगर केन्द्र संख्या (ज़िलाकेन्द्र छोड़कर)</td>
+          <td scope="row" *ngFor="let jilla of jillaList">{{jilla.taluka.length}}</td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td scope="row">इनमें सेवा बस्ती संख्या</td>
+          <td scope="row" *ngFor="let jilla of jillaList">{{jilla.jillaSevaVasti}}</td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td scope="row">सेवा कार्य युक्त सेवा बस्ती</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td scope="row">व्यवसायी व महाविद्यालय शाखा व मिलन संख्या</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td scope="row">सेवा बस्ती पालक शाखा व मिलन संख्या</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td scope="row">सेवा कार्यकर्ता युक्त शाखा व मिलन संख्या</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td scope="row">इनमें कुल सेवा कार्य</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td scope="row">मासिक सेवा बस्ती संपर्क करने वाली शाखा व मिलन संख्या</td>
+          <td scope="row" *ngFor="let jilla of jillaList"></td>
+          <td scope="row"></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <ng-container *ngIf="isDetailedSummary">
+
+    <div class="container table-responsive py-5">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">क्र.</th>
+            <th scope="col">विवरण</th>
+            <th *ngFor="let jilla of jillaList">{{jilla.reportName}}</th>
+            <th scope="col">योग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>5000 या उससे अधिक जनसंख्या के ग्रामों की संख्या</td>
+            <td scope="row" *ngFor="let jilla of jillaList">{{jilla.taluka.length}}</td>
+            <td scope="row"></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td scope="row">इनमें सेवा कार्ययुक्त ग्राम</td>
+            <td scope="row" *ngFor="let jilla of jillaList">{{jilla.jillaSevaVasti}}</td>
+            <td scope="row"></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td scope="row">इनमें कुल सेवा कार्य</td>
+            <td scope="row" *ngFor="let jilla of jillaList"></td>
+            <td scope="row"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container table-responsive py-5">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">क्र.</th>
+            <th scope="col">विवरण</th>
+            <th *ngFor="let jilla of jillaList">{{jilla.reportName}}</th>
+            <th scope="col">योग</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>5000 से कम जनसंख्या के सेवा युक्त ग्राम संख्या</td>
+            <td scope="row" *ngFor="let jilla of jillaList">{{jilla.taluka.length}}</td>
+            <td scope="row"></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td scope="row">इनमें कुल सेवा कार्य</td>
+            <td scope="row" *ngFor="let jilla of jillaList"></td>
+            <td scope="row"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-container>

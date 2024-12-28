@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'રક્ષાબંધન ઉત્સવ વૃત', description: ''}"
+            [cardClass]="'card'">
+
+            <div class="was-validated">
+                <div class="row">
+
+                    <div class="mb-3 col-md-4">
+                        <h5>વર્ષ</h5>
+                        <div>
+                            <select class="form-select" required aria-label="select month" (change)="manageYear($event)"
+                                [ngModel]="selectedYear">
+                                <option [value]="" selected>પસંદ કરો</option>
+                                <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </app-card>
+    </div>
+</div>
+<div class="card mb-0">
+    <div class="card-body ptb-10">
+        <div class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label> નગર નુ નામ</label>
+                    <input class="form-control" type="text" formControlName="nagarName" placeholder="નગર">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>થયેલા ઉત્સવ</label>
+                    <input class="form-control" type="number" formControlName="utsavCount" placeholder="સંખ્યા">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>કુલ સેવા વસ્તી</label>
+                    <input class="form-control" type="number" formControlName="totalSevaPopulation" placeholder="સંખ્યા">
+                </div>
+            </div>
+           <div class="row">
+            <div class="col-md-4 mb-3">
+                <label>સંપર્ક કરેલ સેવા વસ્તી</label>
+                <input class="form-control" type="number" formControlName="contactedSevaPopulation" placeholder="સંખ્યા">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>સંપર્ક માં ગયેલ કાર્યકર્તા ની સંખ્યા</label>
+                <input class="form-control" type="number" formControlName="workersCount" placeholder="સંખ્યા">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>કેટલા પરિવાર નો સંપર્ક થયો</label>
+                <input class="form-control" type="number" formControlName="familyContacted" placeholder="સંખ્યા">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4 mb-3">
+                <label>કેટલી રક્ષા અથવા સંદેશ આપ્યા</label>
+                <input class="form-control" type="number" formControlName="rakshaOrMessageGiven" placeholder="સંખ્યા">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>અન્ય વિશેષ કેટલા સંપર્ક કર્યા</label>
+                <input class="form-control" type="number" formControlName="additionalContacts" placeholder="સંખ્યા">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>નવા જોડાયેલ કાર્યકર્તા</label>
+                <input class="form-control" type="number" formControlName="newWorkers" placeholder="સંખ્યા">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-8 mb-3">
+                <label for="validationTextarea" class="form-label">વિશેષ નોંધ</label>
+                <textarea value='' name="additionalContacts" formControlName="additionalContacts" placeholder="સંખ્યા"
+                    class="form-control" id="validationTextarea"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

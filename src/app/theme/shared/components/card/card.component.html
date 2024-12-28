@@ -1,0 +1,24 @@
+<div class="card" [ngClass]="cardClass">
+  @if (!hidHeader) {
+    <div class="card-header" [ngClass]="headerClass">
+      @if (!customHeader) {
+        <h5>{{ cardTitle.title }} {{ cardTitle.description }}</h5>
+      }
+     
+      @if (customHeader) {
+        <ng-content select=".app-card-header"></ng-content>
+      }
+    </div>
+  }
+  <div [@collapsedCard]="collapsedCard">
+    <div class="card-block" [ngClass]="blockClass">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  @if (loadCard) {
+    <div class="card-loader">
+      <i class="pct-loader1 anim-rotate"></i>
+    </div>
+  }
+</div>
+

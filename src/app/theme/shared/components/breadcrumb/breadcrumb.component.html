@@ -1,0 +1,40 @@
+
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              {{myList.prant}}
+            </li>
+            <li class="breadcrumb-item">
+              {{myList.vibhag.vibhagName}}
+            </li>
+            <li class="breadcrumb-item">
+              {{myList.jilla.jillaName}}
+            </li>
+            <li class="breadcrumb-item">
+              {{myList.taluka.talukaName}}
+            </li>
+            <li class="breadcrumb-item">
+              <select #vasti (change)="vastiChange(vasti)">
+                <option value="વસ્તી">વસ્તી</option>
+                <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{vasti.sevaVastiName}}</option>
+              </select>
+            </li>
+            <li class="breadcrumb-item">
+              <select #shakha (change)="shakhaChange(shakha)">
+                <option value="શાખા">શાખા</option>
+                <option *ngFor="let shakha of shakhaList" name="shaka" [value]="shakha.shakhaId">{{shakha.shakhaName}}</option>
+              </select>
+            </li>
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 

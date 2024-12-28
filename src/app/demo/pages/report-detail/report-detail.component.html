@@ -1,0 +1,146 @@
+<div class="row">
+    <div class="col-md-12">
+    <label for="vibhag">क्षेत्र:</label>
+    <select id="vibhag" (change)="vibhagChange($event)" class="form-select">
+        <option value="" selected>-- Select Option --</option>
+        <option value="mahanagar">महानगर</option>
+        <option value="vibhag">जिला</option>
+        <option value="nagar">नगर</option>
+        <option value="other">अन्य</option>
+    </select>
+</div>
+</div>
+
+<div class="container table-responsive py-5" *ngIf="isOptionSelected">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th rowspan="2" *ngIf="isMahanagar">महानगर नाम</th>
+                <th rowspan="2" *ngIf="isJilla">जिला केंद्र नाम (महानगर को छोड़कर)</th>
+                <th rowspan="2" *ngIf="isNagar">अन्य नगर केंद्र नाम (जिला केंद्र को छोड़कर)</th>
+                <th rowspan="2">सेवाबस्ती सांख्य</th>
+                <th rowspan="2">कार्यायुक्त सेवा बस्ती</th>
+                <th colspan="5">सेवाकार्य सांख्य</th>
+                <th colspan="5"><span>तारीख</span> से <span>तारीख</span> के बीच किए सेवा उपक्रमो की संख्या</th>
+            </tr>
+            <tr>
+                <th>शिक्षा</th>
+                <th>स्वास्थ्य</th>
+                <th>सामाजिक</th>
+                <th>स्वावलंबन</th>
+                <th>योग</th>
+                <th>शिक्षा</th>
+                <th>स्वास्थ्य</th>
+                <th>सामाजिक</th>
+                <th>स्वावलंबन</th>
+                <th>योग</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of [0,1,2]">
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+                <td>{{i}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-container *ngIf="isDetailedSummary">
+
+
+    <div class="container table-responsive py-5">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th rowspan="2">जिला</th>
+                    <th rowspan="2">5000 से अधिक जनसंख्या ग्राम संख्या</th>
+                    <th rowspan="2">सेवा कार्यायुक्त ग्राम</th>
+                    <th colspan="5">सेवाकार्य सांख्य</th>
+                    <th colspan="5"><span>तारीख</span> से <span>तारीख</span> के बीच किए सेवा उपक्रमो की संख्या</th>
+                </tr>
+                <tr>
+                    <th>शिक्षा</th>
+                    <th>स्वास्थ्य</th>
+                    <th>सामाजिक</th>
+                    <th>स्वावलंबन</th>
+                    <th>योग</th>
+                    <th>शिक्षा</th>
+                    <th>स्वास्थ्य</th>
+                    <th>सामाजिक</th>
+                    <th>स्वावलंबन</th>
+                    <th>योग</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of [0,1,2]">
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container table-responsive py-5">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th rowspan="2">जिला</th>
+                    <th rowspan="2" colspan="2">5000 से कम जनसंख्या के सेवा कार्यायुक्त ग्रामो की संख्या</th>
+                    <th colspan="5">सेवाकार्य सांख्य</th>
+                    <th colspan="5"><span>तारीख</span> से <span>तारीख</span> के बीच किए सेवा उपक्रमो की संख्या</th>
+                </tr>
+                <tr>
+                    <th>शिक्षा</th>
+                    <th>स्वास्थ्य</th>
+                    <th>सामाजिक</th>
+                    <th>स्वावलंबन</th>
+                    <th>योग</th>
+                    <th>शिक्षा</th>
+                    <th>स्वास्थ्य</th>
+                    <th>सामाजिक</th>
+                    <th>स्वावलंबन</th>
+                    <th>योग</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of [0,1,2]">
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>

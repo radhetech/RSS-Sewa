@@ -1,0 +1,129 @@
+<!-- <div>
+    <select (change)="monthChange($event)" [(ngModel)]="selectedMonth">
+      <option value=""> Pasand </option>
+      <option value="{{month}}" *ngFor="let month of [1,2,3,4,5]">{{month}}</option>
+    </select>
+    <select (change)="yearChange($event)" [(ngModel)]="selectedYr">
+      <option value=""> Pasand </option>
+      <option  value="{{year}}" *ngFor="let year of [2023,2024,2025]"> {{year}}</option>
+    </select>
+  </div> -->
+<div class="row">
+  <div class="col-sm-12">
+    <app-card [hidHeader]="false" [cardTitle]="{title: 'જિલ્લા વૃત્ત', description: ''}" [cardClass]="'card'">
+
+      <div class="was-validated">
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <h5>મહિનો</h5>
+            <div>
+              <select class="form-select" required aria-label="select month" (change)="monthChange($event)"
+                [ngModel]="selectedMonth">
+                <option [value]="" selected>પસંદ કરો</option>
+                <option [value]="month" *ngFor="let month of [1,2,3,4,5,6,7,8,9,10,11,12]">{{month}}</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="mb-3 col-md-4">
+            <h5>વર્ષ</h5>
+
+            <select class="form-select" required aria-label="select month" (change)="yearChange($event)"
+              [(ngModel)]="selectedYr">
+              <option [value]="" selected>પસંદ કરો</option>
+              <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+
+            </select>
+
+
+          </div>
+        </div>
+      </div>
+
+    </app-card>
+  </div>
+</div>
+
+
+<div class="card mb-0">
+  <div class="card-body ptb-10">
+    <form [formGroup]="jillaForm" (ngSubmit)="submitJilla(jillaForm)">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="">જિલ્લા બેઠક થઈ? </label>
+          <select class="form-select" required aria-label="select answer" (change)="manageBethak($event)"
+            formControlName="jBethak">
+            <option value="jBethakYes">હા</option>
+            <option value="jBethakNo">ના</option>
+          </select>
+          <span class="error-message" *ngIf="
+        isSubmit &&
+        jillaForm.touched &&
+        jillaForm.get('jBethak')?.hasError('required')
+      ">વૃત્ત ભરવું ફરજિયાત છે</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (શિક્ષા) </label>
+          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="shiksha" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (આરોગ્ય) </label>
+          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="aayogya" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (સ્વાવલંબન) </label>
+          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="swavalamban" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="">જિલ્લામા આયામ સહ કેટલા સેવા કાર્ય ચાલે છે ? (સામાજિક) </label>
+          <input type="number" class="form-control" placeholder="શિક્ષા" formControlName="samajik" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>કેટલી શાખામાં પ્રવાસ થયો? </label>
+          <input type="number" class="form-control" formControlName="shakhaPravasNum" />
+          <span class="error-message" *ngIf="
+        isSubmit &&
+        jillaForm.touched &&
+        jillaForm.get('shakhaPravasNum')?.hasError('required')
+      ">વૃત્ત ભરવું ફરજિયાત છે</span>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label>કેટલી સેવા વસ્તીમાં સંપર્ક થયો? </label>
+          <input type="number" class="form-control" formControlName="sevaVastiPravasNum" />
+
+          <span class="error-message" *ngIf="
+        isSubmit &&
+        jillaForm.touched &&
+        jillaForm.get('sevaVastiPravasNum')?.hasError('required')
+      ">વૃત્ત ભરવું ફરજિયાત છે</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>કેટલા સેવા કાર્યમાં જવાનુ થયું ? </label>
+          <input type="number" class="form-control" formControlName="sevaKaryaPravasNum" />
+
+          <span class="error-message" *ngIf="
+        isSubmit &&
+        jillaForm.touched &&
+        jillaForm.get('sevaKaryaPravasNum')?.hasError('required')
+      ">વૃત્ત ભરવું ફરજિયાત છે</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>આ મહિનામાં કેટલા નવા સેવા કાર્ય શરૂ થયા? </label>
+          <input type="number" class="form-control" formControlName="newSevaKaryaNum" />
+
+          <span class="error-message" *ngIf="
+        isSubmit &&
+        jillaForm.touched &&
+        jillaForm.get('newSevaKaryaNum')?.hasError('required')
+      ">વૃત્ત ભરવું ફરજિયાત છે</span>
+        </div>
+      </div>
+    </form>
+    <button type="submit" (click)="submitJilla(jillaForm)" class="btn btn-primary submit-btn">સબમિટ કરો</button>
+  </div>
+</div>
