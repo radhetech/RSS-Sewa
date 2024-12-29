@@ -3,7 +3,7 @@
         <div class="col-md-12">
     <label for="vibhag">વિભાગ:</label>
     <select id="vibhag" class="form-select" (change)="vibhagChange($event)">
-      <option value="" selected>-- Select Option --</option>
+      <option value="" selected>-- पसंद कीजिए --</option>
       <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
       <option value="other">अन्य</option>
     </select>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12" [formGroup]="adminForm">
-        <app-card [hidHeader]="false" [cardTitle]="{title: 'Admin', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'એડમિન', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
 
             <div class="was-validated font-16">
                 <!-- date form start here -->
@@ -8,7 +8,7 @@
                     <label for="vibhag">વિભાગ:</label>
                     <label for="vibhag" class="float-right">કુલ-{{vibhagList.length}}</label>
                     <select id="vibhag" class="form-select" formControlName="vibhag" (change)="vibhagChange($event)">
-                        <option value="" selected>Select</option>
+                        <option value="" selected>પસંદ કરો</option>
                         <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
                     </select>
                 </div>
@@ -17,7 +17,7 @@
                         <label for="jilla">ભાગ/જિલ્લો:</label>
                         <label for="vibhag" class="float-right">કુલ-{{jillaList.length}}</label>
                         <select id="jilla" class="form-select" formControlName="jilla" (change)="jillaChange($event)">
-                            <option value="" selected>Select</option>
+                            <option value="" selected>પસંદ કરો</option>
                             <option *ngFor="let jilla of jillaList" [value]="jilla.jillaId">{{ jilla.jillaName }}
                             </option>
                         </select>
@@ -28,7 +28,7 @@
                         <label for="taluka">નગર/તાલુકો:</label>
                         <label for="vibhag" class="float-right">કુલ-{{talukaList.length}}</label>
                         <select id="taluka" class="form-select" formControlName="taluka" (change)="talukaChange($event)">
-                            <option value="" selected>Select</option>
+                            <option value="" selected>પસંદ કરો</option>
                             <option *ngFor="let taluka of talukaList" [value]="taluka.talukaId">{{ taluka.talukaName }}
                             </option>
                         </select>
@@ -39,14 +39,14 @@
                         <label for="vasti">સેવા વસ્તી:</label>
                         <label for="vibhag" class="float-right">કુલ-{{vastiList.length}}</label>
                         <select id="vasti" class="form-select" formControlName="vasti" (change)="vastiChange($event)">
-                            <option value="" selected>Select</option>
+                            <option value="" selected>પસંદ કરો</option>
                             <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{ vasti.sevaVastiName
                                 }}</option>
                             <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો </option>
                         </select>
                         <div *ngIf="addVastiFlag" class="add-item">
                             <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
-                            <button type="button" class="btn btn-primary btn-sm" (click)="addVasti($event)">Add</button>
+                            <button type="button" class="btn btn-primary btn-sm" (click)="addVasti($event)">ઉમેરો</button>
                         </div>
                     </div>
                 </div>
@@ -55,14 +55,14 @@
                         <label for="shakha">શાખા:</label>
                         <label for="vibhag" class="float-right">કુલ-{{shakhaList.length}}</label>
                         <select id="shakha" class="form-select" formControlName="shakha" (change)="shakhaChange($event)">
-                            <option value="" selected>Select</option>
+                            <option value="" selected>પસંદ કરો</option>
                             <option *ngFor="let shakha of shakhaList" [value]="shakha.shakhaName">{{ shakha.shakhaName
                                 }}</option>
                             <option value="addSakha">નવી શાખા ઉમેરો</option>
                         </select>
                         <div *ngIf="addShakhaFlag" class="add-item">
                             <input type="text"  formControlName="newShakha" placeholder="નવી શાખા ઉમેરો" />
-                            <button type="button" class="btn btn-primary btn-sm" (click)="addShakha($event)">Add</button>
+                            <button type="button" class="btn btn-primary btn-sm" (click)="addShakha($event)">ઉમેરો</button>
                         </div>
                     </div>
                 </div>
