@@ -43,7 +43,7 @@
                       
                     </div>
                     <div class="card-body ptb-10">
-                        <div class="row">
+                        <div class="row ptb-10">
                             <div class="col-md-4 mb-1">
                             <label for="">પુરુષ</label>
                             <input type="number" class="form-control" formControlName="men" placeholder="પુરુષ" />
@@ -89,6 +89,7 @@
     Submit
   </button>
 </form>
+<app-snackbar [errorsmsg]="msg" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar>
 
 
   

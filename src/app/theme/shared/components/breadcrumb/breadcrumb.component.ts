@@ -57,7 +57,9 @@ export class BreadcrumbComponent implements OnInit {
 }
 getVastiList(){
   this.apiService.getData(`${this.vastiUrl}/${this.myList.taluka.talukaId}`).subscribe({next:(res:any)=>{
-    this.vastiList = res;
+    if(res && res.length){
+      this.vastiList = res;
+    }
    },error:()=>{}})
    console.log(this.vastiList)
 }

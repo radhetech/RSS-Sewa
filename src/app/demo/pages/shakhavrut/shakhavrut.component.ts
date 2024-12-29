@@ -17,7 +17,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   formGroup!: FormGroup;
   dateForm!:FormGroup;
   snackbarColour:string = 'green'
-  snackMessage:any= 'સફળતાપૂર્વક સબમિટ કર્યું';
+  snackMessage:any= 'શાખા વૃત સફળતાપૂર્વક સબમિટ કર્યું';
   showSnackBar:boolean = false;
   lastFiveThursdays: Date[] = [];
   isShakhaSelected: boolean = false;
@@ -243,13 +243,13 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
           console.log(' submitted')
           this.showSnackBar = true;
           this.snackbarColour = 'success';
-          this.msg = 'Created';
+          this.msg = 'સફળતાપૂર્વક શાખા વૃત સબમિટ થઈ ગયું છે.';
           this.formGroup.reset();
           this.dateForm.reset();
         },(err)=>{
           this.showSnackBar = true;
           this.snackbarColour = 'error';
-          this.msg = 'Some error happen.';
+          this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
         });
         this.snackTimeOut();
 

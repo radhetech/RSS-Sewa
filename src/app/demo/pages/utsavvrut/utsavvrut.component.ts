@@ -36,8 +36,8 @@ export class UtsavvrutComponent {
     });
   }
   ngOnInit(): void {
-      this.valSel.manageBreadCrumb(true);
-      this.valSel.manageShakhaVrutFlag(false);
+       this.valSel.manageBreadCrumb(true);
+      // this.valSel.manageShakhaVrutFlag(false);
   }
   manageYear(event:any){
     this.rakshabandhanForm.reset();

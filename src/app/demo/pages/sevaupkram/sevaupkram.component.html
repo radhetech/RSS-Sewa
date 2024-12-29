@@ -56,32 +56,32 @@
                                 <div class="card-body ptb-10 font-16">
                                     <div class="row">
                                         <div class="col-md-2 mb-1">
-                                            <label for="">Men</label>
+                                            <label for="">પુરુષ</label>
                                             <input type="number" class="form-control" formControlName="men"
                                                 placeholder="Men" />
                                         </div>
                                         <div class="col-md-2 mb-1">
-                                            <label for="">woman</label>
+                                            <label for="">મહિલા</label>
                                             <input type="number" class="form-control" formControlName="women"
-                                                placeholder="Women" />
+                                                placeholder="મહિલા" />
                                         </div>
                                         <div class="col-md-2 mb-1">
-                                            <label for="">Others</label>
+                                            <label for="">અન્ય</label>
                                             <input type="number" class="form-control" formControlName="others"
                                                 placeholder="Others" />
                                         </div>
                                     <!-- </div>
                                     <div class="row"> -->
                                         <div class="col-md-2 mb-1">
-                                            <label for="">Date</label>
+                                            <label for="">તારીખ</label>
                                             <input type="date" class="form-control" formControlName="date"
-                                                placeholder="date" />
+                                                placeholder="તારીખ" />
                                         </div>
 
                                         <div class="col-md-2 mb-1">
-                                            <label for="">images</label>
+                                            <label for="">છબી</label>
                                             <input type="number" class="form-control" formControlName="images"
-                                                placeholder="images" />
+                                                placeholder="છબી" />
                                         </div>
                                     </div>
 
@@ -115,3 +115,4 @@
         Submit
     </button>
 </form>
+<app-snackbar [errorsmsg]="msg" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar>

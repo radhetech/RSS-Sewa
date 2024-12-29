@@ -5,16 +5,19 @@ import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder } from '@angul
 import { SharedModule } from '../../../theme/shared/shared.module';
 import { ApiService } from 'src/app/services/api.service';
 import { valueSelect } from 'src/app/services/valueSelect.service';
+import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 
 @Component({
   selector: 'app-sevakarya',
   standalone: true,
-  imports: [CardComponent,CommonModule,ReactiveFormsModule,FormsModule,SharedModule],
+  imports: [CardComponent,CommonModule,ReactiveFormsModule,FormsModule,SharedModule,SnackbarComponent],
   templateUrl: './sevakarya.component.html',
   styleUrl: './sevakarya.component.scss'
 })
 export class SevakaryaComponent implements OnInit {
-  
+  snackbarColour:string = ''
+  msg:any= '';
+  showSnackBar:boolean=false;
   dynamicForm: any;
   data = {};
   selectedYear:any="";
@@ -25,7 +28,7 @@ export class SevakaryaComponent implements OnInit {
   loremText ="test";
     keys = [
       {
-        category: 'શિક્ષા',
+        category: 'shiksha',
         subcategories: [
           {
             label: 'સંસ્કાર કેન્દ્ર / બાળ ગોકુલમ',
@@ -100,7 +103,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'સ્વાસ્થ્ય',
+        category: 'aayogya',
         subcategories: [
           {
             label: 'ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા',
@@ -171,7 +174,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'સ્વાવલંબન',
+        category: 'swavalamban',
         subcategories: [
           {
             label: 'સ્વયં સહાયતા જૂથ વૈભવ શ્રી',
@@ -250,7 +253,7 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'સામાજિક',
+        category: 'samajik',
         subcategories: [
           { name: 'bhajanMandali', label: 'ભજન મંડળી', showInputs: true },
           {
@@ -333,7 +336,7 @@ export class SevakaryaComponent implements OnInit {
       //this.setFormData(this.data);
     }
     getData(){
-      this.apiService.getData(`api/getSevaKarya/676077046ea295c064d62925/${this.selectedYear}`).subscribe((res:any)=>{
+      this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
         this.setFormData(res[0])
        })
     }
@@ -377,7 +380,7 @@ export class SevakaryaComponent implements OnInit {
       })
       console.log('Form Value:', this.dynamicForm.value);
       const obj = {
-        sevaVastiId: '676077046ea295c064d62925',
+        sevaVastiId:this.selectedVasti,
         jillaId: this.userData.jilla.jillaId,
         talukaId: this.userData.taluka.talukaId,
         vibhagId: this.userData.vibhag.vibhagId,
@@ -386,12 +389,25 @@ export class SevakaryaComponent implements OnInit {
         ...this.dynamicForm.value
       }
   
-      this.apiService.postData('api/sevaKarya',obj).subscribe((res:any)=>{
-        alert(res)
+      this.apiService.postData('api/sevaKarya',obj,{ responseType: 'text' }).subscribe((res:any)=>{
+        this.showSnackBar = true;
+        this.snackbarColour = 'success';
+        this.msg = 'સફળતાપૂર્વક સેવાકાર્ય વૃત સબમિટ થઈ ગયું છે.';
+      },(err)=>{
+        this.showSnackBar = true;
+        this.snackbarColour = 'error';
+        this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       })
       this.dynamicForm.reset();
+      this.snackTimeOut();
       // Call API to submit the data
       // this.apiService.submitData(this.dynamicForm.value).subscribe(...);
+    }
+    snackTimeOut() {
+      setTimeout(() => {
+        this.showSnackBar = null;
+        console.log(this.showSnackBar);
+      }, 3000);
     }
     manageYear(event:any){
       this.dynamicForm.reset();
