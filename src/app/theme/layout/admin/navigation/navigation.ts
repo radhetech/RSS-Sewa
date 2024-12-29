@@ -24,7 +24,7 @@ export interface Navigation extends NavigationItem {
 const NavigationItems = [
   {
     id: 'navigation',
-    title: '',
+    title: 'home',
     type: 'group',
     icon: 'icon-navigation',
     children: [
@@ -32,7 +32,7 @@ const NavigationItems = [
         id: 'dashboard',
         title: 'મુખપૃષ્ઠ',
         type: 'item',
-        url: '/dashboard',
+        url: '/home/dashboard',
         icon: 'feather icon-home',
         classes: 'nav-item'
       },
@@ -40,7 +40,7 @@ const NavigationItems = [
         id: 'shakhavrut',
         title: 'શાખા વૃત્ત',
         type: 'item',
-        url: '/shakhavrut',
+        url: '/home/shakhavrut',
         icon: 'feather icon-airplay',
         classes: 'nav-item'
       },
@@ -48,7 +48,7 @@ const NavigationItems = [
         id: 'upkram',
         title: 'સેવા ઉપક્રમ',
         type: 'item',
-        url: '/sevaupkram',
+        url: '/home/sevaupkram',
         icon: 'feather icon-edit',
         classes: 'nav-item'
       },
@@ -56,7 +56,7 @@ const NavigationItems = [
         id: 'sevakarya',
         title: 'સેવા કાર્ય',
         type: 'item',
-        url: '/sevakary',
+        url: '/home/sevakary',
         icon: 'feather icon-book',
         classes: 'nav-item'
       },
@@ -64,7 +64,7 @@ const NavigationItems = [
         id: 'utsav',
         title: 'ઉત્સવ વૃત',
         type: 'item',
-        url: '/utsavvrut',
+        url: '/home/utsavvrut',
         icon: 'feather icon-plus-circle',
         classes: 'nav-item'
       },
@@ -72,7 +72,7 @@ const NavigationItems = [
         id: 'jilla',
         title: 'જિલ્લા વૃત',
         type: 'item',
-        url: '/jillavrut',
+        url: '/home/jillavrut',
         icon: 'feather icon-calendar',
         classes: 'nav-item'
       },
@@ -80,7 +80,7 @@ const NavigationItems = [
         id: 'vahivat',
         title: 'એડમિન',
         type: 'item',
-        url: '/vahivat',
+        url: '/home/vahivat',
         icon: 'feather icon-briefcase',
         classes: 'nav-item'
       },
@@ -88,7 +88,7 @@ const NavigationItems = [
         id: 'aheval',
         title: 'અહેવાલ',
         type: 'item',
-        url: '/report',
+        url: '/home/report',
         icon: 'feather icon-bar-chart',
         classes: 'nav-item'
       }
