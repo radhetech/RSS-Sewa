@@ -127,9 +127,9 @@ export class SevaupkramComponent implements OnInit {
         subGroup.addControl(
           subcategory.name,
           this.fb.group({
-            men: [0],
-            women: [0],
-            others: [0],
+            men: [],
+            women: [],
+            others: [],
             date:[''],
             images:[[]]
           })

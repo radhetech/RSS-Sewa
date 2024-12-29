@@ -1,9 +1,10 @@
 <div class="row">
   @for (list of navList; track list) {
     <div class="{{ list.design }} col-xl-4" >
+      <a href="" routerLink="{{ list.link }}" class="text-decoration-none">
       <app-card [hidHeader]="false" [cardTitle]="list" [cardClass]="list.cardClass" [headerClass]="list.headerClass" [blockClass]="list.blockClass">
         <!-- <h6 class="mb-4">{{ sale.title }}</h6> -->
-         <a href="" routerLink="{{ list.link }}" class="text-decoration-none">
+
         <div class="row d-flex align-items-center">
           <div class="col-12">
             <img src="{{list.img}}" height="150px" >
@@ -13,8 +14,9 @@
           </div>
           
         </div>
-      </a>
+   
       </app-card>
+    </a>
     </div>
   }
   <div class="col-xl-12 col-md-12">
