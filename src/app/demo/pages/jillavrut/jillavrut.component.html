@@ -12,9 +12,9 @@
   <div class="col-sm-12">
     <app-card [hidHeader]="false" [cardTitle]="{title: 'જિલ્લા વૃત્ત', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
 
-      <div class="was-validated">
+      <div class="was-validated font-16">
         <div class="row">
-          <div class="mb-3 col-md-4">
+          <div class="mb-3 col-md-4 ">
             <h5>મહિનો</h5>
             <div>
               <select class="form-select" required aria-label="select month" (change)="monthChange($event)"
@@ -45,7 +45,7 @@
 </div>
 
 
-<div class="card mb-0">
+<div class="card mb-0 font-16">
   <div class="card-body ptb-10">
     <form [formGroup]="jillaForm" (ngSubmit)="submitJilla(jillaForm)">
       <div class="row">

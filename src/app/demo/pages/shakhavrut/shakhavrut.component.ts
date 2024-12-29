@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { valueSelect } from '../../../services/valueSelect.service';
 import { ApiService } from '../../../services/api.service';
+import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 @Component({
   selector: 'app-shakhavrut',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule,SnackbarComponent],
   providers: [ ApiService],
   templateUrl: './shakhavrut.component.html',
   styleUrl: './shakhavrut.component.scss'
@@ -29,6 +30,8 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   selectedDate: any;
   formId: string = '';
   isTalukaAdmin:boolean = false;
+  msg:string='';
+
 
   sanskar1List: any = [
     { name: 'amrutvachan/subhashit' },
@@ -37,11 +40,11 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   ];
   isSanskar1Open = false;
   isSanskar2Open = false;
-  constructor(private valueSel: valueSelect, private _apiService: ApiService,private cdr:ChangeDetectorRef) {
+  constructor(private valueSel: valueSelect, private _apiService: ApiService,private cdr:ChangeDetectorRef,private fb: FormBuilder) {
     this.getLastFiveThursdays();
-    this.dateForm = new FormGroup({
-      selectedDate: new FormControl('')
-    })
+    this.dateForm = this.fb.group({
+      selectedDate: [''], // Default value is empty string
+    });
     this.userData = this.valueSel.getUserData()!;
     this.formGroup = new FormGroup({
       // selectedDate: new FormControl(this.dateHeading,Validators.required),
@@ -113,6 +116,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     this._apiService
       .getData(`api/getShakhaVrut?vastiId=${this.vrutVasti}&selectedDate=${this.getFormattedDate(selDate)}&shakhaId=${this.vrutShakha}`)
       .subscribe((res: any) => {
+        this.showSnackBar = false;
         res = res[0];
         this.formId = res?.id;
         if (res != undefined || !res.selectedCategory) {
@@ -143,7 +147,9 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
           });
         }
       },(err)=>{
-        
+          this.showSnackBar = true;
+           this.snackbarColour='error';
+           this.msg="Some error. Please try later"
       });
     } else {
       this.dateSelected = false;
@@ -206,7 +212,9 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     return selDate + '/' + month + '/' + year;
   }
   submitForm(form: any) {
-    console.log(form.value)
+    if(this.formId){
+      form.value.id = this.formId;
+    }
     form.value.selectedDate = this.getFormattedDate( this.dateForm.controls['selectedDate'].value);
     form.value.prant = this.userData.prant;
     form.value.vibhagId = this.userData.vibhag.vibhagId;
@@ -230,25 +238,29 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     }
     console.log(form.value);
       this._apiService
-        .postData('api/shakhaVrut', form.value)
+        .postData('api/shakhaVrut', form.value,{ responseType: 'text' })
         .subscribe((res) => {
+          console.log(' submitted')
           this.showSnackBar = true;
-          this.snackTimeOut()
+          this.snackbarColour = 'success';
+          this.msg = 'Created';
           this.formGroup.reset();
           this.dateForm.reset();
-          console.log(res);
         },(err)=>{
-          
+          this.showSnackBar = true;
+          this.snackbarColour = 'error';
+          this.msg = 'Some error happen.';
         });
- 
+        this.snackTimeOut();
 
     this.formGroup.reset();
     this.dateForm.reset();
   }
   snackTimeOut() {
     setTimeout(() => {
-      // this.snackMessage = null;
-    }, 4000);
+      this.showSnackBar = null;
+      console.log(this.showSnackBar);
+    }, 3000);
   }
   ngOnDestroy(): void {
       this.valueSel.manageBreadCrumb(false);

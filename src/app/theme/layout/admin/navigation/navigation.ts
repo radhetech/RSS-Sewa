@@ -24,7 +24,7 @@ export interface Navigation extends NavigationItem {
 const NavigationItems = [
   {
     id: 'navigation',
-    title: 'home',
+    title: '',
     type: 'group',
     icon: 'icon-navigation',
     children: [

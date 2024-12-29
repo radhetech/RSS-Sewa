@@ -2,7 +2,7 @@
   @if (!hidHeader) {
     <div class="card-header" [ngClass]="headerClass">
       @if (!customHeader) {
-        <h4>{{ cardTitle.title }} {{ cardTitle.description }}</h4>
+        <h4 [ngClass]="headerClass">{{ cardTitle.title }} {{ cardTitle.description }}</h4>
       }
      
       @if (customHeader) {

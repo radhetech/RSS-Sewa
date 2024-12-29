@@ -3,7 +3,7 @@
         <app-card [hidHeader]="false" [cardTitle]="{title: 'રક્ષાબંધન ઉત્સવ વૃત', description: ''}"
             [cardClass]="'card'" [headerClass]="'panel-header'">
 
-            <div class="was-validated">
+            <div class="was-validated font-16">
                 <div class="row">
 
                     <div class="mb-3 col-md-4">
@@ -11,7 +11,7 @@
                         <div>
                             <select class="form-select" required aria-label="select month" (change)="manageYear($event)"
                                 [ngModel]="selectedYear">
-                                <option [value]="" selected>પસંદ કરો</option>
+                                <option value="" selected>પસંદ કરો</option>
                                 <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
 
                             </select>
@@ -24,7 +24,7 @@
         </app-card>
     </div>
 </div>
-<div class="card mb-0">
+<div class="card mb-0 font-16">
     <div class="card-body ptb-10">
         <div class="needs-validation" novalidate>
             <div class="row">

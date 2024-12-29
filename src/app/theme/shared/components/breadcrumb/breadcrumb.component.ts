@@ -30,6 +30,7 @@ export class BreadcrumbComponent implements OnInit {
     //   this.showShakha = res;
     //   this.cdr.detectChanges();
     //  })
+    
   }
  ngOnInit(){
   this.myList = JSON.parse(window.localStorage.getItem('loggedInUser')!)

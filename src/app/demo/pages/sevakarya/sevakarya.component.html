@@ -7,7 +7,7 @@
         <div class="was-validated">
             <div class="row">
             
-              <div class="mb-3 col-md-4">
+              <div class="mb-3 col-md-4 font-16">
                 <h5>વર્ષ</h5>
                 <div>
                     <select class="form-select" required aria-label="select month" (change)="manageYear($event)"  [ngModel]="selectedYear" >
@@ -35,7 +35,7 @@
         </h2>
         <div ngbAccordionCollapse>
             <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
-                <div class="card mb-0">
+                <div class="card mb-0 font-16">
                     <div class="card-header ptb-10">
                         <a class="card-link" >
                             {{ subcategory.label }}
@@ -84,7 +84,7 @@
    
 </div>
 </div>
-<button type="submit" class="btn btn-primary submit-btn" >
+<button type="submit" class="btn btn-primary submit-btn font-16" >
     <i class="feather icon-thumbs-up"></i>
     Submit
   </button>

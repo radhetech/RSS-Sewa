@@ -1,88 +1,95 @@
-
-
 <div class="row">
     <div class="col-sm-12">
-       <app-card [hidHeader]="false" [cardTitle]="{title: 'સેવા ઉપક્રમ', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
-      
-        <div class="was-validated">
-            <div class="row">
-            <div class="mb-3 col-md-4">
-                <h5>મહિનો</h5>
-                <div>
-                    <select class="form-select" required aria-label="select month" (change)="manageMonth($event)"  [ngModel]="selectedMonth">
-                        <option [value]="" selected >પસંદ કરો</option>
-                        <option [value]="month" *ngFor="let month of [1,2,3,4,5,6,7,8,9,10,11,12]">{{month}}</option>
-                    </select>
-                </div>
-               
-              </div>
-              <div class="mb-3 col-md-4">
-                <h5>વર્ષ</h5>
-                <div>
-                    <select class="form-select" required aria-label="select month" (change)="manageYear($event)"  [ngModel]="selectedYear" >
-                        <option [value]="" selected >પસંદ કરો</option>
-                        <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
-                  
-                    </select>
-                </div>
-               
-              </div>
-            </div>
-</div>
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'સેવા ઉપક્રમ', description: ''}" [cardClass]="'card'"
+            [headerClass]="'panel-header'">
 
-</app-card>
-</div>
-</div>
+            <div class="was-validated font-16">
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label>મહિનો</label>
+                        <div>
+                            <select class="form-select" required aria-label="select month"
+                                (change)="manageMonth($event)" [ngModel]="selectedMonth">
+                                <option [value]="" selected>પસંદ કરો</option>
+                                <option [value]="month" *ngFor="let month of [1,2,3,4,5,6,7,8,9,10,11,12]">{{month}}
+                                </option>
+                            </select>
+                        </div>
 
-<form  *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
-    <div *ngFor="let item of keys">
-    <div [formGroupName]="item.category">
-    <div ngbAccordion>
-      <div ngbAccordionItem [collapsed]="false">
-        <h2 ngbAccordionHeader>
-          <button ngbAccordionButton>{{ item.category | titlecase }}</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
-                <div class="card mb-0">
-                    <div class="card-header ptb-10">
-                        <a class="card-link" >
-                            {{ subcategory.label }}
-                        </a>
-                      
                     </div>
-                    <div class="card-body ptb-10">
-                        <div class="row">
-                            <div class="col-md-4 mb-1">
-                            <label for="">Men</label>
-                            <input type="number" class="form-control" formControlName="men" placeholder="Men" />
+                    <div class="mb-3 col-md-4">
+                        <label>વર્ષ</label>
+                        <div>
+                            <select class="form-select" required aria-label="select month" (change)="manageYear($event)"
+                                [ngModel]="selectedYear">
+                                <option [value]="" selected>પસંદ કરો</option>
+                                <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </app-card>
+    </div>
+</div>
+
+<form *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let item of keys">
+        <div [formGroupName]="item.category">
+            <div ngbAccordion>
+                <div ngbAccordionItem [collapsed]="false">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton>{{ item.category | titlecase }}</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                        <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+                            <div class="card mb-0 font-16">
+                                <div class="card-header ptb-10 ">
+                                    <a class="card-link">
+                                        {{ subcategory.label }}
+                                    </a>
+
+                                </div>
+                                <div class="card-body ptb-10 font-16">
+                                    <div class="row">
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">Men</label>
+                                            <input type="number" class="form-control" formControlName="men"
+                                                placeholder="Men" />
+                                        </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">woman</label>
+                                            <input type="number" class="form-control" formControlName="women"
+                                                placeholder="Women" />
+                                        </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">Others</label>
+                                            <input type="number" class="form-control" formControlName="others"
+                                                placeholder="Others" />
+                                        </div>
+                                    <!-- </div>
+                                    <div class="row"> -->
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">Date</label>
+                                            <input type="date" class="form-control" formControlName="date"
+                                                placeholder="date" />
+                                        </div>
+
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">images</label>
+                                            <input type="number" class="form-control" formControlName="images"
+                                                placeholder="images" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <div class="col-md-4 mb-1">
-                                <label for="">woman</label>
-                            <input type="number" class="form-control" formControlName="women" placeholder="Women" />
-                            </div>
-                            <div class="col-md-4 mb-1">
-                                <label for="">Others</label>
-                            <input type="number" class="form-control" formControlName="others" placeholder="Others" />
-                            </div>
-                            </div>
-                            <div class="row">
-                            <div class="col-md-6 mb-1">
-                                <label for="">date</label>
-                            <input type="number" class="form-control" formControlName="date" placeholder="date" />
-                            </div>
-                            
-                            <div class="col-md-6 mb-1">
-                                <label for="">images</label>
-                            <input type="number" class="form-control" formControlName="images" placeholder="images" />
-                            </div>
-                            </div>
-                    
-                      </div>
-                  
-                  </div>
-                </div> 
-            <!-- <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+                        </div>
+                        <!-- <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
                 <div class="card mb-0">
                     <div class="card-header">
                         <a class="card-link" >
@@ -93,21 +100,18 @@
                   
                   </div>
                 </div> -->
-        
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
-      </div>
-      
-      
     </div>
-  
-   
-</div>
-</div>
-<button type="submit" class="btn btn-primary submit-btn" >
-    <i class="feather icon-thumbs-up"></i>
-    Submit
-  </button>
+    <button type="submit" class="btn btn-primary submit-btn">
+        <i class="feather icon-thumbs-up"></i>
+        Submit
+    </button>
 </form>
-
-
-  

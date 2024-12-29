@@ -9,9 +9,12 @@
 }
 
 .breadcrumb-item {
-  + .breadcrumb-item {
-    color: $primary-color;
-  }
+  // + .breadcrumb-item {
+  //   color: $primary-color;
+  // }
+  .breadcrumb-item {
+      color: $primary-color;
+    }
 
   &.active {
     color: $theme-heading-color;
