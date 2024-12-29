@@ -17,9 +17,9 @@ import { NotFoundComponent } from './demo/pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: AdminComponent,
-    // canActivate: [authguardGuard],
+    canActivate: [authguardGuard],
     children: [
       {
         path: '',

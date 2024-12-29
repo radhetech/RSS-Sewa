@@ -68,7 +68,7 @@ export default class AuthSigninComponent implements OnInit {
         this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
         this.snackTimeOut();
         setTimeout(() => {
-          this._router.navigate(['dashboard']);
+          this._router.navigate(['/home/dashboard']);
         }, 1000);
      
       },((err)=>{
