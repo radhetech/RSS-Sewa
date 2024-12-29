@@ -21,7 +21,7 @@
                 <div>
                     <select class="form-select" required aria-label="select month" (change)="manageYear($event)"  [ngModel]="selectedYear" >
                         <option [value]="" selected >પસંદ કરો</option>
-                        <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+                        <option [value]="year" *ngFor="let year of [2024,2025]">{{year}}</option>
                   
                     </select>
                 </div>
@@ -54,27 +54,27 @@
                     <div class="card-body ptb-10">
                         <div class="row">
                             <div class="col-md-4 mb-1">
-                            <label for="">Men</label>
-                            <input type="number" class="form-control" formControlName="men" placeholder="Men" />
+                            <label for="">પુરુષ</label>
+                            <input type="number" class="form-control" formControlName="men" placeholder="પુરુષ" />
                             </div>
                             <div class="col-md-4 mb-1">
-                                <label for="">woman</label>
-                            <input type="number" class="form-control" formControlName="women" placeholder="Women" />
+                                <label for="">મહિલા</label>
+                            <input type="number" class="form-control" formControlName="women" placeholder="મહિલા" />
                             </div>
                             <div class="col-md-4 mb-1">
-                                <label for="">Others</label>
-                            <input type="number" class="form-control" formControlName="others" placeholder="Others" />
+                                <label for="">સંકળાયેલ સ્વયંસેવક</label>
+                            <input type="number" class="form-control" formControlName="others" placeholder="સંકળાયેલ સ્વયંસેવક" />
                             </div>
                             </div>
                             <div class="row">
                             <div class="col-md-6 mb-1">
-                                <label for="">date</label>
-                            <input type="number" class="form-control" formControlName="date" placeholder="date" />
+                                <label for="">તારીખ</label>
+                            <input type="number" class="form-control" formControlName="date" placeholder="તારીખ" />
                             </div>
                             
                             <div class="col-md-6 mb-1">
-                                <label for="">images</label>
-                            <input type="number" class="form-control" formControlName="images" placeholder="images" />
+                                <label for="">ફોટો અપલોડ કરો</label>
+                            <input type="number" class="form-control" formControlName="images" placeholder="ફોટો અપલોડ કરો" />
                             </div>
                             </div>
                     
