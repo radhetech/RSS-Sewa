@@ -100,7 +100,7 @@ export default class DashboardComponent implements OnInit {
       link:'/home/vahivat',
        img:'../../../assets/images/profile.avif',
        cardClass:'dashboard-card',
-       headerClass:'dashboard-card-header',
+       headerClass:'panel-header',
        blockClass:'dashboard-card-block',
     },
     {
@@ -110,7 +110,7 @@ export default class DashboardComponent implements OnInit {
       link:'/home/report',
        img:'../../../assets/images/Vrut.webp',
        cardClass:'dashboard-card',
-       headerClass:'dashboard-card-header',
+       headerClass:'panel-header',
        blockClass:'dashboard-card-block',
     }
   ];
