@@ -74,6 +74,8 @@ export class VahivatComponent implements OnInit{
      console.log(this.talukaList)
   }
   talukaChange(e:any){
+    this.adminForm.get('vasti').reset();
+    this.adminForm.get('newVasti').reset();
     this.vastiList=[];
     this.shakhaList = [];
     this.ApiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
@@ -83,6 +85,9 @@ export class VahivatComponent implements OnInit{
      console.log(this.vastiList)
   }
   vastiChange(e:any){
+    this.adminForm.get('shakha').reset();
+    this.adminForm.get('newShakha').reset();
+    this.addShakhaFlag=false;
     this.shakaListFlag = true;
         if(e.target.value=='addVasti'){ 
           this.addVastiFlag = true;
@@ -105,6 +110,8 @@ export class VahivatComponent implements OnInit{
     this.ApiService.postData('api/sevaVasti/save',pushedVal).subscribe((res)=>{
        this.vastiList.push(res)
     })
+    this.adminForm.get('vasti').reset();
+    this.adminForm.get('newVasti').reset();
     // this.vastiList.push(pushedVal);
     // this.adminForm.patchValue({
     //   vasti:pushedVal

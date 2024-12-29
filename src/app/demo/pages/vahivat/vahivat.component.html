@@ -44,7 +44,7 @@
                                 }}</option>
                             <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો </option>
                         </select>
-                        <div *ngIf="addVastiFlag" class="add-item">
+                        <div *ngIf="adminForm.get('vasti').value=='addVasti'" class="add-item">
                             <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
                             <button type="button" class="btn btn-primary btn-sm" (click)="addVasti($event)">ઉમેરો</button>
                         </div>
