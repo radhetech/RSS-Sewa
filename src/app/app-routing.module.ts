@@ -14,6 +14,7 @@ import { authguardGuard } from './services/authguard.guard';
 import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
 import { LogoutComponent } from './demo/pages/logout/logout.component';
 import { NotFoundComponent } from './demo/pages/not-found/not-found.component';
+import { SevadarshanComponent } from './demo/pages/sevadarshan/sevadarshan.component';
 
 const routes: Routes = [
   {
@@ -24,56 +25,52 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full',
-      
+        pathMatch: 'full'
       },
       {
         path: 'dashboard',
-        component: DashboardComponent,
-      
+        component: DashboardComponent
       },
       {
         path: 'shakhavrut',
-        component: ShakhavrutComponent,
-        
+        component: ShakhavrutComponent
       },
       {
         path: 'sevaupkram',
-        component: SevaupkramComponent,
-        
+        component: SevaupkramComponent
       },
       {
         path: 'sevakary',
-        component: SevakaryaComponent,
-       
+        component: SevakaryaComponent
       },
+
       {
         path: 'utsavvrut',
-        component: UtsavvrutComponent,
-         
+        component: UtsavvrutComponent
+      },
+      {
+        path: 'sevadarshan',
+        component: SevadarshanComponent
       },
       {
         path: 'jillavrut',
-        component: JillavrutComponent,
-        
+        component: JillavrutComponent
       },
       {
         path: 'vahivat',
-        component: VahivatComponent,
-         
+        component: VahivatComponent
       },
       {
         path: 'report',
-        component: ReportComponent,
-         
+        component: ReportComponent
       }
     ]
   },
 
   {
     path: 'login',
-    component: AuthSigninComponent,
-  },
+    component: AuthSigninComponent
+  }
 ];
 
 @NgModule({
