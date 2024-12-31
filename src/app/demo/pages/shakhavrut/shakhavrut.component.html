@@ -1,8 +1,9 @@
 
 <div class="row">
 <div class="col-sm-12">
+  <h5 *ngIf="!isShakhaSelected">*સેવા વસ્તી અને શાખા પંસદ કરો</h5>
    <app-card [hidHeader]="false" [cardTitle]="{title: 'શાખા વૃત્ત'}" [cardClass]="'card'" [headerClass]="'panel-header'">
-    <h4 *ngIf="!isShakhaSelected">સેવા વસ્તી અને શાખા પંસદ કરો</h4>
+    
   <div *ngIf="isShakhaSelected">
     <div class="was-validated" >
         <!-- date form start here -->
@@ -95,7 +96,7 @@
     </div>
     <button type="button" class="btn btn-primary" (click)="submitForm(formGroup)" >
         <i class="feather icon-thumbs-up"></i>
-        Submit
+        સબમિટ કરો 
       </button>
       </div>
     </app-card>
