@@ -61,6 +61,30 @@ const NavigationItems = [
         classes: 'nav-item'
       },
       {
+        id: 'sevadarshan',
+        title: 'સેવા દર્શન',
+        type: 'item',
+        url: '/home/sevadarshan',
+        icon: 'feather icon-book',
+        classes: 'nav-item'
+      },
+      {
+        id: 'tempadmin',
+        title: 'જીલ્લા એડમીન ',
+        type: 'item',
+        url: '/home/tempadmin',
+        icon: 'feather icon-book',
+        classes: 'nav-item'
+      },
+      {
+        id: 'pravas-list',
+        title: 'પ્રવાસ યાદી ',
+        type: 'item',
+        url: '/home/pravaslist',
+        icon: 'feather icon-book',
+        classes: 'nav-item'
+      },
+      {
         id: 'utsav',
         title: 'ઉત્સવ વૃત',
         type: 'item',

@@ -32,16 +32,9 @@ export default class AuthSigninComponent implements OnInit {
   
     ngOnInit() {
       localStorage.clear();
-      this.valSel.manageBreadCrumb(false);
     }
-  
-  
-    
     onFormSubmitted(res: NgForm) {
       console.log(res.value)
-      
-      
-    
       this.apiService.postData(this.authenticateUrl, {
         "password": res.value.password,
         "username": res.value.username,

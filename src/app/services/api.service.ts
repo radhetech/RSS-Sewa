@@ -24,6 +24,9 @@ export class ApiService {
         console.log("response",response);
       }));
   }
+  getUserData(){
+    return JSON.parse(localStorage.getItem('loggedInUser'))
+  }
   
   
 }

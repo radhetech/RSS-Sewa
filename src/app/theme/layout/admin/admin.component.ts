@@ -4,9 +4,10 @@ import { Location } from '@angular/common';
 
 // project import
 import { DattaConfig } from 'src/app/app-config';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { valueSelect } from 'src/app/services/valueSelect.service';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -16,8 +17,8 @@ export class AdminComponent implements OnInit{
   navCollapsed: any;
   navCollapsedMob: boolean;
   windowWidth: number;
-  showBrd!:boolean;
-  constructor(private location: Location, private _router:Router,private valSel:valueSelect) {
+  showSpecialComponent!:boolean;
+  constructor(private router: Router,private location: Location, private _router:Router,private valSel:valueSelect) {
     let current_url = this.location.path();
     if (this.location['_baseHref']) {
       current_url = this.location['_baseHref'] + this.location.path();
@@ -30,10 +31,19 @@ export class AdminComponent implements OnInit{
   }
   ngOnInit(): void {
    
-    this.valSel.showBreadCrumb().subscribe((res)=>{
-      this.showBrd = res;
-    })
+ 
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // Check if the route is 'special', and set the component visibility accordingly
+      if (event.url === '/home/dashboard' || event.url === '/home/report' || event.url === '/home/pravaslist' || event.url ==='/home/vahivat' || event.url ==='/login' || event.url === '/home/jillavrut' || event.url === '/home/sevadarshan' || event.url === '/home/tempadmin') {
+        this.showSpecialComponent = false;
+      } else {
+        this.showSpecialComponent = true;
+      }
+    });
   }
+  
 
   navMobClick() {
     if (this.navCollapsedMob && !document.querySelector('app-navigation.pcoded-navbar').classList.contains('mob-open')) {

@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xl-12">
+        <app-card [cardTitle]="{title: 'સેવા દર્શન પ્રવાસ યાદી ( જાન્યુઆરી  2024 ) ', description: ''}" [options]="false" blockClass="table-border-style">
+          <div class="table-responsive font-16">
+            <table class="table table-columned">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>नाम </th>
+                  <th>दायित्व </th>
+                  <th>जिल्ला / भाग </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pravasi of pravasiList; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{pravasi.name}}</td>
+                  <td>{{pravasi.responsibility}}</td>
+                  <td>{{pravasi.jilla}}</td>
+              </tbody>
+            </table>
+          </div>
+        </app-card>
+      </div>
+    </div>

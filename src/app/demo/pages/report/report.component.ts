@@ -25,7 +25,6 @@ export class ReportComponent implements OnInit {
   vibhagUrl:string = "api/getVibhag";
   jillaUrl:string = "api/getJilla";
   ngOnInit(): void {
-    this.valSel.manageBreadCrumb(false)
   }
   getVibhag() {
     this.apiService.getData(this.vibhagUrl).subscribe({

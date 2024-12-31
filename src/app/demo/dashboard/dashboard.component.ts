@@ -1,6 +1,7 @@
 // angular import
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 // project import
 import { SharedModule } from 'src/app/theme/shared/shared.module';
@@ -14,18 +15,25 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
   styleUrls: ['./dashboard.component.scss']
 })
 export default class DashboardComponent implements OnInit {
+  constructor(private apiService:ApiService){
+
+  }
   ngOnInit() {
 
-      let temp = JSON.parse(localStorage.getItem('loggedInUser'))
+      let temp = this.apiService.getUserData();
       let userRole = temp.authorities[0];
-      if(userRole=='taluka'){
+      if(userRole=='sdarshan'){
         this.navList =  this.navList.filter((item:any)=>{
-           return item.title!='જિલ્લા વૃત'&& item.title!='અહેવાલ'
+           return item.id=='sevadarshan' || item.id=='pravas-list';
+        })
+      }else if(userRole=='taluka'){
+        this.navList =  this.navList.filter((item:any)=>{
+           return  item.id=='shakhavrut' || item.id=='upkram'|| item.id=='upkram'|| item.id=='sevakarya' || item.id=='vahivat' || item.id=='utsav';
         })
       } else if(userRole=='jilla'){
    
         this.navList =  this.navList.filter((item:any)=>{
-          return  item.title=='જિલ્લા વૃત' || item.title=='અહેવાલ'
+         return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list';
        })
       }
      
@@ -34,16 +42,18 @@ export default class DashboardComponent implements OnInit {
 
   navList = [
     {
+      id: 'shakhavrut',
       title: 'શાખા વૃત્ત',
       description: ' (સેવા દિવસ ગુરૂવાર નું વૃત્ત માટે)',
       design: 'col-md-3',
       link:'/home/shakhavrut',
-      img:'../../../assets/images/Vrut.webp',
+      img:'../../../assets/images/shakha-vrut-circle.png',
       cardClass:'dashboard-card',
       headerClass:'dashboard-card-header',
       blockClass:'dashboard-card-block',
     },
     {
+      id: 'upkram',
       title: 'સેવા ઉપક્રમ',
       description: '(સેવા ઉપક્રમની વિગતો ભરવા માટે)',
       design: 'col-md-3',
@@ -53,17 +63,17 @@ export default class DashboardComponent implements OnInit {
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
-    {
+    { id: 'sevakarya',
       title: 'સેવા કાર્ય',
       description: '(સેવા કાર્યની વિગતો ભરવા માટે)',
       design: 'col-md-3',
       link:'/home/sevakary',
-       img:'../../../assets/images/Sevabharati.jpeg',
+       img:'../../../assets/images/sevabharti-circle.png',
        cardClass:'dashboard-card',
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
-    {
+    { id: 'utsav',
       title: 'ઉત્સવ વૃત',
       description: '(ઉત્સવનું વૃત્ત આપવા માટે)',
       design: 'col-md-3',
@@ -73,7 +83,7 @@ export default class DashboardComponent implements OnInit {
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
-    {
+    { id: 'sevadarshan',
       title: 'સેવા દર્શન',
       description: '(સેવા દર્શનની વિગતો ભરવા માટે)',
       design: 'col-md-3',
@@ -83,17 +93,27 @@ export default class DashboardComponent implements OnInit {
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
-    {
-      title: 'જિલ્લા વૃત',
-      description: '(જિલ્લા વૃત માટે)',
+    { id: 'pravas-list',
+      title: 'સેવા દર્શન પ્રવાસ યાદી ',
+      description: '',
       design: 'col-md-3',
-      link:'/home/jillavrut',
-       img:'../../../assets/images/Vrut.webp',
+      link:'/home/pravaslist',
+       img:'../../../assets/images/sevadarshan.jpeg',
        cardClass:'dashboard-card',
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
-    {
+    { id: 'jilla',
+      title: 'જિલ્લા વૃત',
+      description: '(જિલ્લા વૃત માટે)',
+      design: 'col-md-3',
+      link:'/home/jillavrut',
+       img:'../../../assets/images/shakha-vrut-circle.png',
+       cardClass:'dashboard-card',
+       headerClass:'dashboard-card-header',
+       blockClass:'dashboard-card-block',
+    },
+    { id: 'vahivat',
       title: 'વહીવટી',
       description: '(વહીવટી કામ માટે)',
       design: 'col-md-3',
@@ -103,15 +123,25 @@ export default class DashboardComponent implements OnInit {
        headerClass:'panel-header',
        blockClass:'dashboard-card-block',
     },
-    {
+    { id: 'aheval',
       title: 'અહેવાલ',
       description: '(માસિક અને વાર્ષિક અહેવાલ)',
       design: 'col-md-3',
       link:'/home/report',
-       img:'../../../assets/images/Vrut.webp',
+       img:'../../../assets/images/shakha-vrut-circle.png',
        cardClass:'dashboard-card',
        headerClass:'panel-header',
        blockClass:'dashboard-card-block',
-    }
+    },
+    { id: 'tempadmin',
+      title: 'સેવા દર્શન યુઝર્સ માટે',
+      description: 'for seva darshan',
+      design: 'col-md-3',
+      link:'/home/tempadmin',
+       img:'../../../assets/images/Shikshan1.webp',
+       cardClass:'dashboard-card',
+       headerClass:'dashboard-card-header',
+       blockClass:'dashboard-card-block',
+    },
   ];
 }

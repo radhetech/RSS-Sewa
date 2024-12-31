@@ -1,31 +1,35 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
-import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { SharedModule } from '../../../theme/shared/shared.module';
 import { ApiService } from 'src/app/services/api.service';
 import { valueSelect } from 'src/app/services/valueSelect.service';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 
 @Component({
-  selector: 'app-sevakarya',
+  selector: 'app-sevadarshan',
   standalone: true,
   imports: [CardComponent,CommonModule,ReactiveFormsModule,FormsModule,SharedModule,SnackbarComponent],
-  templateUrl: './sevakarya.component.html',
-  styleUrl: './sevakarya.component.scss'
+  templateUrl: './sevadarshan.component.html',
+  styleUrl: './sevadarshan.component.scss'
 })
-export class SevakaryaComponent implements OnInit {
-  snackbarColour:string = ''
+export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   msg:any= '';
+  adminForm:FormGroup;
+  selectedJilla:string;
   showSnackBar:boolean=false;
   dynamicForm: any;
-  data = {};
-  selectedYear:any="";
-  selectedMonth:any="";
+  talukaList:any = [];
+    vastiList:any = [];
+  selectedYear:any=2024;
   isCollapsed = true;
   multiCollapsed1 = true;
   multiCollapsed2 = true;
   loremText ="test";
+  selectedFile: File;
+  talukaUrl:string = "api/getTaluka";
+    vastiUrl:string = "api/getSevaVasti";
     keys = [
       {
         catName:'શિક્ષા',
@@ -104,8 +108,8 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        category: 'aayogya',
         catName:'સ્વાસ્થ્ય',
+        category: 'aayogya',
         subcategories: [
           {
             label: 'ગ્રામીણ આરોગ્ય રક્ષક / મિત્ર, પેટિકા',
@@ -176,8 +180,8 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        catName:'સ્વાવલંબન',
         category: 'swavalamban',
+        catName:'સ્વાવલંબન',
         subcategories: [
           {
             label: 'સ્વયં સહાયતા જૂથ વૈભવ શ્રી',
@@ -256,8 +260,8 @@ export class SevakaryaComponent implements OnInit {
         ],
       },
       {
-        catName:'સામાજિક',
         category: 'samajik',
+        catName:'સામાજિક',
         subcategories: [
           { name: 'bhajanMandali', label: 'ભજન મંડળી', showInputs: true },
           {
@@ -316,10 +320,15 @@ export class SevakaryaComponent implements OnInit {
     showSubcategories: { [key: string]: { [key: string]: boolean } } = {};
     userData:any;
     selectedVasti:any;
-    constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {}
+    constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {
+      this.adminForm = new FormGroup({
+            taluka: new FormControl(''),
+            vasti: new FormControl(''),
+            reportingPerson: new FormControl(''),
+           })
+    }
   
     ngOnInit(): void {
-     this.valSelService.manageShakhaVrutFlag(false)
       this.dynamicForm = this.generateForm(this.keys);
       
       this.keys.forEach((item) => {
@@ -332,16 +341,42 @@ export class SevakaryaComponent implements OnInit {
      if(this.selectedYear!=''){
         this.getData();
      }
-      this.userData = this.valSelService.getUserData();
-     this.valSelService.getCurrentVasti().subscribe((res)=>{
-        this.selectedVasti = res;
-    })
+      this.userData = this.apiService.getUserData();
+      this.selectedJilla = this.userData.jilla.jillaName;
+      this.apiService.getData(`${this.talukaUrl}/${this.userData.jilla.jillaId}`).subscribe({next:(res:any)=>{
+        this.talukaList = res;
+       },error:()=>{}})
       //this.setFormData(this.data);
     }
     getData(){
       this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
         this.setFormData(res[0])
        })
+    }
+    onFileSelected(event: any) {
+      this.selectedFile = event.target.files[0];
+      this.onUpload();
+    }
+    onUpload() {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile, this.selectedFile.name);
+
+      this.apiService.postData('api/upload', formData)
+        .subscribe(response => {
+            const photoUrl = response.url; // Assuming the response contains the URL of the uploaded photo
+            this.addPhoto('categoryName', 'subcategoryName', photoUrl, this.dynamicForm);
+        });
+    }
+    talukaChange(e){
+      this.adminForm.get('vasti').reset();
+      this.vastiList=[];
+      this.apiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
+        this.vastiList = res;
+       },error:()=>{}})
+       console.log(this.vastiList)
+    }
+    vastiChange(e){
+       console.log(e.target.value)
     }
   
     // Generate FormGroup based on modified keys with labels
@@ -353,15 +388,32 @@ export class SevakaryaComponent implements OnInit {
           subGroup.addControl(
             subcategory.name,
             this.fb.group({
-              men: [0],
-              women: [0],
-              others: [0],
+              isSelected:[true],
+              startDate: [''],
+              photos: [[]],
+              note: [''],
             })
           );
         });
         group.addControl(item.category, subGroup);
       });
       return group;
+    }
+    addPhoto(categoryName: string, subcategoryName: string, photo: any, formGroup: FormGroup) {
+      const subGroup = formGroup.get(categoryName) as FormGroup;
+      if (subGroup) {
+        const subcategoryGroup = subGroup.get(subcategoryName) as FormGroup;
+        if (subcategoryGroup) {
+          const photosArray = subcategoryGroup.get('photos')?.value || [];
+          photosArray.push(photo);
+          console.log(photosArray)
+          subcategoryGroup.patchValue({ photos: photosArray });
+        } else {
+          console.error(`Subcategory ${subcategoryName} not found.`);
+        }
+      } else {
+        console.error(`Category ${categoryName} not found.`);
+      }
     }
   
     // Toggle category visibility
@@ -383,16 +435,17 @@ export class SevakaryaComponent implements OnInit {
       })
       console.log('Form Value:', this.dynamicForm.value);
       const obj = {
-        sevaVastiId:this.selectedVasti,
+        sevaVastiId:this.adminForm.value.vasti,
         jillaId: this.userData.jilla.jillaId,
-        talukaId: this.userData.taluka.talukaId,
+        talukaId: this.adminForm.value.taluka,
         vibhagId: this.userData.vibhag.vibhagId,
         prant: this.userData.prant,
         year: this.selectedYear,
+        reportingPerson: this.adminForm.value.reportingPerson,
         ...this.dynamicForm.value
       }
   
-      this.apiService.postData('api/sevaKarya',obj,{ responseType: 'text' }).subscribe((res:any)=>{
+      this.apiService.postData('api/sevaDarshan',obj,{ responseType: 'text' }).subscribe((res:any)=>{
         this.showSnackBar = true;
         this.snackbarColour = 'success';
         this.msg = 'સફળતાપૂર્વક સેવાકાર્ય વૃત સબમિટ થઈ ગયું છે.';

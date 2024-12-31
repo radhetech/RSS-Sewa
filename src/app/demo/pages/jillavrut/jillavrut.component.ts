@@ -35,7 +35,6 @@ export class JillavrutComponent {
     });
   }
   ngOnInit(): void {
-    this.valSel.manageBreadCrumb(false);
     this.userData = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
   }
   manageBethak(e:any){

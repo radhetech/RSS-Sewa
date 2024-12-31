@@ -10,7 +10,6 @@ export class valueSelect{
   //  shakha vasti and breadcrum to show and hide
    private showVasti = new BehaviorSubject<boolean>(false);
    private showShakha = new BehaviorSubject<boolean>(false);
-   private breadCrumb = new BehaviorSubject<boolean>(true);
    private navItemSelected = new BehaviorSubject<any>({});
   //  ends here
    shakhaVrutSelected$ = this.shakhaVrutSelected.asObservable();
@@ -38,9 +37,7 @@ public getUserData=()=>{
   getCurrentShakha(){
     return this.currentShakha.asObservable();
   }
-  manageBreadCrumb(val:boolean){
-    this.breadCrumb.next(val)
-  }
+  
   manageShakhaVrutFlag(val:boolean){
     this.shakhaVrutSelected.next(val)
   }
@@ -50,8 +47,6 @@ public getUserData=()=>{
   manageShowShakha(val:boolean){
     this.showShakha.next(val)
   }
-  showBreadCrumb(){
-    return this.breadCrumb.asObservable();
-  }
+  
 
 }

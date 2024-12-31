@@ -14,6 +14,9 @@ import { authguardGuard } from './services/authguard.guard';
 import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
 import { LogoutComponent } from './demo/pages/logout/logout.component';
 import { NotFoundComponent } from './demo/pages/not-found/not-found.component';
+import { SevadarshanComponent } from './demo/pages/sevadarshan/sevadarshan.component';
+import { PravasListComponent } from './demo/pages/pravas-list/pravas-list.component';
+import { TempAdminComponent } from './demo/pages/temp-admin/temp-admin.component';
 
 const routes: Routes = [
   {
@@ -48,6 +51,16 @@ const routes: Routes = [
        
       },
       {
+        path: 'sevadarshan',
+        component: SevadarshanComponent,
+       
+      },
+      {
+        path: 'pravaslist',
+        component: PravasListComponent,
+       
+      },
+      {
         path: 'utsavvrut',
         component: UtsavvrutComponent,
          
@@ -55,6 +68,11 @@ const routes: Routes = [
       {
         path: 'jillavrut',
         component: JillavrutComponent,
+        
+      },
+      {
+        path: 'tempadmin',
+        component: TempAdminComponent,
         
       },
       {

@@ -40,9 +40,9 @@
     <div *ngFor="let item of keys">
         <div [formGroupName]="item.category">
             <div ngbAccordion>
-                <div ngbAccordionItem [collapsed]="false">
+                <div ngbAccordionItem [collapsed]="true">
                     <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton>{{ item.category | titlecase }}</button>
+                        <button ngbAccordionButton>{{ item.catName }}</button>
                     </h2>
                     <div ngbAccordionCollapse>
                         <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">

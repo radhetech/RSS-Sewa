@@ -72,7 +72,6 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   }
   ngOnInit(): void {
     this.valueSel.manageShowShakha(true);
-    this.valueSel.manageBreadCrumb(true);
     this.valueSel.manageShakhaVrutFlag(true);
     this.valueSel.getCurrentShakha().subscribe((res) => {
       this.formGroup.reset();
@@ -263,7 +262,6 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     }, 3000);
   }
   ngOnDestroy(): void {
-      this.valueSel.manageBreadCrumb(false);
       this.valueSel.manageShakhaVrutFlag(false);
       this.valueSel.manageShowShakha(false);
   }

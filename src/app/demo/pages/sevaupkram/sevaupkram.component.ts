@@ -29,6 +29,7 @@ export class SevaupkramComponent implements OnInit {
       keys = [
     {
       category: 'shiksha',
+      catName:'શિક્ષા',
       subcategories: [
         { label: 'શૈક્ષણિક સામગ્રીનું વિતરણ', name: 'educationMaterialDistribution', showInputs: true },
         { label: 'પરીક્ષા માર્ગદર્શન શિબિર', name: 'examGuidanceCamp', showInputs: true },
@@ -39,6 +40,7 @@ export class SevaupkramComponent implements OnInit {
     },
     {
       category: 'aayogya',
+      catName:'સ્વાસ્થ્ય',
       subcategories: [
         { label: 'રક્તદાન શિબિર', name: 'bloodDonationCamp', showInputs: true },
         { label: 'આરોગ્ય શિબિર', name: 'healthCamp', showInputs: true },
@@ -54,6 +56,7 @@ export class SevaupkramComponent implements OnInit {
     },
     {
       category: 'swavalamban',
+      catName:'સ્વાવલંબન',
       subcategories: [
         { label: 'વ્યવસાય તાલીમ શિબિર', name: 'professionalTrainingCamp', showInputs: true },
         { label: 'પંચગવ્ય નિર્માણ શિબિર', name: 'panchgavyaTrainingCamp', showInputs: true },
@@ -69,6 +72,7 @@ export class SevaupkramComponent implements OnInit {
     },
     {
       category: 'samajik',
+      catName:'સામાજિક',
       subcategories: [
         { label: 'કન્યા પૂજા', name: 'girlWorship', showInputs: true },
         { label: 'સમૂહ લગ્ન', name: 'massMarriage', showInputs: true },
@@ -92,7 +96,6 @@ export class SevaupkramComponent implements OnInit {
   constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {}
 
   ngOnInit(): void {
-    this.valSelService.manageBreadCrumb(true);
    this.valSelService.manageShakhaVrutFlag(false)
     this.dynamicForm = this.generateForm(this.keys);
     

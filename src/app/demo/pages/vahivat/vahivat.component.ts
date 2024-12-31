@@ -18,6 +18,8 @@ export class VahivatComponent implements OnInit{
     talukaList:any = [];
     vastiList:any = [];
     shakhaList:any = []; 
+    talukaUser:boolean=false;
+    userData:any;
     sevaVastiFlag:boolean = false;
     shakaListFlag:boolean = false; 
     addVastiFlag:boolean = false;
@@ -46,7 +48,10 @@ export class VahivatComponent implements OnInit{
       console.log(res);
       this.vibhagList = res;
      },error:()=>{}})
-     
+     this.userData = this.ApiService.getUserData();
+     if(this.userData.authorities[0]=='taluka'){
+          this.talukaUser = true;
+     }
    }
    vibhagChange(e:any){
     console.log(e.target.value)

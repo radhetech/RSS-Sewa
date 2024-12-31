@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'સેવા દર્શન યુઝર્સ', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
+            <div>
+                <!-- Create the reactive form -->
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div class="row mb-3">
+                    <div class="col-md-12">
+                    <label for="login">યુઝરનેમ:</label>
+                    <input class="form-control" id="login" formControlName="login" placeholder="યુઝરનેમ"/>
+                    <div *ngIf="userForm.get('login').touched && userForm.get('login').invalid">
+                      <small *ngIf="userForm.get('login').hasError('required')" class="text-danger">યુઝરનેમ  જરૂરી છે </small>
+                    </div>
+                  </div>
+              
+                  <div class="col-md-12">
+                    <label for="password">પાસવર્ડ:</label>
+                    <input  class="form-control" id="password" type="password" formControlName="password" placeholder="પાસવર્ડ"/>
+                    <div *ngIf="userForm.get('password').touched && userForm.get('password').invalid">
+                      <small *ngIf="userForm.get('password').hasError('required')" class="text-danger">પાસવર્ડ જરૂરી છે</small>
+                    </div>
+                  </div>
+                   </div>
+                  <button type="submit" class="btn btn-primary submit-btn font-16" [disabled]="userForm.invalid">Submit</button>
+                </form>
+              </div>
+              
+            
+        </app-card>
+    </div>
+</div>

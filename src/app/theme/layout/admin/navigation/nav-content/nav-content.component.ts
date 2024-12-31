@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class NavContentComponent implements OnInit{
   // public props
-  title = 'Demo application for version numbering';
+  title = 'test';
   currentApplicationVersion = environment.appVersion;
   @Output() onNavCollapsedMob = new EventEmitter();
   navigation: any;
@@ -33,14 +33,17 @@ export class NavContentComponent implements OnInit{
     console.log(this.nav.get())
       this.userData= JSON.parse(localStorage.getItem('loggedInUser'))
       this.userRole = this.userData.authorities[0];
-      if(this.userRole=='taluka'){
+      if(this.userRole=='sdarshan'){
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-           return item.id!='jilla'&& item.id!='aheval'
+           return item.id=='sevadarshan' || item.id=='pravas-list';
+        })
+      }else if(this.userRole=='taluka'){
+        this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
+           return item.id=='shakhavrut' || item.id=='upkram'|| item.id=='upkram'|| item.id=='sevakarya' || item.id=='vahivat' || item.id=='utsav';
         })
       } else if(this.userRole=='jilla'){
-   
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-          return  item.id=='jilla' || item.id=='aheval'
+          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list'
        })
       }
      
