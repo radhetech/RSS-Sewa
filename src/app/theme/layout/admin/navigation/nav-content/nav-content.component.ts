@@ -45,6 +45,10 @@ export class NavContentComponent implements OnInit{
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
           return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list'
        })
+      } else if(this.userRole=='admin' || this.userRole=='prant'){
+        return this.navigation[0].children
+      } else {
+        this.navigation[0].children = [];
       }
      
 

@@ -515,6 +515,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       this.selectedYear = event.target.value;
       this.getData();
     }
+
   
     // Set form data from API response
     setFormData(data: any): void {
@@ -523,3 +524,15 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   
 
 }
+/*this._apiService.downloadFile().subscribe(blob => {
+      importedSaveAs(blob, "test.png");
+    }
+    )
+// service 
+  downloadFile(): Observable<Blob> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/image/*'});
+    return this._http.get("api/download?key=logout.png", { headers, responseType:'blob' })
+ }
+    //"file-saver": "^2.0.5",
+    "@types/file-saver": "^2.0.7",
+*/

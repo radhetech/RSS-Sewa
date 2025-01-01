@@ -18,7 +18,7 @@ export default class DashboardComponent implements OnInit {
   constructor(private apiService:ApiService){
 
   }
-  ngOnInit() {
+  ngOnInit(): void {
 
       let temp = this.apiService.getUserData();
       let userRole = temp.authorities[0];
@@ -35,6 +35,10 @@ export default class DashboardComponent implements OnInit {
         this.navList =  this.navList.filter((item:any)=>{
          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list';
        })
+      } else if(userRole=='admin' || userRole=='prant'){
+           this.navList = this.navList;
+      } else{
+       this.navList = [];
       }
      
 
