@@ -84,8 +84,21 @@
                         <input
                           type="file"
                           class="form-control"
-                          (change)="onFileSelected($event)"
+                          formControlName="photos"
+                          (change)="onFileSelected($event, subcategory, item)"
                         />
+                      <div class="mt-2">
+                        <div *ngFor="let photo of dynamicForm.get([item.category, subcategory.name, 'photos']).value" class="mb-1">
+                          <p (click)="downloadPhoto(photo)"> {{photo}} </p>
+                          <!-- <img [src]="photo" alt="Uploaded Photo" class="img-thumbnail" width="100" height="100" /> -->
+                        </div>
+                      </div>
+                        <!-- <div class="mt-2">
+                          <div *ngFor="let photo of dynamicForm?.controls[item]?.controls[subcategory]" class="mb-1">
+                            <img [src]="photo" alt="Uploaded Photo" class="img-thumbnail" width="100" height="100" />
+                          </div>
+                        </div> -->
+                      
   
                         <!-- <input type="file" id="myfile" formControlName="photos" class="form-control" name="myfile" multiple><br><br> -->
                       </div>

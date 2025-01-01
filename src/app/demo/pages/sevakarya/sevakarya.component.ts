@@ -20,7 +20,7 @@ export class SevakaryaComponent implements OnInit {
   showSnackBar:boolean=false;
   dynamicForm: any;
   data = {};
-  selectedYear:any="";
+  selectedYear:any=2024;
   selectedMonth:any="";
   isCollapsed = true;
   multiCollapsed1 = true;
@@ -329,18 +329,19 @@ export class SevakaryaComponent implements OnInit {
           this.showSubcategories[item.category][subcategory.name] = false;
         });
       });
-     if(this.selectedYear!=''){
-        this.getData();
-     }
       this.userData = this.valSelService.getUserData();
      this.valSelService.getCurrentVasti().subscribe((res)=>{
         this.selectedVasti = res;
+        this.getData();
     })
+    // this.getData();
       //this.setFormData(this.data);
     }
     getData(){
       this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
-        this.setFormData(res[0])
+        if(res.length){this.setFormData(res[0])}else{
+               this.dynamicForm.reset();
+        }
        })
     }
   

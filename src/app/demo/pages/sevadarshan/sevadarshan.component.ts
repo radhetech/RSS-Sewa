@@ -19,7 +19,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   adminForm:FormGroup;
   selectedJilla:string;
   showSnackBar:boolean=false;
-  dynamicForm: any;
+  dynamicForm: FormGroup;
   talukaList:any = [];
     vastiList:any = [];
   selectedYear:any=2024;
@@ -345,7 +345,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       this.selectedJilla = this.userData.jilla.jillaName;
       this.apiService.getData(`${this.talukaUrl}/${this.userData.jilla.jillaId}`).subscribe({next:(res:any)=>{
         this.talukaList = res;
-       },error:()=>{}})
+       }, error:()=>{}})
       //this.setFormData(this.data);
     }
     getData(){
@@ -353,18 +353,24 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         this.setFormData(res[0])
        })
     }
-    onFileSelected(event: any) {
+    onFileSelected(event: any, subcategory: any, item: any) {
       this.selectedFile = event.target.files[0];
-      this.onUpload();
+      this.onUpload(subcategory.name, item.category); 
     }
-    onUpload() {
+    onUpload(subcategory: any, category: string) {
       const formData = new FormData();
       formData.append('file', this.selectedFile, this.selectedFile.name);
 
       this.apiService.postData('api/upload', formData)
         .subscribe(response => {
-            const photoUrl = response.url; // Assuming the response contains the URL of the uploaded photo
-            this.addPhoto('categoryName', 'subcategoryName', photoUrl, this.dynamicForm);
+            const photoUrl = response; // Assuming the response contains the URL of the uploaded photo
+            //this.addPhoto('categoryName', 'subcategoryName', photoUrl, this.dynamicForm);
+            console.log(' url', photoUrl);
+           // this.dynamicForm.get(category).get(subcategory).patchValue({photos: [response]});
+          //  let temp =  this.dynamicForm.get(category).get(subcategory).get('photos').value;
+          //  temp.push(response);
+           this.dynamicForm.get(category).get(subcategory).patchValue({photos: [response]});
+            console.log(this.dynamicForm.get(category).get(subcategory));
         });
     }
     talukaChange(e){
@@ -375,9 +381,30 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
        },error:()=>{}})
        console.log(this.vastiList)
     }
-    vastiChange(e){
-       console.log(e.target.value)
+    vastiChange(e) {
+      // Check if userData and vibhagId are valid
+      if (this.userData && this.userData.vibhag && this.userData.vibhag.vibhagId) {
+        const selectedVastiId = e.target.value;
+    
+        if (selectedVastiId) {
+          this.apiService.getData(`api/getSevaDarshan/${this.userData.vibhag.vibhagId}/2024?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
+            // Ensure response is an array and handle accordingly
+            if (Array.isArray(res) && res.length) {
+              this.dynamicForm.patchValue(res[0]);
+            } else {
+              this.dynamicForm.reset();  // Reset the form if response is empty or not valid
+            }
+          }, (error) => {
+            console.error('Error during API call:', error);
+            // Handle error case appropriately, maybe show an error message to the user
+          });
+        }
+      } else {
+        console.error('User data or vibhag ID is not defined');
+        // Handle the error case where the user data is not available
+      }
     }
+    
   
     // Generate FormGroup based on modified keys with labels
     generateForm(keys: any[]): FormGroup {
@@ -415,7 +442,25 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         console.error(`Category ${categoryName} not found.`);
       }
     }
-  
+    downloadPhoto(item:any){
+      this.apiService.getData(`api/download?key=${this.getFilenameFromUrl(item)}`).subscribe((res)=>{
+        console.log(res)
+      })
+    }
+     getFilenameFromUrl(url) {
+      // Use the URL object for safer parsing
+      const parsedUrl = new URL(url);
+      const pathname = parsedUrl.pathname; // Get the path part of the URL
+      return pathname.substring(pathname.lastIndexOf('/') + 1); // Extract the filename
+  }
+  downloadFile(data: Blob, filename: string): void {
+    const blob = new Blob([data], { type: data.type });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;  // Set the filename
+    link.click();  // Simulate click to trigger download
+    URL.revokeObjectURL(link.href);  // Clean up the URL object
+  }
     // Toggle category visibility
     toggleCategory(category: string): void {
       this.showCategories[category] = !this.showCategories[category];
@@ -448,7 +493,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       this.apiService.postData('api/sevaDarshan',obj,{ responseType: 'text' }).subscribe((res:any)=>{
         this.showSnackBar = true;
         this.snackbarColour = 'success';
-        this.msg = 'સફળતાપૂર્વક સેવાકાર્ય વૃત સબમિટ થઈ ગયું છે.';
+        this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
       },(err)=>{
         this.showSnackBar = true;
         this.snackbarColour = 'error';

@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-md-12" [formGroup]="adminForm">
+    <div class="col-md-12" >
         <app-card [hidHeader]="false" [cardTitle]="{title: 'એડમિન', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
-
-            <div class="was-validated font-16">
+            <!-- for all other user  -->
+            <div class="was-validated font-16" *ngIf="!talukaUser" [formGroup]="adminForm">
                 <!-- date form start here -->
                 
                 <div class="mb-3">
@@ -68,6 +68,69 @@
                     </div>
                 </div>
 
+            </div>
+            <!-- for taluka user  -->
+            <div class="was-validated font-16" *ngIf="talukaUser" [formGroup]="talukaAdminForm">
+                <div class="mb-3">
+                    <div class="form-group" >
+                   <select id="prant" class="form-select" >
+                    <option value="" selected>  {{userData.prant}}</option>
+                  </select>
+              </div>
+                 </div>
+              <div class="mb-3">
+                <div class="form-group" >
+               <select id="vibhag" class="form-select" >
+                <option value="" selected>  {{userData.vibhag.vibhagName}}</option>
+              </select>
+          </div>
+              </div>
+          <div class="mb-3">
+            <div class="form-group" >
+           <select id="jilla" class="form-select" >
+            <option value="" selected>  {{userData.jilla.jillaName}}</option>
+             </select>
+            </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-group" >
+               <select id="taluka" class="form-select" >
+                <option value="" selected>  {{userData.taluka?.talukaName}}</option>
+                </select>
+                </div>
+           </div>
+            <div class="mb-3">
+                <div class="form-group">
+                    <label for="vasti">સેવા વસ્તી:</label>
+                    <label for="vibhag" class="float-right">કુલ-{{vastiList.length}}</label>
+                    <select id="vasti" class="form-select" formControlName="vasti" (change)="vastiChange($event)">
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{ vasti.sevaVastiName
+                            }}</option>
+                        <option value="addVasti" class="addbtn">નવી સેવા વસ્તી ઉમેરો </option>
+                    </select>
+                    <div *ngIf="talukaAdminForm.get('vasti').value=='addVasti'" class="add-item">
+                        <input type="text" formControlName="newVasti" placeholder="નવી સેવા વસ્તી ઉમેરો" />
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addVasti2($event)">ઉમેરો</button>
+                    </div>
+                </div>
+            </div>
+          <div class="mb-3">
+                <div class="form-group" *ngIf="shakaListFlag">
+                    <label for="shakha">શાખા:</label>
+                    <label for="vibhag" class="float-right">કુલ-{{shakhaList.length}}</label>
+                    <select id="shakha" class="form-select" formControlName="shakha" (change)="shakhaChange($event)">
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let shakha of shakhaList" [value]="shakha.shakhaName">{{ shakha.shakhaName
+                            }}</option>
+                        <option value="addSakha">નવી શાખા ઉમેરો</option>
+                    </select>
+                    <div *ngIf="addShakhaFlag" class="add-item">
+                        <input type="text"  formControlName="newShakha" placeholder="નવી શાખા ઉમેરો" />
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addShakha2($event)">ઉમેરો</button>
+                    </div>
+                </div>
+            </div>  
             </div>
         </app-card>
     </div>
