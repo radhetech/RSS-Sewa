@@ -56,12 +56,12 @@
                                 <div class="card-body ptb-10 font-16">
                                     <div class="row">
                                         <div class="col-md-2 mb-1">
-                                            <label for="">પુરુષ</label>
+                                            <label for="">ભાઈઓ</label>
                                             <input type="number" class="form-control" formControlName="men"
                                                 placeholder="Men" />
                                         </div>
                                         <div class="col-md-2 mb-1">
-                                            <label for="">મહિલા</label>
+                                            <label for="">બહેનો</label>
                                             <input type="number" class="form-control" formControlName="women"
                                                 placeholder="મહિલા" />
                                         </div>
@@ -79,10 +79,21 @@
                                         </div>
 
                                         <div class="col-md-2 mb-1">
-                                            <label for="">છબી</label>
-                                            <input type="number" class="form-control" formControlName="images"
-                                                placeholder="છબી" />
-                                        </div>
+                                            <label for="">ફોટો</label>
+                                            <div formArrayName="images">
+                                                <div *ngFor="let image of getImagesArray(item.category, subcategory.name).controls; let i = index">
+                                                  <input
+                                                    type="text"
+                                                    class="form-control mb-2"
+                                                    [formControlName]="i"
+                                                    placeholder="Enter image URL"
+                                                  />
+                                                </div>
+                                                <button type="button" class="btn btn-secondary" (click)="addImage(item.category, subcategory.name)">
+                                                  Add More Images
+                                                </button>
+                                              </div>
+                                          </div>
                                     </div>
 
                                 </div>

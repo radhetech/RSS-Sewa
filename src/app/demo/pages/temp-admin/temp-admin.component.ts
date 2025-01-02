@@ -49,7 +49,7 @@ export class TempAdminComponent implements OnInit{
       formData.jilla = userData.jilla;
       formData.prant = userData.prant;
       formData.vibhag = userData.vibhag;
-      formData.authorities = ["sdarshan"],
+      formData.authorities = ["SDARSHAN"],
       this.apiService.postData('api/register',formData).subscribe((res)=>{
         console.log(res)
       })    } else {

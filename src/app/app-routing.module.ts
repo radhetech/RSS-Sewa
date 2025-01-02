@@ -87,11 +87,13 @@ const routes: Routes = [
       }
     ]
   },
-
   {
     path: 'login',
     component: AuthSigninComponent,
   },
+  {path: '',
+  redirectTo: '/login'
+  }
 ];
 
 @NgModule({

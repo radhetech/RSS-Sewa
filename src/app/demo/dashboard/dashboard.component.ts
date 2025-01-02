@@ -22,20 +22,20 @@ export default class DashboardComponent implements OnInit {
 
       let temp = this.apiService.getUserData();
       let userRole = temp.authorities[0];
-      if(userRole=='sdarshan'){
+      if(userRole=='SDARSHAN'){
         this.navList =  this.navList.filter((item:any)=>{
            return item.id=='sevadarshan' || item.id=='pravas-list';
         })
-      }else if(userRole=='taluka'){
+      }else if(userRole=='TALUKA'){
         this.navList =  this.navList.filter((item:any)=>{
            return  item.id=='shakhavrut' || item.id=='upkram'|| item.id=='upkram'|| item.id=='sevakarya' || item.id=='vahivat' || item.id=='utsav';
         })
-      } else if(userRole=='jilla'){
+      } else if(userRole=='JILLA'){
    
         this.navList =  this.navList.filter((item:any)=>{
          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list';
        })
-      } else if(userRole=='admin' || userRole=='prant'){
+      } else if(userRole=='ADMIN' || userRole=='PRANT'){
            this.navList = this.navList;
       } else{
        this.navList = [];
@@ -51,7 +51,7 @@ export default class DashboardComponent implements OnInit {
       description: ' (સેવા દિવસ ગુરૂવાર નું વૃત્ત માટે)',
       design: 'col-md-3',
       link:'/home/shakhavrut',
-      img:'../../../assets/images/shakha-vrut-circle.png',
+      img:'../../../assets/images/Vrut.webp',
       cardClass:'dashboard-card',
       headerClass:'dashboard-card-header',
       blockClass:'dashboard-card-block',
@@ -112,7 +112,7 @@ export default class DashboardComponent implements OnInit {
       description: '(જિલ્લા વૃત માટે)',
       design: 'col-md-3',
       link:'/home/jillavrut',
-       img:'../../../assets/images/shakha-vrut-circle.png',
+      img:'../../../assets/images/Vrut.webp',
        cardClass:'dashboard-card',
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
@@ -132,7 +132,7 @@ export default class DashboardComponent implements OnInit {
       description: '(માસિક અને વાર્ષિક અહેવાલ)',
       design: 'col-md-3',
       link:'/home/report',
-       img:'../../../assets/images/shakha-vrut-circle.png',
+      img:'../../../assets/images/Vrut.webp',
        cardClass:'dashboard-card',
        headerClass:'panel-header',
        blockClass:'dashboard-card-block',

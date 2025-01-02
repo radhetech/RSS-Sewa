@@ -25,6 +25,7 @@ export class SevakaryaComponent implements OnInit {
   isCollapsed = true;
   multiCollapsed1 = true;
   multiCollapsed2 = true;
+  formId:string="";
   loremText ="test";
     keys = [
       {
@@ -339,7 +340,11 @@ export class SevakaryaComponent implements OnInit {
     }
     getData(){
       this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
-        if(res.length){this.setFormData(res[0])}else{
+        if(res.length){
+          this.setFormData(res[0]);
+          this.formId = res[0]?.id;
+        }else{
+             
                this.dynamicForm.reset();
         }
        })
@@ -378,10 +383,7 @@ export class SevakaryaComponent implements OnInit {
   
     // On form submit
     onSubmit(): void {
-      let a;
-      this.valSelService.getCurrentVasti().subscribe((res)=>{
-          a= res;
-      })
+      
       console.log('Form Value:', this.dynamicForm.value);
       const obj = {
         sevaVastiId:this.selectedVasti,
@@ -391,6 +393,9 @@ export class SevakaryaComponent implements OnInit {
         prant: this.userData.prant,
         year: this.selectedYear,
         ...this.dynamicForm.value
+      }
+      if(this.formId){
+        obj.id = this.formId;
       }
   
       this.apiService.postData('api/sevaKarya',obj,{ responseType: 'text' }).subscribe((res:any)=>{

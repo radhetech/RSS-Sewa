@@ -33,20 +33,20 @@ export class NavContentComponent implements OnInit{
     console.log(this.nav.get())
       this.userData= JSON.parse(localStorage.getItem('loggedInUser'))
       this.userRole = this.userData.authorities[0];
-      if(this.userRole=='sdarshan'){
+      if(this.userRole=='SDARSHAN'){
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-           return item.id=='sevadarshan' || item.id=='pravas-list';
+           return item.id=='sevadarshan' || item.id=='pravas-list' || item.id=='logout';
         })
-      }else if(this.userRole=='taluka'){
+      }else if(this.userRole=='TALUKA'){
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-           return item.id=='shakhavrut' || item.id=='upkram'|| item.id=='upkram'|| item.id=='sevakarya' || item.id=='vahivat' || item.id=='utsav';
+           return item.id=='shakhavrut' || item.id=='upkram' || item.id=='sevakarya' || item.id=='vahivat' || item.id=='utsav'  || item.id=='admin' || item.id=='logout';
         })
-      } else if(this.userRole=='jilla'){
+      } else if(this.userRole=='JILLA'){
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list'
+          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list' || item.id=='logout';
        })
-      } else if(this.userRole=='admin' || this.userRole=='prant'){
-        return this.navigation[0].children
+      } else if(this.userRole=='ADMIN' || this.userRole=='PRANT'){
+        return this.navigation[0].children;
       } else {
         this.navigation[0].children = [];
       }

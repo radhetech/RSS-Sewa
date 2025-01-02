@@ -1,15 +1,17 @@
 <header>
   <div class="m-header" [style.display]="this.headerStyle">
+    <a class="back-menu"><i _ngcontent-ng-c1631355674="" class="feather icon-arrow-left back-menu"></i> </a>
     <a class="mobile-menu" id="mobile-collapse1" href="javascript:" (click)="this.NavCollapsedMob.emit()"><span></span></a>
     <a [routerLink]="['/home']" class="b-brand">
       <div class="b-bg">
        
       </div>
       <span class="b-title">સેવા વિભાગ</span>
+      
     </a>
   </div>
-  <a class="mobile-menu" [ngClass]="{ on: this.menuClass }" id="mobile-header" href="javascript:" (click)="logout()">
-    <img src="../../../../../assets/images/logout.svg">
-  </a>
+  <!-- <div class="mobile-menu" [ngClass]="{ on: this.menuClass }" id="mobile-header" href="javascript:" (click)="logout()">
+    <i class="icon-arrow-left"></i>
+  </div> -->
 
 </header>

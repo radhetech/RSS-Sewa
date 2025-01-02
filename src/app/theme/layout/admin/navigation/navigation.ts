@@ -115,6 +115,14 @@ const NavigationItems = [
         url: '/home/report',
         icon: 'feather icon-bar-chart',
         classes: 'nav-item'
+      },
+      {
+        id: 'logout',
+        title: 'લોગ આઉટ',
+        type: 'item',
+        url: '/login',
+        icon: 'feather icon-log-out',
+        classes: 'nav-item'
       }
     ]
   }

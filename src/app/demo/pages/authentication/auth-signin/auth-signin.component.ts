@@ -31,7 +31,21 @@ export default class AuthSigninComponent implements OnInit {
     apiResponseForm!: FormGroup;
   
     ngOnInit() {
+     
       localStorage.clear();
+       //temp2.forEach((item)=>{
+       // item.login = item.login.trim();
+        //  this.apiService.postData('api/register',{
+        //   login:item.login,
+        //   password:item.login+'$',
+        //   taluka:item.taluka,
+        //   jilla:item.jilla,
+        //   vibhag:item.vibhag,
+        //   authorities:[item.authorities[0]._id]
+        //  }).subscribe((res)=>{
+        //    console.log(res)
+        //  })
+     // })
     }
     onFormSubmitted(res: NgForm) {
       console.log(res.value)

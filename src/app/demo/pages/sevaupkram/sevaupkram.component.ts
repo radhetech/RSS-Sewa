@@ -93,6 +93,7 @@ export class SevaupkramComponent implements OnInit {
   showSubcategories: { [key: string]: { [key: string]: boolean } } = {};
   userData:any;
   selectedVasti:any;
+  formId:string="";
   constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {}
 
   ngOnInit(): void {
@@ -112,12 +113,20 @@ export class SevaupkramComponent implements OnInit {
     this.userData = this.valSelService.getUserData();
    this.valSelService.getCurrentVasti().subscribe((res)=>{
       this.selectedVasti = res;
+      this.selectedMonth="";
+      this.selectedYear="";
+      this.dynamicForm.reset();
   })
     //this.setFormData(this.data);
   }
   getData(){
+    this.formId="";
     this.apiService.getData(`api/getSevaUpkram/${this.selectedVasti}/${this.selectedMonth}/${this.selectedYear}`).subscribe((res:any)=>{
-      this.setFormData(res[0])
+      if(res.length){
+        this.setFormData(res[0]);
+        this.formId = res[0]?.id;
+        this.patchFormValues(res[0]);
+      }
      })
   }
 
@@ -134,7 +143,7 @@ export class SevaupkramComponent implements OnInit {
             women: [],
             others: [],
             date:[''],
-            images:[[]]
+            images: this.fb.array([])
           })
         );
       });
@@ -142,6 +151,48 @@ export class SevaupkramComponent implements OnInit {
     });
     return group;
   }
+  addImage(category: string, subcategory: string): void {
+    const subGroup = this.dynamicForm.get(category) as FormGroup;
+    const subCategoryGroup = subGroup.get(subcategory) as FormGroup;
+    const imagesArray = subCategoryGroup.get('images') as FormArray;
+  
+    // Add a new FormControl to the images FormArray
+    imagesArray.push(this.fb.control(''));
+  }
+  
+  getImagesArray(category: string, subcategory: string): FormArray {
+    const subGroup = this.dynamicForm.get(category) as FormGroup;
+    const subCategoryGroup = subGroup.get(subcategory) as FormGroup;
+    return subCategoryGroup.get('images') as FormArray;
+  } 
+  patchFormValues(data: any): void {
+    Object.keys(data).forEach((category) => {
+      const categoryGroup = this.dynamicForm.get(category) as FormGroup;
+      if (categoryGroup) {
+        Object.keys(data[category]).forEach((subcategory) => {
+          const subCategoryGroup = categoryGroup.get(subcategory) as FormGroup;
+          if (subCategoryGroup) {
+            subCategoryGroup.patchValue({
+              men: data[category][subcategory].men,
+              women: data[category][subcategory].women,
+              others: data[category][subcategory].others,
+              date: data[category][subcategory].date,
+            });
+  
+            // Handle images (FormArray)
+            const imagesArray = subCategoryGroup.get('images') as FormArray;
+            imagesArray.clear(); // Clear existing images
+            if (data[category][subcategory].images && Array.isArray(data[category][subcategory].images)) {
+              data[category][subcategory].images.forEach((image: string) => {
+                imagesArray.push(this.fb.control(image));
+              });
+            }
+          }
+        });
+      }
+    });
+  }
+  
 
   // Toggle category visibility
   toggleCategory(category: string): void {
@@ -160,6 +211,7 @@ export class SevaupkramComponent implements OnInit {
     this.valSelService.getCurrentVasti().subscribe((res)=>{
         a= res;
     })
+  
     console.log('Form Value:', this.dynamicForm.value);
     const obj = {
       sevaVastiId: this.selectedVasti,
@@ -171,12 +223,17 @@ export class SevaupkramComponent implements OnInit {
       month:this.selectedMonth,
       ...this.dynamicForm.value
     }
+    if(this.formId){  
+      obj.id = this.formId;
+    }
 
     this.apiService.postData('api/sevaUpkram',obj,{ responseType: 'text' }).subscribe((res:any)=>{
       this.showSnackBar = true;
       this.snackbarColour = 'success';
       this.msg = 'સફળતાપૂર્વક સેવા ઉપક્રમ વૃત સબમિટ થઈ ગયું છે.';
-
+      this.formId="";
+      this.selectedMonth="";
+      this.selectedYear="";
     },(err)=>{
       this.showSnackBar = true;
       this.snackbarColour = 'error';
