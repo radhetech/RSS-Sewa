@@ -77,31 +77,7 @@
                           placeholder="તારીખ"
                         />
                       </div>
-                      <div class="col-md-4 mb-1">
-                        <label for="">છબી ( 2 થી ઓછી ) </label>
-                        <!-- <input type="number" class="form-control" formControlName="photos"
-                                              placeholder="photos" />  -->
-                        <input
-                          type="file"
-                          class="form-control"
-                          formControlName="photos"
-                          (change)="onFileSelected($event, subcategory, item)"
-                        />
-                      <div class="mt-2">
-                        <div *ngFor="let photo of dynamicForm.get([item.category, subcategory.name, 'photos']).value" class="mb-1">
-                          <p (click)="downloadPhoto(photo)"> {{photo}} </p>
-                          <!-- <img [src]="photo" alt="Uploaded Photo" class="img-thumbnail" width="100" height="100" /> -->
-                        </div>
-                      </div>
-                        <!-- <div class="mt-2">
-                          <div *ngFor="let photo of dynamicForm?.controls[item]?.controls[subcategory]" class="mb-1">
-                            <img [src]="photo" alt="Uploaded Photo" class="img-thumbnail" width="100" height="100" />
-                          </div>
-                        </div> -->
                       
-  
-                        <!-- <input type="file" id="myfile" formControlName="photos" class="form-control" name="myfile" multiple><br><br> -->
-                      </div>
                       <div class="col-md-4 mb-1">
                         <label for="">નોંધ </label>
                         <textarea
@@ -110,6 +86,36 @@
                           placeholder="નોંધ"
                         >
                         </textarea>
+                      </div>
+                      <div class="col-md-4 mb-1">
+                        <label for="">ફોટો</label>
+                        <div formArrayName="images">
+                            <div *ngFor="let image of getImagesArray(item.category, subcategory.name).controls; let i = index">
+                              <div class="mb-2">
+                                <!-- Display uploaded image link if it exists -->
+                                <ng-container *ngIf="image.value; else uploadFile">
+                                  <span class="uploaded-image" (click)="downloadImage(image.value)">{{ image.value }}</span>
+                                  <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removeImage(item.category, subcategory.name, i)">
+                                    Remove
+                                  </button>
+                                </ng-container>
+                                <!-- Upload new image -->
+                                <ng-template #uploadFile>
+                                  <input
+                                    type="file"
+                                    class="form-control"
+                                    (change)="onFileSelect($event, item.category, subcategory.name, i)"
+                                  />
+                                </ng-template>
+                              </div>
+                            </div>
+                            <!-- Buttons to add/remove images -->
+                            <button type="button" class="btn btn-secondary" (click)="addImage(item.category, subcategory.name)">
+                              Add More Images
+                            </button>
+                          </div>
+                          
+                          
                       </div>
                     </div>
                   </div>

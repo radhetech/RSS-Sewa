@@ -6,7 +6,8 @@ import { CardComponent } from "../../../theme/shared/components/card/card.compon
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
-
+import { HttpHeaders } from '@angular/common/http';
+import {saveAs} from 'file-saver';
 @Component({
   selector: 'app-sevaupkram',
   standalone: true,
@@ -152,12 +153,13 @@ export class SevaupkramComponent implements OnInit {
     return group;
   }
   addImage(category: string, subcategory: string): void {
-    const subGroup = this.dynamicForm.get(category) as FormGroup;
-    const subCategoryGroup = subGroup.get(subcategory) as FormGroup;
-    const imagesArray = subCategoryGroup.get('images') as FormArray;
+    const imagesArray = this.getImagesArray(category, subcategory);
+    imagesArray.push(this.fb.control('')); // Add a new empty control
+  }
   
-    // Add a new FormControl to the images FormArray
-    imagesArray.push(this.fb.control(''));
+  removeImage(category: string, subcategory: string, index: number): void {
+    const imagesArray = this.getImagesArray(category, subcategory);
+    imagesArray.removeAt(index); // Remove image at the given index
   }
   
   getImagesArray(category: string, subcategory: string): FormArray {
@@ -168,22 +170,30 @@ export class SevaupkramComponent implements OnInit {
   patchFormValues(data: any): void {
     Object.keys(data).forEach((category) => {
       const categoryGroup = this.dynamicForm.get(category) as FormGroup;
+  
       if (categoryGroup) {
         Object.keys(data[category]).forEach((subcategory) => {
           const subCategoryGroup = categoryGroup.get(subcategory) as FormGroup;
+  
           if (subCategoryGroup) {
+            // Patch scalar values
             subCategoryGroup.patchValue({
-              men: data[category][subcategory].men,
-              women: data[category][subcategory].women,
-              others: data[category][subcategory].others,
-              date: data[category][subcategory].date,
+              men: data[category][subcategory]?.men || null,
+              women: data[category][subcategory]?.women || null,
+              others: data[category][subcategory]?.others || null,
+              date: data[category][subcategory]?.date || null,
             });
   
             // Handle images (FormArray)
             const imagesArray = subCategoryGroup.get('images') as FormArray;
-            imagesArray.clear(); // Clear existing images
-            if (data[category][subcategory].images && Array.isArray(data[category][subcategory].images)) {
-              data[category][subcategory].images.forEach((image: string) => {
+  
+            // Clear existing images in the FormArray
+            imagesArray.clear();
+  
+            // Populate with new images
+            const images = data[category][subcategory]?.images || [];
+            if (Array.isArray(images)) {
+              images.forEach((image: string) => {
                 imagesArray.push(this.fb.control(image));
               });
             }
@@ -192,7 +202,43 @@ export class SevaupkramComponent implements OnInit {
       }
     });
   }
+ 
   
+  onFileSelect(event: Event, category: string, subcategory: string, index: number): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+     // this.selectedFile = event.target.files[0];
+      const file = input.files[0];
+      const formData = new FormData();
+      formData.append('file', file, file.name);
+    this.apiService.postData('api/upload', formData)
+        .subscribe(response => {
+          const subCategoryGroup = this.dynamicForm.get(`${category}.${subcategory}`) as FormGroup;
+          const imagesArray = subCategoryGroup.get('images') as FormArray;
+          imagesArray.at(index).setValue(response);
+                   });
+       
+      
+      
+      // Convert the file into a data URL or store it as a File object
+      //const reader = new FileReader();
+      // Reads file as base64
+    }
+  }
+  
+  downloadImage(item:string){
+    const filePath = this.getFilenameFromUrl(item);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/image/*'});
+    return this.apiService.getData(`api/download?key=${filePath}`, { headers, responseType:'blob' }).subscribe((res:any)=>{
+      saveAs(res, filePath);
+    })
+  }
+  getFilenameFromUrl(url) {
+    // Use the URL object for safer parsing
+    const parsedUrl = new URL(url);
+    const pathname = parsedUrl.pathname; // Get the path part of the URL
+    return pathname.substring(pathname.lastIndexOf('/') + 1); // Extract the filename
+}
 
   // Toggle category visibility
   toggleCategory(category: string): void {
@@ -207,11 +253,6 @@ export class SevaupkramComponent implements OnInit {
 
   // On form submit
   onSubmit(): void {
-    let a;
-    this.valSelService.getCurrentVasti().subscribe((res)=>{
-        a= res;
-    })
-  
     console.log('Form Value:', this.dynamicForm.value);
     const obj = {
       sevaVastiId: this.selectedVasti,

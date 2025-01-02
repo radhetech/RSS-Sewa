@@ -58,17 +58,17 @@
                                         <div class="col-md-2 mb-1">
                                             <label for="">ભાઈઓ</label>
                                             <input type="number" class="form-control" formControlName="men"
-                                                placeholder="Men" />
+                                                placeholder="ભાઈઓ" />
                                         </div>
                                         <div class="col-md-2 mb-1">
                                             <label for="">બહેનો</label>
                                             <input type="number" class="form-control" formControlName="women"
-                                                placeholder="મહિલા" />
+                                                placeholder="બહેનો" />
                                         </div>
                                         <div class="col-md-2 mb-1">
                                             <label for="">અન્ય</label>
                                             <input type="number" class="form-control" formControlName="others"
-                                                placeholder="Others" />
+                                                placeholder="અન્ય" />
                                         </div>
                                     <!-- </div>
                                     <div class="row"> -->
@@ -82,17 +82,31 @@
                                             <label for="">ફોટો</label>
                                             <div formArrayName="images">
                                                 <div *ngFor="let image of getImagesArray(item.category, subcategory.name).controls; let i = index">
-                                                  <input
-                                                    type="text"
-                                                    class="form-control mb-2"
-                                                    [formControlName]="i"
-                                                    placeholder="Enter image URL"
-                                                  />
+                                                  <div class="mb-2">
+                                                    <!-- Display uploaded image link if it exists -->
+                                                    <ng-container *ngIf="image.value; else uploadFile">
+                                                      <span class="uploaded-image" (click)="downloadImage(image.value)">{{ image.value }}</span>
+                                                      <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removeImage(item.category, subcategory.name, i)">
+                                                        Remove
+                                                      </button>
+                                                    </ng-container>
+                                                    <!-- Upload new image -->
+                                                    <ng-template #uploadFile>
+                                                      <input
+                                                        type="file"
+                                                        class="form-control"
+                                                        (change)="onFileSelect($event, item.category, subcategory.name, i)"
+                                                      />
+                                                    </ng-template>
+                                                  </div>
                                                 </div>
+                                                <!-- Buttons to add/remove images -->
                                                 <button type="button" class="btn btn-secondary" (click)="addImage(item.category, subcategory.name)">
                                                   Add More Images
                                                 </button>
                                               </div>
+                                              
+                                              
                                           </div>
                                     </div>
 

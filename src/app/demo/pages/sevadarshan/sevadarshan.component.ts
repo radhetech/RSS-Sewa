@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
-import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 import { SharedModule } from '../../../theme/shared/shared.module';
 import { ApiService } from 'src/app/services/api.service';
 import { valueSelect } from 'src/app/services/valueSelect.service';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
-
+import { HttpHeaders } from '@angular/common/http';
+import {saveAs} from 'file-saver';
 @Component({
   selector: 'app-sevadarshan',
   standalone: true,
@@ -27,6 +28,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   multiCollapsed1 = true;
   multiCollapsed2 = true;
   loremText ="test";
+  formId:any;
   selectedFile: File;
   talukaUrl:string = "api/getTaluka";
     vastiUrl:string = "api/getSevaVasti";
@@ -374,38 +376,65 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         });
     }
     talukaChange(e){
-      this.adminForm.get('vasti').reset();
+      this.adminForm.get('vasti').setValue('');
       this.vastiList=[];
       this.apiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
         this.vastiList = res;
        },error:()=>{}})
-       console.log(this.vastiList)
+       //console.log(this.vastiList)
     }
     vastiChange(e) {
       // Check if userData and vibhagId are valid
-      if (this.userData && this.userData.vibhag && this.userData.vibhag.vibhagId) {
-        const selectedVastiId = e.target.value;
+      // if (this.userData && this.userData.vibhag && this.userData.vibhag.vibhagId) {
+       const selectedVastiId = e.target.value;
     
         if (selectedVastiId) {
-          this.apiService.getData(`api/getSevaDarshan/${this.userData.vibhag.vibhagId}/2024?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
-            // Ensure response is an array and handle accordingly
-            if (Array.isArray(res) && res.length) {
-              this.dynamicForm.patchValue(res[0]);
-            } else {
-              this.dynamicForm.reset();  // Reset the form if response is empty or not valid
+          this.apiService.getData(`api/getSevaDarshan/${this.userData?.vibhag?.vibhagId}/2024?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
+            if(res.length){
+              this.setFormData(res[0]);
+              this.formId = res[0]?.id;
+              this.patchFormValues(res[0]);
             }
           }, (error) => {
             console.error('Error during API call:', error);
             // Handle error case appropriately, maybe show an error message to the user
           });
         }
-      } else {
-        console.error('User data or vibhag ID is not defined');
-        // Handle the error case where the user data is not available
       }
-    }
+   patchFormValues(data: any): void {
+      Object.keys(data).forEach((category) => {
+        const categoryGroup = this.dynamicForm.get(category) as FormGroup;
     
-  
+        if (categoryGroup) {
+          Object.keys(data[category]).forEach((subcategory) => {
+            const subCategoryGroup = categoryGroup.get(subcategory) as FormGroup;
+    
+            if (subCategoryGroup) {
+              // Patch scalar values
+              subCategoryGroup.patchValue({
+                note: data[category][subcategory]?.note || null,
+          
+                startDate: data[category][subcategory]?.startDate || null,
+              });
+    
+              // Handle images (FormArray)
+              const imagesArray = subCategoryGroup.get('images') as FormArray;
+    
+              // Clear existing images in the FormArray
+              imagesArray.clear();
+    
+              // Populate with new images
+              const images = data[category][subcategory]?.images || [];
+              if (Array.isArray(images)) {
+                images.forEach((image: string) => {
+                  imagesArray.push(this.fb.control(image));
+                });
+              }
+            }
+          });
+        }
+      });
+    }
     // Generate FormGroup based on modified keys with labels
     generateForm(keys: any[]): FormGroup {
       const group = this.fb.group({});
@@ -415,10 +444,9 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
           subGroup.addControl(
             subcategory.name,
             this.fb.group({
-              isSelected:[true],
               startDate: [''],
-              photos: [[]],
               note: [''],
+              images: this.fb.array([])
             })
           );
         });
@@ -426,41 +454,59 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       });
       return group;
     }
-    addPhoto(categoryName: string, subcategoryName: string, photo: any, formGroup: FormGroup) {
-      const subGroup = formGroup.get(categoryName) as FormGroup;
-      if (subGroup) {
-        const subcategoryGroup = subGroup.get(subcategoryName) as FormGroup;
-        if (subcategoryGroup) {
-          const photosArray = subcategoryGroup.get('photos')?.value || [];
-          photosArray.push(photo);
-          console.log(photosArray)
-          subcategoryGroup.patchValue({ photos: photosArray });
-        } else {
-          console.error(`Subcategory ${subcategoryName} not found.`);
-        }
-      } else {
-        console.error(`Category ${categoryName} not found.`);
+     addImage(category: string, subcategory: string): void {
+        const imagesArray = this.getImagesArray(category, subcategory);
+        imagesArray.push(this.fb.control('')); // Add a new empty control
       }
+      
+      removeImage(category: string, subcategory: string, index: number): void {
+        const imagesArray = this.getImagesArray(category, subcategory);
+        imagesArray.removeAt(index); // Remove image at the given index
+      }
+      
+      getImagesArray(category: string, subcategory: string): FormArray {
+        const subGroup = this.dynamicForm.get(category) as FormGroup;
+        const subCategoryGroup = subGroup.get(subcategory) as FormGroup;
+        return subCategoryGroup.get('images') as FormArray;
+      } 
+    
+     
+      
+      onFileSelect(event: Event, category: string, subcategory: string, index: number): void {
+        const input = event.target as HTMLInputElement;
+        if (input.files && input.files[0]) {
+         // this.selectedFile = event.target.files[0];
+          const file = input.files[0];
+          const formData = new FormData();
+          formData.append('file', file, file.name);
+        this.apiService.postData('api/upload', formData)
+            .subscribe(response => {
+              const subCategoryGroup = this.dynamicForm.get(`${category}.${subcategory}`) as FormGroup;
+              const imagesArray = subCategoryGroup.get('images') as FormArray;
+              imagesArray.at(index).setValue(response);
+                       });
+           
+          
+          
+          // Convert the file into a data URL or store it as a File object
+          //const reader = new FileReader();
+          // Reads file as base64
+        }
+      }
+      
+      downloadImage(item:string){
+        const filePath = this.getFilenameFromUrl(item);
+        const headers = new HttpHeaders({ 'Content-Type': 'application/image/*'});
+        return this.apiService.getData(`api/download?key=${filePath}`, { headers, responseType:'blob' }).subscribe((res:any)=>{
+          saveAs(res, filePath);
+        })
+      }
+      getFilenameFromUrl(url) {
+        // Use the URL object for safer parsing
+        const parsedUrl = new URL(url);
+        const pathname = parsedUrl.pathname; // Get the path part of the URL
+        return pathname.substring(pathname.lastIndexOf('/') + 1); // Extract the filename
     }
-    downloadPhoto(item:any){
-      this.apiService.getData(`api/download?key=${this.getFilenameFromUrl(item)}`).subscribe((res)=>{
-        console.log(res)
-      })
-    }
-     getFilenameFromUrl(url) {
-      // Use the URL object for safer parsing
-      const parsedUrl = new URL(url);
-      const pathname = parsedUrl.pathname; // Get the path part of the URL
-      return pathname.substring(pathname.lastIndexOf('/') + 1); // Extract the filename
-  }
-  downloadFile(data: Blob, filename: string): void {
-    const blob = new Blob([data], { type: data.type });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = filename;  // Set the filename
-    link.click();  // Simulate click to trigger download
-    URL.revokeObjectURL(link.href);  // Clean up the URL object
-  }
     // Toggle category visibility
     toggleCategory(category: string): void {
       this.showCategories[category] = !this.showCategories[category];
@@ -504,6 +550,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       // Call API to submit the data
       // this.apiService.submitData(this.dynamicForm.value).subscribe(...);
     }
+  
     snackTimeOut() {
       setTimeout(() => {
         this.showSnackBar = null;

@@ -3,16 +3,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
+import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 @Component({
   selector: 'app-vahivat',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule,CommonModule,CardComponent],
+  imports: [FormsModule,ReactiveFormsModule,CommonModule,CardComponent,SnackbarComponent],
   templateUrl: './vahivat.component.html',
   styleUrl: './vahivat.component.scss'
 })
 export class VahivatComponent implements OnInit{
  
     adminForm:FormGroup;
+    showSnackBar:boolean = false;
+    snackbarColour:string = '';
+    msg:string = '';
     talukaAdminForm:FormGroup;
     vibhagList:any = [];
     jillaList:any = [];
@@ -137,6 +141,10 @@ export class VahivatComponent implements OnInit{
     };
     this.ApiService.postData('api/sevaVasti/save',pushedVal).subscribe((res)=>{
        this.vastiList.push(res)
+    },(err)=>{
+      this.showSnackBar = true;
+      this.snackbarColour = 'error';
+      this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.'
     })
     this.adminForm.get('vasti').reset();
     this.adminForm.get('newVasti').reset();
@@ -156,6 +164,10 @@ export class VahivatComponent implements OnInit{
     };
     this.ApiService.postData('api/sevaVasti/save',pushedVal).subscribe((res)=>{
        this.vastiList.push(res)
+    },(err)=>{
+      this.showSnackBar = true;
+      this.snackbarColour = 'error';
+      this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.'
     })
     this.talukaAdminForm.get('vasti').reset();
     this.talukaAdminForm.get('newVasti').reset();
@@ -178,12 +190,16 @@ export class VahivatComponent implements OnInit{
     this.addShakhaFlag = false;
     this.ApiService.postData('api/shakha/save',pushedShakha).subscribe((res)=>{
       console.log(res);
-      this.ApiService.getData(`${this.shakhaUrl}/${this.adminForm.controls['vasti'].value}`).subscribe({next:(res:any)=>{
+      this.ApiService.getData(`${this.shakhaUrl}/${this.adminForm.controls['vasti'].value}`).subscribe((res:any)=>{
         this.shakhaList = res;
         this.adminForm.controls['shakha'].setValue('');
-       }
-      })
+       })
+      
       this.shakhaList.push(res)
+    },(err)=>{
+      this.showSnackBar = true;
+      this.snackbarColour = 'error';
+      this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.'
     })
     this.adminForm.controls['shakha'].setValue('');
     this.adminForm.controls['shakha'].reset();
@@ -208,6 +224,10 @@ export class VahivatComponent implements OnInit{
        }
       })
       this.shakhaList.push(res)
+    },(err)=>{
+      this.showSnackBar = true;
+      this.snackbarColour = 'error';
+      this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.'
     })
   
     console.log(this.shakhaList)
