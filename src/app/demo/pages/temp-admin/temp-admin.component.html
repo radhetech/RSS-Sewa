@@ -29,3 +29,8 @@
         </app-card>
     </div>
 </div>
+<app-snackbar
+    [errorsmsg]="msg"
+    [snackbarColour]="snackbarColour"
+    *ngIf="showSnackBar"
+  ></app-snackbar>

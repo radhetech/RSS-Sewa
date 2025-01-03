@@ -1,8 +1,8 @@
-<header>
+<header class="navbar-sticky">
   <div class="m-header" [style.display]="this.headerStyle">
-    <a class="back-menu"><i _ngcontent-ng-c1631355674="" class="feather icon-arrow-left back-menu"></i> </a>
+    <span class="back-menu" (click)="testFn()"><i _ngcontent-ng-c1631355674="" class="feather icon-arrow-left back-menu"></i> </span>
     <a class="mobile-menu" id="mobile-collapse1" href="javascript:" (click)="this.NavCollapsedMob.emit()"><span></span></a>
-    <a [routerLink]="['/home']" class="b-brand">
+    <a [routerLink]="['/home/dashboard']" class="b-brand">
       <div class="b-bg">
        
       </div>

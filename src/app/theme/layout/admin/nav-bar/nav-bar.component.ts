@@ -25,4 +25,7 @@ export class NavBarComponent {
   logout(){
     this.route.navigate(['/login'])
   }
+  testFn(){
+    window.history.back();
+  }
 }

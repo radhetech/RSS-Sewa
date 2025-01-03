@@ -3,16 +3,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
+import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 
 @Component({
   selector: 'app-temp-admin',
   standalone: true,
-  imports: [CommonModule,CardComponent,ReactiveFormsModule],
+  imports: [SnackbarComponent, CommonModule,CardComponent,ReactiveFormsModule],
   templateUrl: './temp-admin.component.html',
   styleUrl: './temp-admin.component.scss'
 })
 export class TempAdminComponent implements OnInit{
   userForm: any;
+  showSnackBar:boolean = false;
+  msg:string = '';
+  snackbarColour:string = '';
    constructor(private fb: FormBuilder,private apiService:ApiService){}
    ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -20,27 +24,7 @@ export class TempAdminComponent implements OnInit{
       password: ['', Validators.required],  // Password is required
     });
    }
-   /*
-   {
-    "login": "navrangpura",
-    "password": "navrangpura$",
-    "prant": "ગુજરાત ",
-    "taluka": {
-        "talukaName": "નવરંગપુરા",
-        "talukaId": "67591d19f952504ab473eff9",
-        "jillaId": "675913bef952504ab473eff2"
-    },
-    "jilla": {
-        "jillaName": "પાલડી",
-        "jillaId": "675913bef952504ab473eff2",
-        "vibhagId": "675912b3f952504ab473efe2"
-    },
-    "vibhag": {
-        "vibhagName": "કર્ણાવતી પશ્ચિમ",
-        "vibhagId": "675912b3f952504ab473efe2"
-    }
-}
-   */
+  
    onSubmit() {
     if (this.userForm.valid) {
       const formData = this.userForm.value;
@@ -52,8 +36,25 @@ export class TempAdminComponent implements OnInit{
       formData.authorities = ["SDARSHAN"],
       this.apiService.postData('api/register',formData).subscribe((res)=>{
         console.log(res)
+        this.showSnackBar = true;
+        this.snackbarColour="success";
+        this.msg="યુઝર સફળતાપૂર્વક રજીસ્ટર થઈ ગયું";
+        this.snackTimeOut();
+        this.userForm.reset();
+      },(err)=>{
+        this.showSnackBar = true;
+        this.msg="ફરી પ્રયત્ન કરો અથવા એડમીન નો  સંપર્ક કરો ";
+        this.snackbarColour="error";
+        this.snackTimeOut();
+        console.log(err)
       })    } else {
       console.log('Form is invalid');  // Handle invalid form
     }
+  }
+  snackTimeOut() {
+    setTimeout(() => {
+      this.showSnackBar = null;
+      console.log(this.showSnackBar);
+    }, 3000);
   }
 }
