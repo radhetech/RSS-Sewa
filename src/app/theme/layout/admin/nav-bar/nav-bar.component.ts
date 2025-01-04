@@ -23,9 +23,12 @@ export class NavBarComponent {
     this.collapseStyle = this.menuClass ? 'block' : 'none';
   }
   logout(){
-    this.route.navigate(['/login'])
+    this.route.navigate(['/login']);
   }
   testFn(){
-    window.history.back();
+    if(this.route.url!=='/home/dashboard'){
+      window.history.back();
+    }
+   
   }
 }
