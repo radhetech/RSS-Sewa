@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DarshanCompletedComponent } from 'src/app/darshan-completed/darshan-completed.component';
 import { ApiService } from 'src/app/services/api.service';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
@@ -8,7 +9,7 @@ import { SnackbarComponent } from 'src/app/theme/shared/components/notification/
 @Component({
   selector: 'app-temp-admin',
   standalone: true,
-  imports: [SnackbarComponent, CommonModule,CardComponent,ReactiveFormsModule],
+  imports: [SnackbarComponent,DarshanCompletedComponent, CommonModule,CardComponent,ReactiveFormsModule],
   templateUrl: './temp-admin.component.html',
   styleUrl: './temp-admin.component.scss'
 })

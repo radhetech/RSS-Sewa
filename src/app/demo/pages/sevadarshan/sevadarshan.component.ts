@@ -23,7 +23,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   dynamicForm: FormGroup;
   talukaList:any = [];
     vastiList:any = [];
-  selectedYear:any=2024;
+  selectedYear:any=2025;
   isCollapsed = true;
   multiCollapsed1 = true;
   multiCollapsed2 = true;
@@ -340,9 +340,9 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
           this.showSubcategories[item.category][subcategory.name] = false;
         });
       });
-     if(this.selectedYear!=''){
-        this.getData();
-     }
+    //  if(this.selectedYear!=''){
+    //     this.getData();
+    //  }
       this.userData = this.apiService.getUserData();
       this.selectedJilla = this.userData.jilla.jillaName;
       this.apiService.getData(`${this.talukaUrl}/${this.userData.jilla.jillaId}`).subscribe({next:(res:any)=>{
@@ -350,11 +350,11 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
        }, error:()=>{}})
       //this.setFormData(this.data);
     }
-    getData(){
-      this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
-        this.setFormData(res[0])
-       })
-    }
+    // getData(){
+    //   this.apiService.getData(`api/getSevaKarya/${this.selectedVasti}/${this.selectedYear}`).subscribe((res:any)=>{
+    //     this.setFormData(res[0])
+    //    })
+    // }
     onFileSelected(event: any, subcategory: any, item: any) {
       this.selectedFile = event.target.files[0];
       this.onUpload(subcategory.name, item.category); 
@@ -389,11 +389,12 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
        const selectedVastiId = e.target.value;
     
         if (selectedVastiId) {
-          this.apiService.getData(`api/getSevaDarshan/${this.userData?.vibhag?.vibhagId}/2024?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
+          this.apiService.getData(`api/getSevaDarshan/${this.userData?.vibhag?.vibhagId}/2025?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
             if(res.length){
-              this.setFormData(res[0]);
-              this.formId = res[0]?.id;
-              this.patchFormValues(res[0]);
+              this.setFormData(res[res.length-1]);
+              this.formId = res[res.length-1]?.id;
+              this.patchFormValues(res[res.length-1]);
+              this.adminForm.get('reportingPerson').setValue(res[res.length-1].reportingPerson)
             }
           }, (error) => {
             console.error('Error during API call:', error);
@@ -540,12 +541,22 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         this.showSnackBar = true;
         this.snackbarColour = 'success';
         this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
+         this.dynamicForm.reset();
+        this.adminForm.setValue({
+          taluka: '',
+          vasti: '',
+          reportingPerson: ''
+        });
+        this.adminForm.reset();
+        setTimeout(()=>{
+          window.location.reload()
+        },1000); // Reload the page after successful post
       },(err)=>{
         this.showSnackBar = true;
         this.snackbarColour = 'error';
         this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       })
-      this.dynamicForm.reset();
+      
       this.snackTimeOut();
       // Call API to submit the data
       // this.apiService.submitData(this.dynamicForm.value).subscribe(...);
@@ -560,7 +571,7 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
     manageYear(event:any){
       this.dynamicForm.reset();
       this.selectedYear = event.target.value;
-      this.getData();
+      // this.getData();
     }
 
   

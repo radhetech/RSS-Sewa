@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xl-12">
+        <app-card [cardTitle]="cardTitle" [options]="false" blockClass="table-border-style">
+          <div class="table-responsive font-16">
+            <table class="table table-columned">
+              <thead>
+                <tr>
+                  <th>ક્રમાંક</th>
+                  <th>સેવાદર્શન કર્તા નું નામ  </th>
+                 <th>તારીખ </th>
+                 <th> વિગત </th>
+                  <!--  <th>जिल्ला / भाग </th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let list of list; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{list.reportingPerson}}</td>
+                  <td>{{list.createdDate}}</td>
+                  <td> In progress.</td>
+                  <!--<td>{{pravasi.jilla}}</td> -->
+              </tbody>
+            </table>
+          </div>
+        </app-card>
+      </div>
+    </div>

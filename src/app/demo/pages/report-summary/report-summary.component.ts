@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-report-summary',
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './report-summary.component.html',
   styleUrl: './report-summary.component.scss'
 })
-export class ReportSummaryComponent implements OnInit {
+export class ReportSummaryComponent implements OnInit, OnDestroy {
   isOptionSelected: boolean = false;
   isDetailedSummary: boolean = false;
   isMahanagar: boolean = false;
@@ -22,18 +23,24 @@ export class ReportSummaryComponent implements OnInit {
  vibhagList:any = [];
   // @Input() jillaList!: any[];
  constructor(private apiService:ApiService){}
-ngOnInit() {
+private subscriptions: Subscription = new Subscription();
 
+ngOnInit() {
+  this.subscriptions.add(
     this.apiService.getData(this.vibhagUrl).subscribe({
       next: (res: any) => {
         console.log(res);
         this.vibhagList = res;
-       
       },
       error: () => {},
-   
     })
+  );
 }
+
+ngOnDestroy(): void {
+  this.subscriptions.unsubscribe();
+}
+
   vibhagChange(e: any) {
     if (e.target.value === '') {
       this.isOptionSelected = false;

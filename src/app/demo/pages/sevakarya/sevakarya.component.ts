@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { SharedModule } from '../../../theme/shared/shared.module';
 import { ApiService } from 'src/app/services/api.service';
 import { valueSelect } from 'src/app/services/valueSelect.service';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sevakarya',
@@ -14,7 +15,7 @@ import { SnackbarComponent } from 'src/app/theme/shared/components/notification/
   templateUrl: './sevakarya.component.html',
   styleUrl: './sevakarya.component.scss'
 })
-export class SevakaryaComponent implements OnInit {
+export class SevakaryaComponent implements OnInit, OnDestroy {
   snackbarColour:string = ''
   msg:any= '';
   showSnackBar:boolean=false;
@@ -27,6 +28,7 @@ export class SevakaryaComponent implements OnInit {
   multiCollapsed2 = true;
   formId:string="";
   loremText ="test";
+  private subscription: Subscription;
     keys = [
       {
         catName:'શિક્ષા',
@@ -331,7 +333,7 @@ export class SevakaryaComponent implements OnInit {
         });
       });
       this.userData = this.valSelService.getUserData();
-     this.valSelService.getCurrentVasti().subscribe((res)=>{
+     this.subscription = this.valSelService.getCurrentVasti().subscribe((res)=>{
         this.selectedVasti = res;
         this.getData();
     })
@@ -429,5 +431,9 @@ export class SevakaryaComponent implements OnInit {
       this.dynamicForm.patchValue(data);
     }
   
-
+    ngOnDestroy(): void {
+      if (this.subscription) {
+        this.subscription.unsubscribe();
+      }
+    }
 }

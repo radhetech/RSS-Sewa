@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { valueSelect } from '../../../services/valueSelect.service';
 import { ApiService } from '../../../services/api.service';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-shakhavrut',
   standalone: true,
@@ -40,6 +42,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   ];
   isSanskar1Open = false;
   isSanskar2Open = false;
+  private subscriptions: Subscription = new Subscription();
   constructor(private valueSel: valueSelect, private _apiService: ApiService,private cdr:ChangeDetectorRef,private fb: FormBuilder) {
     this.getLastFiveThursdays();
     this.dateForm = this.fb.group({
@@ -73,7 +76,7 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
   ngOnInit(): void {
     this.valueSel.manageShowShakha(true);
     this.valueSel.manageShakhaVrutFlag(true);
-    this.valueSel.getCurrentShakha().subscribe((res) => {
+    this.subscriptions.add(this.valueSel.getCurrentShakha().subscribe((res) => {
       this.formGroup.reset();
       this.dateForm.reset();
       if (res) {
@@ -85,8 +88,8 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
         this.isShakhaSelected = false;
       }
       this.cdr.detectChanges();
-    });
-    this.valueSel.getCurrentVasti().subscribe((res) => {
+    }));
+    this.subscriptions.add(this.valueSel.getCurrentVasti().subscribe((res) => {
       this.formGroup.reset();
       this.dateForm.reset();
       if (res != 'વસ્તી') {
@@ -97,11 +100,11 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
       } else {
         this.isVastiSelected = false;
       }
-    });
-    this.valueSel.currentVasti.asObservable().subscribe((res)=>{
+    }));
+    this.subscriptions.add(this.valueSel.currentVasti.asObservable().subscribe((res)=>{
       this.vrutVasti=res;
       console.log('komal--',res)
-    })
+    }))
     this.valueSel.manageShowShakha(true);
     // if(this.userData.role =='taluka-admin'){
     //   this.isTalukaAdmin = true;
@@ -262,7 +265,8 @@ export class ShakhavrutComponent implements OnInit , OnDestroy{
     }, 3000);
   }
   ngOnDestroy(): void {
-      this.valueSel.manageShakhaVrutFlag(false);
-      this.valueSel.manageShowShakha(false);
+    this.subscriptions.unsubscribe();
+    this.valueSel.manageShakhaVrutFlag(false);
+    this.valueSel.manageShowShakha(false);
   }
 }

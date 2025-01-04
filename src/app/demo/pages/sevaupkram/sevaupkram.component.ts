@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ApiService } from '../../../services/api.service';
 import { valueSelect } from '../../../services/valueSelect.service';
@@ -8,6 +8,8 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { SnackbarComponent } from 'src/app/theme/shared/components/notification/snackbar.component';
 import { HttpHeaders } from '@angular/common/http';
 import {saveAs} from 'file-saver';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-sevaupkram',
   standalone: true,
@@ -15,7 +17,7 @@ import {saveAs} from 'file-saver';
   templateUrl: './sevaupkram.component.html',
   styleUrl: './sevaupkram.component.scss'
 })
-export class SevaupkramComponent implements OnInit {
+export class SevaupkramComponent implements OnInit, OnDestroy {
   snackbarColour:string = ''
   msg:any= '';
   showSnackBar:boolean=false;
@@ -95,6 +97,8 @@ export class SevaupkramComponent implements OnInit {
   userData:any;
   selectedVasti:any;
   formId:string="";
+  private subscriptions: Subscription = new Subscription();
+
   constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {}
 
   ngOnInit(): void {
@@ -112,12 +116,12 @@ export class SevaupkramComponent implements OnInit {
       this.getData();
    }
     this.userData = this.valSelService.getUserData();
-   this.valSelService.getCurrentVasti().subscribe((res)=>{
+   this.subscriptions.add(this.valSelService.getCurrentVasti().subscribe((res)=>{
       this.selectedVasti = res;
       this.selectedMonth="";
       this.selectedYear="";
       this.dynamicForm.reset();
-  })
+  }))
     //this.setFormData(this.data);
   }
   getData(){
@@ -305,6 +309,10 @@ export class SevaupkramComponent implements OnInit {
   // Set form data from API response
   setFormData(data: any): void {
     this.dynamicForm.patchValue(data);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 }
 
