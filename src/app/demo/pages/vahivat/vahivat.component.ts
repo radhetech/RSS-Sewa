@@ -187,15 +187,19 @@ export class VahivatComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((res) => {
         this.vastiList.push(res);
+        this.showSnackBar = true;
+        this.snackbarColour = 'success';
+        this.msg = "સેવા વસ્તી સફળતાપૂર્વક ઉમેરાઈ ગઈ છે";
       }, (err) => {
         this.showSnackBar = true;
         this.snackbarColour = 'error';
-        this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
+        this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       });
 
     this.adminForm.get('vasti').reset();
     this.adminForm.get('newVasti').reset();
     this.addVastiFlag = false;
+    this.snackTimeOut();
   }
 
   addVasti2(val: any) {
@@ -209,12 +213,15 @@ export class VahivatComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((res) => {
         this.vastiList.push(res);
+        this.showSnackBar = true;
+        this.snackbarColour = 'success';
+        this.msg = 'સેવા વસ્તી  સફળતાપૂર્વક ઉમેરાઈ ગઈ છે';
       }, (err) => {
         this.showSnackBar = true;
         this.snackbarColour = 'error';
-        this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
+        this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       });
-
+    this.snackTimeOut();
     this.talukaAdminForm.get('vasti').reset();
     this.talukaAdminForm.get('newVasti').reset();
     this.addVastiFlag = false;
@@ -234,6 +241,9 @@ export class VahivatComponent implements OnInit, OnDestroy {
         this.ApiService.getData(`${this.shakhaUrl}/${this.adminForm.controls['vasti'].value}`)
           .pipe(takeUntil(this.destroy$))
           .subscribe((res: any) => {
+            this.showSnackBar = true;
+            this.snackbarColour = 'success';
+            this.msg = "શાખા સફળતાપૂર્વક ઉમેરાઈ ગઈ છે";
             this.shakhaList = res;
             this.adminForm.controls['shakha'].setValue('');
           });
@@ -242,8 +252,9 @@ export class VahivatComponent implements OnInit, OnDestroy {
       }, (err) => {
         this.showSnackBar = true;
         this.snackbarColour = 'error';
-        this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
+        this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       });
+      this.snackTimeOut();
 
     this.adminForm.controls['shakha'].setValue('');
     this.adminForm.controls['shakha'].reset();
@@ -266,6 +277,9 @@ export class VahivatComponent implements OnInit, OnDestroy {
           .pipe(takeUntil(this.destroy$))
           .subscribe({
             next: (res: any) => {
+              this.showSnackBar = true;
+              this.snackbarColour = 'success';
+              this.msg = "શાખા સફળતાપૂર્વક ઉમેરાઈ ગઈ છે";
               this.shakhaList = res;
             }
           });
@@ -274,9 +288,9 @@ export class VahivatComponent implements OnInit, OnDestroy {
       }, (err) => {
         this.showSnackBar = true;
         this.snackbarColour = 'error';
-        this.msg = 'સફળતાપૂર્વક સેવાદર્શન વૃત સબમિટ થઈ ગયું છે.';
+        this.msg = 'ફરી  પ્રયત્ન કરો અથવા એડમીન ને સંપર્ક કરો.';
       });
-
+   this.snackTimeOut();
     this.talukaAdminForm.controls['shakha'].setValue('');
     this.talukaAdminForm.controls['shakha'].reset();
     this.talukaAdminForm.controls['newShakha'].reset();
@@ -291,5 +305,11 @@ export class VahivatComponent implements OnInit, OnDestroy {
 
   onSubmit(formData: any) {
     console.log(formData.value);
+  }
+  snackTimeOut() {
+    setTimeout(() => {
+      this.showSnackBar = null;
+      console.log(this.showSnackBar);
+    }, 3000);
   }
 }
