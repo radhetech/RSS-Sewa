@@ -25,7 +25,7 @@ import { NavigationItem } from './theme/layout/admin/navigation/navigation';
 import { ToggleFullScreenDirective } from './theme/shared/components/full-screen/toggle-full-screen';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { I1 } from './services/interceptor';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +49,10 @@ import { I1 } from './services/interceptor';
     provide: HTTP_INTERCEPTORS,
     useClass: I1,
     multi: true
-}],
+},{ 
+  provide: LocationStrategy, 
+  useClass: HashLocationStrategy
+ }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
