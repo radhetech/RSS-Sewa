@@ -53,7 +53,10 @@
         <div ngbAccordion>
           <div ngbAccordionItem [collapsed]="true">
             <h2 ngbAccordionHeader>
-              <button ngbAccordionButton>{{ item.catName }}</button>
+              <button ngbAccordionButton  [ngClass]="{
+                'success': isSubcategoryFilled(item),
+                'info': !isSubcategoryFilled(item)
+            }">{{ item.catName }}</button>
             </h2>
             <div ngbAccordionCollapse>
               <div

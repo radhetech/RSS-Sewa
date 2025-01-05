@@ -382,7 +382,20 @@ export class SevakaryaComponent implements OnInit, OnDestroy {
       this.showSubcategories[category][subcategory] =
         !this.showSubcategories[category][subcategory];
     }
+    isSubcategoryFilled(item: any): boolean {
+      for (const subcategory of item.subcategories) {
+        const subcategoryGroup = this.dynamicForm.get(`${item.category}.${subcategory.name}`) as FormGroup;
+        const men = subcategoryGroup?.get('men')?.value;
+        const women = subcategoryGroup?.get('women')?.value;
+        const others = subcategoryGroup?.get('others')?.value;
   
+        // Check if any field has a value
+        if (men || women || others) {
+          return true;
+        }
+      }
+      return false;
+    }
     // On form submit
     onSubmit(): void {
       

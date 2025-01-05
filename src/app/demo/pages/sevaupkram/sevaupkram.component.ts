@@ -289,6 +289,20 @@ export class SevaupkramComponent implements OnInit, OnDestroy {
     // Call API to submit the data
     // this.apiService.submitData(this.dynamicForm.value).subscribe(...);
   }
+  isSubcategoryFilled(item: any): boolean {
+    for (const subcategory of item.subcategories) {
+      const subcategoryGroup = this.dynamicForm.get(`${item.category}.${subcategory.name}`) as FormGroup;
+      const men = subcategoryGroup?.get('men')?.value;
+      const women = subcategoryGroup?.get('women')?.value;
+      const others = subcategoryGroup?.get('others')?.value;
+
+      // Check if any field has a value
+      if (men || women || others) {
+        return true;
+      }
+    }
+    return false;
+  }
   snackTimeOut() {
     setTimeout(() => {
       this.showSnackBar = null;

@@ -26,68 +26,51 @@
 </div>
 </div>
 
-<form  *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
-    <div *ngFor="let item of keys">
-    <div [formGroupName]="item.category">
-    <div ngbAccordion>
-      <div ngbAccordionItem [collapsed]="true">
-        <h2 ngbAccordionHeader>
-          <button ngbAccordionButton>{{ item.catName }}</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
-                <div class="card mb-0 font-16">
-                    <div class="card-header ptb-10">
-                        <a class="card-link" >
-                            {{ subcategory.label }}
-                        </a>
-                      
-                    </div>
-                    <div class="card-body ptb-10">
-                        <div class="row ptb-10">
-                            <div class="col-md-4 mb-1">
-                            <label for="">પુરુષ</label>
-                            <input type="number" class="form-control" formControlName="men" placeholder="પુરુષ" />
-                            </div>
-                            <div class="col-md-4 mb-1">
-                                <label for="">મહિલા</label>
-                            <input type="number" class="form-control" formControlName="women" placeholder="મહિલા" />
-                            </div>
-                            <div class="col-md-4 mb-1">
-                                <label for="">અન્ય</label>
-                            <input type="number" class="form-control" formControlName="others" placeholder="અન્ય" />
-                            </div>
-                            </div>
+<form *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let item of keys">
+      <div [formGroupName]="item.category">
+          <div ngbAccordion>
+              <div ngbAccordionItem [collapsed]="true">
+                  <h2 ngbAccordionHeader >
+                      <button ngbAccordionButton [ngClass]="{
+                        'success': isSubcategoryFilled(item),
+                        'info': !isSubcategoryFilled(item)
+                    }">{{ item.catName }}</button>
+                  </h2>
+                  <div ngbAccordionCollapse>
+                      <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+                          <div class="card mb-0 font-16">
+                              <div class="card-header ptb-10">
+                                  <a class="card-link">{{ subcategory.label }}</a>
+                              </div>
+                              <div class="card-body ptb-10">
+                                  <div class="row ptb-10">
+                                      <div class="col-md-4 mb-1">
+                                          <label for="">પુરુષ</label>
+                                          <input type="number" class="form-control" formControlName="men" placeholder="પુરુષ" />
+                                      </div>
+                                      <div class="col-md-4 mb-1">
+                                          <label for="">મહિલા</label>
+                                          <input type="number" class="form-control" formControlName="women" placeholder="મહિલા" />
+                                      </div>
+                                      <div class="col-md-4 mb-1">
+                                          <label for="">અન્ય</label>
+                                          <input type="number" class="form-control" formControlName="others" placeholder="અન્ય" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                  
                   </div>
-                </div> 
-            <!-- <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
-                <div class="card mb-0">
-                    <div class="card-header">
-                        <a class="card-link" >
-                            {{ subcategory.label }}
-                        </a>
-                      
-                    </div>
-                  
-                  </div>
-                </div> -->
-        
-        </div>
+              </div>
+          </div>
       </div>
-      
-      
-    </div>
-  
-   
-</div>
-</div>
-<button type="submit" class="btn btn-primary submit-btn font-16" >
-    <i class="feather icon-thumbs-up"></i>
-    Submit
+  </div>
+  <button type="submit" class="btn btn-primary submit-btn font-16">
+      <i class="feather icon-thumbs-up"></i> Submit
   </button>
 </form>
+
 <app-snackbar [errorsmsg]="msg" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar>
 
 

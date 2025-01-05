@@ -561,7 +561,23 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       // Call API to submit the data
       // this.apiService.submitData(this.dynamicForm.value).subscribe(...);
     }
-  
+  // getFormVal(){
+  //   this.dynamicForm.controls()
+  // }
+  isSubcategoryFilled(item: any): boolean {
+    for (const subcategory of item.subcategories) {
+      const subcategoryGroup = this.dynamicForm.get(`${item.category}.${subcategory.name}`) as FormGroup;
+      const startDate = subcategoryGroup?.get('startDate')?.value;
+      const note = subcategoryGroup?.get('note')?.value;
+   
+
+      // Check if any field has a value
+      if (startDate || note ) {
+        return true;
+      }
+    }
+    return false;
+  }
     snackTimeOut() {
       setTimeout(() => {
         this.showSnackBar = null;
