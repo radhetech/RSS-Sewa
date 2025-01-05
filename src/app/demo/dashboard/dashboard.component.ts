@@ -147,5 +147,15 @@ export default class DashboardComponent implements OnInit {
        headerClass:'dashboard-card-header',
        blockClass:'dashboard-card-block',
     },
+    { id: 'darshanvrut',
+      title: 'સેવા દર્શન વૃત',
+      description: '',
+      design: 'col-md-3',
+      link:'/home/sevadarshan-vrut',
+       img:'../../../assets/images/Shikshan1.webp',
+       cardClass:'dashboard-card',
+       headerClass:'dashboard-card-header',
+       blockClass:'dashboard-card-block',
+    },
   ];
 }

@@ -77,6 +77,14 @@ const NavigationItems = [
         classes: 'nav-item'
       },
       {
+        id: 'darshanvrut',
+        title: 'સેવા દર્શન વૃત',
+        type: 'item',
+        url: '/home/sevadarshan-vrut',
+        icon: 'feather icon-book',
+        classes: 'nav-item'
+      },
+      {
         id: 'pravas-list',
         title: 'પ્રવાસ યાદી ',
         type: 'item',

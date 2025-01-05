@@ -17,6 +17,7 @@ import { NotFoundComponent } from './demo/pages/not-found/not-found.component';
 import { SevadarshanComponent } from './demo/pages/sevadarshan/sevadarshan.component';
 import { PravasListComponent } from './demo/pages/pravas-list/pravas-list.component';
 import { TempAdminComponent } from './demo/pages/temp-admin/temp-admin.component';
+import { DarshaVrutComponent } from './demo/pages/darsha-vrut/darsha-vrut.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,11 @@ const routes: Routes = [
       {
         path: 'sevadarshan',
         component: SevadarshanComponent,
+       
+      },
+      {
+        path: 'sevadarshan-vrut',
+        component: DarshaVrutComponent,
        
       },
       {
