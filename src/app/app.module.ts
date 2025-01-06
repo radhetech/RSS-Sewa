@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 // project import
 import { AppComponent } from './app.component';
 import { SharedModule } from './theme/shared/shared.module';
-import { GuestComponent } from './theme/layout/guest/guest.component';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import { NavBarComponent } from './theme/layout/admin/nav-bar/nav-bar.component';
@@ -22,14 +21,12 @@ import { NavGroupComponent } from './theme/layout/admin/navigation/nav-content/n
 import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/nav-item/nav-item.component';
 import { NavSearchComponent } from './theme/layout/admin/nav-bar/nav-left/nav-search/nav-search.component';
 import { NavigationItem } from './theme/layout/admin/navigation/navigation';
-import { ToggleFullScreenDirective } from './theme/shared/components/full-screen/toggle-full-screen';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { I1 } from './services/interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    GuestComponent,
     AdminComponent,
     ConfigurationComponent,
     NavBarComponent,
@@ -42,7 +39,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     NavGroupComponent,
     NavItemComponent,
     NavSearchComponent,
-    ToggleFullScreenDirective
+   
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, SharedModule, BrowserAnimationsModule],
   providers: [NavigationItem,{

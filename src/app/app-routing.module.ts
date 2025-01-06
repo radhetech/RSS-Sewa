@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
-import { GuestComponent } from './theme/layout/guest/guest.component';
 import { ShakhavrutComponent } from './demo/pages/shakhavrut/shakhavrut.component';
 import { SevakaryaComponent } from './demo/pages/sevakarya/sevakarya.component';
 import { UtsavvrutComponent } from './demo/pages/utsavvrut/utsavvrut.component';
