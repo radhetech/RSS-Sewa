@@ -43,7 +43,7 @@ export class NavContentComponent implements OnInit{
         })
       } else if(this.userRole=='JILLA'){
         this.navigation[0].children =  this.navigation[0].children.filter((item:any)=>{
-          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list' || item.id=='logout'  || item.id=='sevadarshan-vrut';
+          return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list' || item.id=='logout'  || item.id=='darshanvrut';
        })
       } else if(this.userRole=='ADMIN' || this.userRole=='PRANT'){
         return this.navigation[0].children;
