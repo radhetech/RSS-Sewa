@@ -1,1 +1,50 @@
-<p>darsha-vrut works!</p>
+<div class="row">
+    <div class="col-md-12" >
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'સેવા દર્શન વૃત', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
+            <!-- for all other user  -->
+            <!-- <div class="was-validated font-16" > -->
+                
+                <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="vibhag">વિભાગ:</label>
+                   
+                    <select [(ngModel)]="selectedVibhag" class="form-select" name="vibhag" (change)="vibhagChange($event)">
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let vibhag of vibhagList" [value]="vibhag.vibhagId">{{ vibhag.name }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="jilla">જીલ્લા:</label>
+                
+                    <select id="jilla" class="form-select" name="jilla" (change)="jillaChange($event)" >
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let jilla of jillaList" [value]="jilla.jillaId">{{ jilla.jillaName }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                   
+                   <!-- <button type="reset">Reset</button> -->
+                   <button type="submit" class="btn btn-primary submit-btn font-16 mt-20" (click)="onSubmit()">
+                    <i class="feather icon-thumbs-up"></i>
+                    Submit
+                  </button>
+                  <button type="button" class="btn btn-info submit-btn font-16 mt-20" (click)="exportToCsv()">Export to CSV</button>
+                <!-- <button type="button"  class="btn btn-info submit-btn font-16 mt-20" (click)="exportToPdf()">Export to PDF</button> -->
+                </div>
+               </div>
+                </app-card>
+                </div>
+                </div>
+<p> વિભાગ ના વૃત માટે ફક્ત વિભાગ પસંદ કરો અને સબમિટ કરો .</p>
+<div *ngIf="rowData.length">
+<ag-grid-angular
+  #agGrid
+  style="height: 500px;"
+  class="ag-theme-alpine dynamic-width"
+  [rowData]="rowData"
+  [columnDefs]="colDefs"
+  [pagination]="true"
+  [paginationPageSize]="paginationPageSize"
+  (gridReady)="onGridReady($event)">
+</ag-grid-angular>
+</div>

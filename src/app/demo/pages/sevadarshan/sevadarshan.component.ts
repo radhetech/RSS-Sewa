@@ -29,6 +29,8 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
   multiCollapsed2 = true;
   loremText ="test";
   formId:any;
+  talukaObj:any;
+  vastiObj:any;
   selectedFile: File;
   talukaUrl:string = "api/getTaluka";
     vastiUrl:string = "api/getSevaVasti";
@@ -376,6 +378,14 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         });
     }
     talukaChange(e){
+      this.talukaObj = {
+        talukaId:e.target.value
+      }
+      this.talukaList.forEach(element => {
+         if(element.talukaId==e.target.value){
+          this.talukaObj.talukaName = element.talukaName
+         }
+      });
       this.adminForm.get('vasti').setValue('');
       this.vastiList=[];
       this.apiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
@@ -384,11 +394,19 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
        //console.log(this.vastiList)
     }
     vastiChange(e) {
+     
       // Check if userData and vibhagId are valid
       // if (this.userData && this.userData.vibhag && this.userData.vibhag.vibhagId) {
        const selectedVastiId = e.target.value;
-    
         if (selectedVastiId) {
+          this.vastiObj={
+            sevaVastiId:selectedVastiId
+          }
+          this.vastiList.forEach(element => {
+            if(element.sevaVastiId==selectedVastiId){
+              this.vastiObj.sevaVastiName = element.sevaVastiName
+            }
+          });
           this.apiService.getData(`api/getSevaDarshan/${this.userData?.vibhag?.vibhagId}/2025?sevaVastiId=${selectedVastiId}`).subscribe((res: any) => {
             if(res.length){
               this.setFormData(res[res.length-1]);
@@ -528,9 +546,10 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       console.log('Form Value:', this.dynamicForm.value);
       const obj = {
         sevaVastiId:this.adminForm.value.vasti,
-        jillaId: this.userData.jilla.jillaId,
-        talukaId: this.adminForm.value.taluka,
-        vibhagId: this.userData.vibhag.vibhagId,
+        jilla: this.userData.jilla,
+        taluka: this.talukaObj,
+        sevaVasti:this.vastiObj,
+        vibhag: this.userData.vibhag,
         prant: this.userData.prant,
         year: this.selectedYear,
         reportingPerson: this.adminForm.value.reportingPerson,

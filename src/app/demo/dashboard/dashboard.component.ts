@@ -33,7 +33,7 @@ export default class DashboardComponent implements OnInit {
       } else if(userRole=='JILLA'){
    
         this.navList =  this.navList.filter((item:any)=>{
-         return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list';
+         return  item.id=='jilla' || item.id=='aheval' || item.id=='tempadmin'|| item.id=='pravas-list' || item.id=='darshanvrut';
        })
       } else if(userRole=='ADMIN' || userRole=='PRANT'){
            this.navList = this.navList;
