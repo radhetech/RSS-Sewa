@@ -1,1 +1,27 @@
-<p>userlist works!</p>
+<div class="row" *ngIf="list.length">
+    <div class="col-xl-12">
+        <app-card [cardTitle]="{title: 'સેવાદર્શક', description: ''}"[options]="false" [headerClass]="'panel-header'" blockClass="table-border-style">
+            <div class="table-responsive font-16">
+                <table class="table table-columned">
+                    <thead>
+                        <tr>
+                            <th>ક્રમાંક</th>
+                            <th>સેવાદર્શક</th>
+                            <th>જીલ્લા</th>
+                            <th>તારીખ</th>
+                            <th> દ્વારા બનાવવામાં આવેલ છે </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of list; let i = index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{user.login}}</td>
+                            <td>{{user.jilla.jillaName}}</td>
+                            <td>{{user.createdDate}}</td>
+                            <td>{{user.createdBy}}</td>
+                    </tbody>
+                </table>
+            </div>
+        </app-card>
+    </div>
+</div>

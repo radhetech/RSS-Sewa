@@ -50,8 +50,8 @@ export default class AuthSigninComponent implements OnInit {
     onFormSubmitted(res: NgForm) {
       console.log(res.value)
       this.apiService.postData(this.authenticateUrl, {
-        "password": res.value.password,
-        "username": res.value.username,
+        "password": res.value.password.toLowerCase(),
+        "username": res.value.username.toLowerCase(),
         "rememberMe": "false"
       }
       ).pipe(
@@ -74,10 +74,11 @@ export default class AuthSigninComponent implements OnInit {
         this.AuthenticationService.isUserLoginSub.next(res)
         this.loginerr = 'સેવા વિભાગમાં આપનું સ્વાગત છે';
         this.snackTimeOut();
+        this._router.navigate(['/home/dashboard']);
         setTimeout(() => {
-          this._router.navigate(['/home/dashboard']);
-        }, 1000);
-     
+          window.location.reload();
+        }, 500);
+       
       },((err)=>{
         this.snackbarColour = 'error';
         this.loginerr = 'સાચો યુઝર આઇડી/પાસવર્ડ નાખો';
