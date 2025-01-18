@@ -131,7 +131,15 @@ const NavigationItems = [
         url: '/login',
         icon: 'feather icon-log-out',
         classes: 'nav-item'
-      }
+      },
+      // {
+      //   id: 'manage-user',
+      //   title: 'Manage User',
+      //   type: 'item',
+      //   url: '/home/manage-user',
+      //   icon: 'feather icon-log-out',
+      //   classes: 'nav-item'
+      // }
     ]
   }
 ];

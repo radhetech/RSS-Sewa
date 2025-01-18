@@ -390,13 +390,13 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
       this.vastiList=[];
       this.apiService.getData(`${this.vastiUrl}/${e.target.value}`).subscribe({next:(res:any)=>{
         this.vastiList = res;
+        if(!res.length){
+            alert('સેવા દર્શન વૃત્ત  ભરવા માટે સેવા વસ્તી પસંદ કરવી ફરજિયાત છે.તાલુકા સેવા પ્રમુખ નો સંપર્ક કરીને સેવા વસ્તી ઉમેરાવો.')
+        }
        },error:()=>{}})
-       //console.log(this.vastiList)
+       
     }
     vastiChange(e) {
-     
-      // Check if userData and vibhagId are valid
-      // if (this.userData && this.userData.vibhag && this.userData.vibhag.vibhagId) {
        const selectedVastiId = e.target.value;
         if (selectedVastiId) {
           this.vastiObj={

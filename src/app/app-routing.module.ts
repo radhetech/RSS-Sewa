@@ -17,6 +17,7 @@ import { SevadarshanComponent } from './demo/pages/sevadarshan/sevadarshan.compo
 import { PravasListComponent } from './demo/pages/pravas-list/pravas-list.component';
 import { TempAdminComponent } from './demo/pages/temp-admin/temp-admin.component';
 import { DarshaVrutComponent } from './demo/pages/darsha-vrut/darsha-vrut.component';
+import { ManageUserComponent } from './demo/pages/manage-user/manage-user.component';
 
 const routes: Routes = [
   {
@@ -89,7 +90,12 @@ const routes: Routes = [
         path: 'report',
         component: ReportComponent,
          
-      }
+      },
+      // {
+      //   path: 'manage-user',
+      //   component: ManageUserComponent,
+         
+      // }
     ]
   },
   {

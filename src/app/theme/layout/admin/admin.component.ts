@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit{
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Check if the route is 'special', and set the component visibility accordingly
-      if (event.url === '/home/dashboard' || event.url === '/home/report' || event.url === '/home/pravaslist' || event.url ==='/home/vahivat' || event.url ==='/login' || event.url === '/home/jillavrut' || event.url === '/home/sevadarshan' || event.url === '/home/tempadmin'  || event.url === '/home/sevadarshan-vrut') {
+      if (event.url === '/home/dashboard' || event.url === '/home/report' || event.url === '/home/pravaslist' || event.url ==='/home/vahivat' || event.url ==='/login' || event.url === '/home/jillavrut' || event.url === '/home/sevadarshan' || event.url === '/home/tempadmin'  || event.url === '/home/sevadarshan-vrut' || event.url === '/home/manage-user') {
         this.showSpecialComponent = false;
       } else {
         this.showSpecialComponent = true;
