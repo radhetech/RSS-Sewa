@@ -1,23 +1,40 @@
 <div class="row">
-<div class="col-sm-12">
-   <app-card [hidHeader]="false" [cardTitle]="{title: 'અહેવાલ', description: ''}" [cardClass]="'card'" [headerClass]="'panel-header'">
-  
-    <div class="was-validated font-16">
-       
+  <div class="col-sm-12">
+    <app-card [hidHeader]="false" [cardTitle]="{ title: 'અહેવાલ', description: '' }" [cardClass]="'card'" [headerClass]="'panel-header'">
+      <div class="was-validated font-16">
         <div class="mb-3">
-            <label for="reportType">वृत्त का प्रकार:</label>
-            <select id="reportType" class="form-select"  (change)="selectReportType($event)">
-              <option value="" selected>-- पसंद कीजिए --</option>
-              <option value="summary"> विभाग/प्रांत का संकलन पत्रक</option>
-              <option value="detail">प्रांत का संकलन पत्रक</option>
-              <option value="statistics">आयाम सह वृत्त</option>
-            </select>
-            </div>
-            </div>
-            </app-card>
-            </div>
+          <label for="reportType">वृत्त का प्रकार:</label>
+          <select id="reportType" required class="form-select" (change)="selectReportType($event)">
+            <option value="" selected>-- पसंद कीजिए --</option>
+            <option value="summary">विभाग/प्रांत का संकलन पत्रक</option>
+            <option value="detail">प्रांत का संकलन पत्रक</option>
+            <option value="statistics">आयाम सह वृत्त</option>
+          </select>
         </div>
-
+        <div class="row" *ngIf="reportType === 'statistics'">
+          <div class="mb-3 col-md-4">
+            <label>મહિનો</label>
+            <div>
+              <select class="form-select" required aria-label="select month" (change)="selectMonth($event)" [ngModel]="selectedMonth">
+                <option value="" selected>પસંદ કરો</option>
+                <option [value]="month" *ngFor="let month of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">{{ month }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 col-md-4">
+            <label>વર્ષ</label>
+            <div>
+              <select class="form-select" required aria-label="select year" (change)="selectYear($event)" [ngModel]="selectedYear">
+                <option value="" selected>પસંદ કરો</option>
+                <option [value]="year" *ngFor="let year of [2023, 2024, 2025]">{{ year }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
 
 <!-- Summary Component -->
 <ng-container *ngIf="reportType === 'summary'">
@@ -30,6 +47,6 @@
 </ng-container>
 
 <!-- Department Component -->
-<ng-container *ngIf="reportType === 'statistics'">
-  <app-report-statistics></app-report-statistics>
+<ng-container *ngIf="reportType === 'statistics' && selectedYear.length">
+  <app-report-statistics [selectedYear]="selectedYear" [selectedMonth]="selectedMonth"></app-report-statistics>
 </ng-container>

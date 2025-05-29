@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AgGridAngular } from 'ag-grid-angular';
-import type { ColDef } from 'ag-grid-community';
+import type { CellClickedEvent, ColDef } from 'ag-grid-community';
 import { ModuleRegistry } from 'ag-grid-community';
 import { ClientSideRowModelModule } from 'ag-grid-community';
 import { CsvExportModule } from 'ag-grid-community';
@@ -15,12 +15,11 @@ import autoTable from 'jspdf-autotable';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-darsha-vrut',
   templateUrl: './darsha-vrut.component.html',
   standalone: true,
-  imports: [AgGridAngular, FormsModule, CommonModule,CardComponent],
+  imports: [AgGridAngular, FormsModule, CommonModule, CardComponent],
   styleUrls: ['./darsha-vrut.component.scss']
 })
 export class DarshaVrutComponent implements OnInit {
@@ -32,11 +31,13 @@ export class DarshaVrutComponent implements OnInit {
   selectedJilla: string = '';
   vibhagList: any = [];
   jillaList: any = [];
-  talukaList:any=[];
+  talukaList: any = [];
   private destroy$ = new Subject<void>();
 
-  constructor(private apiService: ApiService, private router: Router){
-  }
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.rowData = [];
@@ -61,78 +62,78 @@ export class DarshaVrutComponent implements OnInit {
       { field: 'talukaName', width: columnWidth },
       { field: 'jillaName', width: columnWidth },
       { field: 'vibhagName', width: columnWidth }
-     
-    
-      
     ];
 
-    this.apiService.getData('api/getVibhag')
+    this.apiService
+      .getData('api/getVibhag')
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any) => {
           this.vibhagList = res;
-          console.log(this.vibhagList)
+          console.log(this.vibhagList);
         },
-        error: () => { }
+        error: () => {}
       });
   }
 
   onGridReady(params: any) {
-    console.log(params)
+    console.log(params);
     // this.adjustGridHeight(params.api);
   }
 
   vibhagChange(e: any) {
     console.log(e.target.value);
     this.jillaList = [];
-    this.selectedJilla='';
+    this.selectedJilla = '';
 
-    this.apiService.getData(`api/getJilla/${e.target.value}`)
+    this.apiService
+      .getData(`api/getJilla/${e.target.value}`)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any) => {
-
           this.jillaList = res;
         },
-        error: () => { }
+        error: () => {}
       });
   }
 
   jillaChange(e: any) {
     if (e.target.value) {
       this.selectedJilla = e.target.value;
-      this.apiService.getData(`api/getTaluka/${e.target.value}`)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (res: any) => {
-          this.talukaList = res;
-        },
-        error: () => { }
-      });
+      this.apiService
+        .getData(`api/getTaluka/${e.target.value}`)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (res: any) => {
+            this.talukaList = res;
+          },
+          error: () => {}
+        });
     }
   }
 
   onSubmit() {
     const jillaIdParam = this.selectedJilla ? `?jillaId=${this.selectedJilla}` : '';
-    this.apiService.getData(`api/getSevaDarshan/${this.selectedVibhag}/2025${jillaIdParam}`)
+    this.apiService
+      .getData(`api/getSevaDarshan/${this.selectedVibhag}/2025${jillaIdParam}`)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any) => {
-          if(res.length){
-        this.rowData = res.map((item: any) => {
-          return {
-            ...item,
-            jillaName: item.jilla.jillaName,
-            vibhagName: item.vibhag.vibhagName,
-            talukaName: item.taluka.talukaName,
-            sevaVastiName: item.sevaVasti.sevaVastiName
-          };
-        });
-        }else{
-           alert('No Records Found')
-        }
-      },
-        error: () => { }
+          if (res.length) {
+            this.rowData = res.map((item: any) => {
+              return {
+                ...item,
+                jillaName: item.jilla.jillaName,
+                vibhagName: item.vibhag.vibhagName,
+                talukaName: item.taluka.talukaName,
+                sevaVastiName: item.sevaVasti.sevaVastiName
+              };
+            });
+          } else {
+            alert('No Records Found');
+          }
+        },
+        error: () => {}
       });
   }
 
@@ -143,13 +144,22 @@ export class DarshaVrutComponent implements OnInit {
   exportToPdf() {
     const doc = new jsPDF();
     autoTable(doc, {
-      head: [this.colDefs.map(col => col.field)],
-      body: this.rowData.map(row => this.colDefs.map(col => row[col.field]))
+      head: [this.colDefs.map((col) => col.field)],
+      body: this.rowData.map((row) => this.colDefs.map((col) => row[col.field]))
     });
     doc.save('table.pdf');
   }
 
   viewDetails(data: any) {
     this.router.navigate(['/detail', data.id]);
+  }
+
+  onDetailReport(event: CellClickedEvent) {
+    this.router.navigate(['home', 'sevadarshan-vrut', event.data.year], {
+      queryParams: {
+        vibhagId: this.selectedVibhag,
+        sevaVastiId: event.data.sevaVasti.sevaVastiId
+      }
+    });
   }
 }

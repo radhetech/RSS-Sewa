@@ -414,6 +414,9 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
               this.patchFormValues(res[res.length-1]);
               this.adminForm.get('reportingPerson').setValue(res[res.length-1].reportingPerson)
             }
+            else {
+              this.formId = null;
+            }
           }, (error) => {
             console.error('Error during API call:', error);
             // Handle error case appropriately, maybe show an error message to the user
@@ -554,6 +557,10 @@ export class SevadarshanComponent implements OnInit { snackbarColour:string = ''
         year: this.selectedYear,
         reportingPerson: this.adminForm.value.reportingPerson,
         ...this.dynamicForm.value
+      }
+
+      if(this.formId != undefined || this.formId != null) {
+        obj['id'] = this.formId;
       }
   
       this.apiService.postData('api/sevaDarshan',obj,{ responseType: 'text' }).subscribe((res:any)=>{

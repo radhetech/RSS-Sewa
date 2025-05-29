@@ -6,11 +6,12 @@ import { ReportStatisticsComponent } from '../report-statistics/report-statistic
 import { ReportSummaryComponent } from '../report-summary/report-summary.component';
 import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 import { valueSelect } from 'src/app/services/valueSelect.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-report',
   standalone: true,
-  imports: [CommonModule,ReportDetailComponent,ReportStatisticsComponent,ReportSummaryComponent,CardComponent],
+  imports: [CommonModule,ReportDetailComponent,ReportStatisticsComponent,ReportSummaryComponent,CardComponent, FormsModule],
   templateUrl: './report.component.html',
   styleUrl: './report.component.scss'
 })
@@ -22,6 +23,8 @@ export class ReportComponent implements OnInit {
   jillaList: Array<any> = [];
   reportType!: string;
   selectedVibhag: any;
+  selectedMonth: any = "";
+  selectedYear: any = "";
   vibhagUrl:string = "api/getVibhag";
   jillaUrl:string = "api/getJilla";
   ngOnInit(): void {
@@ -52,6 +55,16 @@ export class ReportComponent implements OnInit {
 
   selectReportType(e: any) {
     this.reportType = e.target.value;
+    this.selectedYear = '';
+    this.selectedMonth = '';
+  }
+
+  selectMonth(e: any) {
+    this.selectedMonth = e.target.value;
+  }
+
+  selectYear(e: any) {
+    this.selectedYear = e.target.value;
   }
 }
 

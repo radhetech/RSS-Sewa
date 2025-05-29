@@ -18,6 +18,7 @@ import { PravasListComponent } from './demo/pages/pravas-list/pravas-list.compon
 import { TempAdminComponent } from './demo/pages/temp-admin/temp-admin.component';
 import { DarshaVrutComponent } from './demo/pages/darsha-vrut/darsha-vrut.component';
 import { ManageUserComponent } from './demo/pages/manage-user/manage-user.component';
+import { DarshanVrutByVastiComponent } from './demo/pages/darshan-vrut-by-vasti/darshan-vrut-by-vasti.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
         component: DarshaVrutComponent,
        
       },
+        {
+          path: 'sevadarshan-vrut/:year',
+          component: DarshanVrutByVastiComponent
+        },
       {
         path: 'pravaslist',
         component: PravasListComponent,
