@@ -1,0 +1,886 @@
+<h1>Darshan Vrut Report by {{ rowData[rowData.length - 1]?.reportingPerson }}</h1>
+<h3>as of {{ rowData[rowData.length - 1]?.year }}</h3>
+
+<div hidden>
+  {{ rowData | json }}
+</div>
+<div class="container table-responsive py-5" *ngIf="rowData">
+ <ag-grid-angular
+    #agGrid
+    style="height: 110px"
+    class="ag-theme-alpine dynamic-width"
+    [rowData]="rowData"
+    [columnDefs]="locationColDefs"
+  ></ag-grid-angular>
+  <!--
+     MARK: Shiksha Table
+    -->
+  <table class="table table-bordered table-hover" *ngIf="showShikshaReport">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="5"><h1>शिक्षा</h1></th>
+      </tr>
+      <tr>
+        <th>क्र.</th>
+        <th>सेवा कार्य प्रकार</th>
+        <th>तारिक</th>
+        <th>नोट</th>
+        <th>फोटो</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.sanskarKendra?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">संस्कार केंद्र/बाल गुरुकुलम्</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.sanskarKendra?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.sanskarKendra?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.sanskarKendra?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.tuitionCenter?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">पाठदान केंद्र / ट्यूशन केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.tuitionCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.tuitionCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.tuitionCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.higherEducationCoaching?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">उच्च शिक्षा कोचिंग</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.higherEducationCoaching?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.higherEducationCoaching?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.higherEducationCoaching?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.studyCenter?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">अभ्यासिका</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.studyCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.studyCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.studyCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.balwadi?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">बालवाड़ी</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.balwadi?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.balwadi?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.balwadi?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.primarySchool?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">प्राथमिक शाला (कक्षा 5वी तक)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.primarySchool?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.primarySchool?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.primarySchool?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.secondarySchool?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">माध्यमिक शाला (कक्षा 8वी तक)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.secondarySchool?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.secondarySchool?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.secondarySchool?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.highSchool?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">हाई स्कूल</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.highSchool?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.highSchool?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.highSchool?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.examCoaching?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">प्रतियोगी परीक्षा कोचिंग (उच्च शिक्षा हेतु)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.examCoaching?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.examCoaching?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.examCoaching?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.mobileLaboratory?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">चलित प्रयोगशाला</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.mobileLaboratory?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.mobileLaboratory?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.mobileLaboratory?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.bookBank?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">पुस्तक पेठी बैंक</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.bookBank?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.bookBank?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.bookBank?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.residentialSchool?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">आवासीय विद्यालय / गुरुकुल</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.residentialSchool?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.residentialSchool?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.residentialSchool?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.hindiTeachingClass?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">हिंदी शिक्षण वर्ग</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.hindiTeachingClass?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.hindiTeachingClass?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.hindiTeachingClass?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.adultEducation?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">प्रौढ शिक्षा / साक्षरता कार्यक्रम</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.adultEducation?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.adultEducation?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.adultEducation?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">दिव्यांगों के लिए स्कूल</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.schoolForDisabled?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">छात्रावास</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.schoolForDisabled?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.schoolForDisabled?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.orphanage?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">निराश्रित बालक बालिका सदन (विद्यालय जाने वाले)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.orphanage?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.orphanage?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.orphanage?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.shiksha?.singleTeacherSchool?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">एकल विद्यालय</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.singleTeacherSchool?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.shiksha?.singleTeacherSchool?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].shiksha?.singleTeacherSchool?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--
+    MARK: Swavlamban Table
+    -->
+  <table class="table table-bordered table-hover" *ngIf="showSwavalambanReport">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="5"><h1>स्वावलंबन</h1></th>
+      </tr>
+      <tr>
+        <th>क्र.</th>
+        <th>सेवा कार्य प्रकार</th>
+        <th>तारिक</th>
+        <th>नोट</th>
+        <th>फोटो</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.selfHelpGroup?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">स्वयं सहायता समूह (वैभव श्री)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfHelpGroup?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfHelpGroup?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.selfHelpGroup?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.sewingCenter?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">सिलाई केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.sewingCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.sewingCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.sewingCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.beautyTrainingCenter?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">सौंदर्य प्रशिक्षण केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.beautyTrainingCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.beautyTrainingCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.beautyTrainingCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.healthNurseTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">स्वास्थ्य परिचारिका, दाई प्रशिक्षण, होम नर्सिंग</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.healthNurseTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.healthNurseTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.healthNurseTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.computerTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">कम्प्यूटर प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.computerTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.computerTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.computerTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.examCoaching?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">प्रतियोगी परीक्षा कोचिंग (रोजगार हेतु)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.examCoaching?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.examCoaching?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.examCoaching?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.panchgavyaTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">गौ उत्पाद, पंचगव्य उत्पादन प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.panchgavyaTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.panchgavyaTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.panchgavyaTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.cottageIndustryTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">कुटीर उद्योग प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.cottageIndustryTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.cottageIndustryTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.cottageIndustryTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.handicrafts?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">हस्तकला</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.handicrafts?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.handicrafts?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.handicrafts?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter1?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">स्वरोजगार केंद्र 1 - राखी, विद्युत लड़ियाँ, दीपक</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter1?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter1?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.selfEmploymentCenter1?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.decorationFoodProduction?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">सजावट, खाद्य सामग्री आदि निर्माण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.decorationFoodProduction?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.decorationFoodProduction?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.decorationFoodProduction?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter2?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">स्वरोजगार केंद्र 2 - विद्युत, नल</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter2?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.selfEmploymentCenter2?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.selfEmploymentCenter2?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.repairFitting?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">ऑटो रिपेयरिंग व फिटिंग</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.repairFitting?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.repairFitting?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.repairFitting?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.businessSkillTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">व्यवसाय तथा कौशल प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.businessSkillTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.businessSkillTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.businessSkillTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.villageIndustry?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">ग्रामोद्योग</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.villageIndustry?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.villageIndustry?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.villageIndustry?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.forestMedicineTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">वनौषधि आधारित उत्पादन प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.forestMedicineTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.forestMedicineTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.forestMedicineTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.foodProcessingTraining?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">अन्न और फल प्रक्रिया प्रशिक्षण</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.foodProcessingTraining?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.foodProcessingTraining?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.foodProcessingTraining?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.swavalamban?.seedBank?.startDate?.length">
+        <th>{{getSerialNo('swavalamban')}}</th>
+        <td class="align-middle">बीजकोष</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.seedBank?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.swavalamban?.seedBank?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].swavalamban?.seedBank?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--
+    MARK: Aayogya Table
+    -->
+  <table class="table table-bordered table-hover" *ngIf="showAayogyaReport">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="5"><h1>स्वास्थ्य</h1></th>
+      </tr>
+      <tr>
+        <th>क्र.</th>
+        <th>सेवा कार्य प्रकार</th>
+        <th>तारिक</th>
+        <th>नोट</th>
+        <th>फोटो</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.ruralHealthGuard?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">ग्रामीण आरोग्य रक्षक / मित्र, पेटिका</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.ruralHealthGuard?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.ruralHealthGuard?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.ruralHealthGuard?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.healthAwarenessCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">स्वास्थ्य जागरण केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.healthAwarenessCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.healthAwarenessCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.healthAwarenessCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.mobileDispensary?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">चलित चिकित्सालय (Mobile Dispensary)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.mobileDispensary?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.mobileDispensary?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.mobileDispensary?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.smallOPD?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">स्थिर चिकित्सा केन्द्र (O.P.D.) छोटे</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.smallOPD?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.smallOPD?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.smallOPD?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.divyangCamp?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">स्थिर चिकित्सा केन्द्र (O.P.D.) छोटे</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.divyangCamp?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.divyangCamp?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.divyangCamp?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.largeHospital?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">स्थिर चिकित्सालय (आवासीय) / अस्पताल (बड़े)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.largeHospital?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.largeHospital?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.largeHospital?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.naturopathyCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">प्राकृतिक चिकित्सा केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.naturopathyCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.naturopathyCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.naturopathyCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.patientAssistance?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">रुग्ण सहायता</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.patientAssistance?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.patientAssistance?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.patientAssistance?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.therapy?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">न्यूरोथेरपी, फिजीओथेरपी, योग थेरपी</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.therapy?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.therapy?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.therapy?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.bloodBank?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">रक्तकोष / ब्लड बैंक</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.bloodBank?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.bloodBank?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.bloodBank?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.ambulanceService?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">रुग्णवाहिका</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.ambulanceService?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.ambulanceService?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.ambulanceService?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.disabledServiceCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">दिव्यांग सेवा केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.disabledServiceCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.disabledServiceCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.disabledServiceCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.hospital?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">रुग्णालय</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.hospital?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.hospital?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.hospital?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.eyeBank?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">नेत्र कोष</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.eyeBank?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.eyeBank?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.eyeBank?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.leprosyService?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">कुष्ठ रुग्ण सेवा</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.leprosyService?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.leprosyService?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.leprosyService?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.yogaEducationCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">योग शिक्षा केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.yogaEducationCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.yogaEducationCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.yogaEducationCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.medicineCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">औषधि केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.medicineCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.medicineCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.medicineCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.aayogya?.deAddictionCenter?.startDate?.length">
+        <th>{{getSerialNo('aayogya')}}</th>
+        <td class="align-middle">नशामुक्ति केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.deAddictionCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.aayogya?.deAddictionCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].aayogya?.deAddictionCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--
+    MARK: Samajik Table
+    -->
+  <table class="table table-bordered table-hover" *ngIf="showSamajikReport">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="5"><h1>सामाजिक</h1></th>
+      </tr>
+      <tr>
+        <th>क्र.</th>
+        <th>सेवा कार्य प्रकार</th>
+        <th>तारिक</th>
+        <th>नोट</th>
+        <th>फोटो</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.bhajanMandali?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">भजन मंडली</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.bhajanMandali?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.bhajanMandali?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.bhajanMandali?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.kishoriVikasKendra?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">किशोरी विकास केन्द्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.kishoriVikasKendra?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.kishoriVikasKendra?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.kishoriVikasKendra?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.matrushayaOrphanage?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">मातृछाया / अनाथ शिशु गृह</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.matrushayaOrphanage?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.matrushayaOrphanage?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.matrushayaOrphanage?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.matruMandali?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">मातृमंडली</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.matruMandali?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.matruMandali?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.matruMandali?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.deepPujaHavan?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">दीप पूजा / हवन (साप्ताहिक)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.deepPujaHavan?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.deepPujaHavan?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.deepPujaHavan?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.jholaPustakalay?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">झोला पुस्तकालय</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.jholaPustakalay?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.jholaPustakalay?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.jholaPustakalay?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.annDaan?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">अन्नदान</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.annDaan?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.annDaan?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.annDaan?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.mahilaAshram?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">महिलाश्रम</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.mahilaAshram?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.mahilaAshram?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.mahilaAshram?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.familyLegalCounseling?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">परिवार / कानूनी परामर्श केन्द्र ( Counselling)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.familyLegalCounseling?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.familyLegalCounseling?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.familyLegalCounseling?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.antyaSanskarCenter?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">अंत्यसंस्कार केंद्र</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.antyaSanskarCenter?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.antyaSanskarCenter?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.antyaSanskarCenter?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.orphanageforold?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">अनाथालय</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.orphanageforold?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.orphanageforold?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.orphanageforold?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.library?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">वाचनालय / पुस्तकालय</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.library?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.library?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.library?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.nursery?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">झूलाघर (शिशु पालनकेंद्र)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.nursery?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.nursery?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.nursery?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.elderlyService?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">वृद्ध जन सेवा</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.elderlyService?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.elderlyService?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.elderlyService?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.oldAgeHome?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">वृद्धाश्रम</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.oldAgeHome?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.oldAgeHome?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.oldAgeHome?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.juvenileCenterWork?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">कारावास, बालसुधार केंद्रों में चलने वाले कार्य</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.juvenileCenterWork?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.juvenileCenterWork?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.juvenileCenterWork?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.humanMilkBank?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">मानवी दुग्ध कोष</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.humanMilkBank?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.humanMilkBank?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.humanMilkBank?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="rowData[rowData.length - 1]?.samajik?.womenEmpowerment?.startDate?.length">
+        <th>{{getSerialNo('shiksha')}}</th>
+        <td class="align-middle">अन्य (महिला सशक्तिकरण)</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.womenEmpowerment?.startDate | date }}</td>
+        <td class="align-middle">{{ rowData[rowData.length - 1]?.samajik?.womenEmpowerment?.note }}</td>
+        <td class="align-middle">
+          <div *ngFor="let image of rowData[rowData.length - 1].samajik?.womenEmpowerment?.images; index as index">
+            <a *ngIf="image?.length" href="javascript:void(0)" (click)="viewImage(image)">Image {{ index + 1 }}</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
