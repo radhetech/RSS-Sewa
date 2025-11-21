@@ -1,0 +1,17 @@
+<header class="navbar-sticky">
+  <div class="m-header" [style.display]="this.headerStyle">
+    <span class="back-menu" (click)="testFn()"><i _ngcontent-ng-c1631355674="" class="feather icon-arrow-left back-menu"></i> </span>
+    <a class="mobile-menu" id="mobile-collapse1" href="javascript:" (click)="this.NavCollapsedMob.emit()"><span></span></a>
+    <a [routerLink]="['/home/dashboard']" class="b-brand">
+      <div class="b-bg">
+       
+      </div>
+      <span class="b-title">સેવા વિભાગ</span>
+      
+    </a>
+  </div>
+  <!-- <div class="mobile-menu" [ngClass]="{ on: this.menuClass }" id="mobile-header" href="javascript:" (click)="logout()">
+    <i class="icon-arrow-left"></i>
+  </div> -->
+
+</header>

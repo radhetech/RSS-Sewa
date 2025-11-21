@@ -1,52 +1,114 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SakhaVrttaComponent } from './sakha-vrtta/sakha-vrtta.component';
-import { SevaUpakramaComponent } from './seva-upakrama/seva-upakrama.component';
-import { SevaKaryaComponent } from './seva-karya/seva-karya.component';
-import { UtsavaVrttaComponent } from './utsava-vrtta/utsava-vrtta.component';
-import { SevaDarshanComponent } from './seva-darshan/seva-darshan.component';
-import { authguardGuard } from './services/Auth/authguard.guard';
+import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './theme/layout/admin/admin.component';
+import { ShakhavrutComponent } from './demo/pages/shakhavrut/shakhavrut.component';
+import { SevakaryaComponent } from './demo/pages/sevakarya/sevakarya.component';
+import { UtsavvrutComponent } from './demo/pages/utsavvrut/utsavvrut.component';
+import { JillavrutComponent } from './demo/pages/jillavrut/jillavrut.component';
+import { ReportComponent } from './demo/pages/report/report.component';
+import { VahivatComponent } from './demo/pages/vahivat/vahivat.component';
+import { SevaupkramComponent } from './demo/pages/sevaupkram/sevaupkram.component';
+import DashboardComponent from './demo/dashboard/dashboard.component';
+import { authguardGuard } from './services/authguard.guard';
+import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
+import { LogoutComponent } from './demo/pages/logout/logout.component';
+import { NotFoundComponent } from './demo/pages/not-found/not-found.component';
+import { SevadarshanComponent } from './demo/pages/sevadarshan/sevadarshan.component';
+import { PravasListComponent } from './demo/pages/pravas-list/pravas-list.component';
+import { TempAdminComponent } from './demo/pages/temp-admin/temp-admin.component';
+import { DarshaVrutComponent } from './demo/pages/darsha-vrut/darsha-vrut.component';
+import { ManageUserComponent } from './demo/pages/manage-user/manage-user.component';
+import { DarshanVrutByVastiComponent } from './demo/pages/darshan-vrut-by-vasti/darshan-vrut-by-vasti.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:LoginComponent
+    path: 'home',
+    component: AdminComponent,
+    canActivate: [authguardGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      
+      },
+      {
+        path: 'shakhavrut',
+        component: ShakhavrutComponent,
+        
+      },
+      {
+        path: 'sevaupkram',
+        component: SevaupkramComponent,
+        
+      },
+      {
+        path: 'sevakary',
+        component: SevakaryaComponent,
+       
+      },
+      {
+        path: 'sevadarshan',
+        component: SevadarshanComponent,
+       
+      },
+      {
+        path: 'sevadarshan-vrut',
+        component: DarshaVrutComponent,
+       
+      },
+        {
+          path: 'sevadarshan-vrut/:year',
+          component: DarshanVrutByVastiComponent
+        },
+      {
+        path: 'pravaslist',
+        component: PravasListComponent,
+       
+      },
+      {
+        path: 'utsavvrut',
+        component: UtsavvrutComponent,
+         
+      },
+      {
+        path: 'jillavrut',
+        component: JillavrutComponent,
+        
+      },
+      {
+        path: 'tempadmin',
+        component: TempAdminComponent,
+        
+      },
+      {
+        path: 'vahivat',
+        component: VahivatComponent,
+         
+      },
+      {
+        path: 'report',
+        component: ReportComponent,
+         
+      },
+      // {
+      //   path: 'manage-user',
+      //   component: ManageUserComponent,
+         
+      // }
+    ]
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: AuthSigninComponent,
   },
-  {
-    path:'home',
-    component:HomeComponent,
-    canActivate:[authguardGuard]
-  },
-  {
-    path:'SakhaVrtta',
-    component:SakhaVrttaComponent,
-    canActivate:[authguardGuard]
-  },
-  {
-    path:'SevaUpakrama',
-    component:SevaUpakramaComponent,
-    canActivate:[authguardGuard]
-  },
-  {
-    path:'SevaKarya',
-    component:SevaKaryaComponent,
-    canActivate:[authguardGuard]
-  },
-  {
-    path:'UtsavaVrtta',
-    component:UtsavaVrttaComponent,
-    canActivate:[authguardGuard]
-  },
-  {
-    path:'SevaDarshan',
-    component:SevaDarshanComponent,
-    canActivate:[authguardGuard]
+  {path: '',
+  redirectTo: '/login'
   }
 ];
 
@@ -54,4 +116,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,146 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card [hidHeader]="false" [cardTitle]="{title: 'સેવા ઉપક્રમ', description: ''}" [cardClass]="'card'"
+            [headerClass]="'panel-header'">
+
+            <div class="was-validated font-16">
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label>મહિનો</label>
+                        <div>
+                            <select class="form-select" required aria-label="select month"
+                                (change)="manageMonth($event)" [ngModel]="selectedMonth">
+                                <option [value]="" selected>પસંદ કરો</option>
+                                <option [value]="month" *ngFor="let month of [1,2,3,4,5,6,7,8,9,10,11,12]">{{month}}
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label>વર્ષ</label>
+                        <div>
+                            <select class="form-select" required aria-label="select month" (change)="manageYear($event)"
+                                [ngModel]="selectedYear">
+                                <option [value]="" selected>પસંદ કરો</option>
+                                <option [value]="year" *ngFor="let year of [2023,2024,2025]">{{year}}</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </app-card>
+    </div>
+</div>
+
+<form *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let item of keys">
+        <div [formGroupName]="item.category">
+            <div ngbAccordion>
+                <div ngbAccordionItem [collapsed]="true">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton  [ngClass]="{
+                            'success': isSubcategoryFilled(item),
+                            'info': !isSubcategoryFilled(item)
+                        }">{{ item.catName }}</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                        <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+                            <div class="card mb-0 font-16">
+                                <div class="card-header ptb-10 ">
+                                    <a class="card-link">
+                                        {{ subcategory.label }}
+                                    </a>
+
+                                </div>
+                                <div class="card-body ptb-10 font-16">
+                                    <div class="row">
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">ભાઈઓ</label>
+                                            <input type="number" class="form-control" formControlName="men"
+                                                placeholder="ભાઈઓ" />
+                                        </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">બહેનો</label>
+                                            <input type="number" class="form-control" formControlName="women"
+                                                placeholder="બહેનો" />
+                                        </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">અન્ય</label>
+                                            <input type="number" class="form-control" formControlName="others"
+                                                placeholder="અન્ય" />
+                                        </div>
+                                    <!-- </div>
+                                    <div class="row"> -->
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">તારીખ</label>
+                                            <input type="date" class="form-control" formControlName="date"
+                                                placeholder="તારીખ" />
+                                        </div>
+
+                                        <div class="col-md-2 mb-1">
+                                            <label for="">ફોટો</label>
+                                            <div formArrayName="images">
+                                                <div *ngFor="let image of getImagesArray(item.category, subcategory.name).controls; let i = index">
+                                                  <div class="mb-2">
+                                                    <!-- Display uploaded image link if it exists -->
+                                                    <ng-container *ngIf="image.value; else uploadFile">
+                                                      <span class="uploaded-image" (click)="downloadImage(image.value)">{{ image.value }}</span>
+                                                      <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removeImage(item.category, subcategory.name, i)">
+                                                        Remove
+                                                      </button>
+                                                    </ng-container>
+                                                    <!-- Upload new image -->
+                                                    <ng-template #uploadFile>
+                                                      <input
+                                                        type="file"
+                                                        class="form-control"
+                                                        (change)="onFileSelect($event, item.category, subcategory.name, i)"
+                                                      />
+                                                    </ng-template>
+                                                  </div>
+                                                </div>
+                                                <!-- Buttons to add/remove images -->
+                                                <button type="button" class="btn btn-secondary" (click)="addImage(item.category, subcategory.name)">
+                                                  Add Images
+                                                </button>
+                                              </div>
+                                              
+                                              
+                                          </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+                <div class="card mb-0">
+                    <div class="card-header">
+                        <a class="card-link" >
+                            {{ subcategory.label }}
+                        </a>
+                      
+                    </div>
+                  
+                  </div>
+                </div> -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary submit-btn">
+        <i class="feather icon-thumbs-up"></i>
+        Submit
+    </button>
+</form>
+<app-snackbar [errorsmsg]="msg" [snackbarColour]="snackbarColour" *ngIf="showSnackBar"></app-snackbar>

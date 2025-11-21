@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-sm-12" [formGroup]="adminForm">
+      <app-card
+        [hidHeader]="false"
+        [cardTitle]="{ title: 'સેવા દર્શન 2025 ', description: '' }"
+        [cardClass]="'card'"
+        [headerClass]="'panel-header'"
+      >
+        <div class="was-validated font-16">
+          <div class="row">
+            <div class="mb-3 col-md-3 font-16">
+                <div class="form-group" *ngIf="talukaList.length">
+                    <label for="taluka" class="font-16">નગર/તાલુકો:</label>
+                    <label for="vibhag" class="float-right font-16">કુલ-{{talukaList.length}}</label>
+                    <select id="taluka" class="form-select" formControlName="taluka" (change)="talukaChange($event)">
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let taluka of talukaList" [value]="taluka.talukaId">{{ taluka.talukaName }}
+                        </option>
+                    </select>
+                </div>
+              </div>
+              <div class="mb-3 col-md-3 font-16">
+                <div class="form-group">
+                    <label for="vasti" class="font-16">સેવા વસ્તી:</label>
+                    <label for="vibhag" class="float-right font-16 ">કુલ-{{vastiList.length}}</label>
+                    <select id="vasti" class="form-select" formControlName="vasti" (change)="vastiChange($event)">
+                        <option value="" selected>પસંદ કરો</option>
+                        <option *ngFor="let vasti of vastiList" [value]="vasti.sevaVastiId">{{ vasti.sevaVastiName
+                            }}</option>
+
+                    </select>
+                    
+                </div>
+              </div>
+            <div class="mb-3 col-md-3 font-16">
+              <label class="font-16">સેવા દર્શન કરવા જનાર </label>
+              <input
+                type="text"
+                class="form-control ptb-7"
+                formControlName="reportingPerson"
+                placeholder="name"
+              />
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  
+  <form *ngIf="dynamicForm" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let item of keys; let i = index">
+      <div [formGroupName]="item.category">
+        <div ngbAccordion>
+          <div ngbAccordionItem [collapsed]="true">
+            <h2 ngbAccordionHeader>
+              <button ngbAccordionButton  [ngClass]="{
+                'success': isSubcategoryFilled(item),
+                'info': !isSubcategoryFilled(item)
+            }">{{ item.catName }}</button>
+            </h2>
+            <div ngbAccordionCollapse>
+              <div
+                *ngFor="let subcategory of item.subcategories; let i = index"
+                [formGroupName]="subcategory.name"
+              >
+                <div class="card mb-0 font-16">
+                  <div class="card-header ptb-10" [ngClass]="i % 2 === 0 ? 'even' : 'odd'">
+                    <a class="card-link">
+                      {{ subcategory.label }}
+                    </a>
+                  </div>
+                  <div class="card-body ptb-10">
+                    <div class="row ptb-10">
+                      <div class="col-md-4 mb-1">
+                        <label for="">શરૂ થયાની તારીખ </label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          formControlName="startDate"
+                          placeholder="તારીખ"
+                        />
+                      </div>
+                      
+                      <div class="col-md-4 mb-1">
+                        <label for="">નોંધ </label>
+                        <textarea
+                          class="form-control"
+                          formControlName="note"
+                          placeholder="નોંધ"
+                        >
+                        </textarea>
+                      </div>
+                      <div class="col-md-4 mb-1">
+                        <label for="">ફોટો</label>
+                        <div formArrayName="images">
+                            <div *ngFor="let image of getImagesArray(item.category, subcategory.name).controls; let i = index">
+                              <div class="mb-2">
+                                <!-- Display uploaded image link if it exists -->
+                                <ng-container *ngIf="image.value; else uploadFile">
+                                  <span class="uploaded-image" (click)="downloadImage(image.value)">{{ image.value }}</span>
+                                  <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removeImage(item.category, subcategory.name, i)">
+                                    Remove
+                                  </button>
+                                </ng-container>
+                                <!-- Upload new image -->
+                                <ng-template #uploadFile>
+                                  <input
+                                    type="file"
+                                    class="form-control"
+                                    (change)="onFileSelect($event, item.category, subcategory.name, i)"
+                                  />
+                                </ng-template>
+                              </div>
+                            </div>
+                            <!-- Buttons to add/remove images -->
+                            <button type="button" class="btn btn-secondary" (click)="addImage(item.category, subcategory.name)">
+                              Add Images
+                            </button>
+                          </div>
+                          
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div *ngFor="let subcategory of item.subcategories" [formGroupName]="subcategory.name">
+              <div class="card mb-0">
+                  <div class="card-header">
+                      <a class="card-link" >
+                          {{ subcategory.label }}
+                      </a>
+                    
+                  </div>
+                
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary submit-btn font-16">
+      <i class="feather icon-thumbs-up"></i>
+      Submit
+    </button>
+  </form>
+  <app-snackbar
+    [errorsmsg]="msg"
+    [snackbarColour]="snackbarColour"
+    *ngIf="showSnackBar"
+  ></app-snackbar>
+  
+ 
