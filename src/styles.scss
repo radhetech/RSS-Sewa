@@ -30,4 +30,8 @@
     padding-top:10px !important;
     padding-bottom: 10px !important;
 }
-
+@media print {
+  .hide-print {
+    display: none !important;
+  }
+}

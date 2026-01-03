@@ -4,8 +4,14 @@
 <div hidden>
   {{ rowData | json }}
 </div>
-
 <div class="container table-responsive py-5" *ngIf="rowData">
+ <ag-grid-angular
+    #agGrid
+    style="height: 110px"
+    class="ag-theme-alpine dynamic-width"
+    [rowData]="rowData"
+    [columnDefs]="locationColDefs"
+  ></ag-grid-angular>
   <!--
      MARK: Shiksha Table
     -->

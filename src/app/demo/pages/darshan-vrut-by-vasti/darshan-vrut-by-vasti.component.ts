@@ -4,13 +4,15 @@ import { Subject, takeUntil } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
+import { ColDef } from 'ag-grid-community';
+import { AgGridAngular } from 'ag-grid-angular';
 
 @Component({
   selector: 'app-darshan-vrut-by-vasti',
   standalone: true,
   templateUrl: './darshan-vrut-by-vasti.component.html',
   styleUrl: './darshan-vrut-by-vasti.component.scss',
-  imports: [CommonModule]
+  imports: [CommonModule, AgGridAngular]
 })
 export class DarshanVrutByVastiComponent implements OnInit {
   private vibhagId: string;
@@ -25,6 +27,7 @@ export class DarshanVrutByVastiComponent implements OnInit {
   showSwavalambanReport = false;
   reportType: string;
   serialNo = 1;
+  locationColDefs: ColDef[];
 
   constructor(
     private apiService: ApiService,
@@ -34,6 +37,15 @@ export class DarshanVrutByVastiComponent implements OnInit {
     this.year = route.snapshot.params?.['year'];
     this.vibhagId = route.snapshot.queryParams?.['vibhagId'];
     this.sevaVastiId = route.snapshot.queryParams?.['sevaVastiId'];
+    const columnWidth = 150; // Set the desired column width in pixels
+    this.locationColDefs = [
+      { field: 'createdDate', width: columnWidth },
+      { field: 'reportingPerson', width: columnWidth },
+      { field: 'sevaVastiName', width: columnWidth },
+      { field: 'talukaName', width: columnWidth },
+      { field: 'jillaName', width: columnWidth },
+      { field: 'vibhagName', width: columnWidth }
+    ];
   }
 
   ngOnInit() {
