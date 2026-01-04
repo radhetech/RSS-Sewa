@@ -37,7 +37,7 @@ export class DarshanVrutByVastiComponent implements OnInit {
     this.year = route.snapshot.params?.['year'];
     this.vibhagId = route.snapshot.queryParams?.['vibhagId'];
     this.sevaVastiId = route.snapshot.queryParams?.['sevaVastiId'];
-    const columnWidth = 150; // Set the desired column width in pixels
+    const columnWidth = 130; // Set the desired column width in pixels
     this.locationColDefs = [
       { field: 'createdDate', width: columnWidth },
       { field: 'reportingPerson', width: columnWidth },

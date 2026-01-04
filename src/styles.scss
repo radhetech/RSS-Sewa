@@ -30,8 +30,27 @@
     padding-top:10px !important;
     padding-bottom: 10px !important;
 }
+
 @media print {
-  .hide-print {
-    display: none !important;
+  /* Hide everything else */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only printable content */
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+
+  /* Center the content on page */
+  .print-container {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    /* A4 friendly */
   }
 }

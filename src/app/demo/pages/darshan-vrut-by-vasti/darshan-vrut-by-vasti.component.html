@@ -4,7 +4,7 @@
 <div hidden>
   {{ rowData | json }}
 </div>
-<div class="container table-responsive py-5" *ngIf="rowData">
+<div class="container table-responsive py-5 print-container" *ngIf="rowData">
  <ag-grid-angular
     #agGrid
     style="height: 110px"
