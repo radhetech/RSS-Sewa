@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import Swal from 'sweetalert2';
 import { ColDef } from 'ag-grid-community';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -32,7 +32,8 @@ export class DarshanVrutByVastiComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private datePipe: DatePipe
   ) {
     this.year = route.snapshot.params?.['year'];
     this.vibhagId = route.snapshot.queryParams?.['vibhagId'];
@@ -58,6 +59,10 @@ export class DarshanVrutByVastiComponent implements OnInit {
             this.rowData = res.map((item: any) => {
               return {
                 ...item,
+                createdDate: this.datePipe.transform(
+                  item.createdDate,
+                  'dd MMM yyyy'
+                ),
                 jillaName: item.jilla.jillaName,
                 vibhagName: item.vibhag.vibhagName,
                 talukaName: item.taluka.talukaName,
@@ -68,7 +73,7 @@ export class DarshanVrutByVastiComponent implements OnInit {
             alert('No Records Found');
           }
         },
-        error: () => {}
+        error: () => { }
       });
 
     setTimeout(() => {
@@ -106,23 +111,23 @@ export class DarshanVrutByVastiComponent implements OnInit {
         confirmButton: 'btn btn-light',
       },
     }).then((result) => {
-      if(result.isConfirmed) {
+      if (result.isConfirmed) {
         window.open(url, '_blank');
       }
     });
   }
 
   getSerialNo(report: string): number {
-    if(this.reportType === undefined) {
+    if (this.reportType === undefined) {
       this.reportType = report;
     }
 
-    if(this.reportType != undefined && this.reportType != report) {
+    if (this.reportType != undefined && this.reportType != report) {
       this.reportType = report;
       this.serialNo = 1;
       return this.serialNo++;
     }
-    
+
     return this.serialNo++;
   }
 }
