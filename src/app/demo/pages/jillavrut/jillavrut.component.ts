@@ -19,6 +19,7 @@ export class JillavrutComponent {
   userData:any;
   selectedMonth:any;
   selectedYr:string='';
+  years: number[] = [];
   maxDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
   selectedDate: Date | null = null;
   constructor(private _apiService:ApiService,private valSel:valueSelect) {
@@ -35,6 +36,7 @@ export class JillavrutComponent {
     });
   }
   ngOnInit(): void {
+    this.generateYearList();
     this.userData = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
   }
   manageBethak(e:any){
@@ -97,5 +99,14 @@ export class JillavrutComponent {
   }
   yearChange(e:any){
    this.selectedYr = e.target.value;
+  }
+  generateYearList() {
+    const startYear = 2023;
+    const endYear = new Date().getFullYear() + 2;
+
+    this.years = Array.from(
+      { length: endYear - startYear + 1 }, 
+      (_, i) => startYear + i
+    );
   }
 }

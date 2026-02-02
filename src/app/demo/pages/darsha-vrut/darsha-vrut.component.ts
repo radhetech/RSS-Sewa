@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
   selector: 'app-darsha-vrut',
   templateUrl: './darsha-vrut.component.html',
   standalone: true,
+  providers: [DatePipe],
   imports: [AgGridAngular, FormsModule, CommonModule, CardComponent],
   styleUrls: ['./darsha-vrut.component.scss']
 })
@@ -36,32 +37,32 @@ export class DarshaVrutComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit() {
+    const savedState = this.apiService.getDarshaVrutTableState();
+ if (savedState) {
+    this.rowData = savedState.rowData;
+    this.selectedVibhag = savedState.selectedVibhag;
+    this.vibhagChange(this.selectedVibhag);
+    this.selectedJilla = savedState.selectedJilla;
+     this.apiService.clearDarshaVrutTableState();
+  }else{
     this.rowData = [];
+  }
     this.paginationPageSize = 10;
 
     const columnWidth = 150; // Set the desired column width in pixels
 
     this.colDefs = [
-      // {
-      //   headerName: 'Actions',
-      //   cellRenderer: (params: any) => {
-      //     const button = document.createElement('button');
-      //     button.innerHTML = 'View';
-      //     button.addEventListener('click', () => this.viewDetails(params.data));
-      //     return button;
-      //   },
-      //   width: columnWidth
-      // },
-      { field: 'createdDate', width: columnWidth },
-      { field: 'reportingPerson', width: columnWidth },
-      { field: 'sevaVastiName', width: columnWidth },
-      { field: 'talukaName', width: columnWidth },
-      { field: 'jillaName', width: columnWidth },
-      { field: 'vibhagName', width: columnWidth }
+    { field: 'createdDate', flex: 1, minWidth: columnWidth },
+    { field: 'reportingPerson', flex: 1, minWidth: columnWidth },
+    { field: 'sevaVastiName', flex: 1, minWidth: columnWidth },
+    { field: 'talukaName', flex: 1, minWidth: columnWidth },
+    { field: 'jillaName', flex: 1, minWidth: columnWidth },
+    { field: 'vibhagName', flex: 1, minWidth: columnWidth }
     ];
 
     this.apiService
@@ -77,17 +78,25 @@ export class DarshaVrutComponent implements OnInit {
   }
 
   onGridReady(params: any) {
+    this.agGrid.api.sizeColumnsToFit();
     console.log(params);
     // this.adjustGridHeight(params.api);
   }
 
   vibhagChange(e: any) {
-    console.log(e.target.value);
+    let value: string;
+    if (e && e.target) {
+    value = e.target.value;
+    } else {
+      value = e; 
+    }
+
+    console.log(value);
     this.jillaList = [];
     this.selectedJilla = '';
 
     this.apiService
-      .getData(`api/getJilla/${e.target.value}`)
+      .getData(`api/getJilla/${value}`)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any) => {
@@ -123,6 +132,11 @@ export class DarshaVrutComponent implements OnInit {
             this.rowData = res.map((item: any) => {
               return {
                 ...item,
+                createdDate: this.datePipe.transform(
+                  item.createdDate,
+                  'dd MMM yyyy'
+                ),
+                reportingPerson:item.reportingPerson,
                 jillaName: item.jilla.jillaName,
                 vibhagName: item.vibhag.vibhagName,
                 talukaName: item.taluka.talukaName,
@@ -155,6 +169,12 @@ export class DarshaVrutComponent implements OnInit {
   }
 
   onDetailReport(event: CellClickedEvent) {
+    this.apiService.saveDarshaVrutTableState({
+    rowData: this.rowData,
+    selectedVibhag: this.selectedVibhag,
+    selectedJilla: this.selectedJilla
+    });
+
     this.router.navigate(['home', 'sevadarshan-vrut', event.data.year], {
       queryParams: {
         vibhagId: this.selectedVibhag,

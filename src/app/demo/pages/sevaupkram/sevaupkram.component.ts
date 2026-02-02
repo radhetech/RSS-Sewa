@@ -25,6 +25,7 @@ export class SevaupkramComponent implements OnInit, OnDestroy {
   data = {};
   selectedYear:any="";
   selectedMonth:any="";
+  years: number[] = [];
   isCollapsed = true;
   multiCollapsed1 = true;
   multiCollapsed2 = true;
@@ -102,6 +103,7 @@ export class SevaupkramComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder,private apiService: ApiService, private valSelService:valueSelect ) {}
 
   ngOnInit(): void {
+   this.generateYearList();
    this.valSelService.manageShakhaVrutFlag(false)
     this.dynamicForm = this.generateForm(this.keys);
     
@@ -323,6 +325,15 @@ export class SevaupkramComponent implements OnInit, OnDestroy {
   // Set form data from API response
   setFormData(data: any): void {
     this.dynamicForm.patchValue(data);
+  }
+  generateYearList() {
+    const startYear = 2023;
+    const endYear = new Date().getFullYear() + 2;
+
+    this.years = Array.from(
+      { length: endYear - startYear + 1 }, 
+      (_, i) => startYear + i
+    );
   }
 
   ngOnDestroy(): void {

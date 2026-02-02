@@ -31,7 +31,7 @@
             <select class="form-select" required aria-label="select month" (change)="yearChange($event)"
               [(ngModel)]="selectedYr">
               <option [value]="" selected>પસંદ કરો</option>
-              <option [value]="year" *ngFor="let year of [2024,2025]">{{year}}</option>
+              <option [value]="year" *ngFor="let year of years; track year">{{year}}</option>
 
             </select>
 

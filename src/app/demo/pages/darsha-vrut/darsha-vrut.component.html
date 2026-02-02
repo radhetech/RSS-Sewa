@@ -21,7 +21,7 @@
         <div class="col-md-4 mb-3">
           <label for="jilla">જીલ્લા:</label>
 
-          <select id="jilla" class="form-select" name="jilla" (change)="jillaChange($event)">
+          <select [(ngModel)]="selectedJilla" id="jilla" class="form-select" name="jilla" (change)="jillaChange($event)">
             <option value="" selected>પસંદ કરો</option>
             <option *ngFor="let jilla of jillaList" [value]="jilla.jillaId">{{ jilla.jillaName }}</option>
           </select>

@@ -1,6 +1,13 @@
 <h1>Darshan Vrut Report by {{ rowData[rowData.length - 1]?.reportingPerson }}</h1>
 <h3>as of {{ rowData[rowData.length - 1]?.year }}</h3>
 
+ <button
+    class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center gap-2"
+    (click)="goBack()">
+    ← Back
+  </button>
+
+
 <div hidden>
   {{ rowData | json }}
 </div>

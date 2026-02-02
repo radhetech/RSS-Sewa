@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, Location } from '@angular/common';
 import Swal from 'sweetalert2';
 import { ColDef } from 'ag-grid-community';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -12,6 +12,7 @@ import { AgGridAngular } from 'ag-grid-angular';
   standalone: true,
   templateUrl: './darshan-vrut-by-vasti.component.html',
   styleUrl: './darshan-vrut-by-vasti.component.scss',
+  providers: [DatePipe],
   imports: [CommonModule, AgGridAngular]
 })
 export class DarshanVrutByVastiComponent implements OnInit {
@@ -33,19 +34,20 @@ export class DarshanVrutByVastiComponent implements OnInit {
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private location: Location
   ) {
     this.year = route.snapshot.params?.['year'];
     this.vibhagId = route.snapshot.queryParams?.['vibhagId'];
     this.sevaVastiId = route.snapshot.queryParams?.['sevaVastiId'];
     const columnWidth = 130; // Set the desired column width in pixels
     this.locationColDefs = [
-      { field: 'createdDate', width: columnWidth },
-      { field: 'reportingPerson', width: columnWidth },
-      { field: 'sevaVastiName', width: columnWidth },
-      { field: 'talukaName', width: columnWidth },
-      { field: 'jillaName', width: columnWidth },
-      { field: 'vibhagName', width: columnWidth }
+    { field: 'createdDate', flex: 1, minWidth: columnWidth },
+    { field: 'reportingPerson', flex: 1, minWidth: columnWidth },
+    { field: 'sevaVastiName', flex: 1, minWidth: columnWidth },
+    { field: 'talukaName', flex: 1, minWidth: columnWidth },
+    { field: 'jillaName', flex: 1, minWidth: columnWidth },
+    { field: 'vibhagName', flex: 1, minWidth: columnWidth }
     ];
   }
 
@@ -63,6 +65,7 @@ export class DarshanVrutByVastiComponent implements OnInit {
                   item.createdDate,
                   'dd MMM yyyy'
                 ),
+                reportingPerson:item.reportingPerson,
                 jillaName: item.jilla.jillaName,
                 vibhagName: item.vibhag.vibhagName,
                 talukaName: item.taluka.talukaName,
@@ -85,10 +88,12 @@ export class DarshanVrutByVastiComponent implements OnInit {
   }
 
   getReportVisibility(data: object): boolean {
+    console.log("data",data);
     let show = false;
     if (!data) {
       return false;
     }
+    
     Object.entries(data).forEach(([key, value]) => {
       if (value['startDate']?.length > 0) {
         show = true;
@@ -130,4 +135,7 @@ export class DarshanVrutByVastiComponent implements OnInit {
 
     return this.serialNo++;
   }
+  goBack() {
+  this.location.back();
+}
 }

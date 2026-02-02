@@ -18,6 +18,7 @@ export class UtsavvrutComponent {
   dynamicForm: any;
   data = {};
   selectedYear:any=2024;
+  years: number[] = [];
   isCollapsed = true;
   multiCollapsed1 = true;
   multiCollapsed2 = true;
@@ -36,6 +37,7 @@ export class UtsavvrutComponent {
     });
   }
   ngOnInit(): void {
+    this.generateYearList()
       
   }
   manageYear(event:any){
@@ -52,5 +54,14 @@ export class UtsavvrutComponent {
   onSubmit(e:any) {
     console.log(e.value);
     e.reset()
+  }
+  generateYearList() {
+    const startYear = 2023;
+    const endYear = new Date().getFullYear() + 2;
+
+    this.years = Array.from(
+      { length: endYear - startYear + 1 }, 
+      (_, i) => startYear + i
+    );
   }
 }

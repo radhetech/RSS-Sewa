@@ -25,9 +25,11 @@ export class ReportComponent implements OnInit {
   selectedVibhag: any;
   selectedMonth: any = "";
   selectedYear: any = "";
+  years: number[] = [];
   vibhagUrl:string = "api/getVibhag";
   jillaUrl:string = "api/getJilla";
   ngOnInit(): void {
+    this.generateYearList();
   }
   getVibhag() {
     this.apiService.getData(this.vibhagUrl).subscribe({
@@ -65,6 +67,15 @@ export class ReportComponent implements OnInit {
 
   selectYear(e: any) {
     this.selectedYear = e.target.value;
+  }
+  generateYearList() {
+    const startYear = 2023;
+    const endYear = new Date().getFullYear() + 2;
+
+    this.years = Array.from(
+      { length: endYear - startYear + 1 }, 
+      (_, i) => startYear + i
+    );
   }
 }
 
